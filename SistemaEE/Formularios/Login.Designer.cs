@@ -55,7 +55,7 @@
             btn_ingresar.Cursor = Cursors.Hand;
             btn_ingresar.FlatAppearance.BorderSize = 0;
             btn_ingresar.FlatStyle = FlatStyle.Flat;
-            btn_ingresar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_ingresar.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_ingresar.ForeColor = Color.FromArgb(254, 252, 230);
             btn_ingresar.Location = new Point(39, 454);
             btn_ingresar.Name = "btn_ingresar";
@@ -71,7 +71,7 @@
             btn_salir.Cursor = Cursors.Hand;
             btn_salir.FlatAppearance.BorderSize = 0;
             btn_salir.FlatStyle = FlatStyle.Flat;
-            btn_salir.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_salir.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_salir.ForeColor = Color.FromArgb(254, 252, 230);
             btn_salir.Location = new Point(152, 454);
             btn_salir.Name = "btn_salir";
@@ -84,40 +84,40 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(254, 252, 230);
-            label1.Location = new Point(39, 322);
+            label1.Location = new Point(39, 320);
             label1.Name = "label1";
-            label1.Size = new Size(61, 17);
+            label1.Size = new Size(69, 19);
             label1.TabIndex = 3;
             label1.Text = "Usuario:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(254, 252, 230);
-            label2.Location = new Point(39, 379);
+            label2.Location = new Point(39, 377);
             label2.Name = "label2";
-            label2.Size = new Size(85, 17);
+            label2.Size = new Size(94, 19);
             label2.TabIndex = 4;
             label2.Text = "Contraseña:";
             // 
             // txt_usuario
             // 
-            txt_usuario.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_usuario.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_usuario.Location = new Point(39, 342);
             txt_usuario.Name = "txt_usuario";
-            txt_usuario.Size = new Size(220, 23);
+            txt_usuario.Size = new Size(220, 27);
             txt_usuario.TabIndex = 5;
             // 
             // txt_clave
             // 
-            txt_clave.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_clave.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_clave.Location = new Point(39, 399);
             txt_clave.Name = "txt_clave";
             txt_clave.PasswordChar = '*';
-            txt_clave.Size = new Size(220, 23);
+            txt_clave.Size = new Size(220, 27);
             txt_clave.TabIndex = 6;
             // 
             // Login

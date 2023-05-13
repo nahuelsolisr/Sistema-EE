@@ -1,4 +1,6 @@
-﻿namespace SistemaEE.Formularios
+﻿using SistemaEE.Clases;
+
+namespace SistemaEE.Formularios
 {
     public partial class Menu : Form
     {
@@ -68,6 +70,12 @@
         {
             Proveedores proveedores = new Proveedores();
             proveedores.ShowDialog();
+        }
+
+        private void btn_entradas_Click(object sender, EventArgs e)
+        {
+            Entrada entrada = new Entrada();
+            entrada.ShowDialog();
         }
     }
 }

@@ -37,12 +37,12 @@
             btn_contabilidad = new Button();
             btn_facturacion = new Button();
             panel_facturacion = new Panel();
+            btn_salida = new Button();
+            btn_entradas = new Button();
             btn_atras = new Button();
             btn_proveedores = new Button();
             btn_productos = new Button();
             btn_cliente = new Button();
-            btn_entradas = new Button();
-            btn_salida = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel_facturacion.SuspendLayout();
@@ -83,7 +83,7 @@
             btn_salir.Cursor = Cursors.Hand;
             btn_salir.FlatAppearance.BorderSize = 0;
             btn_salir.FlatStyle = FlatStyle.Flat;
-            btn_salir.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_salir.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_salir.ForeColor = Color.FromArgb(254, 252, 230);
             btn_salir.Location = new Point(478, 508);
             btn_salir.Name = "btn_salir";
@@ -99,7 +99,7 @@
             btn_usuarios.Cursor = Cursors.Hand;
             btn_usuarios.FlatAppearance.BorderSize = 0;
             btn_usuarios.FlatStyle = FlatStyle.Flat;
-            btn_usuarios.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_usuarios.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_usuarios.ForeColor = Color.FromArgb(254, 252, 230);
             btn_usuarios.Location = new Point(238, 252);
             btn_usuarios.Name = "btn_usuarios";
@@ -115,7 +115,7 @@
             btn_contabilidad.Cursor = Cursors.Hand;
             btn_contabilidad.FlatAppearance.BorderSize = 0;
             btn_contabilidad.FlatStyle = FlatStyle.Flat;
-            btn_contabilidad.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_contabilidad.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_contabilidad.ForeColor = Color.FromArgb(254, 252, 230);
             btn_contabilidad.Location = new Point(125, 252);
             btn_contabilidad.Name = "btn_contabilidad";
@@ -131,7 +131,7 @@
             btn_facturacion.Cursor = Cursors.Hand;
             btn_facturacion.FlatAppearance.BorderSize = 0;
             btn_facturacion.FlatStyle = FlatStyle.Flat;
-            btn_facturacion.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_facturacion.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_facturacion.ForeColor = Color.FromArgb(254, 252, 230);
             btn_facturacion.Location = new Point(12, 252);
             btn_facturacion.Name = "btn_facturacion";
@@ -155,13 +155,44 @@
             panel_facturacion.TabIndex = 15;
             panel_facturacion.Visible = false;
             // 
+            // btn_salida
+            // 
+            btn_salida.BackColor = Color.SteelBlue;
+            btn_salida.Cursor = Cursors.Hand;
+            btn_salida.FlatAppearance.BorderSize = 0;
+            btn_salida.FlatStyle = FlatStyle.Flat;
+            btn_salida.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_salida.ForeColor = Color.FromArgb(254, 252, 230);
+            btn_salida.Location = new Point(283, 43);
+            btn_salida.Name = "btn_salida";
+            btn_salida.Size = new Size(80, 57);
+            btn_salida.TabIndex = 14;
+            btn_salida.Text = "Salidas";
+            btn_salida.UseVisualStyleBackColor = false;
+            // 
+            // btn_entradas
+            // 
+            btn_entradas.BackColor = Color.SteelBlue;
+            btn_entradas.Cursor = Cursors.Hand;
+            btn_entradas.FlatAppearance.BorderSize = 0;
+            btn_entradas.FlatStyle = FlatStyle.Flat;
+            btn_entradas.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_entradas.ForeColor = Color.FromArgb(254, 252, 230);
+            btn_entradas.Location = new Point(191, 42);
+            btn_entradas.Name = "btn_entradas";
+            btn_entradas.Size = new Size(80, 57);
+            btn_entradas.TabIndex = 13;
+            btn_entradas.Text = "Entradas";
+            btn_entradas.UseVisualStyleBackColor = false;
+            btn_entradas.Click += btn_entradas_Click;
+            // 
             // btn_atras
             // 
             btn_atras.BackColor = Color.Olive;
             btn_atras.Cursor = Cursors.Hand;
             btn_atras.FlatAppearance.BorderSize = 0;
             btn_atras.FlatStyle = FlatStyle.Flat;
-            btn_atras.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_atras.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_atras.ForeColor = Color.Black;
             btn_atras.Location = new Point(3, 155);
             btn_atras.Name = "btn_atras";
@@ -177,11 +208,11 @@
             btn_proveedores.Cursor = Cursors.Hand;
             btn_proveedores.FlatAppearance.BorderSize = 0;
             btn_proveedores.FlatStyle = FlatStyle.Flat;
-            btn_proveedores.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_proveedores.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_proveedores.ForeColor = Color.FromArgb(254, 252, 230);
             btn_proveedores.Location = new Point(323, 130);
             btn_proveedores.Name = "btn_proveedores";
-            btn_proveedores.Size = new Size(98, 57);
+            btn_proveedores.Size = new Size(114, 57);
             btn_proveedores.TabIndex = 10;
             btn_proveedores.Text = "Proveedores";
             btn_proveedores.UseVisualStyleBackColor = false;
@@ -193,11 +224,11 @@
             btn_productos.Cursor = Cursors.Hand;
             btn_productos.FlatAppearance.BorderSize = 0;
             btn_productos.FlatStyle = FlatStyle.Flat;
-            btn_productos.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_productos.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_productos.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_productos.Location = new Point(237, 130);
+            btn_productos.Location = new Point(226, 130);
             btn_productos.Name = "btn_productos";
-            btn_productos.Size = new Size(80, 57);
+            btn_productos.Size = new Size(91, 57);
             btn_productos.TabIndex = 9;
             btn_productos.Text = "Productos";
             btn_productos.UseVisualStyleBackColor = false;
@@ -209,45 +240,15 @@
             btn_cliente.Cursor = Cursors.Hand;
             btn_cliente.FlatAppearance.BorderSize = 0;
             btn_cliente.FlatStyle = FlatStyle.Flat;
-            btn_cliente.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_cliente.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_cliente.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_cliente.Location = new Point(151, 130);
+            btn_cliente.Location = new Point(130, 130);
             btn_cliente.Name = "btn_cliente";
-            btn_cliente.Size = new Size(80, 57);
+            btn_cliente.Size = new Size(90, 57);
             btn_cliente.TabIndex = 8;
             btn_cliente.Text = "Cliente";
             btn_cliente.UseVisualStyleBackColor = false;
             btn_cliente.Click += btn_cliente_Click;
-            // 
-            // btn_entradas
-            // 
-            btn_entradas.BackColor = Color.SteelBlue;
-            btn_entradas.Cursor = Cursors.Hand;
-            btn_entradas.FlatAppearance.BorderSize = 0;
-            btn_entradas.FlatStyle = FlatStyle.Flat;
-            btn_entradas.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_entradas.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_entradas.Location = new Point(191, 42);
-            btn_entradas.Name = "btn_entradas";
-            btn_entradas.Size = new Size(80, 57);
-            btn_entradas.TabIndex = 13;
-            btn_entradas.Text = "Entradas";
-            btn_entradas.UseVisualStyleBackColor = false;
-            // 
-            // btn_salida
-            // 
-            btn_salida.BackColor = Color.SteelBlue;
-            btn_salida.Cursor = Cursors.Hand;
-            btn_salida.FlatAppearance.BorderSize = 0;
-            btn_salida.FlatStyle = FlatStyle.Flat;
-            btn_salida.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_salida.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_salida.Location = new Point(283, 43);
-            btn_salida.Name = "btn_salida";
-            btn_salida.Size = new Size(80, 57);
-            btn_salida.TabIndex = 14;
-            btn_salida.Text = "Salidas";
-            btn_salida.UseVisualStyleBackColor = false;
             // 
             // Menu
             // 

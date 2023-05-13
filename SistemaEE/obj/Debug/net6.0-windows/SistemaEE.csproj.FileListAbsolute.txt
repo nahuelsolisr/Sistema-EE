@@ -117,3 +117,5 @@ C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\D
 C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.genruntimeconfig.cache
 C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\ref\SistemaEE.dll
 C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Entrada.resources
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Entrada.resources

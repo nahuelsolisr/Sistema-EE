@@ -32,8 +32,8 @@
             label2 = new Label();
             txt_nombre = new TextBox();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btn_TraerProveedor = new Button();
+            btn_TraerProducto = new Button();
             textBox1 = new TextBox();
             label3 = new Label();
             textBox2 = new TextBox();
@@ -86,23 +86,24 @@
             label1.TabIndex = 11;
             label1.Text = "Doc. Proveedor";
             // 
-            // button1
+            // btn_TraerProveedor
             // 
-            button1.Location = new Point(324, 40);
-            button1.Name = "button1";
-            button1.Size = new Size(50, 27);
-            button1.TabIndex = 116;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btn_TraerProveedor.Location = new Point(324, 40);
+            btn_TraerProveedor.Name = "btn_TraerProveedor";
+            btn_TraerProveedor.Size = new Size(50, 27);
+            btn_TraerProveedor.TabIndex = 116;
+            btn_TraerProveedor.Text = "Buscar";
+            btn_TraerProveedor.UseVisualStyleBackColor = true;
+            btn_TraerProveedor.Click += btn_TraerProveedor_Click;
             // 
-            // button2
+            // btn_TraerProducto
             // 
-            button2.Location = new Point(324, 107);
-            button2.Name = "button2";
-            button2.Size = new Size(50, 27);
-            button2.TabIndex = 121;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
+            btn_TraerProducto.Location = new Point(324, 107);
+            btn_TraerProducto.Name = "btn_TraerProducto";
+            btn_TraerProducto.Size = new Size(50, 27);
+            btn_TraerProducto.TabIndex = 121;
+            btn_TraerProducto.Text = "Buscar";
+            btn_TraerProducto.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -224,12 +225,12 @@
             Controls.Add(label6);
             Controls.Add(textBox3);
             Controls.Add(label5);
-            Controls.Add(button2);
+            Controls.Add(btn_TraerProducto);
             Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(label4);
-            Controls.Add(button1);
+            Controls.Add(btn_TraerProveedor);
             Controls.Add(txt_categoria);
             Controls.Add(label2);
             Controls.Add(txt_nombre);
@@ -247,8 +248,8 @@
         private Label label2;
         private TextBox txt_nombre;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button btn_TraerProveedor;
+        private Button btn_TraerProducto;
         private TextBox textBox1;
         private Label label3;
         private TextBox textBox2;

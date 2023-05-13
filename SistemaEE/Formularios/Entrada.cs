@@ -16,5 +16,10 @@ namespace SistemaEE.Formularios
         {
             InitializeComponent();
         }
+
+        private void btn_TraerProveedor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

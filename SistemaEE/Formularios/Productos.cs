@@ -21,6 +21,7 @@ namespace SistemaEE.Formularios
         {
             InitializeComponent();
             dgv_Productos();
+
         }
 
         private void Productos_Load(object sender, EventArgs e)
@@ -28,21 +29,8 @@ namespace SistemaEE.Formularios
 
         }
 
-        //Botón más info
-        private void btn_Info(object sender, EventArgs e)
-        {
-            List<string> columnNames = new List<string> { "Column0", "Column6", "Column7", "Column9" };
-
-            // Determina si se deben mostrar o ocultar las columnas
-            bool showColumns = dgvProductos.Columns[columnNames[0]].Visible;
-
-            // Alterna la visibilidad de cada columna en la lista
-            foreach (string columnName in columnNames)
-            {
-                dgvProductos.Columns[columnName].Visible = !showColumns;
-            }
-        }
-
+        
+      
         //Botón salir
         private void btn_salir_Click(object sender, EventArgs e)
         {
