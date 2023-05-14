@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txt_categoria = new TextBox();
+            txt_provNombre = new TextBox();
             label2 = new Label();
-            txt_nombre = new TextBox();
+            txt_cuit = new TextBox();
             label1 = new Label();
             btn_TraerProveedor = new Button();
             btn_TraerProducto = new Button();
-            textBox1 = new TextBox();
+            txt_nombreProducto = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txt_idproducto = new TextBox();
             label4 = new Label();
             textBox3 = new TextBox();
             label5 = new Label();
@@ -50,13 +50,13 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // txt_categoria
+            // txt_provNombre
             // 
-            txt_categoria.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_categoria.Location = new Point(163, 47);
-            txt_categoria.Name = "txt_categoria";
-            txt_categoria.Size = new Size(144, 20);
-            txt_categoria.TabIndex = 14;
+            txt_provNombre.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_provNombre.Location = new Point(163, 47);
+            txt_provNombre.Name = "txt_provNombre";
+            txt_provNombre.Size = new Size(144, 20);
+            txt_provNombre.TabIndex = 14;
             // 
             // label2
             // 
@@ -68,13 +68,13 @@
             label2.TabIndex = 13;
             label2.Text = "Nombre Proveedor";
             // 
-            // txt_nombre
+            // txt_cuit
             // 
-            txt_nombre.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nombre.Location = new Point(12, 47);
-            txt_nombre.Name = "txt_nombre";
-            txt_nombre.Size = new Size(145, 20);
-            txt_nombre.TabIndex = 12;
+            txt_cuit.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_cuit.Location = new Point(12, 47);
+            txt_cuit.Name = "txt_cuit";
+            txt_cuit.Size = new Size(145, 20);
+            txt_cuit.TabIndex = 12;
             // 
             // label1
             // 
@@ -82,9 +82,9 @@
             label1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(12, 29);
             label1.Name = "label1";
-            label1.Size = new Size(82, 13);
+            label1.Size = new Size(80, 13);
             label1.TabIndex = 11;
-            label1.Text = "Doc. Proveedor";
+            label1.Text = "Cuit  Proveedor";
             // 
             // btn_TraerProveedor
             // 
@@ -104,14 +104,15 @@
             btn_TraerProducto.TabIndex = 121;
             btn_TraerProducto.Text = "Buscar";
             btn_TraerProducto.UseVisualStyleBackColor = true;
+            btn_TraerProducto.Click += btn_TraerProducto_Click;
             // 
-            // textBox1
+            // txt_nombreProducto
             // 
-            textBox1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(163, 114);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(144, 20);
-            textBox1.TabIndex = 120;
+            txt_nombreProducto.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_nombreProducto.Location = new Point(163, 114);
+            txt_nombreProducto.Name = "txt_nombreProducto";
+            txt_nombreProducto.Size = new Size(144, 20);
+            txt_nombreProducto.TabIndex = 120;
             // 
             // label3
             // 
@@ -123,13 +124,13 @@
             label3.TabIndex = 119;
             label3.Text = "Nombre Producto";
             // 
-            // textBox2
+            // txt_idproducto
             // 
-            textBox2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(12, 114);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(145, 20);
-            textBox2.TabIndex = 118;
+            txt_idproducto.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_idproducto.Location = new Point(12, 114);
+            txt_idproducto.Name = "txt_idproducto";
+            txt_idproducto.Size = new Size(145, 20);
+            txt_idproducto.TabIndex = 118;
             // 
             // label4
             // 
@@ -226,14 +227,14 @@
             Controls.Add(textBox3);
             Controls.Add(label5);
             Controls.Add(btn_TraerProducto);
-            Controls.Add(textBox1);
+            Controls.Add(txt_nombreProducto);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(txt_idproducto);
             Controls.Add(label4);
             Controls.Add(btn_TraerProveedor);
-            Controls.Add(txt_categoria);
+            Controls.Add(txt_provNombre);
             Controls.Add(label2);
-            Controls.Add(txt_nombre);
+            Controls.Add(txt_cuit);
             Controls.Add(label1);
             Name = "Entrada";
             Text = "Entrada";
@@ -244,15 +245,15 @@
         }
 
         #endregion
-        private TextBox txt_categoria;
+        private TextBox txt_provNombre;
         private Label label2;
-        private TextBox txt_nombre;
+        private TextBox txt_cuit;
         private Label label1;
         private Button btn_TraerProveedor;
         private Button btn_TraerProducto;
-        private TextBox textBox1;
+        private TextBox txt_nombreProducto;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txt_idproducto;
         private Label label4;
         private TextBox textBox3;
         private Label label5;

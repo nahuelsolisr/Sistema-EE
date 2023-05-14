@@ -85,7 +85,7 @@
             btn_salir.FlatStyle = FlatStyle.Flat;
             btn_salir.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_salir.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_salir.Location = new Point(478, 508);
+            btn_salir.Location = new Point(478, 504);
             btn_salir.Name = "btn_salir";
             btn_salir.Size = new Size(107, 32);
             btn_salir.TabIndex = 11;
@@ -163,9 +163,9 @@
             btn_salida.FlatStyle = FlatStyle.Flat;
             btn_salida.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_salida.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_salida.Location = new Point(283, 43);
+            btn_salida.Location = new Point(93, 3);
             btn_salida.Name = "btn_salida";
-            btn_salida.Size = new Size(80, 57);
+            btn_salida.Size = new Size(67, 57);
             btn_salida.TabIndex = 14;
             btn_salida.Text = "Salidas";
             btn_salida.UseVisualStyleBackColor = false;
@@ -178,7 +178,7 @@
             btn_entradas.FlatStyle = FlatStyle.Flat;
             btn_entradas.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_entradas.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_entradas.Location = new Point(191, 42);
+            btn_entradas.Location = new Point(7, 3);
             btn_entradas.Name = "btn_entradas";
             btn_entradas.Size = new Size(80, 57);
             btn_entradas.TabIndex = 13;
@@ -198,7 +198,7 @@
             btn_atras.Name = "btn_atras";
             btn_atras.Size = new Size(107, 32);
             btn_atras.TabIndex = 12;
-            btn_atras.Text = "Salir";
+            btn_atras.Text = "Atrás";
             btn_atras.UseVisualStyleBackColor = false;
             btn_atras.Click += btn_atras_Click;
             // 
@@ -210,9 +210,9 @@
             btn_proveedores.FlatStyle = FlatStyle.Flat;
             btn_proveedores.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_proveedores.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_proveedores.Location = new Point(323, 130);
+            btn_proveedores.Location = new Point(343, 3);
             btn_proveedores.Name = "btn_proveedores";
-            btn_proveedores.Size = new Size(114, 57);
+            btn_proveedores.Size = new Size(107, 57);
             btn_proveedores.TabIndex = 10;
             btn_proveedores.Text = "Proveedores";
             btn_proveedores.UseVisualStyleBackColor = false;
@@ -226,7 +226,7 @@
             btn_productos.FlatStyle = FlatStyle.Flat;
             btn_productos.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_productos.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_productos.Location = new Point(226, 130);
+            btn_productos.Location = new Point(246, 3);
             btn_productos.Name = "btn_productos";
             btn_productos.Size = new Size(91, 57);
             btn_productos.TabIndex = 9;
@@ -242,9 +242,9 @@
             btn_cliente.FlatStyle = FlatStyle.Flat;
             btn_cliente.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_cliente.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_cliente.Location = new Point(130, 130);
+            btn_cliente.Location = new Point(166, 3);
             btn_cliente.Name = "btn_cliente";
-            btn_cliente.Size = new Size(90, 57);
+            btn_cliente.Size = new Size(73, 57);
             btn_cliente.TabIndex = 8;
             btn_cliente.Text = "Cliente";
             btn_cliente.UseVisualStyleBackColor = false;

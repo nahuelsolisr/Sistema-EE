@@ -74,7 +74,7 @@ namespace SistemaEE.Formularios
 
         private void btn_entradas_Click(object sender, EventArgs e)
         {
-            Entrada entrada = new Entrada();
+            Entrada entrada = new Entrada(204298681, "Ejemplo", 178899,"Harina");
             entrada.ShowDialog();
         }
     }

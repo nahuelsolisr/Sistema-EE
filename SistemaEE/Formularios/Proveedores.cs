@@ -26,7 +26,7 @@ namespace SistemaEE.Formularios
         }
         public void dgv_Proveedores()
         {
-            {
+            
                 ConectaDB.AbrirDB();
                 string consultaProveedor = "SELECT * FROM proveedor";
                 ConectaDB.LecturaDB(consultaProveedor);
@@ -52,7 +52,7 @@ namespace SistemaEE.Formularios
 
                 dgvProveedor.ClearSelection();
                 DB.lector.Close();
-            }
+            
         }
 
         private void Cell_Click(object sender, DataGridViewCellEventArgs e)
