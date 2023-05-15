@@ -12,14 +12,134 @@ namespace SistemaEE.Formularios
 {
     public partial class Clientes : Form
     {
+        decimal idCliente;
         public Clientes()
         {
             InitializeComponent();
+            dgv_Clientes();
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void dgv_Clientes()
+        {
+
+            ConectaDB.AbrirDB();
+            string consultaCliente = "SELECT * FROM clientes";
+            ConectaDB.LecturaDB(consultaCliente);
+            dgvCliente.Rows.Clear(); // Limpia los datos anteriores en la grilla
+
+            while (DB.lector.Read())
+            {
+                //En lugar de asignar cada valor al valor de una celda específica de la grilla, 
+                //se puede agregar una fila completa a la grilla de una sola vez, utilizando el método 
+                //Add() de la propiedad Rows de la grilla.
+
+                dgvCliente.Rows.Add(
+                      "",
+                    DB.lector["cuit_cliente"],
+                    DB.lector["cliente_nombre"],
+                    DB.lector["direccion"],
+                    DB.lector["mail_cliente"],
+                    DB.lector["condicion_cliente"]
+                );
+            }
+
+            dgvCliente.ClearSelection();
+            DB.lector.Close();
+
+        }
+
+        private void Cell_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvCliente.Columns[e.ColumnIndex].Name == "btn_seleccionar")
+            {
+                idCliente = Convert.ToDecimal(dgvCliente.Rows[e.RowIndex].Cells["Column0"].Value);
+                //Limpia el color de  la fila cuando se selecciona otro boton
+                foreach (DataGridViewRow fila in dgvCliente.Rows)
+                {
+                    fila.DefaultCellStyle.BackColor = dgvCliente.DefaultCellStyle.BackColor;
+
+                }
+
+
+                // Obtiene los datos de la fila seleccionada
+
+                DataGridViewRow filaSeleccionada = dgvCliente.Rows[e.RowIndex];
+
+                //le da color a la fila seleccionada
+                filaSeleccionada.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+
+
+                string cuit = filaSeleccionada.Cells["Column0"].Value.ToString();
+                string nombre = filaSeleccionada.Cells["Column1"].Value.ToString();
+                string direccion = filaSeleccionada.Cells["Column2"].Value.ToString();
+                string mail = filaSeleccionada.Cells["Column3"].Value.ToString();
+                string condicion = filaSeleccionada.Cells["Column4"].Value.ToString();
+
+
+                // Actualiza los TextBox con los datos de la fila seleccionada
+                txt_cuit.Text = cuit;
+                txt_nombre.Text = nombre;
+                txt_direccion.Text = direccion;
+                txt_mail.Text = mail;
+                txt_condicion.Text = condicion;
+
+            }
+        }
+
+        private void Cliente_Alta_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                ConectaDB.AbrirDB();
+                string insertCliente = "INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_mail.Text + "', '" + txt_condicion.Text + "')";
+                ConectaDB.CargarDB(insertCliente);
+                ConectaDB.CerrarDB();
+                MessageBox.Show("El Cliente ha sido agregado correctamente.");
+                dgv_Clientes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar el Cliente: " + ex.Message);
+            }
+        }
+
+        private void Cliente_Baja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConectaDB.AbrirDB();
+                string deleteCliente = "DELETE FROM clientes WHERE cuit_cliente = " + idCliente + ";";
+                ConectaDB.CargarDB(deleteCliente);
+                ConectaDB.CerrarDB();
+                MessageBox.Show("Cliente eliminado correctamente");
+                dgv_Clientes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el Cliente: " + ex.Message);
+            }
+        }
+
+        private void Cliente_Modi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConectaDB.AbrirDB();
+                string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + txt_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
+                ConectaDB.CargarDB(updateProveedor);
+                ConectaDB.CerrarDB();
+                dgv_Clientes();
+                MessageBox.Show("Actualización exitosa.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar cliente: " + ex.Message);
+            }
         }
     }
 }

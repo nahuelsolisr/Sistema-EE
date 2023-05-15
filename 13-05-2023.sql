@@ -71,7 +71,18 @@ select * from proveedor
 
 drop table proveedor
 
+create table clientes(
+cuit_cliente float primary key,
+cliente_nombre varchar (40),
+direccion varchar (60),
+mail_cliente varchar (40),
+condicion_cliente varchar(30)
+)
 
+INSERT INTO clientes VALUES (30589473922, 'Juan Perez', 'Calle Falsa 123', 'jperez@mail.com', 'Regular');
+INSERT INTO clientes VALUES (27684930586, 'Maria Rodriguez', 'Avenida Siempreviva 456', 'amartinez@gmail.com', 'VIP');
+INSERT INTO clientes VALUES (30875200143, 'Pedro Sanchez', 'Calle Imaginaria 789', 'psanchez@mail.com', 'Regular');
+INSERT INTO clientes VALUES (30194750869, 'Ana Martinez', 'Avenida Principal 789', 'amartinez@mail.com', 'VIP');
 
 
 

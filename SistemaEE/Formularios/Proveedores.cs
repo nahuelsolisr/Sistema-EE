@@ -123,7 +123,7 @@ namespace SistemaEE.Formularios
                 string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
                 ConectaDB.CargarDB(deleteProveedor);
                 ConectaDB.CerrarDB();
-                MessageBox.Show("Producto eliminado correctamente");
+                MessageBox.Show("Proveedor eliminado correctamente");
                 dgv_Proveedores();
             }
             catch (Exception ex)
