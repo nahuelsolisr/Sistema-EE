@@ -17,7 +17,7 @@ namespace SistemaEE.Formularios
         {
             InitializeComponent();
         }
-
+        // SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-9UILVSA\SQLEXPRESS;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
         SqlConnection conexion = new SqlConnection(@"Data Source=RODRIGO\DEVELOPER;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
         public void logear(string usuario, string contrasena)
         {

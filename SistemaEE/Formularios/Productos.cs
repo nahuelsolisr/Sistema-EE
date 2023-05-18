@@ -20,6 +20,7 @@ namespace SistemaEE.Formularios
         public Productos()
         {
             InitializeComponent();
+
             dgv_Productos();
 
         }
@@ -83,7 +84,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string insertProducto = "INSERT INTO productos (nombre, categoria, marca) VALUES ('" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
+                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + txt_prov.Text + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
                 ConectaDB.CargarDB(insertProducto);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El producto ha sido agregado correctamente.");
@@ -117,7 +118,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string updateProducto = "UPDATE productos SET nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
+                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
                 ConectaDB.CargarDB(updateProducto);
                 ConectaDB.CerrarDB();
                 dgv_Productos();
@@ -156,6 +157,13 @@ namespace SistemaEE.Formularios
 
             dgvProductos.ClearSelection();
             DB.lector.Close();
+        }
+
+        private void btn_buscarProv_Click(object sender, EventArgs e)
+        {
+            MuestraProveedor muestraProveedor = new MuestraProveedor();
+            muestraProveedor.ShowDialog();
+            txt_prov.Text = Clases.Elegir.cuit_prov.ToString();
         }
     }
 }

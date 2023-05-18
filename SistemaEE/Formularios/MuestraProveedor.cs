@@ -20,15 +20,20 @@ namespace SistemaEE.Formularios
 
         private void Cell_Click(object sender, DataGridViewCellEventArgs e)
         {
-           
+                     
+
             if (e.RowIndex >= 0 && dgvProveedor.Columns[e.ColumnIndex].Name == "btn_seleccionar")
             {
                 Clases.Entrada.cuit = Convert.ToDecimal(dgvProveedor.Rows[e.RowIndex].Cells["Column0"].Value);
                 Clases.Entrada.nombreProv = Convert.ToString(dgvProveedor.Rows[e.RowIndex].Cells["Column1"].Value);
-                Entrada enviarDatos = new Entrada(Clases.Entrada.cuit, Clases.Entrada.nombreProv, Clases.Entrada.idProducto, Clases.Entrada.nombreProducto);
+                Clases.Elegir.cuit_prov = Convert.ToDecimal(dgvProveedor.Rows[e.RowIndex].Cells["Column0"].Value);
+                Clases.Elegir.nom_prov = Convert.ToString(dgvProveedor.Rows[e.RowIndex].Cells["Column1"].Value);
+
                 this.Close();
-                enviarDatos.Show();
+                
             }
+
+
         }
         public void dgv_Proveedores()
         {

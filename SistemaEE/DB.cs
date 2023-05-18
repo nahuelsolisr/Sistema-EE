@@ -11,10 +11,9 @@ namespace SistemaEE
 {
     internal class DB
     {
+        // SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-9UILVSA\SQLEXPRESS;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
         public static SqlConnection ConexionConBD;
         public static string strConexión = "Data Source=RODRIGO\\DEVELOPER;Initial Catalog=EconomiaEmpresarial; Integrated Security=True";
-
-  
         public static SqlCommand Orden;
         public static SqlDataReader lector;
      

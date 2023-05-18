@@ -13,39 +13,31 @@ insert into usuarios values('Usuario','123','Cliente')
 
 select * from usuarios
 
-drop table usuarios
+drop table productos
 
 create table productos(
 id_producto INT IDENTITY(1,1) PRIMARY KEY,
+cuit_prov float,
 nombre varchar(20),
 categoria varchar(20),
 marca varchar(20),
-cantidad int NULL,
+cantidad decimal NULL,
 precio float NULL,
 porcentajeg float NULL
+FOREIGN KEY (cuit_prov) REFERENCES proveedor(cuit_prov),
 )
 
 
 
 
 select * from productos
-INSERT INTO productos (nombre, categoria, marca)
-VALUES ('Leche', 'Lácteos', 'Alpura'),
-('Pan', 'Panadería', 'Bimbo'),
-('Jabón', 'Higiene personal', 'Zote'),
-('Arroz', 'Alimentos básicos', 'Lala'),
-('Refresco', 'Bebidas', 'Coca-Cola'),
-('Crema', 'Lácteos', 'Nestlé'),
-('Cereal', 'Desayunos', 'Kelloggs'),
-('Pañales', 'Bebés', 'Huggies'),
-('Galletas', 'Snacks', 'Gamesa'),
-('Pasta dental', 'Higiene personal', 'Colgate'),
-('Atún', 'Conservas', 'Dolphin'),
-('Papel higiénico', 'Higiene personal', 'Suavel'),
-('Sopa', 'Alimentos básicos', 'Maggi'),
-('Shampoo', 'Higiene personal', 'Pantene'),
-('Café', 'Bebidas', 'Nescafé');
-
+INSERT INTO productos (cuit_prov, nombre, categoria, marca)VALUES
+(20111111112, 'Producto 1', 'Categoria 1', 'Marca 1'),
+(20333333334, 'Producto 2', 'Categoria 2', 'Marca 2'),
+(20333333334, 'Producto 3', 'Categoria 3', 'Marca 3'),
+(20333333334, 'Producto 4', 'Categoria 4', 'Marca 4'),
+(20666666667, 'Producto 5', 'Categoria 5', 'Marca 5'),
+(20999999990, 'Producto 6', 'Categoria 6', 'Marca 6')
 
 
 drop table productos

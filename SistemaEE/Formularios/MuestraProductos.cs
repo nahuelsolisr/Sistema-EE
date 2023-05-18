@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEE.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,19 +23,17 @@ namespace SistemaEE.Formularios
         {
             if (e.RowIndex >= 0 && dgvProductos.Columns[e.ColumnIndex].Name == "btn_seleccionar")
             {
-                Clases.Entrada.idProducto = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Column0"].Value);
-                Clases.Entrada.nombreProducto= Convert.ToString(dgvProductos.Rows[e.RowIndex].Cells["Column2"].Value);
-                Entrada enviarDatos = new Entrada(Clases.Entrada.cuit, Clases.Entrada.nombreProv, Clases.Entrada.idProducto, Clases.Entrada.nombreProducto);
+                Elegir.idProducto = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Column0"].Value);
+                Elegir.nomProducto= Convert.ToString(dgvProductos.Rows[e.RowIndex].Cells["Column2"].Value);
                 this.Close();
-                enviarDatos.Show();
 
             }
         }
         public void dgv_Productos()
         {
             ConectaDB.AbrirDB();
-            string consultaproductos = "SELECT * FROM productos";
-            ConectaDB.LecturaDB(consultaproductos);
+            string consultaProductos = "SELECT * FROM productos WHERE cuit_prov = '" + Elegir.cuit_prov + "'";
+            ConectaDB.LecturaDB(consultaProductos);
             dgvProductos.Rows.Clear(); // Limpia los datos anteriores en la grilla
 
             while (DB.lector.Read())
