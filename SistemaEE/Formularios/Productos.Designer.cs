@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             txt_nombre = new TextBox();
             label5 = new Label();
@@ -39,11 +39,6 @@
             txt_marca = new TextBox();
             label3 = new Label();
             dgvProductos = new DataGridView();
-            Column0 = new DataGridViewTextBoxColumn();
-            btn_seleccionar = new DataGridViewButtonColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             btn_Alta = new Button();
             btn_Modificacion = new Button();
             btn_baja = new Button();
@@ -58,6 +53,11 @@
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            Column0 = new DataGridViewTextBoxColumn();
+            btn_seleccionar = new DataGridViewButtonColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -144,15 +144,15 @@
             dgvProductos.AllowUserToResizeColumns = false;
             dgvProductos.AllowUserToResizeRows = false;
             dgvProductos.BackgroundColor = Color.White;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column2, Column3, Column4 });
             dgvProductos.Location = new Point(251, 94);
@@ -160,47 +160,14 @@
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Transparent;
-            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.Size = new Size(539, 338);
             dgvProductos.TabIndex = 103;
             dgvProductos.CellClick += Cell_Click;
-            // 
-            // Column0
-            // 
-            Column0.HeaderText = "Codigo";
-            Column0.Name = "Column0";
-            Column0.ReadOnly = true;
-            Column0.Visible = false;
-            // 
-            // btn_seleccionar
-            // 
-            btn_seleccionar.HeaderText = "";
-            btn_seleccionar.Name = "btn_seleccionar";
-            btn_seleccionar.ReadOnly = true;
-            btn_seleccionar.Resizable = DataGridViewTriState.False;
-            btn_seleccionar.Width = 35;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Nombre";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Categoría";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Marca";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
             // 
             // btn_Alta
             // 
@@ -367,6 +334,40 @@
             iconPictureBox4.TabIndex = 116;
             iconPictureBox4.TabStop = false;
             // 
+            // Column0
+            // 
+            Column0.HeaderText = "Codigo";
+            Column0.Name = "Column0";
+            Column0.ReadOnly = true;
+            Column0.Visible = false;
+            // 
+            // btn_seleccionar
+            // 
+            btn_seleccionar.HeaderText = "";
+            btn_seleccionar.Name = "btn_seleccionar";
+            btn_seleccionar.ReadOnly = true;
+            btn_seleccionar.Resizable = DataGridViewTriState.False;
+            btn_seleccionar.Text = "";
+            btn_seleccionar.Width = 35;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Nombre";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Categoría";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Marca";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -427,11 +428,6 @@
         private GroupBox groupBox1;
         private Button btn_salir;
         private TextBox textBox9;
-        private DataGridViewTextBoxColumn Column0;
-        private DataGridViewButtonColumn btn_seleccionar;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private TextBox txt_prov;
         private Label label4;
         private FontAwesome.Sharp.IconButton btn_buscarProv;
@@ -440,5 +436,10 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private DataGridViewTextBoxColumn Column0;
+        private DataGridViewButtonColumn btn_seleccionar;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

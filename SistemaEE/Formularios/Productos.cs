@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEE.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,8 @@ namespace SistemaEE.Formularios
 
         public Productos()
         {
-            InitializeComponent();
 
+            InitializeComponent();
             dgv_Productos();
 
         }

@@ -30,6 +30,14 @@ namespace SistemaEE.Formularios
             this.Close();
         }
 
+
+
+
+
+
+
+
+
         private void btn_facturacion_Click(object sender, EventArgs e)
         {
             panel_facturacion.Visible = true;
@@ -37,33 +45,11 @@ namespace SistemaEE.Formularios
             btn_usuarios.Enabled = false;
         }
 
-        private void btn_contabilidad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_usuarios_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_atras_Click(object sender, EventArgs e)
+        private void btn_volver_Click(object sender, EventArgs e)
         {
             panel_facturacion.Visible = false;
             btn_contabilidad.Enabled = true;
             btn_usuarios.Enabled = true;
-        }
-
-        private void btn_cliente_Click(object sender, EventArgs e)
-        {
-            Clientes clientes = new Clientes();
-            clientes.ShowDialog();
-        }
-
-        private void btn_productos_Click(object sender, EventArgs e)
-        {
-            Productos productos = new Productos();
-            productos.ShowDialog();
         }
 
         private void btn_proveedores_Click(object sender, EventArgs e)
@@ -72,10 +58,32 @@ namespace SistemaEE.Formularios
             proveedores.ShowDialog();
         }
 
+        private void btn_productos_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.ShowDialog();
+        }
+
+        private void btn_clientes_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            clientes.ShowDialog();
+        }
+
         private void btn_entradas_Click(object sender, EventArgs e)
         {
             Entrada entrada = new Entrada();
             entrada.ShowDialog();
+        }
+
+        private void btn_salidas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_fichaStock_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
