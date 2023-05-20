@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEE.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +17,10 @@ namespace SistemaEE.Formularios
         public Clientes()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             dgv_Clientes();
         }
 
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         public void dgv_Clientes()
         {
 
@@ -90,7 +88,16 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void Cliente_Alta_Click(object sender, EventArgs e)
+
+
+        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txt_filtrarGrilla.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarClientes(dgvCliente, filtro);
+        }
+
+        private void btn_alta_Click(object sender, EventArgs e)
         {
 
             try
@@ -108,7 +115,7 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void Cliente_Baja_Click(object sender, EventArgs e)
+        private void btn_baja_Click(object sender, EventArgs e)
         {
             try
             {
@@ -125,8 +132,9 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void Cliente_Modi_Click(object sender, EventArgs e)
+        private void btn_modi_Click(object sender, EventArgs e)
         {
+
             try
             {
                 ConectaDB.AbrirDB();
@@ -140,6 +148,11 @@ namespace SistemaEE.Formularios
             {
                 MessageBox.Show("Error al actualizar cliente: " + ex.Message);
             }
+        }
+
+        private void btn_salir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

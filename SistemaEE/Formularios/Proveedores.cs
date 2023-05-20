@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEE.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,42 +18,40 @@ namespace SistemaEE.Formularios
         public Proveedores()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             dgv_Proveedores();
         }
 
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
         public void dgv_Proveedores()
         {
-            
-                ConectaDB.AbrirDB();
-                string consultaProveedor = "SELECT * FROM proveedor";
-                ConectaDB.LecturaDB(consultaProveedor);
-                dgvProveedor.Rows.Clear(); // Limpia los datos anteriores en la grilla
 
-                while (DB.lector.Read())
-                {
-                    //En lugar de asignar cada valor al valor de una celda específica de la grilla, 
-                    //se puede agregar una fila completa a la grilla de una sola vez, utilizando el método 
-                    //Add() de la propiedad Rows de la grilla.
+            ConectaDB.AbrirDB();
+            string consultaProveedor = "SELECT * FROM proveedor";
+            ConectaDB.LecturaDB(consultaProveedor);
+            dgvProveedor.Rows.Clear(); // Limpia los datos anteriores en la grilla
 
-                    dgvProveedor.Rows.Add(
-                          "",
-                        DB.lector["cuit_prov"],
-                        DB.lector["nombre_prov"],
-                        DB.lector["domicilio_prov"],
-                        DB.lector["mail_prov"],
-                        DB.lector["condicion"]
+            while (DB.lector.Read())
+            {
+                //En lugar de asignar cada valor al valor de una celda específica de la grilla, 
+                //se puede agregar una fila completa a la grilla de una sola vez, utilizando el método 
+                //Add() de la propiedad Rows de la grilla.
+
+                dgvProveedor.Rows.Add(
+                      "",
+                    DB.lector["cuit_prov"],
+                    DB.lector["nombre_prov"],
+                    DB.lector["domicilio_prov"],
+                    DB.lector["mail_prov"],
+                    DB.lector["condicion"]
 
 
-                    );
-                }
+                );
+            }
 
-                dgvProveedor.ClearSelection();
-                DB.lector.Close();
-            
+            dgvProveedor.ClearSelection();
+            DB.lector.Close();
+
         }
 
         private void Cell_Click(object sender, DataGridViewCellEventArgs e)
@@ -98,7 +97,14 @@ namespace SistemaEE.Formularios
 
         }
 
-        private void btn_Alta_Click(object sender, EventArgs e)
+        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txt_filtrarGrilla.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarProveedores(dgvProveedor, filtro);
+        }
+
+        private void btn_alta_Click(object sender, EventArgs e)
         {
             try
             {
@@ -115,8 +121,9 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_Baja_Click(object sender, EventArgs e)
+        private void btn_baja_Click(object sender, EventArgs e)
         {
+
             try
             {
                 ConectaDB.AbrirDB();
@@ -131,8 +138,7 @@ namespace SistemaEE.Formularios
                 MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
             }
         }
-
-        private void btn_Modi_Click(object sender, EventArgs e)
+        private void btn_modi_Click(object sender, EventArgs e)
         {
             try
             {
@@ -147,6 +153,11 @@ namespace SistemaEE.Formularios
             {
                 MessageBox.Show("Error al actualizar proveedor: " + ex.Message);
             }
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

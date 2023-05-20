@@ -8,6 +8,7 @@ namespace SistemaEE.Formularios
         public Menu(string nombre, bool permisos)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             lbl_usuario.Text = nombre;
 
             this.permisos = permisos;

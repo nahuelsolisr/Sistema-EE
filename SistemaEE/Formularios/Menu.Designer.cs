@@ -32,6 +32,7 @@
             panel1 = new Panel();
             btn_salir = new Button();
             panel_facturacion = new Panel();
+            btn_fichaStock = new FontAwesome.Sharp.IconButton();
             btn_volver = new FontAwesome.Sharp.IconButton();
             btn_entradas = new FontAwesome.Sharp.IconButton();
             btn_clientes = new FontAwesome.Sharp.IconButton();
@@ -41,7 +42,6 @@
             btn_facturacion = new FontAwesome.Sharp.IconButton();
             btn_contabilidad = new FontAwesome.Sharp.IconButton();
             btn_usuarios = new FontAwesome.Sharp.IconButton();
-            btn_fichaStock = new FontAwesome.Sharp.IconButton();
             panel_facturacion.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             btn_salir.FlatStyle = FlatStyle.Flat;
             btn_salir.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_salir.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_salir.Location = new Point(478, 504);
+            btn_salir.Location = new Point(478, 557);
             btn_salir.Name = "btn_salir";
             btn_salir.Size = new Size(107, 32);
             btn_salir.TabIndex = 11;
@@ -95,10 +95,26 @@
             panel_facturacion.TabIndex = 15;
             panel_facturacion.Visible = false;
             // 
+            // btn_fichaStock
+            // 
+            btn_fichaStock.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_fichaStock.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            btn_fichaStock.IconColor = Color.DimGray;
+            btn_fichaStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_fichaStock.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_fichaStock.Location = new Point(3, 289);
+            btn_fichaStock.Name = "btn_fichaStock";
+            btn_fichaStock.Size = new Size(179, 57);
+            btn_fichaStock.TabIndex = 24;
+            btn_fichaStock.Text = "Ficha de Stock";
+            btn_fichaStock.TextAlign = ContentAlignment.MiddleRight;
+            btn_fichaStock.UseVisualStyleBackColor = true;
+            btn_fichaStock.Click += btn_fichaStock_Click;
+            // 
             // btn_volver
             // 
             btn_volver.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_volver.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            btn_volver.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             btn_volver.IconColor = Color.DimGray;
             btn_volver.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_volver.IconSize = 25;
@@ -237,22 +253,6 @@
             btn_usuarios.Text = "Usuarios";
             btn_usuarios.TextAlign = ContentAlignment.MiddleRight;
             btn_usuarios.UseVisualStyleBackColor = true;
-            // 
-            // btn_fichaStock
-            // 
-            btn_fichaStock.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_fichaStock.IconChar = FontAwesome.Sharp.IconChar.Cubes;
-            btn_fichaStock.IconColor = Color.DimGray;
-            btn_fichaStock.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_fichaStock.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_fichaStock.Location = new Point(3, 289);
-            btn_fichaStock.Name = "btn_fichaStock";
-            btn_fichaStock.Size = new Size(179, 57);
-            btn_fichaStock.TabIndex = 24;
-            btn_fichaStock.Text = "Ficha de Stock";
-            btn_fichaStock.TextAlign = ContentAlignment.MiddleRight;
-            btn_fichaStock.UseVisualStyleBackColor = true;
-            btn_fichaStock.Click += btn_fichaStock_Click;
             // 
             // Menu
             // 

@@ -1,4 +1,5 @@
-﻿using SistemaEE.Properties;
+﻿using SistemaEE.Clases;
+using SistemaEE.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace SistemaEE.Formularios
         {
 
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             dgv_Productos();
 
         }
@@ -34,10 +36,7 @@ namespace SistemaEE.Formularios
 
 
         //Botón salir
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
 
 
         //Evento click en botón de la grilla
@@ -78,58 +77,8 @@ namespace SistemaEE.Formularios
 
 
 
-        //Botones de alta, baja y modificación
 
-        private void btn_Alta_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ConectaDB.AbrirDB();
-                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + txt_prov.Text + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
-                ConectaDB.CargarDB(insertProducto);
-                ConectaDB.CerrarDB();
-                MessageBox.Show("El producto ha sido agregado correctamente.");
-                dgv_Productos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar el producto: " + ex.Message);
-            }
-        }
 
-        private void btn_Baja_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ConectaDB.AbrirDB();
-                string deleteProducto = "DELETE FROM productos WHERE id_producto = " + idProductoSeleccionado + ";";
-                ConectaDB.CargarDB(deleteProducto);
-                ConectaDB.CerrarDB();
-                MessageBox.Show("Producto eliminado correctamente");
-                dgv_Productos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar el producto: " + ex.Message);
-            }
-        }
-
-        private void btn_Modi_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ConectaDB.AbrirDB();
-                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
-                ConectaDB.CargarDB(updateProducto);
-                ConectaDB.CerrarDB();
-                dgv_Productos();
-                MessageBox.Show("Actualización exitosa.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar producto: " + ex.Message);
-            }
-        }
 
 
         //Cargo los productos en la grilla
@@ -165,6 +114,73 @@ namespace SistemaEE.Formularios
             MuestraProveedor muestraProveedor = new MuestraProveedor();
             muestraProveedor.ShowDialog();
             txt_prov.Text = Clases.Elegir.cuit_prov.ToString();
+        }
+
+        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txt_filtrarGrilla.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarProductos(dgvProductos, filtro);
+        }
+
+        //Botones de alta, baja y modificación
+
+
+        private void btn_alta_Click_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                ConectaDB.AbrirDB();
+                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + txt_prov.Text + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
+                ConectaDB.CargarDB(insertProducto);
+                ConectaDB.CerrarDB();
+                MessageBox.Show("El producto ha sido agregado correctamente.");
+                dgv_Productos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar el producto: " + ex.Message);
+            }
+        }
+
+        private void btn_baja_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ConectaDB.AbrirDB();
+                string deleteProducto = "DELETE FROM productos WHERE id_producto = " + idProductoSeleccionado + ";";
+                ConectaDB.CargarDB(deleteProducto);
+                ConectaDB.CerrarDB();
+                MessageBox.Show("Producto eliminado correctamente");
+                dgv_Productos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+            }
+        }
+
+        private void btn_modi_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ConectaDB.AbrirDB();
+                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
+                ConectaDB.CargarDB(updateProducto);
+                ConectaDB.CerrarDB();
+                dgv_Productos();
+                MessageBox.Show("Actualización exitosa.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar producto: " + ex.Message);
+            }
+        }
+
+        private void btn_salir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

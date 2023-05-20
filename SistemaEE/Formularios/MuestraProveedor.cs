@@ -24,8 +24,7 @@ namespace SistemaEE.Formularios
 
             if (e.RowIndex >= 0 && dgvProveedor.Columns[e.ColumnIndex].Name == "btn_seleccionar")
             {
-                Clases.Entrada.cuit = Convert.ToDecimal(dgvProveedor.Rows[e.RowIndex].Cells["Column0"].Value);
-                Clases.Entrada.nombreProv = Convert.ToString(dgvProveedor.Rows[e.RowIndex].Cells["Column1"].Value);
+               
                 Clases.Elegir.cuit_prov = Convert.ToDecimal(dgvProveedor.Rows[e.RowIndex].Cells["Column0"].Value);
                 Clases.Elegir.nom_prov = Convert.ToString(dgvProveedor.Rows[e.RowIndex].Cells["Column1"].Value);
 

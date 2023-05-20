@@ -16,6 +16,8 @@ namespace SistemaEE.Formularios
         public Login()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            txt_clave.UseSystemPasswordChar = true;
         }
         // SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-9UILVSA\SQLEXPRESS;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
         SqlConnection conexion = new SqlConnection(@"Data Source=RODRIGO\DEVELOPER;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
@@ -64,6 +66,20 @@ namespace SistemaEE.Formularios
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_eye_Click(object sender, EventArgs e)
+        {
+            if (txt_clave.UseSystemPasswordChar)
+            {
+                // Cambiar a modo de texto normal
+                txt_clave.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                // Cambiar a modo de contraseña oculta
+                txt_clave.UseSystemPasswordChar = true;
+            }
         }
     }
 }

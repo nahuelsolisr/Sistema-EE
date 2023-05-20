@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            groupBox1 = new GroupBox();
-            textBox5 = new TextBox();
-            button4 = new Button();
-            Cliente_Modi = new Button();
-            Cliente_Baja = new Button();
-            Cliente_Alta = new Button();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             txt_nombre = new TextBox();
             label2 = new Label();
             label6 = new Label();
             label5 = new Label();
             txt_cuit = new TextBox();
             label1 = new Label();
-            btn_salir = new Button();
             dgvCliente = new DataGridView();
             btn_seleccionar = new DataGridViewButtonColumn();
             Column0 = new DataGridViewTextBoxColumn();
@@ -56,79 +49,31 @@
             label4 = new Label();
             txt_condicion = new TextBox();
             label7 = new Label();
+            txt_filtrarGrilla = new TextBox();
+            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            btn_salir = new FontAwesome.Sharp.IconButton();
+            btn_baja = new FontAwesome.Sharp.IconButton();
+            btn_alta = new FontAwesome.Sharp.IconButton();
+            btn_modi = new FontAwesome.Sharp.IconButton();
+            groupBox1 = new GroupBox();
+            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            groupBox1.Location = new Point(241, 13);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(13, 451);
-            groupBox1.TabIndex = 121;
-            groupBox1.TabStop = false;
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(517, 68);
-            textBox5.Margin = new Padding(4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(178, 27);
-            textBox5.TabIndex = 119;
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(703, 68);
-            button4.Margin = new Padding(4);
-            button4.Name = "button4";
-            button4.Size = new Size(96, 29);
-            button4.TabIndex = 118;
-            button4.Text = "Buscar";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // Cliente_Modi
-            // 
-            Cliente_Modi.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Cliente_Modi.Location = new Point(116, 423);
-            Cliente_Modi.Margin = new Padding(4);
-            Cliente_Modi.Name = "Cliente_Modi";
-            Cliente_Modi.Size = new Size(43, 41);
-            Cliente_Modi.TabIndex = 117;
-            Cliente_Modi.Text = "M";
-            Cliente_Modi.UseVisualStyleBackColor = true;
-            Cliente_Modi.Click += Cliente_Modi_Click;
-            // 
-            // Cliente_Baja
-            // 
-            Cliente_Baja.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Cliente_Baja.Location = new Point(65, 423);
-            Cliente_Baja.Margin = new Padding(4);
-            Cliente_Baja.Name = "Cliente_Baja";
-            Cliente_Baja.Size = new Size(43, 41);
-            Cliente_Baja.TabIndex = 116;
-            Cliente_Baja.Text = "B";
-            Cliente_Baja.UseVisualStyleBackColor = true;
-            Cliente_Baja.Click += Cliente_Baja_Click;
-            // 
-            // Cliente_Alta
-            // 
-            Cliente_Alta.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Cliente_Alta.Location = new Point(13, 423);
-            Cliente_Alta.Margin = new Padding(4);
-            Cliente_Alta.Name = "Cliente_Alta";
-            Cliente_Alta.Size = new Size(44, 41);
-            Cliente_Alta.TabIndex = 115;
-            Cliente_Alta.Text = "A";
-            Cliente_Alta.UseVisualStyleBackColor = true;
-            Cliente_Alta.Click += Cliente_Alta_Click;
             // 
             // txt_nombre
             // 
             txt_nombre.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nombre.Location = new Point(16, 139);
+            txt_nombre.Location = new Point(49, 148);
             txt_nombre.Margin = new Padding(4);
             txt_nombre.Name = "txt_nombre";
             txt_nombre.Size = new Size(216, 27);
@@ -138,7 +83,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(19, 117);
+            label2.Location = new Point(46, 126);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(72, 19);
@@ -149,7 +94,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(262, 11);
+            label6.Location = new Point(308, 9);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(155, 19);
@@ -160,7 +105,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(15, 11);
+            label5.Location = new Point(18, 9);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(176, 19);
@@ -170,7 +115,7 @@
             // txt_cuit
             // 
             txt_cuit.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cuit.Location = new Point(15, 76);
+            txt_cuit.Location = new Point(49, 92);
             txt_cuit.Margin = new Padding(4);
             txt_cuit.Name = "txt_cuit";
             txt_cuit.Size = new Size(216, 27);
@@ -180,58 +125,42 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(18, 53);
+            label1.Location = new Point(52, 71);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(43, 19);
             label1.TabIndex = 105;
             label1.Text = "Cuit:";
             // 
-            // btn_salir
-            // 
-            btn_salir.BackColor = Color.Firebrick;
-            btn_salir.Cursor = Cursors.Hand;
-            btn_salir.FlatAppearance.BorderSize = 0;
-            btn_salir.FlatStyle = FlatStyle.Flat;
-            btn_salir.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_salir.ForeColor = Color.FromArgb(254, 252, 230);
-            btn_salir.Location = new Point(167, 423);
-            btn_salir.Margin = new Padding(4);
-            btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(66, 41);
-            btn_salir.TabIndex = 122;
-            btn_salir.Text = "Salir";
-            btn_salir.UseVisualStyleBackColor = false;
-            btn_salir.Click += btn_salir_Click;
-            // 
             // dgvCliente
             // 
             dgvCliente.AllowUserToResizeColumns = false;
             dgvCliente.AllowUserToResizeRows = false;
+            dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCliente.BackgroundColor = Color.White;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCliente.Columns.AddRange(new DataGridViewColumn[] { btn_seleccionar, Column0, Column1, Column2, Column3, Column4 });
-            dgvCliente.Location = new Point(261, 105);
+            dgvCliente.Location = new Point(308, 92);
             dgvCliente.Margin = new Padding(4);
             dgvCliente.MultiSelect = false;
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Transparent;
-            dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvCliente.RowTemplate.Height = 25;
-            dgvCliente.Size = new Size(538, 357);
+            dgvCliente.Size = new Size(725, 482);
             dgvCliente.TabIndex = 124;
             dgvCliente.CellClick += Cell_Click;
             // 
@@ -241,42 +170,47 @@
             btn_seleccionar.Name = "btn_seleccionar";
             btn_seleccionar.ReadOnly = true;
             btn_seleccionar.Resizable = DataGridViewTriState.False;
-            btn_seleccionar.Width = 35;
+            btn_seleccionar.Width = 25;
             // 
             // Column0
             // 
             Column0.HeaderText = "Cuit";
             Column0.Name = "Column0";
             Column0.ReadOnly = true;
+            Column0.Width = 66;
             // 
             // Column1
             // 
             Column1.HeaderText = "Nombre";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
+            Column1.Width = 95;
             // 
             // Column2
             // 
             Column2.HeaderText = "Dirección";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
+            Column2.Width = 103;
             // 
             // Column3
             // 
             Column3.HeaderText = "Mail";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
+            Column3.Width = 66;
             // 
             // Column4
             // 
             Column4.HeaderText = "Condición";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
+            Column4.Width = 108;
             // 
             // txt_mail
             // 
             txt_mail.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_mail.Location = new Point(17, 261);
+            txt_mail.Location = new Point(49, 259);
             txt_mail.Margin = new Padding(4);
             txt_mail.Name = "txt_mail";
             txt_mail.Size = new Size(216, 27);
@@ -286,7 +220,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(20, 239);
+            label3.Location = new Point(46, 236);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(43, 19);
@@ -296,7 +230,7 @@
             // txt_direccion
             // 
             txt_direccion.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_direccion.Location = new Point(16, 198);
+            txt_direccion.Location = new Point(49, 204);
             txt_direccion.Margin = new Padding(4);
             txt_direccion.Name = "txt_direccion";
             txt_direccion.Size = new Size(216, 27);
@@ -306,7 +240,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(19, 175);
+            label4.Location = new Point(46, 181);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(80, 19);
@@ -316,7 +250,7 @@
             // txt_condicion
             // 
             txt_condicion.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_condicion.Location = new Point(17, 324);
+            txt_condicion.Location = new Point(49, 315);
             txt_condicion.Margin = new Padding(4);
             txt_condicion.Name = "txt_condicion";
             txt_condicion.Size = new Size(216, 27);
@@ -326,18 +260,200 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(20, 302);
+            label7.Location = new Point(43, 292);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(85, 19);
             label7.TabIndex = 129;
             label7.Text = "Condición:";
             // 
+            // txt_filtrarGrilla
+            // 
+            txt_filtrarGrilla.Font = new Font("Tahoma", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_filtrarGrilla.Location = new Point(662, 48);
+            txt_filtrarGrilla.Margin = new Padding(4);
+            txt_filtrarGrilla.Name = "txt_filtrarGrilla";
+            txt_filtrarGrilla.Size = new Size(318, 36);
+            txt_filtrarGrilla.TabIndex = 136;
+            txt_filtrarGrilla.TextChanged += txt_filtrarGrilla_TextChanged;
+            // 
+            // iconPictureBox6
+            // 
+            iconPictureBox6.BackColor = Color.WhiteSmoke;
+            iconPictureBox6.ForeColor = SystemColors.ControlText;
+            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            iconPictureBox6.IconColor = SystemColors.ControlText;
+            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox6.IconSize = 27;
+            iconPictureBox6.Location = new Point(17, 148);
+            iconPictureBox6.Name = "iconPictureBox6";
+            iconPictureBox6.Size = new Size(31, 27);
+            iconPictureBox6.TabIndex = 145;
+            iconPictureBox6.TabStop = false;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.WhiteSmoke;
+            iconPictureBox5.ForeColor = SystemColors.ControlText;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            iconPictureBox5.IconColor = SystemColors.ControlText;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 27;
+            iconPictureBox5.Location = new Point(17, 315);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(31, 27);
+            iconPictureBox5.TabIndex = 144;
+            iconPictureBox5.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.WhiteSmoke;
+            iconPictureBox3.ForeColor = SystemColors.ControlText;
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            iconPictureBox3.IconColor = SystemColors.ControlText;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 27;
+            iconPictureBox3.Location = new Point(17, 92);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(31, 27);
+            iconPictureBox3.TabIndex = 143;
+            iconPictureBox3.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.WhiteSmoke;
+            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 27;
+            iconPictureBox2.Location = new Point(17, 204);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(31, 27);
+            iconPictureBox2.TabIndex = 142;
+            iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.WhiteSmoke;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.EnvelopeSquare;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 27;
+            iconPictureBox1.Location = new Point(17, 259);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(31, 27);
+            iconPictureBox1.TabIndex = 141;
+            iconPictureBox1.TabStop = false;
+            // 
+            // btn_salir
+            // 
+            btn_salir.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_salir.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            btn_salir.IconColor = Color.Black;
+            btn_salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_salir.IconSize = 25;
+            btn_salir.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_salir.Location = new Point(19, 550);
+            btn_salir.Name = "btn_salir";
+            btn_salir.Size = new Size(118, 42);
+            btn_salir.TabIndex = 149;
+            btn_salir.Text = "Salir";
+            btn_salir.TextAlign = ContentAlignment.MiddleRight;
+            btn_salir.UseVisualStyleBackColor = true;
+            btn_salir.Click += btn_salir_Click_1;
+            // 
+            // btn_baja
+            // 
+            btn_baja.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_baja.IconChar = FontAwesome.Sharp.IconChar.TimesSquare;
+            btn_baja.IconColor = Color.Black;
+            btn_baja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_baja.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_baja.Location = new Point(18, 424);
+            btn_baja.Name = "btn_baja";
+            btn_baja.Size = new Size(248, 55);
+            btn_baja.TabIndex = 148;
+            btn_baja.Text = "Eliminar";
+            btn_baja.TextAlign = ContentAlignment.MiddleRight;
+            btn_baja.UseVisualStyleBackColor = true;
+            btn_baja.Click += btn_baja_Click;
+            // 
+            // btn_alta
+            // 
+            btn_alta.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_alta.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            btn_alta.IconColor = Color.Black;
+            btn_alta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_alta.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_alta.Location = new Point(18, 363);
+            btn_alta.Name = "btn_alta";
+            btn_alta.Size = new Size(248, 55);
+            btn_alta.TabIndex = 147;
+            btn_alta.Text = "Agregar";
+            btn_alta.TextAlign = ContentAlignment.MiddleRight;
+            btn_alta.UseVisualStyleBackColor = true;
+            btn_alta.Click += btn_alta_Click;
+            // 
+            // btn_modi
+            // 
+            btn_modi.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_modi.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            btn_modi.IconColor = Color.Black;
+            btn_modi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_modi.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_modi.Location = new Point(18, 485);
+            btn_modi.Name = "btn_modi";
+            btn_modi.Size = new Size(248, 55);
+            btn_modi.TabIndex = 146;
+            btn_modi.Text = "Modificar";
+            btn_modi.TextAlign = ContentAlignment.MiddleRight;
+            btn_modi.UseVisualStyleBackColor = true;
+            btn_modi.Click += btn_modi_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(273, 9);
+            groupBox1.Margin = new Padding(4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
+            groupBox1.Size = new Size(27, 579);
+            groupBox1.TabIndex = 150;
+            groupBox1.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            iconPictureBox4.BackColor = Color.WhiteSmoke;
+            iconPictureBox4.ForeColor = SystemColors.ControlText;
+            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox4.IconColor = SystemColors.ControlText;
+            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox4.IconSize = 36;
+            iconPictureBox4.Location = new Point(987, 48);
+            iconPictureBox4.Name = "iconPictureBox4";
+            iconPictureBox4.Size = new Size(42, 36);
+            iconPictureBox4.TabIndex = 151;
+            iconPictureBox4.TabStop = false;
+            // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(811, 477);
+            ClientSize = new Size(1046, 601);
+            ControlBox = false;
+            Controls.Add(iconPictureBox4);
+            Controls.Add(groupBox1);
+            Controls.Add(btn_salir);
+            Controls.Add(btn_baja);
+            Controls.Add(btn_alta);
+            Controls.Add(btn_modi);
+            Controls.Add(iconPictureBox6);
+            Controls.Add(iconPictureBox5);
+            Controls.Add(iconPictureBox3);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(txt_filtrarGrilla);
             Controls.Add(txt_condicion);
             Controls.Add(label7);
             Controls.Add(txt_mail);
@@ -345,13 +461,6 @@
             Controls.Add(txt_direccion);
             Controls.Add(label4);
             Controls.Add(dgvCliente);
-            Controls.Add(Cliente_Modi);
-            Controls.Add(btn_salir);
-            Controls.Add(groupBox1);
-            Controls.Add(textBox5);
-            Controls.Add(button4);
-            Controls.Add(Cliente_Baja);
-            Controls.Add(Cliente_Alta);
             Controls.Add(txt_nombre);
             Controls.Add(label2);
             Controls.Add(label6);
@@ -364,25 +473,23 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private TextBox textBox5;
-        private Button button4;
-        private Button Cliente_Modi;
-        private Button Cliente_Baja;
-        private Button Cliente_Alta;
         private TextBox txt_nombre;
         private Label label2;
         private Label label6;
         private Label label5;
         private TextBox txt_cuit;
         private Label label1;
-        private Button btn_salir;
         private DataGridView dgvCliente;
         private DataGridViewButtonColumn btn_seleccionar;
         private DataGridViewTextBoxColumn Column0;
@@ -396,5 +503,17 @@
         private Label label4;
         private TextBox txt_condicion;
         private Label label7;
+        private TextBox txt_filtrarGrilla;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconButton btn_salir;
+        private FontAwesome.Sharp.IconButton btn_baja;
+        private FontAwesome.Sharp.IconButton btn_alta;
+        private FontAwesome.Sharp.IconButton btn_modi;
+        private GroupBox groupBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
     }
 }
