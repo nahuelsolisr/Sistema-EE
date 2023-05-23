@@ -13,6 +13,9 @@
     <Compile Update="Formularios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\MuestraCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\MuestraProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,7 +25,13 @@
     <Compile Update="Formularios\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\ProductosEnStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\Salidas.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

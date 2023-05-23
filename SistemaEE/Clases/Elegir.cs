@@ -14,6 +14,22 @@ namespace SistemaEE.Clases
         public static int idProducto;
         public static string nomProducto;
 
-        
+        public static decimal CUITCliente;
+        public static string NombreCliente;
+
+        public static string direccion_cliente;
+        public static string condicionante;
+        public static string mail_cliente;
+
+
+        public static decimal precioProducto;
+        public static int ganancia;
+        public static int cantidad;
+        public static string marca;
+        public static string categoria;
+
+      
+      
+
     }
 }

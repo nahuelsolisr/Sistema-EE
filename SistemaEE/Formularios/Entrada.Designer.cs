@@ -49,10 +49,7 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            btn_grillaCheck = new DataGridViewCheckBoxColumn();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             btn_TraerProveedor = new FontAwesome.Sharp.IconButton();
             btn_traerProduct = new FontAwesome.Sharp.IconButton();
@@ -61,23 +58,27 @@
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             btn_añadir = new FontAwesome.Sharp.IconButton();
             btn_confirmar = new FontAwesome.Sharp.IconButton();
+            label8 = new Label();
+            pnl_detalle = new Panel();
+            btn_salir = new FontAwesome.Sharp.IconButton();
+            label9 = new Label();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)nud_cantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nud_ganancia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
+            pnl_detalle.SuspendLayout();
             SuspendLayout();
             // 
             // txt_provNombre
             // 
             txt_provNombre.Enabled = false;
             txt_provNombre.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_provNombre.Location = new Point(226, 32);
+            txt_provNombre.Location = new Point(43, 71);
             txt_provNombre.Name = "txt_provNombre";
             txt_provNombre.Size = new Size(144, 27);
             txt_provNombre.TabIndex = 14;
@@ -86,7 +87,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(224, 10);
+            label2.Location = new Point(39, 49);
             label2.Name = "label2";
             label2.Size = new Size(149, 19);
             label2.TabIndex = 13;
@@ -96,7 +97,7 @@
             // 
             txt_cuit.Enabled = false;
             txt_cuit.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cuit.Location = new Point(44, 32);
+            txt_cuit.Location = new Point(195, 71);
             txt_cuit.Name = "txt_cuit";
             txt_cuit.Size = new Size(145, 27);
             txt_cuit.TabIndex = 12;
@@ -105,7 +106,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(43, 10);
+            label1.Location = new Point(197, 49);
             label1.Name = "label1";
             label1.Size = new Size(125, 19);
             label1.TabIndex = 11;
@@ -115,7 +116,7 @@
             // 
             txt_nombreProducto.Enabled = false;
             txt_nombreProducto.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nombreProducto.Location = new Point(226, 111);
+            txt_nombreProducto.Location = new Point(429, 70);
             txt_nombreProducto.Name = "txt_nombreProducto";
             txt_nombreProducto.Size = new Size(144, 27);
             txt_nombreProducto.TabIndex = 120;
@@ -124,7 +125,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(228, 89);
+            label3.Location = new Point(430, 48);
             label3.Name = "label3";
             label3.Size = new Size(140, 19);
             label3.TabIndex = 119;
@@ -134,7 +135,7 @@
             // 
             txt_idproducto.Enabled = false;
             txt_idproducto.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_idproducto.Location = new Point(44, 111);
+            txt_idproducto.Location = new Point(580, 70);
             txt_idproducto.Name = "txt_idproducto";
             txt_idproducto.Size = new Size(145, 27);
             txt_idproducto.TabIndex = 118;
@@ -143,7 +144,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(43, 89);
+            label4.Location = new Point(581, 48);
             label4.Name = "label4";
             label4.Size = new Size(133, 19);
             label4.TabIndex = 117;
@@ -152,7 +153,7 @@
             // txt_precio
             // 
             txt_precio.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_precio.Location = new Point(44, 184);
+            txt_precio.Location = new Point(34, 66);
             txt_precio.Name = "txt_precio";
             txt_precio.Size = new Size(74, 27);
             txt_precio.TabIndex = 123;
@@ -161,7 +162,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(41, 162);
+            label5.Location = new Point(31, 44);
             label5.Name = "label5";
             label5.Size = new Size(58, 19);
             label5.TabIndex = 122;
@@ -171,7 +172,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(291, 163);
+            label6.Location = new Point(310, 44);
             label6.Name = "label6";
             label6.Size = new Size(79, 19);
             label6.TabIndex = 124;
@@ -180,7 +181,7 @@
             // nud_cantidad
             // 
             nud_cantidad.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nud_cantidad.Location = new Point(156, 184);
+            nud_cantidad.Location = new Point(162, 66);
             nud_cantidad.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             nud_cantidad.Name = "nud_cantidad";
             nud_cantidad.Size = new Size(99, 27);
@@ -190,7 +191,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(153, 162);
+            label7.Location = new Point(159, 44);
             label7.Name = "label7";
             label7.Size = new Size(77, 19);
             label7.TabIndex = 127;
@@ -199,7 +200,7 @@
             // nud_ganancia
             // 
             nud_ganancia.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nud_ganancia.Location = new Point(293, 184);
+            nud_ganancia.Location = new Point(312, 65);
             nud_ganancia.Name = "nud_ganancia";
             nud_ganancia.Size = new Size(121, 27);
             nud_ganancia.TabIndex = 130;
@@ -219,8 +220,8 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvCarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, btn_grillaCheck });
-            dgvCarrito.Location = new Point(13, 230);
+            dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvCarrito.Location = new Point(13, 232);
             dgvCarrito.Margin = new Padding(4);
             dgvCarrito.MultiSelect = false;
             dgvCarrito.Name = "dgvCarrito";
@@ -231,7 +232,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvCarrito.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvCarrito.RowTemplate.Height = 25;
-            dgvCarrito.Size = new Size(510, 322);
+            dgvCarrito.Size = new Size(763, 304);
             dgvCarrito.TabIndex = 133;
             // 
             // Column1
@@ -259,14 +260,6 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // btn_grillaCheck
-            // 
-            btn_grillaCheck.HeaderText = "";
-            btn_grillaCheck.Name = "btn_grillaCheck";
-            btn_grillaCheck.ReadOnly = true;
-            btn_grillaCheck.Resizable = DataGridViewTriState.True;
-            btn_grillaCheck.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.WhiteSmoke;
@@ -275,39 +268,11 @@
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 27;
-            iconPictureBox1.Location = new Point(13, 32);
+            iconPictureBox1.Location = new Point(12, 71);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(31, 27);
             iconPictureBox1.TabIndex = 134;
             iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.WhiteSmoke;
-            iconPictureBox2.ForeColor = SystemColors.ControlText;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Font;
-            iconPictureBox2.IconColor = SystemColors.ControlText;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 27;
-            iconPictureBox2.Location = new Point(195, 32);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(31, 27);
-            iconPictureBox2.TabIndex = 135;
-            iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.WhiteSmoke;
-            iconPictureBox3.ForeColor = SystemColors.ControlText;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Font;
-            iconPictureBox3.IconColor = SystemColors.ControlText;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 27;
-            iconPictureBox3.Location = new Point(195, 111);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(31, 27);
-            iconPictureBox3.TabIndex = 136;
-            iconPictureBox3.TabStop = false;
             // 
             // iconPictureBox4
             // 
@@ -317,7 +282,7 @@
             iconPictureBox4.IconColor = SystemColors.ControlText;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 27;
-            iconPictureBox4.Location = new Point(13, 111);
+            iconPictureBox4.Location = new Point(397, 70);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(31, 27);
             iconPictureBox4.TabIndex = 137;
@@ -329,9 +294,9 @@
             btn_TraerProveedor.IconColor = Color.Black;
             btn_TraerProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_TraerProveedor.IconSize = 20;
-            btn_TraerProveedor.Location = new Point(376, 32);
+            btn_TraerProveedor.Location = new Point(341, 70);
             btn_TraerProveedor.Name = "btn_TraerProveedor";
-            btn_TraerProveedor.Size = new Size(38, 27);
+            btn_TraerProveedor.Size = new Size(38, 29);
             btn_TraerProveedor.TabIndex = 138;
             btn_TraerProveedor.UseVisualStyleBackColor = true;
             btn_TraerProveedor.Click += btn_TraerProveedor_Click_1;
@@ -342,7 +307,7 @@
             btn_traerProduct.IconColor = Color.Black;
             btn_traerProduct.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_traerProduct.IconSize = 20;
-            btn_traerProduct.Location = new Point(376, 110);
+            btn_traerProduct.Location = new Point(727, 70);
             btn_traerProduct.Name = "btn_traerProduct";
             btn_traerProduct.Size = new Size(38, 27);
             btn_traerProduct.TabIndex = 139;
@@ -357,7 +322,7 @@
             iconPictureBox5.IconColor = SystemColors.ControlText;
             iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox5.IconSize = 27;
-            iconPictureBox5.Location = new Point(13, 184);
+            iconPictureBox5.Location = new Point(3, 66);
             iconPictureBox5.Name = "iconPictureBox5";
             iconPictureBox5.Size = new Size(31, 27);
             iconPictureBox5.TabIndex = 140;
@@ -371,7 +336,7 @@
             iconPictureBox6.IconColor = SystemColors.ControlText;
             iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox6.IconSize = 27;
-            iconPictureBox6.Location = new Point(261, 184);
+            iconPictureBox6.Location = new Point(280, 65);
             iconPictureBox6.Name = "iconPictureBox6";
             iconPictureBox6.Size = new Size(31, 27);
             iconPictureBox6.TabIndex = 141;
@@ -385,7 +350,7 @@
             iconPictureBox7.IconColor = SystemColors.ControlText;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox7.IconSize = 27;
-            iconPictureBox7.Location = new Point(124, 184);
+            iconPictureBox7.Location = new Point(130, 66);
             iconPictureBox7.Name = "iconPictureBox7";
             iconPictureBox7.Size = new Size(31, 27);
             iconPictureBox7.TabIndex = 142;
@@ -398,11 +363,11 @@
             btn_añadir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_añadir.IconSize = 35;
             btn_añadir.ImageAlign = ContentAlignment.MiddleRight;
-            btn_añadir.Location = new Point(420, 184);
+            btn_añadir.Location = new Point(587, 44);
             btn_añadir.Name = "btn_añadir";
-            btn_añadir.Size = new Size(104, 39);
+            btn_añadir.Size = new Size(166, 49);
             btn_añadir.TabIndex = 143;
-            btn_añadir.Text = "Agregar al ";
+            btn_añadir.Text = "Agregar al carrito";
             btn_añadir.TextAlign = ContentAlignment.MiddleLeft;
             btn_añadir.UseVisualStyleBackColor = true;
             btn_añadir.Click += btn_añadir_Click;
@@ -414,38 +379,99 @@
             btn_confirmar.IconColor = Color.Black;
             btn_confirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_confirmar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_confirmar.Location = new Point(398, 559);
+            btn_confirmar.Location = new Point(663, 543);
             btn_confirmar.Name = "btn_confirmar";
-            btn_confirmar.Size = new Size(126, 45);
+            btn_confirmar.Size = new Size(113, 45);
             btn_confirmar.TabIndex = 144;
             btn_confirmar.Text = "Guardar ";
             btn_confirmar.TextAlign = ContentAlignment.MiddleRight;
             btn_confirmar.UseVisualStyleBackColor = true;
+            btn_confirmar.Visible = false;
             btn_confirmar.Click += btn_confirmar_Click_1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(11, 9);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(165, 19);
+            label8.TabIndex = 145;
+            label8.Text = "DETALLES DE VALOR";
+            // 
+            // pnl_detalle
+            // 
+            pnl_detalle.Controls.Add(label8);
+            pnl_detalle.Controls.Add(label5);
+            pnl_detalle.Controls.Add(btn_añadir);
+            pnl_detalle.Controls.Add(txt_precio);
+            pnl_detalle.Controls.Add(label6);
+            pnl_detalle.Controls.Add(iconPictureBox7);
+            pnl_detalle.Controls.Add(nud_cantidad);
+            pnl_detalle.Controls.Add(iconPictureBox6);
+            pnl_detalle.Controls.Add(label7);
+            pnl_detalle.Controls.Add(iconPictureBox5);
+            pnl_detalle.Controls.Add(nud_ganancia);
+            pnl_detalle.Location = new Point(12, 115);
+            pnl_detalle.Name = "pnl_detalle";
+            pnl_detalle.Size = new Size(763, 110);
+            pnl_detalle.TabIndex = 146;
+            // 
+            // btn_salir
+            // 
+            btn_salir.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_salir.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            btn_salir.IconColor = Color.Black;
+            btn_salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btn_salir.IconSize = 25;
+            btn_salir.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_salir.Location = new Point(12, 543);
+            btn_salir.Name = "btn_salir";
+            btn_salir.Size = new Size(115, 46);
+            btn_salir.TabIndex = 150;
+            btn_salir.Text = "Salir";
+            btn_salir.TextAlign = ContentAlignment.MiddleRight;
+            btn_salir.UseVisualStyleBackColor = true;
+            btn_salir.Click += btn_salir_Click;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(12, 9);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(227, 19);
+            label9.TabIndex = 189;
+            label9.Text = "SELECCIONE EL PROVEEDOR:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(397, 9);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(220, 19);
+            label10.TabIndex = 190;
+            label10.Text = "SELECCIONE EL PRODUCTO:";
             // 
             // Entrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(525, 606);
+            ClientSize = new Size(783, 601);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(btn_salir);
             Controls.Add(btn_confirmar);
-            Controls.Add(btn_añadir);
-            Controls.Add(iconPictureBox7);
-            Controls.Add(iconPictureBox6);
-            Controls.Add(iconPictureBox5);
+            Controls.Add(pnl_detalle);
             Controls.Add(btn_traerProduct);
             Controls.Add(btn_TraerProveedor);
             Controls.Add(iconPictureBox4);
-            Controls.Add(iconPictureBox3);
-            Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox1);
             Controls.Add(dgvCarrito);
-            Controls.Add(nud_ganancia);
-            Controls.Add(label7);
-            Controls.Add(nud_cantidad);
-            Controls.Add(label6);
-            Controls.Add(txt_precio);
-            Controls.Add(label5);
             Controls.Add(txt_nombreProducto);
             Controls.Add(label3);
             Controls.Add(txt_idproducto);
@@ -461,12 +487,12 @@
             ((System.ComponentModel.ISupportInitialize)nud_ganancia).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
+            pnl_detalle.ResumeLayout(false);
+            pnl_detalle.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -489,8 +515,6 @@
         private NumericUpDown nud_ganancia;
         private DataGridView dgvCarrito;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconButton btn_TraerProveedor;
         private FontAwesome.Sharp.IconButton btn_traerProduct;
@@ -498,11 +522,15 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
         private FontAwesome.Sharp.IconButton btn_añadir;
+        private FontAwesome.Sharp.IconButton btn_confirmar;
+        private Label label8;
+        private Panel pnl_detalle;
+        private FontAwesome.Sharp.IconButton btn_salir;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private DataGridViewCheckBoxColumn btn_grillaCheck;
-        private FontAwesome.Sharp.IconButton btn_confirmar;
+        private Label label9;
+        private Label label10;
     }
 }

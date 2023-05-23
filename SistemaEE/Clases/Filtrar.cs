@@ -81,5 +81,6 @@ namespace SistemaEE.Clases
             dgvCliente.ClearSelection();
             DB.lector.Close();
         }
+
     }
 }

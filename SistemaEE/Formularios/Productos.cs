@@ -182,5 +182,10 @@ namespace SistemaEE.Formularios
         {
             this.Close();
         }
+
+        private void iconPictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

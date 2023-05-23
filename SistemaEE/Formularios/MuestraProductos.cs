@@ -24,7 +24,7 @@ namespace SistemaEE.Formularios
             if (e.RowIndex >= 0 && dgvProductos.Columns[e.ColumnIndex].Name == "btn_seleccionar")
             {
                 Elegir.idProducto = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Column0"].Value);
-                Elegir.nomProducto= Convert.ToString(dgvProductos.Rows[e.RowIndex].Cells["Column2"].Value);
+                Elegir.nomProducto = Convert.ToString(dgvProductos.Rows[e.RowIndex].Cells["Column2"].Value);
                 this.Close();
 
             }
@@ -54,6 +54,13 @@ namespace SistemaEE.Formularios
 
             dgvProductos.ClearSelection();
             DB.lector.Close();
+        }
+
+        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txt_filtrarGrilla.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarProductos(dgvProductos, filtro);
         }
     }
 }

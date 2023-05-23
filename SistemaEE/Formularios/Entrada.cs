@@ -15,33 +15,15 @@ namespace SistemaEE.Formularios
 {
     public partial class Entrada : Form
     {
-        static decimal CUIT;
-        static string NOMBRE;
-        static int IDPRODUCTO;
-        static string NOMBREPRODUCTO;
+
         static decimal CANTIDAD;
+        public int CONTADOR =0;
         List<decimal> listaProductos = new List<decimal>();
+
 
         public Entrada()
         {
             InitializeComponent();
-
-
-            txt_cuit.Text = Convert.ToString(CUIT);
-            txt_provNombre.Text = NOMBRE;
-            txt_idproducto.Text = Convert.ToString(IDPRODUCTO);
-            txt_nombreProducto.Text = NOMBREPRODUCTO;
-
-        }
-
-
-
-        public class Producto
-        {
-            public decimal Precio { get; set; }
-            public decimal Ganancia { get; set; }
-            public int Cantidad { get; set; }
-            public string CodigoProducto { get; set; }
         }
 
         private void btn_TraerProveedor_Click_1(object sender, EventArgs e)
@@ -68,6 +50,7 @@ namespace SistemaEE.Formularios
             string nombreProveedor = txt_provNombre.Text;
             decimal codigoProducto = decimal.Parse(txt_idproducto.Text);
             string nombreProducto = txt_nombreProducto.Text;
+
             decimal precio = Convert.ToDecimal(txt_precio.Text);
             decimal ganancia = nud_ganancia.Value;
             decimal cantidad = nud_cantidad.Value;
@@ -98,6 +81,9 @@ namespace SistemaEE.Formularios
             reader.Close();
             ConectaDB.CerrarDB();
 
+            btn_confirmar.Visible = true;
+            CONTADOR++;
+
         }
 
         private void btn_confirmar_Click_1(object sender, EventArgs e)
@@ -122,9 +108,8 @@ namespace SistemaEE.Formularios
 
                     // Ejecuta la consulta
                     ConectaDB.CargarDB(updateEntrada);
-                    MessageBox.Show("Su compra ha sido realizada");
-
                 }
+                MessageBox.Show("Su compra ha sido realizada");
 
                 // Cierra la conexión a la base de datos
                 ConectaDB.CerrarDB();
@@ -138,6 +123,11 @@ namespace SistemaEE.Formularios
             {
 
             }
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

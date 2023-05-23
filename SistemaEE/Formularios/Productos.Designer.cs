@@ -177,6 +177,7 @@
             Column0.Name = "Column0";
             Column0.ReadOnly = true;
             Column0.Visible = false;
+            Column0.Width = 69;
             // 
             // btn_seleccionar
             // 
@@ -184,7 +185,6 @@
             btn_seleccionar.Name = "btn_seleccionar";
             btn_seleccionar.ReadOnly = true;
             btn_seleccionar.Resizable = DataGridViewTriState.False;
-            btn_seleccionar.Text = "";
             btn_seleccionar.Width = 25;
             // 
             // Column2
@@ -393,6 +393,7 @@
             iconPictureBox5.Size = new Size(42, 36);
             iconPictureBox5.TabIndex = 151;
             iconPictureBox5.TabStop = false;
+            iconPictureBox5.Click += iconPictureBox5_Click;
             // 
             // Productos
             // 
@@ -458,16 +459,16 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private DataGridViewTextBoxColumn Column0;
-        private DataGridViewButtonColumn btn_seleccionar;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private FontAwesome.Sharp.IconButton btn_salir;
         private FontAwesome.Sharp.IconButton btn_baja;
         private FontAwesome.Sharp.IconButton btn_alta;
         private FontAwesome.Sharp.IconButton btn_modi;
         private GroupBox groupBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private DataGridViewTextBoxColumn Column0;
+        private DataGridViewButtonColumn btn_seleccionar;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             txt_nombre = new TextBox();
             label2 = new Label();
             label6 = new Label();
@@ -47,7 +47,6 @@
             label3 = new Label();
             txt_direccion = new TextBox();
             label4 = new Label();
-            txt_condicion = new TextBox();
             label7 = new Label();
             txt_filtrarGrilla = new TextBox();
             iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
@@ -61,6 +60,7 @@
             btn_modi = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            cmb_condicion = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
@@ -138,15 +138,15 @@
             dgvCliente.AllowUserToResizeRows = false;
             dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCliente.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCliente.Columns.AddRange(new DataGridViewColumn[] { btn_seleccionar, Column0, Column1, Column2, Column3, Column4 });
             dgvCliente.Location = new Point(308, 92);
@@ -155,10 +155,10 @@
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
-            dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
+            dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvCliente.RowTemplate.Height = 25;
             dgvCliente.Size = new Size(725, 482);
             dgvCliente.TabIndex = 124;
@@ -246,15 +246,6 @@
             label4.Size = new Size(80, 19);
             label4.TabIndex = 125;
             label4.Text = "Dirección:";
-            // 
-            // txt_condicion
-            // 
-            txt_condicion.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_condicion.Location = new Point(49, 315);
-            txt_condicion.Margin = new Padding(4);
-            txt_condicion.Name = "txt_condicion";
-            txt_condicion.Size = new Size(216, 27);
-            txt_condicion.TabIndex = 130;
             // 
             // label7
             // 
@@ -436,12 +427,22 @@
             iconPictureBox4.TabIndex = 151;
             iconPictureBox4.TabStop = false;
             // 
+            // cmb_condicion
+            // 
+            cmb_condicion.FormattingEnabled = true;
+            cmb_condicion.Items.AddRange(new object[] { "Responsable Inscripto", "Monotributista" });
+            cmb_condicion.Location = new Point(49, 315);
+            cmb_condicion.Name = "cmb_condicion";
+            cmb_condicion.Size = new Size(216, 27);
+            cmb_condicion.TabIndex = 152;
+            // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1046, 601);
             ControlBox = false;
+            Controls.Add(cmb_condicion);
             Controls.Add(iconPictureBox4);
             Controls.Add(groupBox1);
             Controls.Add(btn_salir);
@@ -454,7 +455,6 @@
             Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox1);
             Controls.Add(txt_filtrarGrilla);
-            Controls.Add(txt_condicion);
             Controls.Add(label7);
             Controls.Add(txt_mail);
             Controls.Add(label3);
@@ -501,7 +501,6 @@
         private Label label3;
         private TextBox txt_direccion;
         private Label label4;
-        private TextBox txt_condicion;
         private Label label7;
         private TextBox txt_filtrarGrilla;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
@@ -515,5 +514,6 @@
         private FontAwesome.Sharp.IconButton btn_modi;
         private GroupBox groupBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private ComboBox cmb_condicion;
     }
 }

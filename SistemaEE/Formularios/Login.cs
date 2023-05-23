@@ -19,7 +19,7 @@ namespace SistemaEE.Formularios
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             txt_clave.UseSystemPasswordChar = true;
         }
-        // SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-9UILVSA\SQLEXPRESS;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
+        //SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-9UILVSA\SQLEXPRESS;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
         SqlConnection conexion = new SqlConnection(@"Data Source=RODRIGO\DEVELOPER;Initial Catalog=EconomiaEmpresarial;Integrated Security=True");
         public void logear(string usuario, string contrasena)
         {

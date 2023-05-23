@@ -37,7 +37,10 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            txt_filtrarGrilla = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvProveedor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             SuspendLayout();
             // 
             // dgvProveedor
@@ -56,7 +59,7 @@
             dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProveedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedor.Columns.AddRange(new DataGridViewColumn[] { btn_seleccionar, Column0, Column1, Column2, Column3, Column4 });
-            dgvProveedor.Location = new Point(13, 13);
+            dgvProveedor.Location = new Point(13, 50);
             dgvProveedor.Margin = new Padding(4);
             dgvProveedor.MultiSelect = false;
             dgvProveedor.Name = "dgvProveedor";
@@ -67,7 +70,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProveedor.RowTemplate.Height = 25;
-            dgvProveedor.Size = new Size(539, 311);
+            dgvProveedor.Size = new Size(538, 274);
             dgvProveedor.TabIndex = 124;
             dgvProveedor.CellClick += Cell_Click;
             // 
@@ -109,17 +112,46 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
+            // iconPictureBox4
+            // 
+            iconPictureBox4.BackColor = Color.WhiteSmoke;
+            iconPictureBox4.ForeColor = SystemColors.ControlText;
+            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox4.IconColor = SystemColors.ControlText;
+            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox4.IconSize = 29;
+            iconPictureBox4.Location = new Point(520, 13);
+            iconPictureBox4.Name = "iconPictureBox4";
+            iconPictureBox4.Size = new Size(29, 30);
+            iconPictureBox4.TabIndex = 143;
+            iconPictureBox4.TabStop = false;
+            // 
+            // txt_filtrarGrilla
+            // 
+            txt_filtrarGrilla.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_filtrarGrilla.Location = new Point(348, 13);
+            txt_filtrarGrilla.Margin = new Padding(4);
+            txt_filtrarGrilla.Name = "txt_filtrarGrilla";
+            txt_filtrarGrilla.Size = new Size(165, 30);
+            txt_filtrarGrilla.TabIndex = 142;
+            txt_filtrarGrilla.TextChanged += txt_filtrarGrilla_TextChanged;
+            // 
             // MuestraProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(561, 333);
+            ClientSize = new Size(562, 339);
+            ControlBox = false;
+            Controls.Add(iconPictureBox4);
+            Controls.Add(txt_filtrarGrilla);
             Controls.Add(dgvProveedor);
             Name = "MuestraProveedor";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "MuestraProveedor";
+            Text = "Proveedores";
             ((System.ComponentModel.ISupportInitialize)dgvProveedor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -131,5 +163,7 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private TextBox txt_filtrarGrilla;
     }
 }

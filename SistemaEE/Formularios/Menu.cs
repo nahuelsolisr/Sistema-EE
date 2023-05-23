@@ -79,12 +79,13 @@ namespace SistemaEE.Formularios
 
         private void btn_salidas_Click(object sender, EventArgs e)
         {
-
+            Salidas salidas = new Salidas();
+            salidas.ShowDialog();
         }
 
         private void btn_fichaStock_Click(object sender, EventArgs e)
         {
-
+          
         }
     }
 }

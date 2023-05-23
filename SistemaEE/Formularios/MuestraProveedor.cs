@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEE.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,16 +21,16 @@ namespace SistemaEE.Formularios
 
         private void Cell_Click(object sender, DataGridViewCellEventArgs e)
         {
-                     
+
 
             if (e.RowIndex >= 0 && dgvProveedor.Columns[e.ColumnIndex].Name == "btn_seleccionar")
             {
-               
+
                 Clases.Elegir.cuit_prov = Convert.ToDecimal(dgvProveedor.Rows[e.RowIndex].Cells["Column0"].Value);
                 Clases.Elegir.nom_prov = Convert.ToString(dgvProveedor.Rows[e.RowIndex].Cells["Column1"].Value);
 
                 this.Close();
-                
+
             }
 
 
@@ -62,6 +63,13 @@ namespace SistemaEE.Formularios
 
             dgvProveedor.ClearSelection();
             DB.lector.Close();
+        }
+
+        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txt_filtrarGrilla.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarProveedores(dgvProveedor, filtro);
         }
     }
 }

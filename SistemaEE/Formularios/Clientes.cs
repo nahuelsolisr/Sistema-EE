@@ -83,7 +83,7 @@ namespace SistemaEE.Formularios
                 txt_nombre.Text = nombre;
                 txt_direccion.Text = direccion;
                 txt_mail.Text = mail;
-                txt_condicion.Text = condicion;
+                cmb_condicion.Text = condicion;
 
             }
         }
@@ -103,7 +103,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string insertCliente = "INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_mail.Text + "', '" + txt_condicion.Text + "')";
+                string insertCliente = "INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_mail.Text + "', '" + cmb_condicion.Text + "')";
                 ConectaDB.CargarDB(insertCliente);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El Cliente ha sido agregado correctamente.");
@@ -138,7 +138,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + txt_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
+                string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + cmb_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
                 ConectaDB.CargarDB(updateProveedor);
                 ConectaDB.CerrarDB();
                 dgv_Clientes();

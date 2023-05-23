@@ -121,3 +121,6 @@ C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Entrada.resources
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraProveedor.resources
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraProductos.resources
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.ProductosEnStock.resources
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Salidas.resources
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraCliente.resources
