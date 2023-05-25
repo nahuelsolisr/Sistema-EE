@@ -82,29 +82,35 @@ namespace SistemaEE.Formularios
                 foreach (Producto producto in carrito)
                 {
                     // Actualiza los datos del producto en la base de datos
-                    string cant = $"Select cantidad from productos where id_producto = {producto.Id}";
-                    int cantidadActual = 0;
-
-                    // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
-                    using (var reader = ConectaDB.LecturaDB(cant))
-                    {
-                        if (reader.Read())
-                        {
-                            cantidadActual = Convert.ToInt32(reader["cantidad"]);
-                        }
-                    }
-
-                    int cantidadNetaEntrada = cantidadActual + producto.Cantidad;
-                    decimal total_stock = cantidadNetaEntrada * producto.Precio;
-                    total_stock.ToString();
-                    string updateEntrada = $"UPDATE productos SET cantidad = {cantidadNetaEntrada}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
+                    string updateEntrada = $"UPDATE productos SET cantidad = {producto.Cantidad}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
                     ConectaDB.CargarDB(updateEntrada);
-                    decimal totalEntrada = producto.Precio * producto.Cantidad;
-                    totalEntrada.ToString();
+
 
                     //Realiza el insert en la tabla "fichastock"
                     string fecha = DateTime.Now.ToString("yyyy-MM-dd");
-                    string insertEntrada = $"INSERT INTO fichastock (cantidad_entrada, precio_unit_entrada, cod_producto, nombre_producto, total_entrada, fecha, cantidad_stock, precio_unit_stock, total_stock) " + $"VALUES ('{producto.Cantidad}', '{producto.Precio}', {producto.Id}, '{producto.nombre}', '{totalEntrada}', '{fecha}', '{cantidadNetaEntrada}', '{producto.Precio}', '{total_stock}')";
+                    int unidadesE = producto.Cantidad;
+                    decimal precioUE = producto.Precio;
+                    decimal totalE = producto.Cantidad * producto.Precio;
+                    int unidadesEx = ObtenerUnidadesExistentes();
+                    decimal precioUEx = ObtenerPrecioUExistentes();
+                    decimal totalEx = ObtenerTotalExistentes();
+                    string concepto = "COMPRA";
+                    if (unidadesEx == 0 || precioUEx == 0 || totalEx == 0)
+                    {
+                        unidadesEx = unidadesE;
+                        precioUEx = precioUE;
+                        totalEx = totalE;
+                    }
+                    else
+                    {
+                        unidadesEx = unidadesEx + unidadesE;
+                        precioUEx = precioUEx + precioUE;
+                        totalEx = totalEx + totalE;
+                    }
+
+                    string insertEntrada = $"INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
+                       $"VALUES ('{fecha}' , {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
+
                     ConectaDB.CargarDB(insertEntrada);
                 }
 
@@ -149,6 +155,52 @@ namespace SistemaEE.Formularios
             nud_cantidad.Value = 0;
             nud_ganancia.Value = 0;
 
+        }
+
+        public static int ObtenerUnidadesExistentes()
+        {
+
+            string consulta = "SELECT SUM(UnidadesEx) FROM fichastock";
+            SqlCommand comando = new SqlCommand(consulta, DB.ConexionConBD);
+            object resultado = comando.ExecuteScalar();
+            int unidadesExistentes = 0;
+
+            if (resultado != null && !Convert.IsDBNull(resultado))
+            {
+                unidadesExistentes = Convert.ToInt32(resultado);
+            }
+
+            return unidadesExistentes;
+        }
+
+        public static decimal ObtenerPrecioUExistentes()
+        {
+            string consulta = "SELECT AVG(PrecioUEx) FROM fichastock";
+            SqlCommand comando = new SqlCommand(consulta, DB.ConexionConBD);
+            object resultado = comando.ExecuteScalar();
+            decimal precioUExistente = 0;
+
+            if (resultado != null && !Convert.IsDBNull(resultado))
+            {
+                precioUExistente = Convert.ToDecimal(resultado);
+            }
+
+            return precioUExistente;
+        }
+
+        public static decimal ObtenerTotalExistentes()
+        {
+            string consulta = "SELECT SUM(TotalEx) FROM fichastock";
+            SqlCommand comando = new SqlCommand(consulta, DB.ConexionConBD);
+            object resultado = comando.ExecuteScalar();
+            decimal totalExistente = 0;
+
+            if (resultado != null && !Convert.IsDBNull(resultado))
+            {
+                totalExistente = Convert.ToDecimal(resultado);
+            }
+
+            return totalExistente;
         }
     }
 }

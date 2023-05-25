@@ -97,7 +97,8 @@ namespace SistemaEE.Formularios
         }
         private void btn_fichaStock_Click(object sender, EventArgs e)
         {
-
+            FichaDeStock inventario = new FichaDeStock();
+            inventario.ShowDialog();
         }
     }
 }
