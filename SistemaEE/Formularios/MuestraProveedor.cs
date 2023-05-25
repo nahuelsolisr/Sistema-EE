@@ -16,6 +16,7 @@ namespace SistemaEE.Formularios
         public MuestraProveedor()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             dgv_Proveedores();
         }
 

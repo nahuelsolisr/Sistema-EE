@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SistemaEE.Clases;
 
 namespace SistemaEE.Formularios
 {
@@ -39,13 +40,15 @@ namespace SistemaEE.Formularios
                 if (tipoUsuario == "Administrador")
                 {
                     // Si el tipo de usuario es "admin", abrimos el formulario  y le damos permisos a los botones
-                    Menu FormMenu = new Menu("Usuario: Administrador", true);
+                    Menu FormMenu = new Menu("Bienvenido Administrador!",true);
+           
                     FormMenu.ShowDialog();
                 }
                 else
                 {
                     // Si el tipo de usuario es cualquier otro, abrimos el formulario  y restringimos los botones 
-                    Menu FormMenu = new Menu("Usuario: Común", false);
+                    Menu FormMenu = new Menu("Bienvenido Usuario!",false);
+                    
                     FormMenu.ShowDialog();
                 }
             }

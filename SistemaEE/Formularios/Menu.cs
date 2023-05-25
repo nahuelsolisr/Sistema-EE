@@ -4,25 +4,23 @@ namespace SistemaEE.Formularios
 {
     public partial class Menu : Form
     {
-        private bool permisos;
+        public bool PERMISOS;
         public Menu(string nombre, bool permisos)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             lbl_usuario.Text = nombre;
+            this.PERMISOS = permisos;
 
-            this.permisos = permisos;
-
-            if (permisos)
+            if (PERMISOS)
             {
-                // Habilitar todos los botones si el usuario es administrador
-
-
+                btn_contabilidad.Enabled = true;
+                btn_usuarios.Enabled = true;
             }
             else
             {
-                // Deshabilitar los botones productos,provedores, si el usuario no es administrador
-
+                btn_contabilidad.Enabled = false;
+                btn_usuarios.Enabled = false;
             }
         }
 
@@ -49,8 +47,17 @@ namespace SistemaEE.Formularios
         private void btn_volver_Click(object sender, EventArgs e)
         {
             panel_facturacion.Visible = false;
-            btn_contabilidad.Enabled = true;
-            btn_usuarios.Enabled = true;
+
+            if (PERMISOS)
+            {
+                btn_contabilidad.Enabled = true;
+                btn_usuarios.Enabled = true;
+            }
+            else
+            {
+
+            }
+
         }
 
         private void btn_proveedores_Click(object sender, EventArgs e)
@@ -83,9 +90,14 @@ namespace SistemaEE.Formularios
             salidas.ShowDialog();
         }
 
+        private void btn_usuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios usuarios = new Usuarios();
+            usuarios.ShowDialog();
+        }
         private void btn_fichaStock_Click(object sender, EventArgs e)
         {
-          
+
         }
     }
 }

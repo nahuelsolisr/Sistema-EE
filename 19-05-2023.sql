@@ -106,3 +106,17 @@ VALUES
   (22999999992, 'Florencia López', 'Avenida Oeste 357', 'florencialopez@gmail.com', 'Consumidor Final');
 
 
+  CREATE TABLE fichastock (
+    cod_producto int,
+    nombre_producto varchar(40),
+    cantidad_entrada varchar(20) NULL,
+    precio_unit_entrada varchar(20) NULL,
+    total_entrada varchar(20) NULL,
+    cantidad_salida varchar(20) NULL,
+    precio_unit_salida varchar(20) NULL,
+    total_salida varchar(20) NULL,
+    cantidad_stock varchar(20),
+    precio_unit_stock varchar(20),
+    total_stock varchar(20),
+    fecha varchar(40),
+);

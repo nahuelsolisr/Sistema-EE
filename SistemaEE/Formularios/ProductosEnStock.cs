@@ -16,6 +16,7 @@ namespace SistemaEE.Formularios
         public ProductosEnStock()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             TraerProductos();
         }
         public void TraerProductos()

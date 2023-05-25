@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btn_añadir = new FontAwesome.Sharp.IconButton();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
@@ -85,6 +85,7 @@
             btn_añadir.Text = "Agregar al  carrito";
             btn_añadir.TextAlign = ContentAlignment.MiddleLeft;
             btn_añadir.UseVisualStyleBackColor = true;
+            btn_añadir.Click += btn_añadir_Click;
             // 
             // iconPictureBox7
             // 
@@ -146,15 +147,15 @@
             dgvProductos.AllowUserToResizeColumns = false;
             dgvProductos.AllowUserToResizeRows = false;
             dgvProductos.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
             dgvProductos.Location = new Point(13, 232);
@@ -163,10 +164,10 @@
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
-            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.Size = new Size(757, 301);
             dgvProductos.TabIndex = 170;
@@ -248,6 +249,7 @@
             // 
             // txt_nombreProducto
             // 
+            txt_nombreProducto.Enabled = false;
             txt_nombreProducto.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_nombreProducto.Location = new Point(583, 70);
             txt_nombreProducto.Name = "txt_nombreProducto";
@@ -266,6 +268,7 @@
             // 
             // txt_idproducto
             // 
+            txt_idproducto.Enabled = false;
             txt_idproducto.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_idproducto.Location = new Point(435, 70);
             txt_idproducto.Name = "txt_idproducto";

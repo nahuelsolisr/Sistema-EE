@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             lbl_usuario = new Label();
             panel1 = new Panel();
             btn_salir = new Button();
@@ -42,7 +43,10 @@
             btn_facturacion = new FontAwesome.Sharp.IconButton();
             btn_contabilidad = new FontAwesome.Sharp.IconButton();
             btn_usuarios = new FontAwesome.Sharp.IconButton();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
             panel_facturacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lbl_usuario
@@ -57,7 +61,8 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DimGray;
+            panel1.BackColor = Color.FromArgb(82, 82, 89);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -226,6 +231,7 @@
             // 
             // btn_contabilidad
             // 
+            btn_contabilidad.Enabled = false;
             btn_contabilidad.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_contabilidad.IconChar = FontAwesome.Sharp.IconChar.Calculator;
             btn_contabilidad.IconColor = Color.DimGray;
@@ -241,6 +247,7 @@
             // 
             // btn_usuarios
             // 
+            btn_usuarios.Enabled = false;
             btn_usuarios.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_usuarios.IconChar = FontAwesome.Sharp.IconChar.Users;
             btn_usuarios.IconColor = Color.DimGray;
@@ -253,6 +260,17 @@
             btn_usuarios.Text = "Usuarios";
             btn_usuarios.TextAlign = ContentAlignment.MiddleRight;
             btn_usuarios.UseVisualStyleBackColor = true;
+            btn_usuarios.Click += btn_usuarios_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(597, 93);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // Menu
             // 
@@ -273,7 +291,10 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Menu :.";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel_facturacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +315,6 @@
         private FontAwesome.Sharp.IconButton btn_entradas;
         private FontAwesome.Sharp.IconButton btn_volver;
         private FontAwesome.Sharp.IconButton btn_fichaStock;
+        private PictureBox pictureBox1;
     }
 }

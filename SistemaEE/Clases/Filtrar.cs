@@ -13,7 +13,6 @@ namespace SistemaEE.Clases
         {
             ConectaDB.AbrirDB();
             string consultaProductos = "SELECT * FROM productos WHERE nombre LIKE '%' + @filtro + '%' OR categoria LIKE '%' + @filtro + '%' OR marca LIKE '%' + @filtro + '%'";
-            ConectaDB.LecturaDB(consultaProductos);
             SqlCommand comando = new SqlCommand(consultaProductos, DB.ConexionConBD);
             comando.Parameters.AddWithValue("@filtro", filtro);
             DB.lector = comando.ExecuteReader();
@@ -32,6 +31,7 @@ namespace SistemaEE.Clases
 
             dgvProductos.ClearSelection();
             DB.lector.Close();
+            ConectaDB.CerrarDB();
         }
         public void FiltrarProveedores(DataGridView dgvProveedor, string filtro)
         {
@@ -80,6 +80,30 @@ namespace SistemaEE.Clases
 
             dgvCliente.ClearSelection();
             DB.lector.Close();
+        }
+        public void FiltrarUsuarios(DataGridView dgvUsuarios, string filtro)
+        {
+            ConectaDB.AbrirDB();
+            string consultaUsuario = "SELECT * FROM usuarios WHERE Id_usuario LIKE '%' + @filtro + '%' OR Usuario LIKE '%' + @filtro + '%' OR Contra LIKE '%' + @filtro + '%' OR Tipo_usuario LIKE '%' + @filtro + '%'";
+            SqlCommand comando = new SqlCommand(consultaUsuario, DB.ConexionConBD);
+            comando.Parameters.AddWithValue("@filtro", filtro);
+            DB.lector = comando.ExecuteReader();
+            dgvUsuarios.Rows.Clear(); // Limpia los datos anteriores en la grilla
+
+            while (DB.lector.Read())
+            {
+                dgvUsuarios.Rows.Add(
+                    DB.lector["Id_usuario"],
+                    "",
+                    DB.lector["Usuario"],
+                    DB.lector["Contra"],
+                    DB.lector["Tipo_usuario"]
+                );
+            }
+
+            dgvUsuarios.ClearSelection();
+            DB.lector.Close();
+            ConectaDB.CerrarDB();
         }
 
     }

@@ -16,6 +16,7 @@ namespace SistemaEE.Formularios
         public MuestraCliente()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             dgv_Clientes();
         }
         public void dgv_Clientes()

@@ -8,6 +8,8 @@ namespace SistemaEE.Clases
 {
     internal class Elegir
     {
+    
+
         public static decimal cuit_prov;
         public static string nom_prov;
 
@@ -25,6 +27,7 @@ namespace SistemaEE.Clases
         public static decimal precioProducto;
         public static int ganancia;
         public static int cantidad;
+        public static int cantidadentrada;
         public static string marca;
         public static string categoria;
 

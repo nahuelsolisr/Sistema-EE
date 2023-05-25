@@ -45,10 +45,6 @@
             label7 = new Label();
             nud_ganancia = new NumericUpDown();
             dgvCarrito = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             btn_TraerProveedor = new FontAwesome.Sharp.IconButton();
@@ -63,6 +59,10 @@
             btn_salir = new FontAwesome.Sharp.IconButton();
             label9 = new Label();
             label10 = new Label();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)nud_cantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nud_ganancia).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
@@ -220,7 +220,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvCarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column3 });
             dgvCarrito.Location = new Point(13, 232);
             dgvCarrito.Margin = new Padding(4);
             dgvCarrito.MultiSelect = false;
@@ -234,31 +234,6 @@
             dgvCarrito.RowTemplate.Height = 25;
             dgvCarrito.Size = new Size(763, 304);
             dgvCarrito.TabIndex = 133;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Producto";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 103;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Precio";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Ganancia";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Cantidad";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
             // 
             // iconPictureBox1
             // 
@@ -457,6 +432,31 @@
             label10.TabIndex = 190;
             label10.Text = "SELECCIONE EL PRODUCTO:";
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "Producto";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 103;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Precio";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Cantidad";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Ganancia";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
             // Entrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -526,11 +526,11 @@
         private Label label8;
         private Panel pnl_detalle;
         private FontAwesome.Sharp.IconButton btn_salir;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Label label9;
         private Label label10;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column3;
     }
 }

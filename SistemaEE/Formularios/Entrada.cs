@@ -16,14 +16,13 @@ namespace SistemaEE.Formularios
     public partial class Entrada : Form
     {
 
-        static decimal CANTIDAD;
-        public int CONTADOR =0;
-        List<decimal> listaProductos = new List<decimal>();
+        private List<Producto> carrito = new List<Producto>();
 
 
         public Entrada()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
         private void btn_TraerProveedor_Click_1(object sender, EventArgs e)
@@ -42,48 +41,33 @@ namespace SistemaEE.Formularios
             txt_nombreProducto.Text = Elegir.nomProducto;
         }
 
+
         private void btn_añadir_Click(object sender, EventArgs e)
         {
-            ConectaDB.AbrirDB();
-
-            string cuitProveedor = txt_cuit.Text;
-            string nombreProveedor = txt_provNombre.Text;
-            decimal codigoProducto = decimal.Parse(txt_idproducto.Text);
+            // Obtén los datos del producto del formulario
+            string idProducto = txt_idproducto.Text;
             string nombreProducto = txt_nombreProducto.Text;
-
             decimal precio = Convert.ToDecimal(txt_precio.Text);
+            int cantidad = (int)nud_cantidad.Value;
             decimal ganancia = nud_ganancia.Value;
-            decimal cantidad = nud_cantidad.Value;
-
-            // Agrega los datos a la DataGridView
-            dgvCarrito.Rows.Add(nombreProducto, precio, ganancia, cantidad);
-            //lista de productos 
-            listaProductos.Add(Convert.ToDecimal(precio));
-            listaProductos.Add(Convert.ToDecimal(ganancia));
-            listaProductos.Add(Convert.ToDecimal(cantidad));
-            listaProductos.Add(Convert.ToDecimal(codigoProducto));
 
 
-            string consultacantidad = "SELECT cantidad FROM productos where id_producto= " + txt_idproducto.Text;
-            SqlDataReader reader = ConectaDB.LecturaDB(consultacantidad);
-
-            // Verifica si hay filas en el resultado
-            if (reader.Read())
+            // Crea un objeto Producto con los datos obtenidos
+            Producto producto = new Producto
             {
-                // Verifica si el valor de cantidad no es nulo
-                if (!reader.IsDBNull(0))
-                {
-                    // Obtiene el valor de cantidad y lo asigna a la variable correspondiente
-                    CANTIDAD = reader.GetDecimal(0);
-                }
-            }
+                Id = idProducto,
+                Precio = precio,
+                Cantidad = cantidad,
+                nombre=nombreProducto,
+                Ganancia = (decimal)nud_ganancia.Value
+            };
 
-            reader.Close();
-            ConectaDB.CerrarDB();
+            // Agrega el producto al carrito
+            carrito.Add(producto);
 
+            // Agrega el producto a la DataGridView
+            dgvCarrito.Rows.Add(nombreProducto, precio, cantidad, ganancia);
             btn_confirmar.Visible = true;
-            CONTADOR++;
-
         }
 
         private void btn_confirmar_Click_1(object sender, EventArgs e)
@@ -92,23 +76,38 @@ namespace SistemaEE.Formularios
 
             if (result == DialogResult.Yes)
             {
+                Limpiar();
                 ConectaDB.AbrirDB();
 
-                // Itera sobre los elementos de la lista en incrementos de 4 (asumiendo que hay 4 valores por registro)
-                for (int i = 0; i < listaProductos.Count; i += 4)
+                foreach (Producto producto in carrito)
                 {
-                    // Obtiene los valores correspondientes para el registro actual
-                    decimal precio = listaProductos[i];
-                    decimal ganancia = listaProductos[i + 1];
-                    decimal cantidad = listaProductos[i + 2];
-                    decimal codigoProducto = listaProductos[i + 3];
-                    cantidad += CANTIDAD;
-                    // Construye la consulta SQL utilizando los valores del registro actual
-                    string updateEntrada = $"UPDATE productos SET cantidad = {cantidad}, precio = {precio}, porcentajeg = {ganancia} WHERE id_producto = {codigoProducto}";
+                    // Actualiza los datos del producto en la base de datos
+                    string cant = $"Select cantidad from productos where id_producto = {producto.Id}";
+                    int cantidadActual = 0;
 
-                    // Ejecuta la consulta
+                    // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
+                    using (var reader = ConectaDB.LecturaDB(cant))
+                    {
+                        if (reader.Read())
+                        {
+                            cantidadActual = Convert.ToInt32(reader["cantidad"]);
+                        }
+                    }
+
+                    int cantidadNetaEntrada = cantidadActual + producto.Cantidad;
+                    decimal total_stock = cantidadNetaEntrada * producto.Precio;
+                    total_stock.ToString();
+                    string updateEntrada = $"UPDATE productos SET cantidad = {cantidadNetaEntrada}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
                     ConectaDB.CargarDB(updateEntrada);
+                    decimal totalEntrada = producto.Precio * producto.Cantidad;
+                    totalEntrada.ToString();
+
+                    //Realiza el insert en la tabla "fichastock"
+                    string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+                    string insertEntrada = $"INSERT INTO fichastock (cantidad_entrada, precio_unit_entrada, cod_producto, nombre_producto, total_entrada, fecha, cantidad_stock, precio_unit_stock, total_stock) " + $"VALUES ('{producto.Cantidad}', '{producto.Precio}', {producto.Id}, '{producto.nombre}', '{totalEntrada}', '{fecha}', '{cantidadNetaEntrada}', '{producto.Precio}', '{total_stock}')";
+                    ConectaDB.CargarDB(insertEntrada);
                 }
+
                 MessageBox.Show("Su compra ha sido realizada");
 
                 // Cierra la conexión a la base de datos
@@ -123,11 +122,33 @@ namespace SistemaEE.Formularios
             {
 
             }
+
+
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public class Producto
+        {
+            public string Id { get; set; }
+            public decimal Precio { get; set; }
+            public int Cantidad { get; set; }
+            public decimal Ganancia { get; set; }
+            public string nombre { get; set; }
+        }
+        public void Limpiar()
+        {
+            dgvCarrito.Rows.Clear();
+
+            txt_precio.Text = "";
+            txt_idproducto.Text = "";
+            txt_nombreProducto.Text = "";
+            nud_cantidad.Value = 0;
+            nud_ganancia.Value = 0;
+
         }
     }
 }
