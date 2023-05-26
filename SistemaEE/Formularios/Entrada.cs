@@ -25,6 +25,11 @@ namespace SistemaEE.Formularios
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
 
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btn_TraerProveedor_Click_1(object sender, EventArgs e)
         {
             MuestraProveedor muestraProveedor = new MuestraProveedor();
@@ -51,20 +56,18 @@ namespace SistemaEE.Formularios
             int cantidad = (int)nud_cantidad.Value;
             decimal ganancia = nud_ganancia.Value;
 
-
             // Crea un objeto Producto con los datos obtenidos
             Producto producto = new Producto
             {
                 Id = idProducto,
                 Precio = precio,
                 Cantidad = cantidad,
-                nombre=nombreProducto,
+                nombre = nombreProducto,
                 Ganancia = (decimal)nud_ganancia.Value
             };
 
             // Agrega el producto al carrito
             carrito.Add(producto);
-
             // Agrega el producto a la DataGridView
             dgvCarrito.Rows.Add(nombreProducto, precio, cantidad, ganancia);
             btn_confirmar.Visible = true;
@@ -76,15 +79,13 @@ namespace SistemaEE.Formularios
 
             if (result == DialogResult.Yes)
             {
-                Limpiar();
-                ConectaDB.AbrirDB();
 
+                ConectaDB.AbrirDB();
                 foreach (Producto producto in carrito)
                 {
                     // Actualiza los datos del producto en la base de datos
                     string updateEntrada = $"UPDATE productos SET cantidad = {producto.Cantidad}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
                     ConectaDB.CargarDB(updateEntrada);
-
 
                     //Realiza el insert en la tabla "fichastock"
                     string fecha = DateTime.Now.ToString("yyyy-MM-dd");
@@ -95,6 +96,9 @@ namespace SistemaEE.Formularios
                     decimal precioUEx = ObtenerPrecioUExistentes();
                     decimal totalEx = ObtenerTotalExistentes();
                     string concepto = "COMPRA";
+
+                    //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen
+
                     if (unidadesEx == 0 || precioUEx == 0 || totalEx == 0)
                     {
                         unidadesEx = unidadesE;
@@ -107,36 +111,20 @@ namespace SistemaEE.Formularios
                         precioUEx = precioUEx + precioUE;
                         totalEx = totalEx + totalE;
                     }
-
-                    string insertEntrada = $"INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
-                       $"VALUES ('{fecha}' , {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
-
-                    ConectaDB.CargarDB(insertEntrada);
+                    //hace el insert en stock
+                    string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
+                       $"VALUES ({fecha} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
+                    ConectaDB.CargarDB(insertStock);
                 }
 
                 MessageBox.Show("Su compra ha sido realizada");
-
-                // Cierra la conexión a la base de datos
                 ConectaDB.CerrarDB();
+                Limpiar();
 
             }
-            else if (result == DialogResult.Cancel)
-            {
-
-            }
-            else
-            {
-
-            }
-
-
+            else { }
         }
-
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        //CLASE DEL PRODUCTO
         public class Producto
         {
             public string Id { get; set; }
@@ -145,18 +133,20 @@ namespace SistemaEE.Formularios
             public decimal Ganancia { get; set; }
             public string nombre { get; set; }
         }
+
+        //METODO PARA LIMPIAR
         public void Limpiar()
         {
             dgvCarrito.Rows.Clear();
-
             txt_precio.Text = "";
             txt_idproducto.Text = "";
             txt_nombreProducto.Text = "";
             nud_cantidad.Value = 0;
             nud_ganancia.Value = 0;
-
         }
 
+        //METODOS PARA OBTENER EL VALOR DE EXISTENCIA 
+        //SI NO EXISTE LO TRANSFORMO EN 0  
         public static int ObtenerUnidadesExistentes()
         {
 
@@ -172,7 +162,6 @@ namespace SistemaEE.Formularios
 
             return unidadesExistentes;
         }
-
         public static decimal ObtenerPrecioUExistentes()
         {
             string consulta = "SELECT AVG(PrecioUEx) FROM fichastock";

@@ -85,8 +85,6 @@ condicion_cliente varchar(30)
 select * from clientes;
 truncate table clientes;
 
-
-
 INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente)
 VALUES 
   (20111111112, 'Juan Pérez', 'Calle Falsa 123', 'juanperez@gmail.com', 'Responsable Inscripto'),
@@ -105,18 +103,23 @@ VALUES
   (22666666669, 'Lucas Romero', 'Calle Norte 951', 'lucasromero@yahoo.com', 'Monotributista'),
   (22999999992, 'Florencia López', 'Avenida Oeste 357', 'florencialopez@gmail.com', 'Consumidor Final');
 
+drop table fichastock
 
-  CREATE TABLE fichastock (
-    cod_producto int,
-    nombre_producto varchar(40),
-    cantidad_entrada varchar(20) NULL,
-    precio_unit_entrada varchar(20) NULL,
-    total_entrada varchar(20) NULL,
-    cantidad_salida varchar(20) NULL,
-    precio_unit_salida varchar(20) NULL,
-    total_salida varchar(20) NULL,
-    cantidad_stock varchar(20),
-    precio_unit_stock varchar(20),
-    total_stock varchar(20),
-    fecha varchar(40),
-);
+  CREATE TABLE fichastock(
+    fecha datetime,
+    IdProducto int primary key identity(1,1),
+    Concepto varchar(10),
+    UnidadesE int NULL,
+    PrecioUE int NULL,
+    TotalE int NULL,
+    UnidadesS int NULL,
+    PrecioUS int NULL,
+    TotalS int NULL,
+    UnidadesEx int,
+    PrecioUEx int,
+    TotalEx int,  
+)
+
+INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) VALUES ('2023-05-25', 'COMPRA', '21', 10, 5600, 56000, 10, 5600, 56000)
+INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) VALUES ('2023-05-25', '2', 'COMPRA', 20, 100000, 2000000, 20, 100000, 2000000)
+INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) VALUES ('2023-05-25' , 2, 'COMPRA', 20, 100000, 2000000, 20, 100000, 2000000)

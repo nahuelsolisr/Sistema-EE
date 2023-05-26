@@ -80,7 +80,7 @@ namespace SistemaEE.Formularios
             int cantidadneta = cantidad1 - (int)nud_cantidad.Value;
             int producto = Elegir.idProducto;
             string consultaActualizarCantidad = "UPDATE productos SET cantidad = " + cantidadneta + " where id_producto =" + producto;
-           
+
             ConectaDB.CargarDB(consultaActualizarCantidad);
             MessageBox.Show("Compra realizada correctamente");
         }
@@ -156,10 +156,10 @@ namespace SistemaEE.Formularios
                 string fecha = DateTime.Now.ToString("yyyy-MM-dd");
                 string insertEntrada = $"INSERT INTO fichastock (cantidad_salida, precio_unit_salida, cod_producto, nombre_producto, total_salida, fecha, cantidad_stock, precio_unit_stock, total_stock) " + $"VALUES ('{producto.Cantidad}', '{producto.Precio}', {producto.Id}, '{producto.nombre}', '{totalsalida2}', '{fecha}', '{CantidadNetaSalida}', '{preciocosto}', '{totalsalida}')";
                 ConectaDB.CargarDB(insertEntrada);
-                
+
             }
             ConectaDB.CerrarDB();
-          
+
         }
 
         public void Limpiar()
