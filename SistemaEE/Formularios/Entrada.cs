@@ -97,7 +97,7 @@ namespace SistemaEE.Formularios
                     decimal totalEx = ObtenerTotalExistentes();
                     string concepto = "COMPRA";
 
-                    //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen
+                    //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen   
 
                     if (unidadesEx == 0 || precioUEx == 0 || totalEx == 0)
                     {
@@ -108,19 +108,19 @@ namespace SistemaEE.Formularios
                     else
                     {
                         unidadesEx = unidadesEx + unidadesE;
-                        precioUEx = precioUEx + precioUE;
                         totalEx = totalEx + totalE;
                     }
                     //hace el insert en stock
                     string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
                        $"VALUES ({fecha} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
                     ConectaDB.CargarDB(insertStock);
+                 
                 }
 
                 MessageBox.Show("Su compra ha sido realizada");
                 ConectaDB.CerrarDB();
                 Limpiar();
-
+                carrito.Clear();
             }
             else { }
         }

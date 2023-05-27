@@ -1,72 +1,96 @@
 ﻿using SistemaEE.Clases;
+using MaterialSkin.Controls;
+using MaterialSkin.Properties;
+using MaterialSkin.Animations;
+using MaterialSkin;
 
 namespace SistemaEE.Formularios
 {
-    public partial class Menu : Form
+    public partial class Menu : MaterialForm
     {
         public bool PERMISOS;
         public Menu(string nombre, bool permisos)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //
+            this.Size = new Size(600, 600);
+            this.Resize += (sender, e) => this.Size = new Size(600, 600);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+            }
+            else
+            {
+                EstiloClaro();
+
+                
+            }
+         
             lbl_usuario.Text = nombre;
             this.PERMISOS = permisos;
 
-            if (PERMISOS)
+        }
+
+
+        private void msModoOscuro_CheckedChanged(object sender, EventArgs e)
+        {
+           
+
+            if (msModoOscuro.Checked)
             {
-                btn_contabilidad.Enabled = true;
-                btn_usuarios.Enabled = true;
+                Elegir.modoOscuro = true;
+                EstiloOscuro();
             }
             else
             {
-                btn_contabilidad.Enabled = false;
-                btn_usuarios.Enabled = false;
+                Elegir.modoOscuro = false;
+                EstiloClaro();
             }
         }
 
-        private void btn_salir_Click(object sender, EventArgs e)
+        public void EstiloClaro()
         {
-            this.Close();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
         }
 
-
-
-
-
-
-
-
-
-        private void btn_facturacion_Click(object sender, EventArgs e)
+        private void mtcMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            panel_facturacion.Visible = true;
-            btn_contabilidad.Enabled = false;
-            btn_usuarios.Enabled = false;
-        }
-
-        private void btn_volver_Click(object sender, EventArgs e)
-        {
-            panel_facturacion.Visible = false;
-
-            if (PERMISOS)
-            {
-                btn_contabilidad.Enabled = true;
-                btn_usuarios.Enabled = true;
-            }
-            else
+            if (mtcMenu.SelectedTab == tabContabilidad)
             {
 
             }
-
+            if (mtcMenu.SelectedTab == tabUsuarios)
+            {
+                Usuarios usuarios = new Usuarios();
+                usuarios.ShowDialog();
+            }
+            else { }
         }
 
-        private void btn_proveedores_Click(object sender, EventArgs e)
+        private void btn_prov_Click(object sender, EventArgs e)
         {
+
             Proveedores proveedores = new Proveedores();
             proveedores.ShowDialog();
         }
 
-        private void btn_productos_Click(object sender, EventArgs e)
+        private void btn_producto_Click(object sender, EventArgs e)
         {
             Productos productos = new Productos();
             productos.ShowDialog();
@@ -90,12 +114,7 @@ namespace SistemaEE.Formularios
             salidas.ShowDialog();
         }
 
-        private void btn_usuarios_Click(object sender, EventArgs e)
-        {
-            Usuarios usuarios = new Usuarios();
-            usuarios.ShowDialog();
-        }
-        private void btn_fichaStock_Click(object sender, EventArgs e)
+        private void btn_stock_Click(object sender, EventArgs e)
         {
             FichaDeStock inventario = new FichaDeStock();
             inventario.ShowDialog();

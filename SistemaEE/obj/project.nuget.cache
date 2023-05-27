@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "y1zPLMVzAqyYWwLl462fMdl6cObB0E0PeDSC/A5VDXq7sKtDHeUGYeb+kQkyZ44VLkYZ9j1GYz+RuOmgfIBZjw==",
+  "dgSpecHash": "NgenZI+rlPPA6a2tNL9ft7PfBj2FAR74btv8G6IZA6I3eit6u89cgfua+RflqyxcUS4BjviB/bBwcUGjQHOKiw==",
   "success": true,
   "projectFilePath": "C:\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodri\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Rodri\\.nuget\\packages\\materialskin.2\\2.3.1\\materialskin.2.2.3.1.nupkg.sha512",
     "C:\\Users\\Rodri\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Rodri\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Rodri\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",

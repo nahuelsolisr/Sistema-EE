@@ -126,3 +126,4 @@ C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraCliente.resources
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Usuarios.resources
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.FichaDeStock.resources
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\MaterialSkin.dll

@@ -1,4 +1,6 @@
-﻿using SistemaEE.Clases;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,16 +14,38 @@ using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
-    public partial class Proveedores : Form
+    public partial class Proveedores : MaterialForm
     {
         decimal idProveedor;
         public Proveedores()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //
+            this.Size = new Size(1046, 620);
+            this.Resize += (sender, e) => this.Size = new Size(1046, 620);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
+            EstiloClaro();
             dgv_Proveedores();
         }
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
+        }
+        public void EstiloOscuro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
+        }
 
         public void dgv_Proveedores()
         {
@@ -104,7 +128,10 @@ namespace SistemaEE.Formularios
             filtrador.FiltrarProveedores(dgvProveedor, filtro);
         }
 
-        private void btn_alta_Click(object sender, EventArgs e)
+
+
+
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -113,6 +140,7 @@ namespace SistemaEE.Formularios
                 ConectaDB.CargarDB(insertProveedor);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El proveedor ha sido agregado correctamente.");
+                Limpiar();
                 dgv_Proveedores();
             }
             catch (Exception ex)
@@ -121,24 +149,8 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_baja_Click(object sender, EventArgs e)
-        {
 
-            try
-            {
-                ConectaDB.AbrirDB();
-                string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
-                ConectaDB.CargarDB(deleteProveedor);
-                ConectaDB.CerrarDB();
-                MessageBox.Show("Proveedor eliminado correctamente");
-                dgv_Proveedores();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
-            }
-        }
-        private void btn_modi_Click(object sender, EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -146,6 +158,7 @@ namespace SistemaEE.Formularios
                 string updateProveedor = "UPDATE proveedor SET cuit_prov = " + txt_cuit.Text + ", nombre_prov = '" + txt_nombre.Text + "', domicilio_prov = '" + txt_domicilio.Text + "', mail_prov = '" + txt_mail.Text + "',condicion = '" + txt_condicion.Text + "' WHERE cuit_prov = " + idProveedor;
                 ConectaDB.CargarDB(updateProveedor);
                 ConectaDB.CerrarDB();
+                Limpiar();
                 dgv_Proveedores();
                 MessageBox.Show("Actualización exitosa.");
             }
@@ -155,9 +168,31 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_salir_Click(object sender, EventArgs e)
+        private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                ConectaDB.AbrirDB();
+                string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
+                ConectaDB.CargarDB(deleteProveedor);
+                ConectaDB.CerrarDB();
+                Limpiar();
+                MessageBox.Show("Proveedor eliminado correctamente");
+                dgv_Proveedores();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
+            }
+        }
+
+        public void Limpiar()
+        {
+            txt_cuit.Text = "";
+            txt_nombre.Text = "";
+            txt_domicilio.Text = "";
+            txt_mail.Text = "";
+            txt_condicion.Text = "";
         }
     }
 }

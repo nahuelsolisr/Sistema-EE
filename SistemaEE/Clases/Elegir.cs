@@ -9,7 +9,7 @@ namespace SistemaEE.Clases
     internal class Elegir
     {
     
-
+        public static bool  modoOscuro;
         public static decimal cuit_prov;
         public static string nom_prov;
 

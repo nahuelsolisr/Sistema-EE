@@ -104,10 +104,11 @@ VALUES
   (22999999992, 'Florencia López', 'Avenida Oeste 357', 'florencialopez@gmail.com', 'Consumidor Final');
 
 drop table fichastock
-
-  CREATE TABLE fichastock(
+truncate table fichastock
+CREATE TABLE fichastock(
     fecha datetime,
-    IdProducto int primary key identity(1,1),
+	nombreProducto varchar(20),
+    IdProducto int,
     Concepto varchar(10),
     UnidadesE int NULL,
     PrecioUE int NULL,
@@ -119,7 +120,4 @@ drop table fichastock
     PrecioUEx int,
     TotalEx int,  
 )
-
-INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) VALUES ('2023-05-25', 'COMPRA', '21', 10, 5600, 56000, 10, 5600, 56000)
-INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) VALUES ('2023-05-25', '2', 'COMPRA', 20, 100000, 2000000, 20, 100000, 2000000)
-INSERT INTO fichastock (fecha,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) VALUES ('2023-05-25' , 2, 'COMPRA', 20, 100000, 2000000, 20, 100000, 2000000)
+select * from fichastock
