@@ -1,4 +1,6 @@
-﻿using SistemaEE.Clases;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +13,42 @@ using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
-    public partial class MuestraProveedor : Form
+    public partial class MuestraProveedor : MaterialForm
     {
         public MuestraProveedor()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.Size = new Size(694, 469);
+            this.Resize += (sender, e) => this.Size = new Size(694, 469);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
             dgv_Proveedores();
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+            }
+            else
+            {
+                EstiloClaro();
+            }
+        }
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
         }
 
         private void Cell_Click(object sender, DataGridViewCellEventArgs e)
@@ -66,9 +97,11 @@ namespace SistemaEE.Formularios
             DB.lector.Close();
         }
 
-        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+
+
+        private void txt_filtrar_TextChanged(object sender, EventArgs e)
         {
-            string filtro = txt_filtrarGrilla.Text;
+            string filtro = txt_filtrar.Text;
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarProveedores(dgvProveedor, filtro);
         }

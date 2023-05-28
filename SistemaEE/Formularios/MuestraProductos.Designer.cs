@@ -36,10 +36,10 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            txt_filtrarGrilla = new TextBox();
+            txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvProductos
@@ -58,7 +58,7 @@
             dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column2, Column3, Column4 });
-            dgvProductos.Location = new Point(12, 48);
+            dgvProductos.Location = new Point(11, 138);
             dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
@@ -68,7 +68,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(339, 288);
+            dgvProductos.Size = new Size(677, 325);
             dgvProductos.TabIndex = 104;
             dgvProductos.CellClick += Cell_Click;
             // 
@@ -105,45 +105,53 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // iconPictureBox5
+            // txt_filtrar
             // 
-            iconPictureBox5.BackColor = Color.WhiteSmoke;
-            iconPictureBox5.ForeColor = SystemColors.ControlText;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox5.IconColor = SystemColors.ControlText;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 30;
-            iconPictureBox5.Location = new Point(319, 12);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(32, 30);
-            iconPictureBox5.TabIndex = 153;
-            iconPictureBox5.TabStop = false;
+            txt_filtrar.AnimateReadOnly = false;
+            txt_filtrar.BorderStyle = BorderStyle.None;
+            txt_filtrar.Depth = 0;
+            txt_filtrar.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_filtrar.LeadingIcon = null;
+            txt_filtrar.Location = new Point(312, 84);
+            txt_filtrar.MaxLength = 50;
+            txt_filtrar.MouseState = MaterialSkin.MouseState.OUT;
+            txt_filtrar.Multiline = false;
+            txt_filtrar.Name = "txt_filtrar";
+            txt_filtrar.Size = new Size(316, 50);
+            txt_filtrar.TabIndex = 164;
+            txt_filtrar.Text = "";
+            txt_filtrar.TrailingIcon = null;
+            txt_filtrar.TextChanged += txt_filtrar_TextChanged;
             // 
-            // txt_filtrarGrilla
+            // iconPictureBox1
             // 
-            txt_filtrarGrilla.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_filtrarGrilla.Location = new Point(148, 12);
-            txt_filtrarGrilla.Name = "txt_filtrarGrilla";
-            txt_filtrarGrilla.Size = new Size(165, 30);
-            txt_filtrarGrilla.TabIndex = 152;
-            txt_filtrarGrilla.TextChanged += txt_filtrarGrilla_TextChanged;
+            iconPictureBox1.BackColor = Color.WhiteSmoke;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 48;
+            iconPictureBox1.Location = new Point(634, 84);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(53, 48);
+            iconPictureBox1.TabIndex = 163;
+            iconPictureBox1.TabStop = false;
             // 
             // MuestraProductos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(363, 348);
+            ClientSize = new Size(694, 469);
             ControlBox = false;
-            Controls.Add(iconPictureBox5);
-            Controls.Add(txt_filtrarGrilla);
+            Controls.Add(txt_filtrar);
+            Controls.Add(iconPictureBox1);
             Controls.Add(dgvProductos);
             Name = "MuestraProductos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Productos";
+            Text = ".: Productos registrados :.";
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -154,7 +162,7 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private TextBox txt_filtrarGrilla;
+        private MaterialSkin.Controls.MaterialTextBox txt_filtrar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

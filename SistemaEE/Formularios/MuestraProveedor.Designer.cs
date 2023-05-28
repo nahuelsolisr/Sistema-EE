@@ -37,10 +37,10 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            txt_filtrarGrilla = new TextBox();
+            txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvProveedor).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvProveedor
@@ -59,7 +59,7 @@
             dgvProveedor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProveedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedor.Columns.AddRange(new DataGridViewColumn[] { btn_seleccionar, Column0, Column1, Column2, Column3, Column4 });
-            dgvProveedor.Location = new Point(13, 50);
+            dgvProveedor.Location = new Point(7, 139);
             dgvProveedor.Margin = new Padding(4);
             dgvProveedor.MultiSelect = false;
             dgvProveedor.Name = "dgvProveedor";
@@ -70,7 +70,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvProveedor.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProveedor.RowTemplate.Height = 25;
-            dgvProveedor.Size = new Size(538, 274);
+            dgvProveedor.Size = new Size(680, 323);
             dgvProveedor.TabIndex = 124;
             dgvProveedor.CellClick += Cell_Click;
             // 
@@ -112,46 +112,53 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // iconPictureBox4
+            // txt_filtrar
             // 
-            iconPictureBox4.BackColor = Color.WhiteSmoke;
-            iconPictureBox4.ForeColor = SystemColors.ControlText;
-            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox4.IconColor = SystemColors.ControlText;
-            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 29;
-            iconPictureBox4.Location = new Point(520, 13);
-            iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(29, 30);
-            iconPictureBox4.TabIndex = 143;
-            iconPictureBox4.TabStop = false;
+            txt_filtrar.AnimateReadOnly = false;
+            txt_filtrar.BorderStyle = BorderStyle.None;
+            txt_filtrar.Depth = 0;
+            txt_filtrar.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_filtrar.LeadingIcon = null;
+            txt_filtrar.Location = new Point(312, 82);
+            txt_filtrar.MaxLength = 50;
+            txt_filtrar.MouseState = MaterialSkin.MouseState.OUT;
+            txt_filtrar.Multiline = false;
+            txt_filtrar.Name = "txt_filtrar";
+            txt_filtrar.Size = new Size(316, 50);
+            txt_filtrar.TabIndex = 166;
+            txt_filtrar.Text = "";
+            txt_filtrar.TrailingIcon = null;
+            txt_filtrar.TextChanged += txt_filtrar_TextChanged;
             // 
-            // txt_filtrarGrilla
+            // iconPictureBox1
             // 
-            txt_filtrarGrilla.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_filtrarGrilla.Location = new Point(348, 13);
-            txt_filtrarGrilla.Margin = new Padding(4);
-            txt_filtrarGrilla.Name = "txt_filtrarGrilla";
-            txt_filtrarGrilla.Size = new Size(165, 30);
-            txt_filtrarGrilla.TabIndex = 142;
-            txt_filtrarGrilla.TextChanged += txt_filtrarGrilla_TextChanged;
+            iconPictureBox1.BackColor = Color.WhiteSmoke;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 48;
+            iconPictureBox1.Location = new Point(634, 84);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(53, 48);
+            iconPictureBox1.TabIndex = 165;
+            iconPictureBox1.TabStop = false;
             // 
             // MuestraProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(562, 339);
+            ClientSize = new Size(694, 469);
             ControlBox = false;
-            Controls.Add(iconPictureBox4);
-            Controls.Add(txt_filtrarGrilla);
+            Controls.Add(txt_filtrar);
+            Controls.Add(iconPictureBox1);
             Controls.Add(dgvProveedor);
             Name = "MuestraProveedor";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Proveedores";
+            Text = ".: Proveedores disponibles :.";
             ((System.ComponentModel.ISupportInitialize)dgvProveedor).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -163,7 +170,7 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private TextBox txt_filtrarGrilla;
+        private MaterialSkin.Controls.MaterialTextBox txt_filtrar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

@@ -1,4 +1,6 @@
-﻿using SistemaEE.Clases;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
 using SistemaEE.Properties;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
-    public partial class Productos : Form
+    public partial class Productos : MaterialForm
     {
         int idProductoSeleccionado; // Variable id de producto para modificar - dar de baja
 
@@ -25,6 +27,40 @@ namespace SistemaEE.Formularios
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             dgv_Productos();
+            this.Size = new Size(1046, 620);
+            this.Resize += (sender, e) => this.Size = new Size(1046, 620);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
+            dgv_Productos();
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+                dgvProductos.DefaultCellStyle.BackColor = Color.DimGray;
+            }
+            else
+            {
+                EstiloClaro();
+            }
+
+        }
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
 
         }
 
@@ -59,7 +95,7 @@ namespace SistemaEE.Formularios
                 DataGridViewRow filaSeleccionada = dgvProductos.Rows[e.RowIndex];
 
                 //le da color a la fila seleccionada
-                filaSeleccionada.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                filaSeleccionada.DefaultCellStyle.BackColor = Color.SteelBlue;
 
 
                 string nombre = filaSeleccionada.Cells["Column2"].Value.ToString();
@@ -116,19 +152,9 @@ namespace SistemaEE.Formularios
             txt_prov.Text = Clases.Elegir.cuit_prov.ToString();
         }
 
-        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
-            string filtro = txt_filtrarGrilla.Text;
-            Filtrar filtrador = new Filtrar();
-            filtrador.FiltrarProductos(dgvProductos, filtro);
-        }
-
-        //Botones de alta, baja y modificación
-
-
-        private void btn_alta_Click_1(object sender, EventArgs e)
-        {
-
             try
             {
                 ConectaDB.AbrirDB();
@@ -144,7 +170,25 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_baja_Click_1(object sender, EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                ConectaDB.AbrirDB();
+                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
+                ConectaDB.CargarDB(updateProducto);
+                ConectaDB.CerrarDB();
+                dgv_Productos();
+                MessageBox.Show("Actualización exitosa.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar producto: " + ex.Message);
+            }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -161,31 +205,18 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_modi_Click_1(object sender, EventArgs e)
+        private void txt_filtrar_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                ConectaDB.AbrirDB();
-                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
-                ConectaDB.CargarDB(updateProducto);
-                ConectaDB.CerrarDB();
-                dgv_Productos();
-                MessageBox.Show("Actualización exitosa.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar producto: " + ex.Message);
-            }
+            string filtro = txt_filtrar.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarProductos(dgvProductos, filtro);
         }
 
-        private void btn_salir_Click_1(object sender, EventArgs e)
+        private void btn_prov_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void iconPictureBox5_Click(object sender, EventArgs e)
-        {
-
+            MuestraProveedor muestraProveedor = new MuestraProveedor();
+            muestraProveedor.ShowDialog();
+            txt_prov.Text = Clases.Elegir.cuit_prov.ToString();
         }
     }
 }

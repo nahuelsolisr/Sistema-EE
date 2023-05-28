@@ -28,9 +28,9 @@ namespace SistemaEE.Formularios
             {
                 EstiloClaro();
 
-                
+
             }
-         
+
             lbl_usuario.Text = nombre;
             this.PERMISOS = permisos;
 
@@ -39,7 +39,7 @@ namespace SistemaEE.Formularios
 
         private void msModoOscuro_CheckedChanged(object sender, EventArgs e)
         {
-           
+
 
             if (msModoOscuro.Checked)
             {

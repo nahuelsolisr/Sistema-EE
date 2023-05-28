@@ -28,8 +28,18 @@ namespace SistemaEE.Formularios
             this.MinimizeBox = true;
             this.MaximizeBox = false;
             //
-            EstiloClaro();
             dgv_Proveedores();
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+                dgvProveedor.DefaultCellStyle.BackColor = Color.DimGray;
+            }
+            else
+            {
+                EstiloClaro();
+            }
+
+
         }
         public void EstiloClaro()
         {
@@ -41,10 +51,12 @@ namespace SistemaEE.Formularios
         }
         public void EstiloOscuro()
         {
+
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
+
         }
 
         public void dgv_Proveedores()
@@ -96,7 +108,7 @@ namespace SistemaEE.Formularios
                 DataGridViewRow filaSeleccionada = dgvProveedor.Rows[e.RowIndex];
 
                 //le da color a la fila seleccionada
-                filaSeleccionada.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                filaSeleccionada.DefaultCellStyle.BackColor = Color.SteelBlue;
 
 
                 string cuit = filaSeleccionada.Cells["Column0"].Value.ToString();
@@ -111,7 +123,7 @@ namespace SistemaEE.Formularios
                 txt_nombre.Text = nombre;
                 txt_domicilio.Text = domicilio;
                 txt_mail.Text = mail;
-                txt_condicion.Text = condicion;
+                cmb_condicion.Text = condicion;
 
             }
         }
@@ -121,12 +133,7 @@ namespace SistemaEE.Formularios
 
         }
 
-        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
-        {
-            string filtro = txt_filtrarGrilla.Text;
-            Filtrar filtrador = new Filtrar();
-            filtrador.FiltrarProveedores(dgvProveedor, filtro);
-        }
+
 
 
 
@@ -136,7 +143,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string insertProveedor = "INSERT INTO proveedor (cuit_prov, nombre_prov, domicilio_prov, mail_prov, condicion) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_domicilio.Text + "', '" + txt_mail.Text + "', '" + txt_condicion.Text + "')";
+                string insertProveedor = "INSERT INTO proveedor (cuit_prov, nombre_prov, domicilio_prov, mail_prov, condicion) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_domicilio.Text + "', '" + txt_mail.Text + "', '" + cmb_condicion.Text + "')";
                 ConectaDB.CargarDB(insertProveedor);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El proveedor ha sido agregado correctamente.");
@@ -155,7 +162,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string updateProveedor = "UPDATE proveedor SET cuit_prov = " + txt_cuit.Text + ", nombre_prov = '" + txt_nombre.Text + "', domicilio_prov = '" + txt_domicilio.Text + "', mail_prov = '" + txt_mail.Text + "',condicion = '" + txt_condicion.Text + "' WHERE cuit_prov = " + idProveedor;
+                string updateProveedor = "UPDATE proveedor SET cuit_prov = " + txt_cuit.Text + ", nombre_prov = '" + txt_nombre.Text + "', domicilio_prov = '" + txt_domicilio.Text + "', mail_prov = '" + txt_mail.Text + "',condicion = '" + cmb_condicion.Text + "' WHERE cuit_prov = " + idProveedor;
                 ConectaDB.CargarDB(updateProveedor);
                 ConectaDB.CerrarDB();
                 Limpiar();
@@ -192,7 +199,14 @@ namespace SistemaEE.Formularios
             txt_nombre.Text = "";
             txt_domicilio.Text = "";
             txt_mail.Text = "";
-            txt_condicion.Text = "";
+            cmb_condicion.Text = "";
+        }
+
+        private void txt_filtrar_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = txt_filtrar.Text;
+            Filtrar filtrador = new Filtrar();
+            filtrador.FiltrarProveedores(dgvProveedor, filtro);
         }
     }
 }

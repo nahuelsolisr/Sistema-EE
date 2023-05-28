@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             btn_contabilidad = new FontAwesome.Sharp.IconButton();
             mtcMenu = new MaterialSkin.Controls.MaterialTabControl();
             tabHome = new TabPage();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            pictureBox1 = new PictureBox();
             lbl_usuario = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             tabFacturacion = new TabPage();
@@ -52,6 +55,7 @@
             msModoOscuro = new MaterialSkin.Controls.MaterialSwitch();
             mtcMenu.SuspendLayout();
             tabHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabFacturacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
@@ -98,6 +102,8 @@
             // 
             // tabHome
             // 
+            tabHome.Controls.Add(materialLabel2);
+            tabHome.Controls.Add(pictureBox1);
             tabHome.Controls.Add(lbl_usuario);
             tabHome.Controls.Add(materialLabel1);
             tabHome.Location = new Point(4, 24);
@@ -107,6 +113,28 @@
             tabHome.TabIndex = 0;
             tabHome.Text = "Home";
             tabHome.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(213, 478);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(358, 19);
+            materialLabel2.TabIndex = 24;
+            materialLabel2.Text = "¿Qué vamos a hacer hoy? sólo tu puedes saberlo...";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(6, 35);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(565, 440);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
             // 
             // lbl_usuario
             // 
@@ -126,12 +154,12 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(6, 43);
+            materialLabel1.Location = new Point(119, 13);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(551, 19);
+            materialLabel1.Size = new Size(185, 19);
             materialLabel1.TabIndex = 0;
-            materialLabel1.Text = "¡Bienvenido al programa!\r\n\r\nHola, [Nombre del usuario]. Bienvenido al programa.";
+            materialLabel1.Text = "¡Bienvenido al programa!\r\n\r\n";
             // 
             // tabFacturacion
             // 
@@ -163,12 +191,12 @@
             btn_stock.Depth = 0;
             btn_stock.HighEmphasis = true;
             btn_stock.Icon = null;
-            btn_stock.Location = new Point(69, 304);
+            btn_stock.Location = new Point(66, 304);
             btn_stock.Margin = new Padding(4, 6, 4, 6);
             btn_stock.MouseState = MaterialSkin.MouseState.HOVER;
             btn_stock.Name = "btn_stock";
             btn_stock.NoAccentTextColor = Color.Empty;
-            btn_stock.Size = new Size(123, 53);
+            btn_stock.Size = new Size(277, 53);
             btn_stock.TabIndex = 36;
             btn_stock.Text = "Inventario";
             btn_stock.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -184,12 +212,12 @@
             btn_salidas.Depth = 0;
             btn_salidas.HighEmphasis = true;
             btn_salidas.Icon = null;
-            btn_salidas.Location = new Point(69, 245);
+            btn_salidas.Location = new Point(66, 245);
             btn_salidas.Margin = new Padding(4, 6, 4, 6);
             btn_salidas.MouseState = MaterialSkin.MouseState.HOVER;
             btn_salidas.Name = "btn_salidas";
             btn_salidas.NoAccentTextColor = Color.Empty;
-            btn_salidas.Size = new Size(123, 53);
+            btn_salidas.Size = new Size(277, 53);
             btn_salidas.TabIndex = 35;
             btn_salidas.Text = "Salidas";
             btn_salidas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -205,12 +233,12 @@
             btn_entradas.Depth = 0;
             btn_entradas.HighEmphasis = true;
             btn_entradas.Icon = null;
-            btn_entradas.Location = new Point(69, 183);
+            btn_entradas.Location = new Point(66, 183);
             btn_entradas.Margin = new Padding(4, 6, 4, 6);
             btn_entradas.MouseState = MaterialSkin.MouseState.HOVER;
             btn_entradas.Name = "btn_entradas";
             btn_entradas.NoAccentTextColor = Color.Empty;
-            btn_entradas.Size = new Size(123, 53);
+            btn_entradas.Size = new Size(277, 53);
             btn_entradas.TabIndex = 34;
             btn_entradas.Text = "Entradas";
             btn_entradas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -226,12 +254,12 @@
             btn_clientes.Depth = 0;
             btn_clientes.HighEmphasis = true;
             btn_clientes.Icon = null;
-            btn_clientes.Location = new Point(69, 124);
+            btn_clientes.Location = new Point(66, 124);
             btn_clientes.Margin = new Padding(4, 6, 4, 6);
             btn_clientes.MouseState = MaterialSkin.MouseState.HOVER;
             btn_clientes.Name = "btn_clientes";
             btn_clientes.NoAccentTextColor = Color.Empty;
-            btn_clientes.Size = new Size(123, 53);
+            btn_clientes.Size = new Size(277, 53);
             btn_clientes.TabIndex = 33;
             btn_clientes.Text = "Clientes";
             btn_clientes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -247,12 +275,12 @@
             btn_producto.Depth = 0;
             btn_producto.HighEmphasis = true;
             btn_producto.Icon = null;
-            btn_producto.Location = new Point(69, 65);
+            btn_producto.Location = new Point(66, 65);
             btn_producto.Margin = new Padding(4, 6, 4, 6);
             btn_producto.MouseState = MaterialSkin.MouseState.HOVER;
             btn_producto.Name = "btn_producto";
             btn_producto.NoAccentTextColor = Color.Empty;
-            btn_producto.Size = new Size(123, 53);
+            btn_producto.Size = new Size(277, 53);
             btn_producto.TabIndex = 32;
             btn_producto.Text = "Productos";
             btn_producto.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -268,12 +296,12 @@
             btn_prov.Depth = 0;
             btn_prov.HighEmphasis = true;
             btn_prov.Icon = null;
-            btn_prov.Location = new Point(69, 6);
+            btn_prov.Location = new Point(66, 6);
             btn_prov.Margin = new Padding(4, 6, 4, 6);
             btn_prov.MouseState = MaterialSkin.MouseState.HOVER;
             btn_prov.Name = "btn_prov";
             btn_prov.NoAccentTextColor = Color.Empty;
-            btn_prov.Size = new Size(123, 53);
+            btn_prov.Size = new Size(277, 53);
             btn_prov.TabIndex = 31;
             btn_prov.Text = "Proveedores";
             btn_prov.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -426,6 +454,7 @@
             mtcMenu.ResumeLayout(false);
             tabHome.ResumeLayout(false);
             tabHome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabFacturacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
@@ -462,5 +491,7 @@
         private MaterialSkin.Controls.MaterialButton btn_entradas;
         private MaterialSkin.Controls.MaterialButton btn_clientes;
         private MaterialSkin.Controls.MaterialButton btn_producto;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private PictureBox pictureBox1;
     }
 }

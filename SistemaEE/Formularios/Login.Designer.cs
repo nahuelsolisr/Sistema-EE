@@ -50,9 +50,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-8, 59);
+            pictureBox1.Location = new Point(-8, 97);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(327, 226);
+            pictureBox1.Size = new Size(327, 221);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -62,7 +62,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(254, 252, 230);
-            label1.Location = new Point(58, 302);
+            label1.Location = new Point(58, 333);
             label1.Name = "label1";
             label1.Size = new Size(69, 19);
             label1.TabIndex = 3;
@@ -73,7 +73,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(254, 252, 230);
-            label2.Location = new Point(58, 377);
+            label2.Location = new Point(58, 408);
             label2.Name = "label2";
             label2.Size = new Size(94, 19);
             label2.TabIndex = 4;
@@ -87,7 +87,7 @@
             iconPictureBox1.IconColor = Color.SteelBlue;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 46;
-            iconPictureBox1.Location = new Point(9, 331);
+            iconPictureBox1.Location = new Point(9, 362);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(46, 50);
             iconPictureBox1.TabIndex = 135;
@@ -101,7 +101,7 @@
             iconPictureBox2.IconColor = Color.SteelBlue;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 46;
-            iconPictureBox2.Location = new Point(9, 405);
+            iconPictureBox2.Location = new Point(9, 436);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(46, 50);
             iconPictureBox2.TabIndex = 136;
@@ -115,7 +115,7 @@
             btn_eye.IconColor = Color.SteelBlue;
             btn_eye.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_eye.IconSize = 36;
-            btn_eye.Location = new Point(267, 408);
+            btn_eye.Location = new Point(267, 439);
             btn_eye.Name = "btn_eye";
             btn_eye.Size = new Size(36, 41);
             btn_eye.TabIndex = 137;
@@ -129,7 +129,7 @@
             txt_usuario.Depth = 0;
             txt_usuario.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_usuario.LeadingIcon = null;
-            txt_usuario.Location = new Point(58, 324);
+            txt_usuario.Location = new Point(58, 355);
             txt_usuario.MaxLength = 50;
             txt_usuario.MouseState = MaterialSkin.MouseState.OUT;
             txt_usuario.Multiline = false;
@@ -146,7 +146,7 @@
             txt_clave.Depth = 0;
             txt_clave.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_clave.LeadingIcon = null;
-            txt_clave.Location = new Point(57, 399);
+            txt_clave.Location = new Point(57, 430);
             txt_clave.MaxLength = 50;
             txt_clave.MouseState = MaterialSkin.MouseState.OUT;
             txt_clave.Multiline = false;
@@ -163,7 +163,7 @@
             btn_ingresar.Depth = 0;
             btn_ingresar.HighEmphasis = true;
             btn_ingresar.Icon = null;
-            btn_ingresar.Location = new Point(170, 490);
+            btn_ingresar.Location = new Point(211, 490);
             btn_ingresar.Margin = new Padding(4, 6, 4, 6);
             btn_ingresar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_ingresar.Name = "btn_ingresar";
@@ -178,30 +178,31 @@
             // 
             // msModoOscuro
             // 
+            msModoOscuro.BackColor = Color.Transparent;
             msModoOscuro.Depth = 0;
             msModoOscuro.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            msModoOscuro.Location = new Point(248, 31);
+            msModoOscuro.Location = new Point(251, 66);
             msModoOscuro.Margin = new Padding(0);
             msModoOscuro.MouseLocation = new Point(-1, -1);
             msModoOscuro.MouseState = MaterialSkin.MouseState.HOVER;
             msModoOscuro.Name = "msModoOscuro";
             msModoOscuro.Ripple = true;
-            msModoOscuro.Size = new Size(55, 25);
+            msModoOscuro.Size = new Size(55, 28);
             msModoOscuro.TabIndex = 141;
-            msModoOscuro.UseVisualStyleBackColor = true;
+            msModoOscuro.UseVisualStyleBackColor = false;
             msModoOscuro.CheckedChanged += msModoOscuro_CheckedChanged;
             // 
             // iconPictureBox3
             // 
-            iconPictureBox3.BackColor = Color.White;
-            iconPictureBox3.ForeColor = SystemColors.ControlText;
+            iconPictureBox3.BackColor = Color.Transparent;
+            iconPictureBox3.ForeColor = Color.SteelBlue;
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Moon;
-            iconPictureBox3.IconColor = SystemColors.ControlText;
+            iconPictureBox3.IconColor = Color.SteelBlue;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 25;
-            iconPictureBox3.Location = new Point(213, 31);
+            iconPictureBox3.IconSize = 28;
+            iconPictureBox3.Location = new Point(211, 66);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(32, 25);
+            iconPictureBox3.Size = new Size(37, 28);
             iconPictureBox3.TabIndex = 142;
             iconPictureBox3.TabStop = false;
             // 

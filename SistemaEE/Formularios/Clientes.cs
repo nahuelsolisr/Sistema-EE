@@ -1,4 +1,6 @@
-﻿using SistemaEE.Clases;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +13,48 @@ using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
-    public partial class Clientes : Form
+    public partial class Clientes : MaterialForm
     {
         decimal idCliente;
         public Clientes()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //
+            this.Size = new Size(1030, 581);
+            this.Resize += (sender, e) => this.Size = new Size(1030, 581);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
             dgv_Clientes();
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+                dgvCliente.DefaultCellStyle.BackColor = Color.DimGray;
+            }
+            else
+            {
+                EstiloClaro();
+            }
+
+        }
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
+
         }
 
         public void dgv_Clientes()
@@ -68,7 +104,7 @@ namespace SistemaEE.Formularios
                 DataGridViewRow filaSeleccionada = dgvCliente.Rows[e.RowIndex];
 
                 //le da color a la fila seleccionada
-                filaSeleccionada.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192);
+                filaSeleccionada.DefaultCellStyle.BackColor = Color.SteelBlue;
 
 
                 string cuit = filaSeleccionada.Cells["Column0"].Value.ToString();
@@ -89,17 +125,15 @@ namespace SistemaEE.Formularios
         }
 
 
-
-        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+        private void txt_filtrar_TextChanged(object sender, EventArgs e)
         {
-            string filtro = txt_filtrarGrilla.Text;
+            string filtro = txt_filtrar.Text;
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarClientes(dgvCliente, filtro);
         }
 
-        private void btn_alta_Click(object sender, EventArgs e)
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 ConectaDB.AbrirDB();
@@ -115,7 +149,24 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_baja_Click(object sender, EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ConectaDB.AbrirDB();
+                string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + cmb_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
+                ConectaDB.CargarDB(updateProveedor);
+                ConectaDB.CerrarDB();
+                dgv_Clientes();
+                MessageBox.Show("Actualización exitosa.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar cliente: " + ex.Message);
+            }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -132,27 +183,9 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void btn_modi_Click(object sender, EventArgs e)
+        private void iconPictureBox1_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                ConectaDB.AbrirDB();
-                string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + cmb_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
-                ConectaDB.CargarDB(updateProveedor);
-                ConectaDB.CerrarDB();
-                dgv_Clientes();
-                MessageBox.Show("Actualización exitosa.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar cliente: " + ex.Message);
-            }
-        }
-
-        private void btn_salir_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

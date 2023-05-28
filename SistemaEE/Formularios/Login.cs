@@ -52,14 +52,14 @@ namespace SistemaEE.Formularios
                 if (tipoUsuario == "Administrador")
                 {
                     // Si el tipo de usuario es "admin", abrimos el formulario  y le damos permisos a los botones
-                    Menu FormMenu = new Menu("Bienvenido Administrador!", true);
+                    Menu FormMenu = new Menu("Administrador", true);
 
                     FormMenu.ShowDialog();
                 }
                 else
                 {
                     // Si el tipo de usuario es cualquier otro, abrimos el formulario  y restringimos los botones 
-                    Menu FormMenu = new Menu("Bienvenido Usuario!", false);
+                    Menu FormMenu = new Menu("Empleado", false);
 
                     FormMenu.ShowDialog();
                 }
@@ -113,7 +113,7 @@ namespace SistemaEE.Formularios
 
         private void msModoOscuro_CheckedChanged(object sender, EventArgs e)
         {
-     
+
             if (msModoOscuro.Checked)
             {
                 Elegir.modoOscuro = true;

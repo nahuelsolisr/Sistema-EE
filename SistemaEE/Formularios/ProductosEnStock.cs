@@ -1,4 +1,6 @@
-﻿using SistemaEE.Clases;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +13,44 @@ using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
-    public partial class ProductosEnStock : Form
+    public partial class ProductosEnStock : MaterialForm
     {
         public ProductosEnStock()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            TraerProductos();
+            this.Size = new Size(694, 469);
+            this.Resize += (sender, e) => this.Size = new Size(694, 469);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
+            dgv_Productos();
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+            }
+            else
+            {
+                EstiloClaro();
+            }
         }
-        public void TraerProductos()
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
+        }
+        public void dgv_Productos()
         {
             ConectaDB.AbrirDB();
             string consultaProductos = "SELECT id_producto,nombre,categoria, marca, precio, cantidad, porcentajeg FROM productos WHERE cantidad >= 1";
@@ -67,9 +98,11 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void txt_filtrarGrilla_TextChanged(object sender, EventArgs e)
+
+
+        private void txt_filtrar_TextChanged(object sender, EventArgs e)
         {
-            string filtro = txt_filtrarGrilla.Text;
+            string filtro = txt_filtrar.Text;
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarProductos(dgvProductos, filtro);
         }

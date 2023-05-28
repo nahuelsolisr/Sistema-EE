@@ -28,14 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            txt_nombre = new TextBox();
-            label2 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            txt_cuit = new TextBox();
-            label1 = new Label();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvCliente = new DataGridView();
             btn_seleccionar = new DataGridViewButtonColumn();
             Column0 = new DataGridViewTextBoxColumn();
@@ -43,94 +37,46 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            txt_mail = new TextBox();
-            label3 = new Label();
-            txt_direccion = new TextBox();
-            label4 = new Label();
-            label7 = new Label();
-            txt_filtrarGrilla = new TextBox();
-            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            btn_salir = new FontAwesome.Sharp.IconButton();
-            btn_baja = new FontAwesome.Sharp.IconButton();
-            btn_alta = new FontAwesome.Sharp.IconButton();
-            btn_modi = new FontAwesome.Sharp.IconButton();
-            groupBox1 = new GroupBox();
+            pnl_detalle = new Panel();
+            cmb_condicion = new MaterialSkin.Controls.MaterialComboBox();
+            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
+            txt_cuit = new MaterialSkin.Controls.MaterialTextBox();
+            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            cmb_condicion = new ComboBox();
+            btn_editar = new MaterialSkin.Controls.MaterialButton();
+            materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
+            btn_eliminar = new MaterialSkin.Controls.MaterialButton();
+            iconPictureBox10 = new FontAwesome.Sharp.IconPictureBox();
+            btn_agregar = new MaterialSkin.Controls.MaterialButton();
+            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            iconPictureBox11 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            iconPictureBox12 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            iconPictureBox13 = new FontAwesome.Sharp.IconPictureBox();
+            txt_mail = new MaterialSkin.Controls.MaterialTextBox();
+            txt_direccion = new MaterialSkin.Controls.MaterialTextBox();
+            txt_nombre = new MaterialSkin.Controls.MaterialTextBox();
+            panel1 = new Panel();
+            txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            pnl_detalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox13).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // txt_nombre
-            // 
-            txt_nombre.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nombre.Location = new Point(49, 148);
-            txt_nombre.Margin = new Padding(4);
-            txt_nombre.Name = "txt_nombre";
-            txt_nombre.Size = new Size(216, 27);
-            txt_nombre.TabIndex = 110;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(46, 126);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 19);
-            label2.TabIndex = 109;
-            label2.Text = "Nombre:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(308, 9);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(155, 19);
-            label6.TabIndex = 108;
-            label6.Text = "LISTA DE CLIENTES";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(18, 9);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(176, 19);
-            label5.TabIndex = 107;
-            label5.Text = "DETALLE DEL CLIENTE";
-            // 
-            // txt_cuit
-            // 
-            txt_cuit.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cuit.Location = new Point(49, 92);
-            txt_cuit.Margin = new Padding(4);
-            txt_cuit.Name = "txt_cuit";
-            txt_cuit.Size = new Size(216, 27);
-            txt_cuit.TabIndex = 106;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(52, 71);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 19);
-            label1.TabIndex = 105;
-            label1.Text = "Cuit:";
             // 
             // dgvCliente
             // 
@@ -138,29 +84,29 @@
             dgvCliente.AllowUserToResizeRows = false;
             dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCliente.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCliente.Columns.AddRange(new DataGridViewColumn[] { btn_seleccionar, Column0, Column1, Column2, Column3, Column4 });
-            dgvCliente.Location = new Point(308, 92);
+            dgvCliente.Location = new Point(387, 128);
             dgvCliente.Margin = new Padding(4);
             dgvCliente.MultiSelect = false;
             dgvCliente.Name = "dgvCliente";
             dgvCliente.ReadOnly = true;
             dgvCliente.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
-            dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvCliente.RowTemplate.Height = 25;
-            dgvCliente.Size = new Size(725, 482);
+            dgvCliente.Size = new Size(636, 446);
             dgvCliente.TabIndex = 124;
             dgvCliente.CellClick += Cell_Click;
             // 
@@ -207,289 +153,460 @@
             Column4.ReadOnly = true;
             Column4.Width = 108;
             // 
-            // txt_mail
+            // pnl_detalle
             // 
-            txt_mail.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_mail.Location = new Point(49, 259);
-            txt_mail.Margin = new Padding(4);
-            txt_mail.Name = "txt_mail";
-            txt_mail.Size = new Size(216, 27);
-            txt_mail.TabIndex = 128;
+            pnl_detalle.Controls.Add(cmb_condicion);
+            pnl_detalle.Controls.Add(iconPictureBox9);
+            pnl_detalle.Controls.Add(txt_cuit);
+            pnl_detalle.Controls.Add(iconPictureBox8);
+            pnl_detalle.Controls.Add(materialLabel7);
+            pnl_detalle.Controls.Add(iconPictureBox4);
+            pnl_detalle.Controls.Add(btn_editar);
+            pnl_detalle.Controls.Add(materialLabel6);
+            pnl_detalle.Controls.Add(iconPictureBox7);
+            pnl_detalle.Controls.Add(btn_eliminar);
+            pnl_detalle.Controls.Add(iconPictureBox10);
+            pnl_detalle.Controls.Add(btn_agregar);
+            pnl_detalle.Controls.Add(materialLabel5);
+            pnl_detalle.Controls.Add(iconPictureBox11);
+            pnl_detalle.Controls.Add(materialLabel4);
+            pnl_detalle.Controls.Add(iconPictureBox12);
+            pnl_detalle.Controls.Add(materialLabel3);
+            pnl_detalle.Controls.Add(iconPictureBox13);
+            pnl_detalle.Controls.Add(txt_mail);
+            pnl_detalle.Controls.Add(txt_direccion);
+            pnl_detalle.Controls.Add(txt_nombre);
+            pnl_detalle.Location = new Point(10, 119);
+            pnl_detalle.Name = "pnl_detalle";
+            pnl_detalle.Size = new Size(368, 483);
+            pnl_detalle.TabIndex = 165;
             // 
-            // label3
+            // cmb_condicion
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(46, 236);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 19);
-            label3.TabIndex = 127;
-            label3.Text = "Mail:";
+            cmb_condicion.AutoResize = false;
+            cmb_condicion.BackColor = Color.FromArgb(255, 255, 255);
+            cmb_condicion.Depth = 0;
+            cmb_condicion.DrawMode = DrawMode.OwnerDrawVariable;
+            cmb_condicion.DropDownHeight = 174;
+            cmb_condicion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_condicion.DropDownWidth = 121;
+            cmb_condicion.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmb_condicion.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmb_condicion.FormattingEnabled = true;
+            cmb_condicion.IntegralHeight = false;
+            cmb_condicion.ItemHeight = 43;
+            cmb_condicion.Items.AddRange(new object[] { "Responsable Inscripto", "Monotributista ", "Consumidor final" });
+            cmb_condicion.Location = new Point(58, 358);
+            cmb_condicion.MaxDropDownItems = 4;
+            cmb_condicion.MouseState = MaterialSkin.MouseState.OUT;
+            cmb_condicion.Name = "cmb_condicion";
+            cmb_condicion.Size = new Size(295, 49);
+            cmb_condicion.StartIndex = 0;
+            cmb_condicion.TabIndex = 153;
             // 
-            // txt_direccion
+            // iconPictureBox9
             // 
-            txt_direccion.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_direccion.Location = new Point(49, 204);
-            txt_direccion.Margin = new Padding(4);
-            txt_direccion.Name = "txt_direccion";
-            txt_direccion.Size = new Size(216, 27);
-            txt_direccion.TabIndex = 126;
+            iconPictureBox9.BackColor = SystemColors.Control;
+            iconPictureBox9.ForeColor = SystemColors.ControlText;
+            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.TimesSquare;
+            iconPictureBox9.IconColor = SystemColors.ControlText;
+            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox9.IconSize = 39;
+            iconPictureBox9.Location = new Point(242, 421);
+            iconPictureBox9.Name = "iconPictureBox9";
+            iconPictureBox9.Size = new Size(39, 43);
+            iconPictureBox9.TabIndex = 157;
+            iconPictureBox9.TabStop = false;
             // 
-            // label4
+            // txt_cuit
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(46, 181);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 19);
-            label4.TabIndex = 125;
-            label4.Text = "Dirección:";
+            txt_cuit.AnimateReadOnly = false;
+            txt_cuit.BorderStyle = BorderStyle.None;
+            txt_cuit.Depth = 0;
+            txt_cuit.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_cuit.LeadingIcon = null;
+            txt_cuit.Location = new Point(59, 27);
+            txt_cuit.MaxLength = 50;
+            txt_cuit.MouseState = MaterialSkin.MouseState.OUT;
+            txt_cuit.Multiline = false;
+            txt_cuit.Name = "txt_cuit";
+            txt_cuit.Size = new Size(295, 50);
+            txt_cuit.TabIndex = 145;
+            txt_cuit.Text = "";
+            txt_cuit.TrailingIcon = null;
             // 
-            // label7
+            // iconPictureBox8
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(43, 292);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(85, 19);
-            label7.TabIndex = 129;
-            label7.Text = "Condición:";
+            iconPictureBox8.BackColor = SystemColors.Control;
+            iconPictureBox8.ForeColor = SystemColors.ControlText;
+            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            iconPictureBox8.IconColor = SystemColors.ControlText;
+            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox8.IconSize = 36;
+            iconPictureBox8.Location = new Point(117, 421);
+            iconPictureBox8.Name = "iconPictureBox8";
+            iconPictureBox8.Size = new Size(39, 36);
+            iconPictureBox8.TabIndex = 156;
+            iconPictureBox8.TabStop = false;
             // 
-            // txt_filtrarGrilla
+            // materialLabel7
             // 
-            txt_filtrarGrilla.Font = new Font("Tahoma", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_filtrarGrilla.Location = new Point(662, 48);
-            txt_filtrarGrilla.Margin = new Padding(4);
-            txt_filtrarGrilla.Name = "txt_filtrarGrilla";
-            txt_filtrarGrilla.Size = new Size(318, 36);
-            txt_filtrarGrilla.TabIndex = 136;
-            txt_filtrarGrilla.TextChanged += txt_filtrarGrilla_TextChanged;
-            // 
-            // iconPictureBox6
-            // 
-            iconPictureBox6.BackColor = Color.WhiteSmoke;
-            iconPictureBox6.ForeColor = SystemColors.ControlText;
-            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            iconPictureBox6.IconColor = SystemColors.ControlText;
-            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox6.IconSize = 27;
-            iconPictureBox6.Location = new Point(17, 148);
-            iconPictureBox6.Name = "iconPictureBox6";
-            iconPictureBox6.Size = new Size(31, 27);
-            iconPictureBox6.TabIndex = 145;
-            iconPictureBox6.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            iconPictureBox5.BackColor = Color.WhiteSmoke;
-            iconPictureBox5.ForeColor = SystemColors.ControlText;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            iconPictureBox5.IconColor = SystemColors.ControlText;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 27;
-            iconPictureBox5.Location = new Point(17, 315);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(31, 27);
-            iconPictureBox5.TabIndex = 144;
-            iconPictureBox5.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.WhiteSmoke;
-            iconPictureBox3.ForeColor = SystemColors.ControlText;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            iconPictureBox3.IconColor = SystemColors.ControlText;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 27;
-            iconPictureBox3.Location = new Point(17, 92);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(31, 27);
-            iconPictureBox3.TabIndex = 143;
-            iconPictureBox3.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.WhiteSmoke;
-            iconPictureBox2.ForeColor = SystemColors.ControlText;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconPictureBox2.IconColor = SystemColors.ControlText;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 27;
-            iconPictureBox2.Location = new Point(17, 204);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(31, 27);
-            iconPictureBox2.TabIndex = 142;
-            iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.WhiteSmoke;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.EnvelopeSquare;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 27;
-            iconPictureBox1.Location = new Point(17, 259);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(31, 27);
-            iconPictureBox1.TabIndex = 141;
-            iconPictureBox1.TabStop = false;
-            // 
-            // btn_salir
-            // 
-            btn_salir.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_salir.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            btn_salir.IconColor = Color.Black;
-            btn_salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_salir.IconSize = 25;
-            btn_salir.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_salir.Location = new Point(19, 550);
-            btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(118, 42);
-            btn_salir.TabIndex = 149;
-            btn_salir.Text = "Salir";
-            btn_salir.TextAlign = ContentAlignment.MiddleRight;
-            btn_salir.UseVisualStyleBackColor = true;
-            btn_salir.Click += btn_salir_Click_1;
-            // 
-            // btn_baja
-            // 
-            btn_baja.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_baja.IconChar = FontAwesome.Sharp.IconChar.TimesSquare;
-            btn_baja.IconColor = Color.Black;
-            btn_baja.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_baja.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_baja.Location = new Point(18, 424);
-            btn_baja.Name = "btn_baja";
-            btn_baja.Size = new Size(248, 55);
-            btn_baja.TabIndex = 148;
-            btn_baja.Text = "Eliminar";
-            btn_baja.TextAlign = ContentAlignment.MiddleRight;
-            btn_baja.UseVisualStyleBackColor = true;
-            btn_baja.Click += btn_baja_Click;
-            // 
-            // btn_alta
-            // 
-            btn_alta.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_alta.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            btn_alta.IconColor = Color.Black;
-            btn_alta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_alta.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_alta.Location = new Point(18, 363);
-            btn_alta.Name = "btn_alta";
-            btn_alta.Size = new Size(248, 55);
-            btn_alta.TabIndex = 147;
-            btn_alta.Text = "Agregar";
-            btn_alta.TextAlign = ContentAlignment.MiddleRight;
-            btn_alta.UseVisualStyleBackColor = true;
-            btn_alta.Click += btn_alta_Click;
-            // 
-            // btn_modi
-            // 
-            btn_modi.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_modi.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            btn_modi.IconColor = Color.Black;
-            btn_modi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_modi.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_modi.Location = new Point(18, 485);
-            btn_modi.Name = "btn_modi";
-            btn_modi.Size = new Size(248, 55);
-            btn_modi.TabIndex = 146;
-            btn_modi.Text = "Modificar";
-            btn_modi.TextAlign = ContentAlignment.MiddleRight;
-            btn_modi.UseVisualStyleBackColor = true;
-            btn_modi.Click += btn_modi_Click;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Location = new Point(273, 9);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(27, 579);
-            groupBox1.TabIndex = 150;
-            groupBox1.TabStop = false;
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(58, 326);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(88, 19);
+            materialLabel7.TabIndex = 163;
+            materialLabel7.Text = "CONDICIÓN:";
             // 
             // iconPictureBox4
             // 
             iconPictureBox4.BackColor = Color.WhiteSmoke;
             iconPictureBox4.ForeColor = SystemColors.ControlText;
-            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.EnvelopeSquare;
             iconPictureBox4.IconColor = SystemColors.ControlText;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 36;
-            iconPictureBox4.Location = new Point(987, 48);
+            iconPictureBox4.IconSize = 47;
+            iconPictureBox4.Location = new Point(8, 275);
             iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(42, 36);
-            iconPictureBox4.TabIndex = 151;
+            iconPictureBox4.Size = new Size(47, 50);
+            iconPictureBox4.TabIndex = 135;
             iconPictureBox4.TabStop = false;
             // 
-            // cmb_condicion
+            // btn_editar
             // 
-            cmb_condicion.FormattingEnabled = true;
-            cmb_condicion.Items.AddRange(new object[] { "Responsable Inscripto", "Monotributista" });
-            cmb_condicion.Location = new Point(49, 315);
-            cmb_condicion.Name = "cmb_condicion";
-            cmb_condicion.Size = new Size(216, 27);
-            cmb_condicion.TabIndex = 152;
+            btn_editar.AutoSize = false;
+            btn_editar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_editar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_editar.Depth = 0;
+            btn_editar.HighEmphasis = true;
+            btn_editar.Icon = null;
+            btn_editar.Location = new Point(150, 421);
+            btn_editar.Margin = new Padding(4, 6, 4, 6);
+            btn_editar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_editar.Name = "btn_editar";
+            btn_editar.NoAccentTextColor = Color.Empty;
+            btn_editar.Size = new Size(89, 36);
+            btn_editar.TabIndex = 158;
+            btn_editar.Text = "Editar";
+            btn_editar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_editar.UseAccentColor = false;
+            btn_editar.UseVisualStyleBackColor = true;
+            btn_editar.Click += btn_editar_Click;
+            // 
+            // materialLabel6
+            // 
+            materialLabel6.AutoSize = true;
+            materialLabel6.Depth = 0;
+            materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel6.Location = new Point(58, 245);
+            materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel6.Name = "materialLabel6";
+            materialLabel6.Size = new Size(42, 19);
+            materialLabel6.TabIndex = 162;
+            materialLabel6.Text = "MAIL:";
+            // 
+            // iconPictureBox7
+            // 
+            iconPictureBox7.BackColor = SystemColors.Control;
+            iconPictureBox7.ForeColor = SystemColors.ControlText;
+            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            iconPictureBox7.IconColor = SystemColors.ControlText;
+            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox7.IconSize = 36;
+            iconPictureBox7.Location = new Point(5, 421);
+            iconPictureBox7.Name = "iconPictureBox7";
+            iconPictureBox7.Size = new Size(39, 36);
+            iconPictureBox7.TabIndex = 155;
+            iconPictureBox7.TabStop = false;
+            // 
+            // btn_eliminar
+            // 
+            btn_eliminar.AutoSize = false;
+            btn_eliminar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_eliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_eliminar.Depth = 0;
+            btn_eliminar.HighEmphasis = true;
+            btn_eliminar.Icon = null;
+            btn_eliminar.Location = new Point(278, 421);
+            btn_eliminar.Margin = new Padding(4, 6, 4, 6);
+            btn_eliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.NoAccentTextColor = Color.Empty;
+            btn_eliminar.Size = new Size(78, 36);
+            btn_eliminar.TabIndex = 154;
+            btn_eliminar.Text = "Eliminar";
+            btn_eliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_eliminar.UseAccentColor = false;
+            btn_eliminar.UseVisualStyleBackColor = true;
+            btn_eliminar.Click += btn_eliminar_Click;
+            // 
+            // iconPictureBox10
+            // 
+            iconPictureBox10.BackColor = Color.WhiteSmoke;
+            iconPictureBox10.ForeColor = SystemColors.ControlText;
+            iconPictureBox10.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            iconPictureBox10.IconColor = SystemColors.ControlText;
+            iconPictureBox10.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox10.IconSize = 50;
+            iconPictureBox10.Location = new Point(5, 193);
+            iconPictureBox10.Name = "iconPictureBox10";
+            iconPictureBox10.Size = new Size(50, 50);
+            iconPictureBox10.TabIndex = 136;
+            iconPictureBox10.TabStop = false;
+            // 
+            // btn_agregar
+            // 
+            btn_agregar.AutoSize = false;
+            btn_agregar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_agregar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_agregar.Depth = 0;
+            btn_agregar.HighEmphasis = true;
+            btn_agregar.Icon = null;
+            btn_agregar.Location = new Point(37, 421);
+            btn_agregar.Margin = new Padding(4, 6, 4, 6);
+            btn_agregar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_agregar.Name = "btn_agregar";
+            btn_agregar.NoAccentTextColor = Color.Empty;
+            btn_agregar.Size = new Size(78, 36);
+            btn_agregar.TabIndex = 152;
+            btn_agregar.Text = "Agregar";
+            btn_agregar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_agregar.UseAccentColor = false;
+            btn_agregar.UseVisualStyleBackColor = true;
+            btn_agregar.Click += btn_agregar_Click;
+            // 
+            // materialLabel5
+            // 
+            materialLabel5.AutoSize = true;
+            materialLabel5.Depth = 0;
+            materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel5.Location = new Point(59, 166);
+            materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel5.Name = "materialLabel5";
+            materialLabel5.Size = new Size(83, 19);
+            materialLabel5.TabIndex = 161;
+            materialLabel5.Text = "DOMICILIO:";
+            // 
+            // iconPictureBox11
+            // 
+            iconPictureBox11.BackColor = Color.WhiteSmoke;
+            iconPictureBox11.ForeColor = SystemColors.ControlText;
+            iconPictureBox11.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            iconPictureBox11.IconColor = SystemColors.ControlText;
+            iconPictureBox11.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox11.IconSize = 48;
+            iconPictureBox11.Location = new Point(10, 35);
+            iconPictureBox11.Name = "iconPictureBox11";
+            iconPictureBox11.Size = new Size(48, 52);
+            iconPictureBox11.TabIndex = 137;
+            iconPictureBox11.TabStop = false;
+            // 
+            // materialLabel4
+            // 
+            materialLabel4.AutoSize = true;
+            materialLabel4.Depth = 0;
+            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel4.Location = new Point(64, 85);
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
+            materialLabel4.Size = new Size(70, 19);
+            materialLabel4.TabIndex = 160;
+            materialLabel4.Text = "NOMBRE:";
+            // 
+            // iconPictureBox12
+            // 
+            iconPictureBox12.BackColor = Color.WhiteSmoke;
+            iconPictureBox12.ForeColor = SystemColors.ControlText;
+            iconPictureBox12.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
+            iconPictureBox12.IconColor = SystemColors.ControlText;
+            iconPictureBox12.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox12.IconSize = 47;
+            iconPictureBox12.Location = new Point(9, 357);
+            iconPictureBox12.Name = "iconPictureBox12";
+            iconPictureBox12.Size = new Size(47, 50);
+            iconPictureBox12.TabIndex = 139;
+            iconPictureBox12.TabStop = false;
+            // 
+            // materialLabel3
+            // 
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(59, 5);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(39, 19);
+            materialLabel3.TabIndex = 159;
+            materialLabel3.Text = "CUIT:";
+            // 
+            // iconPictureBox13
+            // 
+            iconPictureBox13.BackColor = Color.WhiteSmoke;
+            iconPictureBox13.ForeColor = SystemColors.ControlText;
+            iconPictureBox13.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            iconPictureBox13.IconColor = SystemColors.ControlText;
+            iconPictureBox13.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox13.IconSize = 48;
+            iconPictureBox13.Location = new Point(9, 113);
+            iconPictureBox13.Name = "iconPictureBox13";
+            iconPictureBox13.Size = new Size(48, 50);
+            iconPictureBox13.TabIndex = 140;
+            iconPictureBox13.TabStop = false;
+            // 
+            // txt_mail
+            // 
+            txt_mail.AnimateReadOnly = false;
+            txt_mail.BorderStyle = BorderStyle.None;
+            txt_mail.Depth = 0;
+            txt_mail.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_mail.LeadingIcon = null;
+            txt_mail.Location = new Point(59, 267);
+            txt_mail.MaxLength = 50;
+            txt_mail.MouseState = MaterialSkin.MouseState.OUT;
+            txt_mail.Multiline = false;
+            txt_mail.Name = "txt_mail";
+            txt_mail.Size = new Size(295, 50);
+            txt_mail.TabIndex = 147;
+            txt_mail.Text = "";
+            txt_mail.TrailingIcon = null;
+            // 
+            // txt_direccion
+            // 
+            txt_direccion.AnimateReadOnly = false;
+            txt_direccion.BorderStyle = BorderStyle.None;
+            txt_direccion.Depth = 0;
+            txt_direccion.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_direccion.LeadingIcon = null;
+            txt_direccion.Location = new Point(59, 188);
+            txt_direccion.MaxLength = 50;
+            txt_direccion.MouseState = MaterialSkin.MouseState.OUT;
+            txt_direccion.Multiline = false;
+            txt_direccion.Name = "txt_direccion";
+            txt_direccion.Size = new Size(295, 50);
+            txt_direccion.TabIndex = 148;
+            txt_direccion.Text = "";
+            txt_direccion.TrailingIcon = null;
+            // 
+            // txt_nombre
+            // 
+            txt_nombre.AnimateReadOnly = false;
+            txt_nombre.BorderStyle = BorderStyle.None;
+            txt_nombre.Depth = 0;
+            txt_nombre.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_nombre.LeadingIcon = null;
+            txt_nombre.Location = new Point(58, 107);
+            txt_nombre.MaxLength = 50;
+            txt_nombre.MouseState = MaterialSkin.MouseState.OUT;
+            txt_nombre.Multiline = false;
+            txt_nombre.Name = "txt_nombre";
+            txt_nombre.Size = new Size(295, 50);
+            txt_nombre.TabIndex = 149;
+            txt_nombre.Text = "";
+            txt_nombre.TrailingIcon = null;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(txt_filtrar);
+            panel1.Controls.Add(materialLabel1);
+            panel1.Controls.Add(materialLabel2);
+            panel1.Controls.Add(iconPictureBox1);
+            panel1.Location = new Point(10, 67);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1023, 54);
+            panel1.TabIndex = 166;
+            // 
+            // txt_filtrar
+            // 
+            txt_filtrar.AnimateReadOnly = false;
+            txt_filtrar.BorderStyle = BorderStyle.None;
+            txt_filtrar.Depth = 0;
+            txt_filtrar.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_filtrar.LeadingIcon = null;
+            txt_filtrar.Location = new Point(645, 3);
+            txt_filtrar.MaxLength = 50;
+            txt_filtrar.MouseState = MaterialSkin.MouseState.OUT;
+            txt_filtrar.Multiline = false;
+            txt_filtrar.Name = "txt_filtrar";
+            txt_filtrar.Size = new Size(316, 50);
+            txt_filtrar.TabIndex = 152;
+            txt_filtrar.Text = "";
+            txt_filtrar.TrailingIcon = null;
+            txt_filtrar.TextChanged += txt_filtrar_TextChanged;
+            // 
+            // materialLabel1
+            // 
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(6, 5);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(196, 19);
+            materialLabel1.TabIndex = 150;
+            materialLabel1.Text = "DETALLE DEL PROVEEDOR";
+            // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(375, 5);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(182, 19);
+            materialLabel2.TabIndex = 151;
+            materialLabel2.Text = "LISTA DE PROVEEDORES";
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.WhiteSmoke;
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 48;
+            iconPictureBox1.Location = new Point(967, 3);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(53, 48);
+            iconPictureBox1.TabIndex = 141;
+            iconPictureBox1.TabStop = false;
+            iconPictureBox1.Click += iconPictureBox1_Click;
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1046, 601);
+            ClientSize = new Size(1030, 581);
             ControlBox = false;
-            Controls.Add(cmb_condicion);
-            Controls.Add(iconPictureBox4);
-            Controls.Add(groupBox1);
-            Controls.Add(btn_salir);
-            Controls.Add(btn_baja);
-            Controls.Add(btn_alta);
-            Controls.Add(btn_modi);
-            Controls.Add(iconPictureBox6);
-            Controls.Add(iconPictureBox5);
-            Controls.Add(iconPictureBox3);
-            Controls.Add(iconPictureBox2);
-            Controls.Add(iconPictureBox1);
-            Controls.Add(txt_filtrarGrilla);
-            Controls.Add(label7);
-            Controls.Add(txt_mail);
-            Controls.Add(label3);
-            Controls.Add(txt_direccion);
-            Controls.Add(label4);
+            Controls.Add(panel1);
+            Controls.Add(pnl_detalle);
             Controls.Add(dgvCliente);
-            Controls.Add(txt_nombre);
-            Controls.Add(label2);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(txt_cuit);
-            Controls.Add(label1);
             Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Clientes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Clientes";
+            Text = ".: Clientes :.";
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            pnl_detalle.ResumeLayout(false);
+            pnl_detalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox13).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private TextBox txt_nombre;
-        private Label label2;
-        private Label label6;
-        private Label label5;
-        private TextBox txt_cuit;
-        private Label label1;
         private DataGridView dgvCliente;
         private DataGridViewButtonColumn btn_seleccionar;
         private DataGridViewTextBoxColumn Column0;
@@ -497,23 +614,32 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
-        private TextBox txt_mail;
-        private Label label3;
-        private TextBox txt_direccion;
-        private Label label4;
-        private Label label7;
-        private TextBox txt_filtrarGrilla;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton btn_salir;
-        private FontAwesome.Sharp.IconButton btn_baja;
-        private FontAwesome.Sharp.IconButton btn_alta;
-        private FontAwesome.Sharp.IconButton btn_modi;
-        private GroupBox groupBox1;
+        private Panel pnl_detalle;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
+        private MaterialSkin.Controls.MaterialTextBox txt_cuit;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private ComboBox cmb_condicion;
+        private MaterialSkin.Controls.MaterialButton btn_editar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private MaterialSkin.Controls.MaterialButton btn_eliminar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox10;
+        private MaterialSkin.Controls.MaterialButton btn_agregar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox11;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox12;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox13;
+        private MaterialSkin.Controls.MaterialTextBox txt_mail;
+        private MaterialSkin.Controls.MaterialTextBox txt_direccion;
+        private MaterialSkin.Controls.MaterialTextBox txt_nombre;
+        private Panel panel1;
+        private MaterialSkin.Controls.MaterialTextBox txt_filtrar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private MaterialSkin.Controls.MaterialComboBox cmb_condicion;
     }
 }

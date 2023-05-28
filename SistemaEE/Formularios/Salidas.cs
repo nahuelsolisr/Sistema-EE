@@ -1,4 +1,6 @@
-﻿using SistemaEE.Clases;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +14,7 @@ using static SistemaEE.Formularios.Entrada;
 
 namespace SistemaEE.Formularios
 {
-    public partial class Salidas : Form
+    public partial class Salidas : MaterialForm
     {
         private List<Producto> carrito = new List<Producto>();
         public int contadorCompras = 0;
@@ -25,26 +27,43 @@ namespace SistemaEE.Formularios
         public Salidas()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            //compras = new object[100, 6];
+            this.Size = new Size(1132, 601);
+            this.Resize += (sender, e) => this.Size = new Size(1132, 601);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+            }
+            else
+            {
+                EstiloClaro();
+
+
+            }
+        }
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
         }
 
-        private void btn_TraerCliente_Click(object sender, EventArgs e)
-        {
-            MuestraCliente muestraCliente = new MuestraCliente();
-            muestraCliente.ShowDialog();
-            txt_cuit.Text = Elegir.CUITCliente.ToString();
-            txt_nombreCliente.Text = Elegir.NombreCliente;
-        }
 
-        private void btn_traerProduct_Click(object sender, EventArgs e)
-        {
-            ProductosEnStock productosEnStock = new ProductosEnStock();
-            productosEnStock.ShowDialog();
-            txt_idproducto.Text = Elegir.idProducto.ToString();
-            txt_nombreProducto.Text = Elegir.nomProducto;
-            txt_precio.Text = Elegir.precioProducto.ToString();
-        }
+
+
 
         private int ObtenerCantidadDisponible(string nombre)
         {
@@ -67,17 +86,11 @@ namespace SistemaEE.Formularios
             return cantidadDisponible;
         }
 
-        private void btn_confirmar_Click(object sender, EventArgs e)
-        {
-
-            RestarCantidadVenta(nombre, cantidadComprada);
-            Limpiar();
-        }
 
         private void RestarCantidadVenta(string nombre, int cantidad)
         {
             int cantidad1 = Elegir.cantidad;
-            int cantidadneta = cantidad1 - (int)nud_cantidad.Value;
+            int cantidadneta = cantidad1 - Convert.ToInt32(txt_cantidad.Text);
             int producto = Elegir.idProducto;
             string consultaActualizarCantidad = "UPDATE productos SET cantidad = " + cantidadneta + " where id_producto =" + producto;
 
@@ -90,18 +103,32 @@ namespace SistemaEE.Formularios
             this.Close();
         }
 
-        private void btn_añadir_Click(object sender, EventArgs e)
+
+
+        public void Limpiar()
+        {
+            // Limpiar la grilla
+            dgvProductos.Rows.Clear();
+
+            // Limpiar los campos de texto
+            txt_precio.Text = "";
+            txt_cantidad.Text = "";
+            txt_idproducto.Text = "";
+            txt_nombreProducto.Text = "";
+        }
+
+        private void btn_agregarCarrito_Click(object sender, EventArgs e)
         {
             ConectaDB.AbrirDB();
             int id_producto = Elegir.idProducto;
             int limitecantidad = Elegir.cantidad;
-            int CantidadNetaSalida = limitecantidad - (int)nud_cantidad.Value;
+            int CantidadNetaSalida = limitecantidad - Convert.ToInt32(txt_cantidad.Text);
             CantidadNetaSalida.ToString();
             string nombreProducto = Elegir.nomProducto;
             string marcaProducto = Elegir.marca;
             string categoriaProducto = Elegir.categoria;
             decimal precioConGanancia = Elegir.precioProducto;
-            cantidadComprada = Convert.ToInt32(nud_cantidad.Value);
+            cantidadComprada = Convert.ToInt32(txt_cantidad.Text);
 
             // Verificar la cantidad disponible del producto
             int cantidadDisponible = ObtenerCantidadDisponible(nombre);
@@ -159,19 +186,29 @@ namespace SistemaEE.Formularios
 
             }
             ConectaDB.CerrarDB();
-
         }
 
-        public void Limpiar()
+        private void btn_ConfirmarCompra_Click(object sender, EventArgs e)
         {
-            // Limpiar la grilla
-            dgvProductos.Rows.Clear();
+            RestarCantidadVenta(nombre, cantidadComprada);
+            Limpiar();
+        }
 
-            // Limpiar los campos de texto
-            txt_precio.Text = "";
-            nud_cantidad.Text = "";
-            txt_idproducto.Text = "";
-            txt_nombreProducto.Text = "";
+        private void btn_traerCliente_Click_1(object sender, EventArgs e)
+        {
+            MuestraCliente muestraCliente = new MuestraCliente();
+            muestraCliente.ShowDialog();
+            txt_cuit.Text = Elegir.CUITCliente.ToString();
+            txt_nombreCliente.Text = Elegir.NombreCliente;
+        }
+
+        private void btn_traerProduc_Click(object sender, EventArgs e)
+        {
+            ProductosEnStock productosEnStock = new ProductosEnStock();
+            productosEnStock.ShowDialog();
+            txt_idproducto.Text = Elegir.idProducto.ToString();
+            txt_nombreProducto.Text = Elegir.nomProducto;
+            txt_precio.Text = Elegir.precioProducto.ToString();
         }
     }
 }

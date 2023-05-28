@@ -30,11 +30,6 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            btn_añadir = new FontAwesome.Sharp.IconButton();
-            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            btn_traerProduct = new FontAwesome.Sharp.IconButton();
-            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             dgvProductos = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -42,105 +37,45 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            label7 = new Label();
-            nud_cantidad = new NumericUpDown();
-            txt_precio = new TextBox();
-            label5 = new Label();
-            txt_nombreProducto = new TextBox();
-            label3 = new Label();
-            txt_idproducto = new TextBox();
-            label4 = new Label();
-            btn_TraerCliente = new FontAwesome.Sharp.IconButton();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            txt_nombreCliente = new TextBox();
-            label2 = new Label();
-            txt_cuit = new TextBox();
-            label1 = new Label();
-            btn_confirmar = new FontAwesome.Sharp.IconButton();
-            label8 = new Label();
-            btn_salir = new FontAwesome.Sharp.IconButton();
-            panel1 = new Panel();
-            label6 = new Label();
-            label9 = new Label();
+            panel2 = new Panel();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            btn_traerProduc = new MaterialSkin.Controls.MaterialButton();
+            btn_traerCliente = new MaterialSkin.Controls.MaterialButton();
+            txt_cuit = new MaterialSkin.Controls.MaterialTextBox();
+            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            txt_nombreProducto = new MaterialSkin.Controls.MaterialTextBox();
+            txt_nombreCliente = new MaterialSkin.Controls.MaterialTextBox();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            txt_idproducto = new MaterialSkin.Controls.MaterialTextBox();
+            pnl_detalle = new Panel();
+            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            txt_cantidad = new MaterialSkin.Controls.MaterialTextBox();
+            txt_precio = new MaterialSkin.Controls.MaterialTextBox();
+            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            btn_agregarCarrito = new MaterialSkin.Controls.MaterialButton();
+            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
+            btn_ConfirmarCompra = new MaterialSkin.Controls.MaterialButton();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
+            pnl_detalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nud_cantidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
             SuspendLayout();
-            // 
-            // btn_añadir
-            // 
-            btn_añadir.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            btn_añadir.IconColor = Color.Black;
-            btn_añadir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_añadir.IconSize = 35;
-            btn_añadir.ImageAlign = ContentAlignment.MiddleRight;
-            btn_añadir.Location = new Point(574, 49);
-            btn_añadir.Name = "btn_añadir";
-            btn_añadir.Size = new Size(166, 49);
-            btn_añadir.TabIndex = 176;
-            btn_añadir.Text = "Agregar al  carrito";
-            btn_añadir.TextAlign = ContentAlignment.MiddleLeft;
-            btn_añadir.UseVisualStyleBackColor = true;
-            btn_añadir.Click += btn_añadir_Click;
-            // 
-            // iconPictureBox7
-            // 
-            iconPictureBox7.BackColor = Color.WhiteSmoke;
-            iconPictureBox7.ForeColor = SystemColors.ControlText;
-            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Cubes;
-            iconPictureBox7.IconColor = SystemColors.ControlText;
-            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox7.IconSize = 27;
-            iconPictureBox7.Location = new Point(115, 71);
-            iconPictureBox7.Name = "iconPictureBox7";
-            iconPictureBox7.Size = new Size(31, 27);
-            iconPictureBox7.TabIndex = 175;
-            iconPictureBox7.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            iconPictureBox5.BackColor = Color.WhiteSmoke;
-            iconPictureBox5.ForeColor = SystemColors.ControlText;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            iconPictureBox5.IconColor = SystemColors.ControlText;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 27;
-            iconPictureBox5.Location = new Point(4, 71);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(31, 27);
-            iconPictureBox5.TabIndex = 174;
-            iconPictureBox5.TabStop = false;
-            // 
-            // btn_traerProduct
-            // 
-            btn_traerProduct.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            btn_traerProduct.IconColor = Color.Black;
-            btn_traerProduct.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_traerProduct.IconSize = 20;
-            btn_traerProduct.Location = new Point(729, 69);
-            btn_traerProduct.Name = "btn_traerProduct";
-            btn_traerProduct.Size = new Size(38, 28);
-            btn_traerProduct.TabIndex = 173;
-            btn_traerProduct.UseVisualStyleBackColor = true;
-            btn_traerProduct.Click += btn_traerProduct_Click;
-            // 
-            // iconPictureBox4
-            // 
-            iconPictureBox4.BackColor = Color.WhiteSmoke;
-            iconPictureBox4.ForeColor = SystemColors.ControlText;
-            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Barcode;
-            iconPictureBox4.IconColor = SystemColors.ControlText;
-            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 27;
-            iconPictureBox4.Location = new Point(403, 70);
-            iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(31, 27);
-            iconPictureBox4.TabIndex = 172;
-            iconPictureBox4.TabStop = false;
             // 
             // dgvProductos
             // 
@@ -158,7 +93,7 @@
             dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dgvProductos.Location = new Point(13, 232);
+            dgvProductos.Location = new Point(7, 313);
             dgvProductos.Margin = new Padding(4);
             dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
@@ -169,7 +104,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(757, 301);
+            dgvProductos.Size = new Size(773, 281);
             dgvProductos.TabIndex = 170;
             // 
             // Column1
@@ -209,95 +144,6 @@
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(144, 49);
-            label7.Name = "label7";
-            label7.Size = new Size(77, 19);
-            label7.TabIndex = 169;
-            label7.Text = "Cantidad:";
-            // 
-            // nud_cantidad
-            // 
-            nud_cantidad.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nud_cantidad.Location = new Point(147, 71);
-            nud_cantidad.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
-            nud_cantidad.Name = "nud_cantidad";
-            nud_cantidad.Size = new Size(99, 27);
-            nud_cantidad.TabIndex = 168;
-            // 
-            // txt_precio
-            // 
-            txt_precio.Enabled = false;
-            txt_precio.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_precio.Location = new Point(35, 71);
-            txt_precio.Name = "txt_precio";
-            txt_precio.Size = new Size(74, 27);
-            txt_precio.TabIndex = 167;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(32, 49);
-            label5.Name = "label5";
-            label5.Size = new Size(58, 19);
-            label5.TabIndex = 166;
-            label5.Text = "Precio:";
-            // 
-            // txt_nombreProducto
-            // 
-            txt_nombreProducto.Enabled = false;
-            txt_nombreProducto.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nombreProducto.Location = new Point(583, 70);
-            txt_nombreProducto.Name = "txt_nombreProducto";
-            txt_nombreProducto.Size = new Size(145, 27);
-            txt_nombreProducto.TabIndex = 165;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(586, 48);
-            label3.Name = "label3";
-            label3.Size = new Size(140, 19);
-            label3.TabIndex = 164;
-            label3.Text = "Nombre Producto:";
-            // 
-            // txt_idproducto
-            // 
-            txt_idproducto.Enabled = false;
-            txt_idproducto.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_idproducto.Location = new Point(435, 70);
-            txt_idproducto.Name = "txt_idproducto";
-            txt_idproducto.Size = new Size(145, 27);
-            txt_idproducto.TabIndex = 163;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(434, 48);
-            label4.Name = "label4";
-            label4.Size = new Size(133, 19);
-            label4.TabIndex = 162;
-            label4.Text = "Codigo Producto:";
-            // 
-            // btn_TraerCliente
-            // 
-            btn_TraerCliente.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            btn_TraerCliente.IconColor = Color.Black;
-            btn_TraerCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_TraerCliente.IconSize = 20;
-            btn_TraerCliente.Location = new Point(338, 69);
-            btn_TraerCliente.Name = "btn_TraerCliente";
-            btn_TraerCliente.Size = new Size(38, 28);
-            btn_TraerCliente.TabIndex = 183;
-            btn_TraerCliente.UseVisualStyleBackColor = true;
-            btn_TraerCliente.Click += btn_TraerCliente_Click;
-            // 
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.WhiteSmoke;
@@ -305,178 +151,453 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 27;
-            iconPictureBox1.Location = new Point(13, 69);
+            iconPictureBox1.IconSize = 50;
+            iconPictureBox1.Location = new Point(3, 30);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(31, 27);
+            iconPictureBox1.Size = new Size(51, 50);
             iconPictureBox1.TabIndex = 181;
             iconPictureBox1.TabStop = false;
             // 
-            // txt_nombreCliente
+            // panel2
             // 
-            txt_nombreCliente.Enabled = false;
-            txt_nombreCliente.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nombreCliente.Location = new Point(44, 69);
-            txt_nombreCliente.Name = "txt_nombreCliente";
-            txt_nombreCliente.Size = new Size(144, 27);
-            txt_nombreCliente.TabIndex = 180;
+            panel2.Controls.Add(iconPictureBox2);
+            panel2.Controls.Add(iconPictureBox3);
+            panel2.Controls.Add(btn_traerProduc);
+            panel2.Controls.Add(btn_traerCliente);
+            panel2.Controls.Add(iconPictureBox1);
+            panel2.Controls.Add(txt_cuit);
+            panel2.Controls.Add(iconPictureBox6);
+            panel2.Controls.Add(materialLabel4);
+            panel2.Controls.Add(materialLabel2);
+            panel2.Controls.Add(txt_nombreProducto);
+            panel2.Controls.Add(txt_nombreCliente);
+            panel2.Controls.Add(materialLabel3);
+            panel2.Controls.Add(materialLabel1);
+            panel2.Controls.Add(txt_idproducto);
+            panel2.Location = new Point(6, 67);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1113, 96);
+            panel2.TabIndex = 202;
             // 
-            // label2
+            // iconPictureBox2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(44, 47);
-            label2.Name = "label2";
-            label2.Size = new Size(125, 19);
-            label2.TabIndex = 179;
-            label2.Text = "Nombre Cliente:";
+            iconPictureBox2.BackColor = Color.WhiteSmoke;
+            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 50;
+            iconPictureBox2.Location = new Point(937, 30);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(54, 50);
+            iconPictureBox2.TabIndex = 205;
+            iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.WhiteSmoke;
+            iconPictureBox3.ForeColor = SystemColors.ControlText;
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox3.IconColor = SystemColors.ControlText;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 53;
+            iconPictureBox3.Location = new Point(375, 30);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(54, 53);
+            iconPictureBox3.TabIndex = 203;
+            iconPictureBox3.TabStop = false;
+            // 
+            // btn_traerProduc
+            // 
+            btn_traerProduc.AutoSize = false;
+            btn_traerProduc.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_traerProduc.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_traerProduc.Depth = 0;
+            btn_traerProduc.HighEmphasis = true;
+            btn_traerProduc.Icon = null;
+            btn_traerProduc.Location = new Point(986, 30);
+            btn_traerProduc.Margin = new Padding(4, 6, 4, 6);
+            btn_traerProduc.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_traerProduc.Name = "btn_traerProduc";
+            btn_traerProduc.NoAccentTextColor = Color.Empty;
+            btn_traerProduc.Size = new Size(114, 50);
+            btn_traerProduc.TabIndex = 204;
+            btn_traerProduc.Text = "BUSCAR";
+            btn_traerProduc.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_traerProduc.UseAccentColor = false;
+            btn_traerProduc.UseVisualStyleBackColor = true;
+            btn_traerProduc.Click += btn_traerProduc_Click;
+            // 
+            // btn_traerCliente
+            // 
+            btn_traerCliente.AutoSize = false;
+            btn_traerCliente.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_traerCliente.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_traerCliente.Depth = 0;
+            btn_traerCliente.HighEmphasis = true;
+            btn_traerCliente.Icon = null;
+            btn_traerCliente.Location = new Point(424, 30);
+            btn_traerCliente.Margin = new Padding(4, 6, 4, 6);
+            btn_traerCliente.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_traerCliente.Name = "btn_traerCliente";
+            btn_traerCliente.NoAccentTextColor = Color.Empty;
+            btn_traerCliente.Size = new Size(114, 50);
+            btn_traerCliente.TabIndex = 202;
+            btn_traerCliente.Text = "BUSCAR";
+            btn_traerCliente.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_traerCliente.UseAccentColor = false;
+            btn_traerCliente.UseVisualStyleBackColor = true;
+            btn_traerCliente.Click += btn_traerCliente_Click_1;
             // 
             // txt_cuit
             // 
+            txt_cuit.AnimateReadOnly = false;
+            txt_cuit.BorderStyle = BorderStyle.None;
+            txt_cuit.Depth = 0;
             txt_cuit.Enabled = false;
-            txt_cuit.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cuit.Location = new Point(191, 69);
+            txt_cuit.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_cuit.LeadingIcon = null;
+            txt_cuit.Location = new Point(57, 30);
+            txt_cuit.MaxLength = 50;
+            txt_cuit.MouseState = MaterialSkin.MouseState.OUT;
+            txt_cuit.Multiline = false;
             txt_cuit.Name = "txt_cuit";
-            txt_cuit.Size = new Size(145, 27);
-            txt_cuit.TabIndex = 178;
+            txt_cuit.Size = new Size(153, 50);
+            txt_cuit.TabIndex = 197;
+            txt_cuit.Text = "";
+            txt_cuit.TrailingIcon = null;
             // 
-            // label1
+            // iconPictureBox6
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(194, 47);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 19);
-            label1.TabIndex = 177;
-            label1.Text = "CUIT Cliente:";
+            iconPictureBox6.BackColor = Color.WhiteSmoke;
+            iconPictureBox6.ForeColor = SystemColors.ControlText;
+            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Barcode;
+            iconPictureBox6.IconColor = SystemColors.ControlText;
+            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox6.IconSize = 50;
+            iconPictureBox6.Location = new Point(569, 30);
+            iconPictureBox6.Name = "iconPictureBox6";
+            iconPictureBox6.Size = new Size(50, 50);
+            iconPictureBox6.TabIndex = 137;
+            iconPictureBox6.TabStop = false;
             // 
-            // btn_confirmar
+            // materialLabel4
             // 
-            btn_confirmar.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_confirmar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            btn_confirmar.IconColor = Color.Black;
-            btn_confirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_confirmar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_confirmar.Location = new Point(646, 544);
-            btn_confirmar.Name = "btn_confirmar";
-            btn_confirmar.Size = new Size(126, 45);
-            btn_confirmar.TabIndex = 184;
-            btn_confirmar.Text = "Guardar ";
-            btn_confirmar.TextAlign = ContentAlignment.MiddleRight;
-            btn_confirmar.UseVisualStyleBackColor = true;
-            btn_confirmar.Click += btn_confirmar_Click;
+            materialLabel4.AutoSize = true;
+            materialLabel4.Depth = 0;
+            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel4.Location = new Point(216, 9);
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
+            materialLabel4.Size = new Size(70, 19);
+            materialLabel4.TabIndex = 200;
+            materialLabel4.Text = "NOMBRE:";
             // 
-            // label8
+            // materialLabel2
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(3, 10);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(171, 19);
-            label8.TabIndex = 185;
-            label8.Text = "DETALLES DE VENTA:";
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(57, 9);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(39, 19);
+            materialLabel2.TabIndex = 199;
+            materialLabel2.Text = "CUIT:";
             // 
-            // btn_salir
+            // txt_nombreProducto
             // 
-            btn_salir.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_salir.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            btn_salir.IconColor = Color.Black;
-            btn_salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_salir.IconSize = 25;
-            btn_salir.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_salir.Location = new Point(12, 544);
-            btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(115, 46);
-            btn_salir.TabIndex = 186;
-            btn_salir.Text = "Salir";
-            btn_salir.TextAlign = ContentAlignment.MiddleRight;
-            btn_salir.UseVisualStyleBackColor = true;
-            btn_salir.Click += btn_salir_Click;
+            txt_nombreProducto.AnimateReadOnly = false;
+            txt_nombreProducto.BorderStyle = BorderStyle.None;
+            txt_nombreProducto.Depth = 0;
+            txt_nombreProducto.Enabled = false;
+            txt_nombreProducto.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_nombreProducto.LeadingIcon = null;
+            txt_nombreProducto.Location = new Point(782, 30);
+            txt_nombreProducto.MaxLength = 50;
+            txt_nombreProducto.MouseState = MaterialSkin.MouseState.OUT;
+            txt_nombreProducto.Multiline = false;
+            txt_nombreProducto.Name = "txt_nombreProducto";
+            txt_nombreProducto.Size = new Size(153, 50);
+            txt_nombreProducto.TabIndex = 191;
+            txt_nombreProducto.Text = "";
+            txt_nombreProducto.TrailingIcon = null;
             // 
-            // panel1
+            // txt_nombreCliente
             // 
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(txt_precio);
-            panel1.Controls.Add(nud_cantidad);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(iconPictureBox5);
-            panel1.Controls.Add(iconPictureBox7);
-            panel1.Controls.Add(btn_añadir);
-            panel1.Location = new Point(12, 115);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(758, 110);
-            panel1.TabIndex = 187;
+            txt_nombreCliente.AnimateReadOnly = false;
+            txt_nombreCliente.BorderStyle = BorderStyle.None;
+            txt_nombreCliente.Depth = 0;
+            txt_nombreCliente.Enabled = false;
+            txt_nombreCliente.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_nombreCliente.LeadingIcon = null;
+            txt_nombreCliente.Location = new Point(216, 31);
+            txt_nombreCliente.MaxLength = 50;
+            txt_nombreCliente.MouseState = MaterialSkin.MouseState.OUT;
+            txt_nombreCliente.Multiline = false;
+            txt_nombreCliente.Name = "txt_nombreCliente";
+            txt_nombreCliente.Size = new Size(153, 50);
+            txt_nombreCliente.TabIndex = 198;
+            txt_nombreCliente.Text = "";
+            txt_nombreCliente.TrailingIcon = null;
             // 
-            // label6
+            // materialLabel3
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(13, 9);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(198, 19);
-            label6.TabIndex = 188;
-            label6.Text = "SELECCIONE EL CLIENTE:";
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(782, 8);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(69, 19);
+            materialLabel3.TabIndex = 192;
+            materialLabel3.Text = "Producto:";
             // 
-            // label9
+            // materialLabel1
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(403, 9);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(220, 19);
-            label9.TabIndex = 189;
-            label9.Text = "SELECCIONE EL PRODUCTO:";
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(620, 8);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(14, 19);
+            materialLabel1.TabIndex = 194;
+            materialLabel1.Text = "Id";
+            // 
+            // txt_idproducto
+            // 
+            txt_idproducto.AnimateReadOnly = false;
+            txt_idproducto.BorderStyle = BorderStyle.None;
+            txt_idproducto.Depth = 0;
+            txt_idproducto.Enabled = false;
+            txt_idproducto.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_idproducto.LeadingIcon = null;
+            txt_idproducto.Location = new Point(620, 30);
+            txt_idproducto.MaxLength = 50;
+            txt_idproducto.MouseState = MaterialSkin.MouseState.OUT;
+            txt_idproducto.Multiline = false;
+            txt_idproducto.Name = "txt_idproducto";
+            txt_idproducto.Size = new Size(153, 50);
+            txt_idproducto.TabIndex = 193;
+            txt_idproducto.Text = "";
+            txt_idproducto.TrailingIcon = null;
+            // 
+            // pnl_detalle
+            // 
+            pnl_detalle.Controls.Add(iconPictureBox8);
+            pnl_detalle.Controls.Add(materialLabel8);
+            pnl_detalle.Controls.Add(materialLabel7);
+            pnl_detalle.Controls.Add(materialLabel6);
+            pnl_detalle.Controls.Add(txt_cantidad);
+            pnl_detalle.Controls.Add(txt_precio);
+            pnl_detalle.Controls.Add(iconPictureBox7);
+            pnl_detalle.Controls.Add(iconPictureBox5);
+            pnl_detalle.Controls.Add(btn_agregarCarrito);
+            pnl_detalle.Location = new Point(6, 169);
+            pnl_detalle.Name = "pnl_detalle";
+            pnl_detalle.Size = new Size(1113, 137);
+            pnl_detalle.TabIndex = 206;
+            // 
+            // iconPictureBox8
+            // 
+            iconPictureBox8.BackColor = Color.WhiteSmoke;
+            iconPictureBox8.ForeColor = SystemColors.ControlText;
+            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
+            iconPictureBox8.IconColor = SystemColors.ControlText;
+            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox8.IconSize = 53;
+            iconPictureBox8.Location = new Point(781, 76);
+            iconPictureBox8.Name = "iconPictureBox8";
+            iconPictureBox8.Size = new Size(59, 53);
+            iconPictureBox8.TabIndex = 208;
+            iconPictureBox8.TabStop = false;
+            // 
+            // materialLabel8
+            // 
+            materialLabel8.AutoSize = true;
+            materialLabel8.Depth = 0;
+            materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.Location = new Point(272, 54);
+            materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel8.Name = "materialLabel8";
+            materialLabel8.Size = new Size(82, 19);
+            materialLabel8.TabIndex = 207;
+            materialLabel8.Text = "CANTIDAD:";
+            // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(54, 55);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(59, 19);
+            materialLabel7.TabIndex = 206;
+            materialLabel7.Text = "PRECIO:";
+            // 
+            // materialLabel6
+            // 
+            materialLabel6.AutoSize = true;
+            materialLabel6.Depth = 0;
+            materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel6.Location = new Point(17, 11);
+            materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel6.Name = "materialLabel6";
+            materialLabel6.Size = new Size(146, 19);
+            materialLabel6.TabIndex = 206;
+            materialLabel6.Text = "DETALLE DE VALOR";
+            // 
+            // txt_cantidad
+            // 
+            txt_cantidad.AnimateReadOnly = false;
+            txt_cantidad.BorderStyle = BorderStyle.None;
+            txt_cantidad.Depth = 0;
+            txt_cantidad.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_cantidad.LeadingIcon = null;
+            txt_cantidad.Location = new Point(270, 77);
+            txt_cantidad.MaxLength = 50;
+            txt_cantidad.MouseState = MaterialSkin.MouseState.OUT;
+            txt_cantidad.Multiline = false;
+            txt_cantidad.Name = "txt_cantidad";
+            txt_cantidad.Size = new Size(159, 50);
+            txt_cantidad.TabIndex = 203;
+            txt_cantidad.Text = "";
+            txt_cantidad.TrailingIcon = null;
+            // 
+            // txt_precio
+            // 
+            txt_precio.AnimateReadOnly = false;
+            txt_precio.BorderStyle = BorderStyle.None;
+            txt_precio.Depth = 0;
+            txt_precio.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_precio.LeadingIcon = null;
+            txt_precio.Location = new Point(53, 77);
+            txt_precio.MaxLength = 50;
+            txt_precio.MouseState = MaterialSkin.MouseState.OUT;
+            txt_precio.Multiline = false;
+            txt_precio.Name = "txt_precio";
+            txt_precio.Size = new Size(157, 50);
+            txt_precio.TabIndex = 202;
+            txt_precio.Text = "";
+            txt_precio.TrailingIcon = null;
+            // 
+            // iconPictureBox7
+            // 
+            iconPictureBox7.BackColor = Color.WhiteSmoke;
+            iconPictureBox7.ForeColor = SystemColors.ControlText;
+            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            iconPictureBox7.IconColor = SystemColors.ControlText;
+            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox7.IconSize = 50;
+            iconPictureBox7.Location = new Point(216, 77);
+            iconPictureBox7.Name = "iconPictureBox7";
+            iconPictureBox7.Size = new Size(53, 50);
+            iconPictureBox7.TabIndex = 142;
+            iconPictureBox7.TabStop = false;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.WhiteSmoke;
+            iconPictureBox5.ForeColor = SystemColors.ControlText;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            iconPictureBox5.IconColor = SystemColors.ControlText;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 48;
+            iconPictureBox5.Location = new Point(3, 76);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(48, 50);
+            iconPictureBox5.TabIndex = 140;
+            iconPictureBox5.TabStop = false;
+            // 
+            // btn_agregarCarrito
+            // 
+            btn_agregarCarrito.AutoSize = false;
+            btn_agregarCarrito.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_agregarCarrito.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_agregarCarrito.Depth = 0;
+            btn_agregarCarrito.HighEmphasis = true;
+            btn_agregarCarrito.Icon = null;
+            btn_agregarCarrito.Location = new Point(820, 76);
+            btn_agregarCarrito.Margin = new Padding(4, 6, 4, 6);
+            btn_agregarCarrito.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_agregarCarrito.Name = "btn_agregarCarrito";
+            btn_agregarCarrito.NoAccentTextColor = Color.Empty;
+            btn_agregarCarrito.Size = new Size(280, 50);
+            btn_agregarCarrito.TabIndex = 209;
+            btn_agregarCarrito.Text = "AGREGAR AL CARRITO";
+            btn_agregarCarrito.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_agregarCarrito.UseAccentColor = false;
+            btn_agregarCarrito.UseVisualStyleBackColor = true;
+            btn_agregarCarrito.Click += btn_agregarCarrito_Click;
+            // 
+            // iconPictureBox9
+            // 
+            iconPictureBox9.BackColor = Color.WhiteSmoke;
+            iconPictureBox9.ForeColor = SystemColors.ControlText;
+            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            iconPictureBox9.IconColor = SystemColors.ControlText;
+            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox9.IconSize = 53;
+            iconPictureBox9.Location = new Point(785, 539);
+            iconPictureBox9.Name = "iconPictureBox9";
+            iconPictureBox9.Size = new Size(59, 53);
+            iconPictureBox9.TabIndex = 211;
+            iconPictureBox9.TabStop = false;
+            // 
+            // btn_ConfirmarCompra
+            // 
+            btn_ConfirmarCompra.AutoSize = false;
+            btn_ConfirmarCompra.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_ConfirmarCompra.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_ConfirmarCompra.Depth = 0;
+            btn_ConfirmarCompra.HighEmphasis = true;
+            btn_ConfirmarCompra.Icon = null;
+            btn_ConfirmarCompra.Location = new Point(839, 539);
+            btn_ConfirmarCompra.Margin = new Padding(4, 6, 4, 6);
+            btn_ConfirmarCompra.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_ConfirmarCompra.Name = "btn_ConfirmarCompra";
+            btn_ConfirmarCompra.NoAccentTextColor = Color.Empty;
+            btn_ConfirmarCompra.Size = new Size(267, 53);
+            btn_ConfirmarCompra.TabIndex = 212;
+            btn_ConfirmarCompra.Text = "CONFIRMAR COMPRA";
+            btn_ConfirmarCompra.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_ConfirmarCompra.UseAccentColor = false;
+            btn_ConfirmarCompra.UseVisualStyleBackColor = true;
+            btn_ConfirmarCompra.Click += btn_ConfirmarCompra_Click;
             // 
             // Salidas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(783, 601);
+            ClientSize = new Size(1132, 601);
             ControlBox = false;
-            Controls.Add(label9);
-            Controls.Add(label6);
-            Controls.Add(panel1);
-            Controls.Add(btn_salir);
-            Controls.Add(btn_confirmar);
-            Controls.Add(btn_TraerCliente);
-            Controls.Add(iconPictureBox1);
-            Controls.Add(txt_nombreCliente);
-            Controls.Add(label2);
-            Controls.Add(txt_cuit);
-            Controls.Add(label1);
-            Controls.Add(btn_traerProduct);
-            Controls.Add(iconPictureBox4);
+            Controls.Add(iconPictureBox9);
+            Controls.Add(btn_ConfirmarCompra);
+            Controls.Add(pnl_detalle);
+            Controls.Add(panel2);
             Controls.Add(dgvProductos);
-            Controls.Add(txt_nombreProducto);
-            Controls.Add(label3);
-            Controls.Add(txt_idproducto);
-            Controls.Add(label4);
             Name = "Salidas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Salidas";
+            Text = ".: Venta :.";
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
+            pnl_detalle.ResumeLayout(false);
+            pnl_detalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nud_cantidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private FontAwesome.Sharp.IconButton btn_añadir;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private FontAwesome.Sharp.IconButton btn_traerProduct;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private DataGridView dgvProductos;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
@@ -484,25 +605,32 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
-        private Label label7;
-        private NumericUpDown nud_cantidad;
-        private TextBox txt_precio;
-        private Label label5;
-        private TextBox txt_nombreProducto;
-        private Label label3;
-        private TextBox txt_idproducto;
-        private Label label4;
-        private FontAwesome.Sharp.IconButton btn_TraerCliente;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private TextBox txt_nombreCliente;
-        private Label label2;
-        private TextBox txt_cuit;
-        private Label label1;
-        private FontAwesome.Sharp.IconButton btn_confirmar;
-        private Label label8;
-        private FontAwesome.Sharp.IconButton btn_salir;
-        private Panel panel1;
-        private Label label6;
-        private Label label9;
+        private Panel panel2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private MaterialSkin.Controls.MaterialButton btn_traerProduc;
+        private MaterialSkin.Controls.MaterialButton btn_traerCliente;
+        private MaterialSkin.Controls.MaterialTextBox txt_cuit;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialTextBox txt_nombreProducto;
+        private MaterialSkin.Controls.MaterialTextBox txt_nombreCliente;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialTextBox txt_idproducto;
+        private Panel pnl_detalle;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialTextBox txt_cantidad;
+        private MaterialSkin.Controls.MaterialTextBox txt_precio;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private MaterialSkin.Controls.MaterialButton btn_agregarCarrito;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
+        private MaterialSkin.Controls.MaterialButton btn_ConfirmarCompra;
     }
 }
