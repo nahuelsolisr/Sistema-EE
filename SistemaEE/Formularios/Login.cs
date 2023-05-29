@@ -125,5 +125,25 @@ namespace SistemaEE.Formularios
                 EstiloClaro();
             }
         }
+
+        private void CierroPrograma(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // Confirmar con el usuario antes de cerrar la aplicación si es necesario
+                DialogResult result = MessageBox.Show("¿Estás seguro que deseas salir?", "Confirmar salida", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    // Cancelar el cierre de la aplicación si el usuario selecciona "No"
+                    e.Cancel = true;
+                }
+                else
+                {
+                    // Cerrar la aplicación por completo si el usuario selecciona "Sí"
+                    Application.Exit();
+                }
+            }
+        }
     }
 }

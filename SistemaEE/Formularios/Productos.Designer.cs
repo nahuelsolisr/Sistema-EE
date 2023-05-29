@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvProductos = new DataGridView();
             Column0 = new DataGridViewTextBoxColumn();
             btn_seleccionar = new DataGridViewButtonColumn();
@@ -55,12 +55,15 @@
             txt_categoria = new MaterialSkin.Controls.MaterialTextBox();
             iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             pnl_detalle = new Panel();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             btn_prov = new FontAwesome.Sharp.IconPictureBox();
+            btn_cargaMasiva = new MaterialSkin.Controls.MaterialButton();
             panel1 = new Panel();
             txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
@@ -70,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
             pnl_detalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_prov).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -81,28 +85,28 @@
             dgvProductos.AllowUserToResizeRows = false;
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvProductos.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column2, Column3, Column4 });
-            dgvProductos.Location = new Point(376, 134);
+            dgvProductos.Location = new Point(376, 127);
             dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
-            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
+            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(659, 480);
+            dgvProductos.Size = new Size(472, 480);
             dgvProductos.TabIndex = 103;
             dgvProductos.CellClick += Cell_Click;
             // 
@@ -253,7 +257,7 @@
             btn_agregar.Depth = 0;
             btn_agregar.HighEmphasis = true;
             btn_agregar.Icon = null;
-            btn_agregar.Location = new Point(39, 436);
+            btn_agregar.Location = new Point(39, 439);
             btn_agregar.Margin = new Padding(4, 6, 4, 6);
             btn_agregar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_agregar.Name = "btn_agregar";
@@ -274,7 +278,7 @@
             btn_eliminar.Depth = 0;
             btn_eliminar.HighEmphasis = true;
             btn_eliminar.Icon = null;
-            btn_eliminar.Location = new Point(280, 436);
+            btn_eliminar.Location = new Point(280, 439);
             btn_eliminar.Margin = new Padding(4, 6, 4, 6);
             btn_eliminar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_eliminar.Name = "btn_eliminar";
@@ -295,7 +299,7 @@
             iconPictureBox7.IconColor = Color.SteelBlue;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox7.IconSize = 36;
-            iconPictureBox7.Location = new Point(7, 436);
+            iconPictureBox7.Location = new Point(7, 439);
             iconPictureBox7.Name = "iconPictureBox7";
             iconPictureBox7.Size = new Size(39, 36);
             iconPictureBox7.TabIndex = 155;
@@ -335,7 +339,7 @@
             btn_editar.Depth = 0;
             btn_editar.HighEmphasis = true;
             btn_editar.Icon = null;
-            btn_editar.Location = new Point(152, 436);
+            btn_editar.Location = new Point(152, 439);
             btn_editar.Margin = new Padding(4, 6, 4, 6);
             btn_editar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_editar.Name = "btn_editar";
@@ -384,7 +388,7 @@
             iconPictureBox8.IconColor = Color.SteelBlue;
             iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox8.IconSize = 36;
-            iconPictureBox8.Location = new Point(119, 436);
+            iconPictureBox8.Location = new Point(119, 439);
             iconPictureBox8.Name = "iconPictureBox8";
             iconPictureBox8.Size = new Size(39, 36);
             iconPictureBox8.TabIndex = 156;
@@ -415,7 +419,7 @@
             iconPictureBox9.IconColor = Color.Firebrick;
             iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox9.IconSize = 39;
-            iconPictureBox9.Location = new Point(244, 436);
+            iconPictureBox9.Location = new Point(244, 439);
             iconPictureBox9.Name = "iconPictureBox9";
             iconPictureBox9.Size = new Size(39, 43);
             iconPictureBox9.TabIndex = 157;
@@ -447,6 +451,20 @@
             pnl_detalle.Size = new Size(368, 487);
             pnl_detalle.TabIndex = 165;
             // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.Transparent;
+            iconPictureBox5.ForeColor = Color.SeaGreen;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            iconPictureBox5.IconColor = Color.SeaGreen;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 40;
+            iconPictureBox5.Location = new Point(854, 566);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(42, 40);
+            iconPictureBox5.TabIndex = 167;
+            iconPictureBox5.TabStop = false;
+            // 
             // btn_prov
             // 
             btn_prov.BackColor = Color.WhiteSmoke;
@@ -461,6 +479,27 @@
             btn_prov.TabIndex = 163;
             btn_prov.TabStop = false;
             btn_prov.Click += btn_prov_Click;
+            // 
+            // btn_cargaMasiva
+            // 
+            btn_cargaMasiva.AutoSize = false;
+            btn_cargaMasiva.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_cargaMasiva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_cargaMasiva.Depth = 0;
+            btn_cargaMasiva.Enabled = false;
+            btn_cargaMasiva.HighEmphasis = true;
+            btn_cargaMasiva.Icon = null;
+            btn_cargaMasiva.Location = new Point(893, 566);
+            btn_cargaMasiva.Margin = new Padding(4, 6, 4, 6);
+            btn_cargaMasiva.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_cargaMasiva.Name = "btn_cargaMasiva";
+            btn_cargaMasiva.NoAccentTextColor = Color.Empty;
+            btn_cargaMasiva.Size = new Size(137, 40);
+            btn_cargaMasiva.TabIndex = 168;
+            btn_cargaMasiva.Text = "Carga masiva";
+            btn_cargaMasiva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_cargaMasiva.UseAccentColor = false;
+            btn_cargaMasiva.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -529,15 +568,30 @@
             iconPictureBox1.TabIndex = 141;
             iconPictureBox1.TabStop = false;
             // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(901, 541);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(123, 19);
+            materialLabel7.TabIndex = 164;
+            materialLabel7.Text = "PROXIMAMENTE";
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1046, 620);
+            Controls.Add(materialLabel7);
             Controls.Add(panel1);
+            Controls.Add(iconPictureBox5);
             Controls.Add(pnl_detalle);
             Controls.Add(dgvProductos);
+            Controls.Add(btn_cargaMasiva);
             Name = "Productos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Productos :.";
@@ -552,11 +606,13 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
             pnl_detalle.ResumeLayout(false);
             pnl_detalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_prov).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -591,5 +647,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox btn_prov;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private MaterialSkin.Controls.MaterialButton btn_cargaMasiva;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
     }
 }

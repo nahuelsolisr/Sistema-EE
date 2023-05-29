@@ -226,6 +226,7 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Inicio de sesión :.";
+            FormClosing += CierroPrograma;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();

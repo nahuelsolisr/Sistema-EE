@@ -14,6 +14,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using Microsoft.VisualBasic.Logging;
+using static SistemaEE.Formularios.Entrada;
+using static System.Resources.ResXFileRef;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
 
 namespace SistemaEE.Formularios
 {
@@ -181,6 +187,7 @@ namespace SistemaEE.Formularios
                 ConectaDB.AbrirDB();
                 foreach (Producto producto in carrito)
                 {
+                    int contador = 0;
                     string cant = $"Select cantidad from productos where id_producto = {producto.Id}";
                     int cantidadActual = 0;
 
@@ -218,12 +225,12 @@ namespace SistemaEE.Formularios
                     decimal totalE = producto.Cantidad * producto.Precio;
                     int unidadesEx = ObtenerUnidadesExistentes();
                     decimal precioUEx = ObtenerPrecioUExistentes();
-                    decimal totalEx = cantidadNetaEntrada;
+                    decimal totalEx = ObtenerTotalExistentes();
                     string concepto = "COMPRA";
 
                     //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen   
 
-                    if (unidadesEx == 0 || precioUEx == 0 || totalEx == 0)
+                    if (unidadesEx == 0)
                     {
                         unidadesEx = unidadesE;
                         precioUEx = precioUE;
@@ -231,55 +238,77 @@ namespace SistemaEE.Formularios
                     }
                     else
                     {
-                        unidadesEx = unidadesEx + unidadesE;
-                        totalEx = totalEx + totalE;
+                        
                     }
                     //hace el insert en stock
                     string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
-                        $"VALUES ({fechaActualString} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {cantidadNetaEntrada}, {precioUEx}, {totalEx})";
+                        $"VALUES ({fechaActualString} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
                     ConectaDB.CargarDB(insertStock);
 
-                }
 
+                     unidadesEx = ObtenerUnidadesExistentes() + unidadesE;
+                     precioUEx = ObtenerPrecioUExistentes();
+                     totalEx = ObtenerTotalExistentes() + totalE;
+
+                    string insertaSuma = $"INSERT INTO fichastock (fecha, nombreProducto, IdProducto, Concepto, UnidadesEx, PrecioUEx, TotalEx) " +
+    $"VALUES (NULL, NULL, {producto.Id}, NULL, {unidadesEx}, {precioUEx}, {totalEx})";
+                    ConectaDB.CargarDB(insertaSuma);
+
+                }
+                // Agrega 
                 MessageBox.Show("Su compra ha sido realizada");
                 ConectaDB.CerrarDB();
                 Limpiar();
                 carrito.Clear();
-                ComprobanteCompra();
+              // ComprobanteCompra();
             }
             else { }
         }
         public void ComprobanteCompra()
         {
-            string htmlContent = "<html><head><title>Comprobante de compra</title>";
-            htmlContent += "<style>";
-            htmlContent += "body { font-family: Arial, sans-serif; }";
-            htmlContent += "h1 { color: #333333; text-align: center; }";
-            htmlContent += "p { margin: 10px 0; }";
-            htmlContent += ".section-title { font-weight: bold; margin-top: 20px; }";
-            htmlContent += ".section-content { margin-left: 20px; }";
-            htmlContent += "</style>";
-            htmlContent += "</head><body>";
-            htmlContent += "<h1>Comprobante de compra</h1>";
-            htmlContent += "<div class='section-content'>";
-            htmlContent += "<p><span class='section-title'>Nombre Proveedor:</span> " + Elegir.nom_prov + "</p>";
-            htmlContent += "<p><span class='section-title'>Cuit Proveedor:</span> " + Elegir.cuit_prov + "</p>";
-            htmlContent += "<p><span class='section-title'>Descripción:</span> compra el producto x</p>";
-            htmlContent += "<p><span class='section-title'>Cantidad:</span> " + unidadesE + "</p>";
-            htmlContent += "<p><span class='section-title'>Precio unitario:</span> " + precioUE + "</p>";
-            // Agrega aquí los demás campos del comprobante
-            htmlContent += "</div>";
-            htmlContent += "</body></html>";
 
-            string filePath = @"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\comprobante.html";
-            File.WriteAllText(filePath, htmlContent);
+            string filePath = @"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\plantillaEntrada.html";
+            string htmlContent = File.ReadAllText(filePath);
 
-            // Abre el archivo en una pestaña del navegador
+            // Reemplazar las variables en el contenido HTML
+            htmlContent = htmlContent.Replace("@nombrenegocio", "PANTERASHOP")
+                .Replace("@docnegocio", "344324")
+                .Replace("@direcnegocio", "Ensenada 375")
+                .Replace("@numerodocumento", "111111111")
+                .Replace("@docproveedor", "32423423324")
+                .Replace("@nombreproveedor", "Claudio")
+                .Replace("@fecharegistro", "324234-234234-234")
+                .Replace("@montototal", "1000000");
+
+            // Crear el documento PDF
+            Document doc = new Document();
+
+            // Crear el escritor de PDF y vincularlo al documento y a un archivo temporal
+            string tempFilePath = Path.GetTempFileName() + ".pdf";
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+
+            // Abrir el documento
+            doc.Open();
+
+            // Crear el lector HTML para convertir el contenido HTML a elementos PDF
+            var htmlWorker = new HTMLWorker(doc);
+
+            // Convertir el contenido HTML a elementos PDF y agregarlos al documento
+            using (TextReader reader = new StringReader(htmlContent))
+            {
+                htmlWorker.Parse(reader);
+            }
+
+            // Cerrar el documento
+            doc.Close();
+
+            // Abre el archivo PDF en el navegador
             Process.Start(new ProcessStartInfo
             {
-                FileName = filePath,
+                FileName = tempFilePath,
                 UseShellExecute = true
             });
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             btn_contabilidad = new FontAwesome.Sharp.IconButton();
             mtcMenu = new MaterialSkin.Controls.MaterialTabControl();
@@ -53,6 +54,7 @@
             tabUsuarios = new TabPage();
             tabConfiguracion = new TabPage();
             msModoOscuro = new MaterialSkin.Controls.MaterialSwitch();
+            ImagenesTab = new ImageList(components);
             mtcMenu.SuspendLayout();
             tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -75,7 +77,7 @@
             btn_contabilidad.IconColor = Color.DimGray;
             btn_contabilidad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_contabilidad.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_contabilidad.Location = new Point(3, 46);
+            btn_contabilidad.Location = new Point(66, 18);
             btn_contabilidad.Name = "btn_contabilidad";
             btn_contabilidad.Size = new Size(211, 60);
             btn_contabilidad.TabIndex = 17;
@@ -91,6 +93,7 @@
             mtcMenu.Controls.Add(tabUsuarios);
             mtcMenu.Controls.Add(tabConfiguracion);
             mtcMenu.Depth = 0;
+            mtcMenu.ImageList = ImagenesTab;
             mtcMenu.Location = new Point(6, 67);
             mtcMenu.MouseState = MaterialSkin.MouseState.HOVER;
             mtcMenu.Multiline = true;
@@ -102,17 +105,18 @@
             // 
             // tabHome
             // 
+            tabHome.BackColor = Color.White;
             tabHome.Controls.Add(materialLabel2);
             tabHome.Controls.Add(pictureBox1);
             tabHome.Controls.Add(lbl_usuario);
             tabHome.Controls.Add(materialLabel1);
-            tabHome.Location = new Point(4, 24);
+            tabHome.ImageKey = "house-solid.png";
+            tabHome.Location = new Point(4, 39);
             tabHome.Name = "tabHome";
             tabHome.Padding = new Padding(3);
-            tabHome.Size = new Size(577, 500);
+            tabHome.Size = new Size(577, 485);
             tabHome.TabIndex = 0;
             tabHome.Text = "Home";
-            tabHome.UseVisualStyleBackColor = true;
             // 
             // materialLabel2
             // 
@@ -129,9 +133,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(6, 35);
+            pictureBox1.Location = new Point(70, 35);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(565, 440);
+            pictureBox1.Size = new Size(501, 440);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
@@ -142,7 +146,7 @@
             lbl_usuario.BackColor = Color.Transparent;
             lbl_usuario.Depth = 0;
             lbl_usuario.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lbl_usuario.Location = new Point(6, 13);
+            lbl_usuario.Location = new Point(70, 13);
             lbl_usuario.MouseState = MaterialSkin.MouseState.HOVER;
             lbl_usuario.Name = "lbl_usuario";
             lbl_usuario.Size = new Size(107, 19);
@@ -154,7 +158,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(119, 13);
+            materialLabel1.Location = new Point(194, 13);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(185, 19);
@@ -163,6 +167,7 @@
             // 
             // tabFacturacion
             // 
+            tabFacturacion.BackColor = Color.White;
             tabFacturacion.Controls.Add(btn_stock);
             tabFacturacion.Controls.Add(btn_salidas);
             tabFacturacion.Controls.Add(btn_entradas);
@@ -175,13 +180,13 @@
             tabFacturacion.Controls.Add(iconPictureBox3);
             tabFacturacion.Controls.Add(iconPictureBox2);
             tabFacturacion.Controls.Add(iconPictureBox1);
-            tabFacturacion.Location = new Point(4, 24);
+            tabFacturacion.ImageKey = "file-invoice-solid.png";
+            tabFacturacion.Location = new Point(4, 39);
             tabFacturacion.Name = "tabFacturacion";
             tabFacturacion.Padding = new Padding(3);
-            tabFacturacion.Size = new Size(577, 500);
+            tabFacturacion.Size = new Size(577, 485);
             tabFacturacion.TabIndex = 1;
             tabFacturacion.Text = "Facturación";
-            tabFacturacion.UseVisualStyleBackColor = true;
             // 
             // btn_stock
             // 
@@ -191,7 +196,7 @@
             btn_stock.Depth = 0;
             btn_stock.HighEmphasis = true;
             btn_stock.Icon = null;
-            btn_stock.Location = new Point(66, 304);
+            btn_stock.Location = new Point(124, 304);
             btn_stock.Margin = new Padding(4, 6, 4, 6);
             btn_stock.MouseState = MaterialSkin.MouseState.HOVER;
             btn_stock.Name = "btn_stock";
@@ -212,7 +217,7 @@
             btn_salidas.Depth = 0;
             btn_salidas.HighEmphasis = true;
             btn_salidas.Icon = null;
-            btn_salidas.Location = new Point(66, 245);
+            btn_salidas.Location = new Point(124, 245);
             btn_salidas.Margin = new Padding(4, 6, 4, 6);
             btn_salidas.MouseState = MaterialSkin.MouseState.HOVER;
             btn_salidas.Name = "btn_salidas";
@@ -233,7 +238,7 @@
             btn_entradas.Depth = 0;
             btn_entradas.HighEmphasis = true;
             btn_entradas.Icon = null;
-            btn_entradas.Location = new Point(66, 183);
+            btn_entradas.Location = new Point(124, 183);
             btn_entradas.Margin = new Padding(4, 6, 4, 6);
             btn_entradas.MouseState = MaterialSkin.MouseState.HOVER;
             btn_entradas.Name = "btn_entradas";
@@ -254,7 +259,7 @@
             btn_clientes.Depth = 0;
             btn_clientes.HighEmphasis = true;
             btn_clientes.Icon = null;
-            btn_clientes.Location = new Point(66, 124);
+            btn_clientes.Location = new Point(124, 124);
             btn_clientes.Margin = new Padding(4, 6, 4, 6);
             btn_clientes.MouseState = MaterialSkin.MouseState.HOVER;
             btn_clientes.Name = "btn_clientes";
@@ -275,7 +280,7 @@
             btn_producto.Depth = 0;
             btn_producto.HighEmphasis = true;
             btn_producto.Icon = null;
-            btn_producto.Location = new Point(66, 65);
+            btn_producto.Location = new Point(124, 65);
             btn_producto.Margin = new Padding(4, 6, 4, 6);
             btn_producto.MouseState = MaterialSkin.MouseState.HOVER;
             btn_producto.Name = "btn_producto";
@@ -296,7 +301,7 @@
             btn_prov.Depth = 0;
             btn_prov.HighEmphasis = true;
             btn_prov.Icon = null;
-            btn_prov.Location = new Point(66, 6);
+            btn_prov.Location = new Point(124, 6);
             btn_prov.Margin = new Padding(4, 6, 4, 6);
             btn_prov.MouseState = MaterialSkin.MouseState.HOVER;
             btn_prov.Name = "btn_prov";
@@ -312,12 +317,12 @@
             // iconPictureBox6
             // 
             iconPictureBox6.BackColor = Color.Transparent;
-            iconPictureBox6.ForeColor = SystemColors.ControlText;
+            iconPictureBox6.ForeColor = Color.SteelBlue;
             iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Cube;
-            iconPictureBox6.IconColor = SystemColors.ControlText;
+            iconPictureBox6.IconColor = Color.SteelBlue;
             iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox6.IconSize = 53;
-            iconPictureBox6.Location = new Point(6, 304);
+            iconPictureBox6.Location = new Point(64, 304);
             iconPictureBox6.Name = "iconPictureBox6";
             iconPictureBox6.Size = new Size(62, 53);
             iconPictureBox6.TabIndex = 30;
@@ -326,12 +331,12 @@
             // iconPictureBox5
             // 
             iconPictureBox5.BackColor = Color.Transparent;
-            iconPictureBox5.ForeColor = SystemColors.ControlText;
+            iconPictureBox5.ForeColor = Color.SteelBlue;
             iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Dolly;
-            iconPictureBox5.IconColor = SystemColors.ControlText;
+            iconPictureBox5.IconColor = Color.SteelBlue;
             iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox5.IconSize = 53;
-            iconPictureBox5.Location = new Point(6, 245);
+            iconPictureBox5.Location = new Point(64, 245);
             iconPictureBox5.Name = "iconPictureBox5";
             iconPictureBox5.Size = new Size(62, 53);
             iconPictureBox5.TabIndex = 29;
@@ -340,12 +345,12 @@
             // iconPictureBox4
             // 
             iconPictureBox4.BackColor = Color.Transparent;
-            iconPictureBox4.ForeColor = SystemColors.ControlText;
+            iconPictureBox4.ForeColor = Color.SteelBlue;
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed;
-            iconPictureBox4.IconColor = SystemColors.ControlText;
+            iconPictureBox4.IconColor = Color.SteelBlue;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 53;
-            iconPictureBox4.Location = new Point(6, 183);
+            iconPictureBox4.Location = new Point(64, 183);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(62, 53);
             iconPictureBox4.TabIndex = 28;
@@ -354,12 +359,12 @@
             // iconPictureBox3
             // 
             iconPictureBox3.BackColor = Color.Transparent;
-            iconPictureBox3.ForeColor = SystemColors.ControlText;
+            iconPictureBox3.ForeColor = Color.SteelBlue;
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            iconPictureBox3.IconColor = SystemColors.ControlText;
+            iconPictureBox3.IconColor = Color.SteelBlue;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox3.IconSize = 53;
-            iconPictureBox3.Location = new Point(6, 123);
+            iconPictureBox3.Location = new Point(64, 123);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(62, 53);
             iconPictureBox3.TabIndex = 27;
@@ -368,12 +373,12 @@
             // iconPictureBox2
             // 
             iconPictureBox2.BackColor = Color.Transparent;
-            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.ForeColor = Color.SteelBlue;
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Cubes;
-            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconColor = Color.SteelBlue;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 53;
-            iconPictureBox2.Location = new Point(6, 65);
+            iconPictureBox2.Location = new Point(64, 65);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(62, 53);
             iconPictureBox2.TabIndex = 26;
@@ -382,12 +387,12 @@
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.Transparent;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.TruckMoving;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconColor = Color.SteelBlue;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 53;
-            iconPictureBox1.Location = new Point(6, 6);
+            iconPictureBox1.Location = new Point(64, 6);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(62, 53);
             iconPictureBox1.TabIndex = 25;
@@ -395,38 +400,41 @@
             // 
             // tabContabilidad
             // 
+            tabContabilidad.BackColor = Color.White;
             tabContabilidad.Controls.Add(btn_contabilidad);
-            tabContabilidad.Location = new Point(4, 24);
+            tabContabilidad.ImageKey = "receipt-solid.png";
+            tabContabilidad.Location = new Point(4, 39);
             tabContabilidad.Name = "tabContabilidad";
-            tabContabilidad.Size = new Size(577, 500);
+            tabContabilidad.Size = new Size(577, 485);
             tabContabilidad.TabIndex = 2;
             tabContabilidad.Text = "Contabilidad";
-            tabContabilidad.UseVisualStyleBackColor = true;
             // 
             // tabUsuarios
             // 
-            tabUsuarios.Location = new Point(4, 24);
+            tabUsuarios.BackColor = Color.White;
+            tabUsuarios.ImageKey = "user-solid.png";
+            tabUsuarios.Location = new Point(4, 39);
             tabUsuarios.Name = "tabUsuarios";
-            tabUsuarios.Size = new Size(577, 500);
+            tabUsuarios.Size = new Size(577, 485);
             tabUsuarios.TabIndex = 3;
             tabUsuarios.Text = "Usuarios";
-            tabUsuarios.UseVisualStyleBackColor = true;
             // 
             // tabConfiguracion
             // 
+            tabConfiguracion.BackColor = Color.White;
             tabConfiguracion.Controls.Add(msModoOscuro);
-            tabConfiguracion.Location = new Point(4, 24);
+            tabConfiguracion.ImageKey = "gear-solid.png";
+            tabConfiguracion.Location = new Point(4, 39);
             tabConfiguracion.Name = "tabConfiguracion";
-            tabConfiguracion.Size = new Size(577, 500);
+            tabConfiguracion.Size = new Size(577, 485);
             tabConfiguracion.TabIndex = 4;
             tabConfiguracion.Text = "Configuración";
-            tabConfiguracion.UseVisualStyleBackColor = true;
             // 
             // msModoOscuro
             // 
             msModoOscuro.AutoSize = true;
             msModoOscuro.Depth = 0;
-            msModoOscuro.Location = new Point(13, 10);
+            msModoOscuro.Location = new Point(64, 21);
             msModoOscuro.Margin = new Padding(0);
             msModoOscuro.MouseLocation = new Point(-1, -1);
             msModoOscuro.MouseState = MaterialSkin.MouseState.HOVER;
@@ -438,6 +446,17 @@
             msModoOscuro.UseVisualStyleBackColor = true;
             msModoOscuro.CheckedChanged += msModoOscuro_CheckedChanged;
             // 
+            // ImagenesTab
+            // 
+            ImagenesTab.ColorDepth = ColorDepth.Depth32Bit;
+            ImagenesTab.ImageStream = (ImageListStreamer)resources.GetObject("ImagenesTab.ImageStream");
+            ImagenesTab.TransparentColor = Color.Transparent;
+            ImagenesTab.Images.SetKeyName(0, "house-solid.png");
+            ImagenesTab.Images.SetKeyName(1, "file-invoice-solid.png");
+            ImagenesTab.Images.SetKeyName(2, "receipt-solid.png");
+            ImagenesTab.Images.SetKeyName(3, "user-solid.png");
+            ImagenesTab.Images.SetKeyName(4, "gear-solid.png");
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -445,6 +464,7 @@
             BackColor = Color.FromArgb(82, 82, 89);
             ClientSize = new Size(597, 601);
             Controls.Add(mtcMenu);
+            DrawerShowIconsWhenHidden = true;
             DrawerTabControl = mtcMenu;
             Name = "Menu";
             ShowIcon = false;
@@ -492,5 +512,6 @@
         private MaterialSkin.Controls.MaterialButton btn_producto;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private PictureBox pictureBox1;
+        private ImageList ImagenesTab;
     }
 }

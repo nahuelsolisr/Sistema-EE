@@ -33,7 +33,6 @@ namespace SistemaEE.Formularios
 
             lbl_usuario.Text = nombre;
             this.PERMISOS = permisos;
-
         }
 
 
@@ -119,5 +118,6 @@ namespace SistemaEE.Formularios
             FichaDeStock inventario = new FichaDeStock();
             inventario.ShowDialog();
         }
+
     }
 }
