@@ -154,7 +154,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(694, 469);
-            ControlBox = false;
             Controls.Add(txt_filtrar);
             Controls.Add(iconPictureBox1);
             Controls.Add(dgvCliente);

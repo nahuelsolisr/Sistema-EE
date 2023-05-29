@@ -25,8 +25,7 @@ namespace SistemaEE.Formularios
         {
 
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            dgv_Productos();
+            //
             this.Size = new Size(1046, 620);
             this.Resize += (sender, e) => this.Size = new Size(1046, 620);
             this.FormBorderStyle = FormBorderStyle.None;
@@ -158,7 +157,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + txt_prov.Text + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
+                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + Elegir.cuit_prov + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
                 ConectaDB.CargarDB(insertProducto);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El producto ha sido agregado correctamente.");
@@ -216,7 +215,7 @@ namespace SistemaEE.Formularios
         {
             MuestraProveedor muestraProveedor = new MuestraProveedor();
             muestraProveedor.ShowDialog();
-            txt_prov.Text = Clases.Elegir.cuit_prov.ToString();
+            txt_prov.Text = Clases.Elegir.nom_prov.ToString();
         }
     }
 }

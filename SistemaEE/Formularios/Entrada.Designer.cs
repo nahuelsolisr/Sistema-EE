@@ -137,9 +137,9 @@
             // iconPictureBox4
             // 
             iconPictureBox4.BackColor = Color.WhiteSmoke;
-            iconPictureBox4.ForeColor = SystemColors.ControlText;
+            iconPictureBox4.ForeColor = Color.SteelBlue;
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Barcode;
-            iconPictureBox4.IconColor = SystemColors.ControlText;
+            iconPictureBox4.IconColor = Color.SteelBlue;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 50;
             iconPictureBox4.Location = new Point(569, 30);
@@ -151,9 +151,9 @@
             // iconPictureBox5
             // 
             iconPictureBox5.BackColor = Color.WhiteSmoke;
-            iconPictureBox5.ForeColor = SystemColors.ControlText;
+            iconPictureBox5.ForeColor = Color.SteelBlue;
             iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
-            iconPictureBox5.IconColor = SystemColors.ControlText;
+            iconPictureBox5.IconColor = Color.SteelBlue;
             iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox5.IconSize = 48;
             iconPictureBox5.Location = new Point(3, 76);
@@ -165,9 +165,9 @@
             // iconPictureBox6
             // 
             iconPictureBox6.BackColor = Color.WhiteSmoke;
-            iconPictureBox6.ForeColor = SystemColors.ControlText;
+            iconPictureBox6.ForeColor = Color.SteelBlue;
             iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Percentage;
-            iconPictureBox6.IconColor = SystemColors.ControlText;
+            iconPictureBox6.IconColor = Color.SteelBlue;
             iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox6.IconSize = 49;
             iconPictureBox6.Location = new Point(489, 78);
@@ -179,9 +179,9 @@
             // iconPictureBox7
             // 
             iconPictureBox7.BackColor = Color.WhiteSmoke;
-            iconPictureBox7.ForeColor = SystemColors.ControlText;
+            iconPictureBox7.ForeColor = Color.SteelBlue;
             iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Cubes;
-            iconPictureBox7.IconColor = SystemColors.ControlText;
+            iconPictureBox7.IconColor = Color.SteelBlue;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox7.IconSize = 50;
             iconPictureBox7.Location = new Point(216, 77);
@@ -212,9 +212,9 @@
             // iconPictureBox8
             // 
             iconPictureBox8.BackColor = Color.WhiteSmoke;
-            iconPictureBox8.ForeColor = SystemColors.ControlText;
+            iconPictureBox8.ForeColor = Color.SteelBlue;
             iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            iconPictureBox8.IconColor = SystemColors.ControlText;
+            iconPictureBox8.IconColor = Color.SteelBlue;
             iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox8.IconSize = 53;
             iconPictureBox8.Location = new Point(782, 74);
@@ -420,9 +420,9 @@
             // iconPictureBox3
             // 
             iconPictureBox3.BackColor = Color.WhiteSmoke;
-            iconPictureBox3.ForeColor = SystemColors.ControlText;
+            iconPictureBox3.ForeColor = Color.SteelBlue;
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            iconPictureBox3.IconColor = SystemColors.ControlText;
+            iconPictureBox3.IconColor = Color.SteelBlue;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox3.IconSize = 48;
             iconPictureBox3.Location = new Point(8, 31);
@@ -497,9 +497,9 @@
             // iconPictureBox2
             // 
             iconPictureBox2.BackColor = Color.WhiteSmoke;
-            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.ForeColor = Color.SteelBlue;
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconColor = Color.SteelBlue;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 50;
             iconPictureBox2.Location = new Point(937, 30);
@@ -511,9 +511,9 @@
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.WhiteSmoke;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconColor = Color.SteelBlue;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 53;
             iconPictureBox1.Location = new Point(375, 30);
@@ -567,9 +567,9 @@
             // iconPictureBox9
             // 
             iconPictureBox9.BackColor = Color.WhiteSmoke;
-            iconPictureBox9.ForeColor = SystemColors.ControlText;
+            iconPictureBox9.ForeColor = Color.SteelBlue;
             iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            iconPictureBox9.IconColor = SystemColors.ControlText;
+            iconPictureBox9.IconColor = Color.SteelBlue;
             iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox9.IconSize = 53;
             iconPictureBox9.Location = new Point(784, 539);
@@ -604,7 +604,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1132, 601);
-            ControlBox = false;
             Controls.Add(iconPictureBox9);
             Controls.Add(panel1);
             Controls.Add(pnl_detalle);

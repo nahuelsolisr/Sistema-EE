@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using SistemaEE.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +14,49 @@ using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
-    public partial class FichaDeStock : Form
+    public partial class FichaDeStock : MaterialForm
     {
         public FichaDeStock()
         {
             InitializeComponent();
             aparienciaGrilla();
             dgv_FichaStock();
+            //1256; 607
+            this.Size = new Size(1256, 607);
+            this.Resize += (sender, e) => this.Size = new Size(1256, 607);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = true;
+            this.MinimizeBox = true;
+            this.MaximizeBox = false;
+            //
+            dgv_FichaStock();
+            if (Elegir.modoOscuro)
+            {
+                EstiloOscuro();
+                dgvFichaStock.DefaultCellStyle.BackColor = Color.DimGray;
+            }
+            else
+            {
+                EstiloClaro();
+            }
+
+        }
+        public void EstiloClaro()
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+        }
+        public void EstiloOscuro()
+        {
+
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK; // Cambiar a tema oscuro
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE); // Ajustar colores para modo oscuro
+
         }
         public void dgv_FichaStock()
         {

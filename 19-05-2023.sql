@@ -121,3 +121,9 @@ CREATE TABLE fichastock(
     TotalEx int,  
 )
 select * from fichastock
+
+SELECT id_producto,nombre,categoria, marca, precio, cantidad, porcentajeg FROM productos WHERE cantidad >= 1;
+
+DELETE FROM productos
+WHERE cantidad > 1;
+

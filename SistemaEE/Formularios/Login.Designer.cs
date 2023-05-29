@@ -224,7 +224,6 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Login";
-            Opacity = 0.96D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Inicio de sesión :.";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

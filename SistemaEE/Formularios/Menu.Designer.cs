@@ -359,7 +359,7 @@
             iconPictureBox3.IconColor = SystemColors.ControlText;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox3.IconSize = 53;
-            iconPictureBox3.Location = new Point(6, 124);
+            iconPictureBox3.Location = new Point(6, 123);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(62, 53);
             iconPictureBox3.TabIndex = 27;
@@ -447,7 +447,6 @@
             Controls.Add(mtcMenu);
             DrawerTabControl = mtcMenu;
             Name = "Menu";
-            Opacity = 0.98D;
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Menu :.";

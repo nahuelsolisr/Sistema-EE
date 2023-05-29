@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
 
 namespace SistemaEE.Formularios
 {
@@ -19,7 +21,8 @@ namespace SistemaEE.Formularios
     {
 
         private List<Producto> carrito = new List<Producto>();
-
+        public static int unidadesE;
+        public static decimal precioUE;
 
         public Entrada()
         {
@@ -186,7 +189,16 @@ namespace SistemaEE.Formularios
                     {
                         if (reader.Read())
                         {
-                            cantidadActual = Convert.ToInt32(reader["cantidad"]);
+                            object cantidadObj = reader["cantidad"];
+                            if (cantidadObj != DBNull.Value)
+                            {
+                                cantidadActual = Convert.ToInt32(cantidadObj);
+                            }
+                            else
+                            {
+                                // Valor nulo, maneja el caso según tus necesidades (por ejemplo, asignar un valor predeterminado)
+                                cantidadActual = 0;
+                            }
                         }
                     }
                     int cantidadNetaEntrada = cantidadActual + producto.Cantidad;
@@ -201,8 +213,8 @@ namespace SistemaEE.Formularios
                     //Realiza el insert en la tabla "fichastock"
                     DateTime fechaActual = DateTime.Now;
                     string fechaActualString = fechaActual.ToString("dd/MM/yyyy");
-                    int unidadesE = producto.Cantidad;
-                    decimal precioUE = producto.Precio;
+                    unidadesE = producto.Cantidad;
+                    precioUE = producto.Precio;
                     decimal totalE = producto.Cantidad * producto.Precio;
                     int unidadesEx = ObtenerUnidadesExistentes();
                     decimal precioUEx = ObtenerPrecioUExistentes();
@@ -233,8 +245,41 @@ namespace SistemaEE.Formularios
                 ConectaDB.CerrarDB();
                 Limpiar();
                 carrito.Clear();
+                ComprobanteCompra();
             }
             else { }
+        }
+        public void ComprobanteCompra()
+        {
+            string htmlContent = "<html><head><title>Comprobante de compra</title>";
+            htmlContent += "<style>";
+            htmlContent += "body { font-family: Arial, sans-serif; }";
+            htmlContent += "h1 { color: #333333; text-align: center; }";
+            htmlContent += "p { margin: 10px 0; }";
+            htmlContent += ".section-title { font-weight: bold; margin-top: 20px; }";
+            htmlContent += ".section-content { margin-left: 20px; }";
+            htmlContent += "</style>";
+            htmlContent += "</head><body>";
+            htmlContent += "<h1>Comprobante de compra</h1>";
+            htmlContent += "<div class='section-content'>";
+            htmlContent += "<p><span class='section-title'>Nombre Proveedor:</span> " + Elegir.nom_prov + "</p>";
+            htmlContent += "<p><span class='section-title'>Cuit Proveedor:</span> " + Elegir.cuit_prov + "</p>";
+            htmlContent += "<p><span class='section-title'>Descripción:</span> compra el producto x</p>";
+            htmlContent += "<p><span class='section-title'>Cantidad:</span> " + unidadesE + "</p>";
+            htmlContent += "<p><span class='section-title'>Precio unitario:</span> " + precioUE + "</p>";
+            // Agrega aquí los demás campos del comprobante
+            htmlContent += "</div>";
+            htmlContent += "</body></html>";
+
+            string filePath = @"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\comprobante.html";
+            File.WriteAllText(filePath, htmlContent);
+
+            // Abre el archivo en una pestaña del navegador
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            });
         }
     }
 }

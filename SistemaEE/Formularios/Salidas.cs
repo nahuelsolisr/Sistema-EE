@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using static SistemaEE.Formularios.Entrada;
 
 namespace SistemaEE.Formularios
@@ -109,7 +110,6 @@ namespace SistemaEE.Formularios
         {
             // Limpiar la grilla
             dgvProductos.Rows.Clear();
-
             // Limpiar los campos de texto
             txt_precio.Text = "";
             txt_cantidad.Text = "";

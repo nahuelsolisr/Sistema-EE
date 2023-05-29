@@ -106,7 +106,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvCliente.RowTemplate.Height = 25;
-            dgvCliente.Size = new Size(636, 446);
+            dgvCliente.Size = new Size(636, 474);
             dgvCliente.TabIndex = 124;
             dgvCliente.CellClick += Cell_Click;
             // 
@@ -207,14 +207,14 @@
             // iconPictureBox9
             // 
             iconPictureBox9.BackColor = SystemColors.Control;
-            iconPictureBox9.ForeColor = SystemColors.ControlText;
+            iconPictureBox9.ForeColor = Color.Firebrick;
             iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.TimesSquare;
-            iconPictureBox9.IconColor = SystemColors.ControlText;
+            iconPictureBox9.IconColor = Color.Firebrick;
             iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox9.IconSize = 39;
-            iconPictureBox9.Location = new Point(242, 421);
+            iconPictureBox9.Location = new Point(242, 444);
             iconPictureBox9.Name = "iconPictureBox9";
-            iconPictureBox9.Size = new Size(39, 43);
+            iconPictureBox9.Size = new Size(39, 39);
             iconPictureBox9.TabIndex = 157;
             iconPictureBox9.TabStop = false;
             // 
@@ -238,12 +238,12 @@
             // iconPictureBox8
             // 
             iconPictureBox8.BackColor = SystemColors.Control;
-            iconPictureBox8.ForeColor = SystemColors.ControlText;
+            iconPictureBox8.ForeColor = Color.SteelBlue;
             iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            iconPictureBox8.IconColor = SystemColors.ControlText;
+            iconPictureBox8.IconColor = Color.SteelBlue;
             iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox8.IconSize = 36;
-            iconPictureBox8.Location = new Point(117, 421);
+            iconPictureBox8.Location = new Point(117, 444);
             iconPictureBox8.Name = "iconPictureBox8";
             iconPictureBox8.Size = new Size(39, 36);
             iconPictureBox8.TabIndex = 156;
@@ -264,9 +264,9 @@
             // iconPictureBox4
             // 
             iconPictureBox4.BackColor = Color.WhiteSmoke;
-            iconPictureBox4.ForeColor = SystemColors.ControlText;
+            iconPictureBox4.ForeColor = Color.SteelBlue;
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.EnvelopeSquare;
-            iconPictureBox4.IconColor = SystemColors.ControlText;
+            iconPictureBox4.IconColor = Color.SteelBlue;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 47;
             iconPictureBox4.Location = new Point(8, 275);
@@ -283,7 +283,7 @@
             btn_editar.Depth = 0;
             btn_editar.HighEmphasis = true;
             btn_editar.Icon = null;
-            btn_editar.Location = new Point(150, 421);
+            btn_editar.Location = new Point(150, 444);
             btn_editar.Margin = new Padding(4, 6, 4, 6);
             btn_editar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_editar.Name = "btn_editar";
@@ -311,12 +311,12 @@
             // iconPictureBox7
             // 
             iconPictureBox7.BackColor = SystemColors.Control;
-            iconPictureBox7.ForeColor = SystemColors.ControlText;
+            iconPictureBox7.ForeColor = Color.SteelBlue;
             iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            iconPictureBox7.IconColor = SystemColors.ControlText;
+            iconPictureBox7.IconColor = Color.SteelBlue;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox7.IconSize = 36;
-            iconPictureBox7.Location = new Point(5, 421);
+            iconPictureBox7.Location = new Point(5, 444);
             iconPictureBox7.Name = "iconPictureBox7";
             iconPictureBox7.Size = new Size(39, 36);
             iconPictureBox7.TabIndex = 155;
@@ -330,7 +330,7 @@
             btn_eliminar.Depth = 0;
             btn_eliminar.HighEmphasis = true;
             btn_eliminar.Icon = null;
-            btn_eliminar.Location = new Point(278, 421);
+            btn_eliminar.Location = new Point(278, 444);
             btn_eliminar.Margin = new Padding(4, 6, 4, 6);
             btn_eliminar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_eliminar.Name = "btn_eliminar";
@@ -346,9 +346,9 @@
             // iconPictureBox10
             // 
             iconPictureBox10.BackColor = Color.WhiteSmoke;
-            iconPictureBox10.ForeColor = SystemColors.ControlText;
+            iconPictureBox10.ForeColor = Color.SteelBlue;
             iconPictureBox10.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconPictureBox10.IconColor = SystemColors.ControlText;
+            iconPictureBox10.IconColor = Color.SteelBlue;
             iconPictureBox10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox10.IconSize = 50;
             iconPictureBox10.Location = new Point(5, 193);
@@ -365,7 +365,7 @@
             btn_agregar.Depth = 0;
             btn_agregar.HighEmphasis = true;
             btn_agregar.Icon = null;
-            btn_agregar.Location = new Point(37, 421);
+            btn_agregar.Location = new Point(37, 444);
             btn_agregar.Margin = new Padding(4, 6, 4, 6);
             btn_agregar.MouseState = MaterialSkin.MouseState.HOVER;
             btn_agregar.Name = "btn_agregar";
@@ -393,9 +393,9 @@
             // iconPictureBox11
             // 
             iconPictureBox11.BackColor = Color.WhiteSmoke;
-            iconPictureBox11.ForeColor = SystemColors.ControlText;
+            iconPictureBox11.ForeColor = Color.SteelBlue;
             iconPictureBox11.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            iconPictureBox11.IconColor = SystemColors.ControlText;
+            iconPictureBox11.IconColor = Color.SteelBlue;
             iconPictureBox11.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox11.IconSize = 48;
             iconPictureBox11.Location = new Point(10, 35);
@@ -419,9 +419,9 @@
             // iconPictureBox12
             // 
             iconPictureBox12.BackColor = Color.WhiteSmoke;
-            iconPictureBox12.ForeColor = SystemColors.ControlText;
+            iconPictureBox12.ForeColor = Color.SteelBlue;
             iconPictureBox12.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            iconPictureBox12.IconColor = SystemColors.ControlText;
+            iconPictureBox12.IconColor = Color.SteelBlue;
             iconPictureBox12.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox12.IconSize = 47;
             iconPictureBox12.Location = new Point(9, 357);
@@ -445,9 +445,9 @@
             // iconPictureBox13
             // 
             iconPictureBox13.BackColor = Color.WhiteSmoke;
-            iconPictureBox13.ForeColor = SystemColors.ControlText;
+            iconPictureBox13.ForeColor = Color.SteelBlue;
             iconPictureBox13.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            iconPictureBox13.IconColor = SystemColors.ControlText;
+            iconPictureBox13.IconColor = Color.SteelBlue;
             iconPictureBox13.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox13.IconSize = 48;
             iconPictureBox13.Location = new Point(9, 113);
@@ -563,9 +563,9 @@
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.WhiteSmoke;
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconColor = Color.SteelBlue;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 48;
             iconPictureBox1.Location = new Point(967, 3);
@@ -579,8 +579,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1030, 581);
-            ControlBox = false;
+            ClientSize = new Size(1046, 620);
             Controls.Add(panel1);
             Controls.Add(pnl_detalle);
             Controls.Add(dgvCliente);

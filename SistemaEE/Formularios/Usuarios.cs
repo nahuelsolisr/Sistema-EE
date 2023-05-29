@@ -21,9 +21,9 @@ namespace SistemaEE.Formularios
         public Usuarios()
         {
             InitializeComponent();
-            //
-            this.Size = new Size(1030, 581);
-            this.Resize += (sender, e) => this.Size = new Size(1030, 581);
+            //1046; 620
+            this.Size = new Size(1046, 620);
+            this.Resize += (sender, e) => this.Size = new Size(1046, 620);
             this.FormBorderStyle = FormBorderStyle.None;
             this.ControlBox = true;
             this.MinimizeBox = true;

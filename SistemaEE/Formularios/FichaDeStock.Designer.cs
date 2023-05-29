@@ -44,14 +44,13 @@
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
             Column11 = new DataGridViewTextBoxColumn();
-            label9 = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            txt_filtrarGrilla = new TextBox();
-            btn_salir = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
+            txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvFichaStock).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvFichaStock
@@ -80,7 +79,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvFichaStock.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvFichaStock.RowTemplate.Height = 25;
-            dgvFichaStock.Size = new Size(1207, 403);
+            dgvFichaStock.Size = new Size(1228, 422);
             dgvFichaStock.TabIndex = 105;
             // 
             // Column0
@@ -162,101 +161,74 @@
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
             // 
-            // label9
+            // panel1
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.LightGreen;
-            label9.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(418, 112);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(82, 19);
-            label9.TabIndex = 190;
-            label9.Text = "ENTRADA";
+            panel1.Controls.Add(txt_filtrar);
+            panel1.Controls.Add(materialLabel1);
+            panel1.Controls.Add(iconPictureBox1);
+            panel1.Location = new Point(12, 74);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1222, 54);
+            panel1.TabIndex = 167;
             // 
-            // label1
+            // txt_filtrar
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.LightSalmon;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(717, 112);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 19);
-            label1.TabIndex = 191;
-            label1.Text = "SALIDA";
+            txt_filtrar.AnimateReadOnly = false;
+            txt_filtrar.BorderStyle = BorderStyle.None;
+            txt_filtrar.Depth = 0;
+            txt_filtrar.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_filtrar.LeadingIcon = null;
+            txt_filtrar.Location = new Point(842, 5);
+            txt_filtrar.MaxLength = 50;
+            txt_filtrar.MouseState = MaterialSkin.MouseState.OUT;
+            txt_filtrar.Multiline = false;
+            txt_filtrar.Name = "txt_filtrar";
+            txt_filtrar.Size = new Size(316, 50);
+            txt_filtrar.TabIndex = 152;
+            txt_filtrar.Text = "";
+            txt_filtrar.TrailingIcon = null;
             // 
-            // label2
+            // materialLabel1
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.LightBlue;
-            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(1020, 112);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(99, 19);
-            label2.TabIndex = 192;
-            label2.Text = "EXISTENCIA";
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(6, 5);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(329, 19);
+            materialLabel1.TabIndex = 150;
+            materialLabel1.Text = "CONTROL DE INVENTARIO / FICHA DE STOCK";
             // 
-            // iconPictureBox5
+            // iconPictureBox1
             // 
-            iconPictureBox5.BackColor = Color.WhiteSmoke;
-            iconPictureBox5.ForeColor = SystemColors.ControlText;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox5.IconColor = SystemColors.ControlText;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 36;
-            iconPictureBox5.Location = new Point(1166, 12);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(42, 36);
-            iconPictureBox5.TabIndex = 194;
-            iconPictureBox5.TabStop = false;
-            // 
-            // txt_filtrarGrilla
-            // 
-            txt_filtrarGrilla.Font = new Font("Tahoma", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_filtrarGrilla.Location = new Point(842, 12);
-            txt_filtrarGrilla.Name = "txt_filtrarGrilla";
-            txt_filtrarGrilla.Size = new Size(318, 36);
-            txt_filtrarGrilla.TabIndex = 193;
-            // 
-            // btn_salir
-            // 
-            btn_salir.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_salir.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            btn_salir.IconColor = Color.Black;
-            btn_salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btn_salir.IconSize = 25;
-            btn_salir.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_salir.Location = new Point(12, 543);
-            btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(115, 46);
-            btn_salir.TabIndex = 195;
-            btn_salir.Text = "Salir";
-            btn_salir.TextAlign = ContentAlignment.MiddleRight;
-            btn_salir.UseVisualStyleBackColor = true;
-            btn_salir.Click += btn_salir_Click;
+            iconPictureBox1.BackColor = Color.WhiteSmoke;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconPictureBox1.IconColor = Color.SteelBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 48;
+            iconPictureBox1.Location = new Point(1164, 5);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(53, 48);
+            iconPictureBox1.TabIndex = 141;
+            iconPictureBox1.TabStop = false;
             // 
             // FichaDeStock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1219, 601);
-            ControlBox = false;
-            Controls.Add(btn_salir);
-            Controls.Add(iconPictureBox5);
-            Controls.Add(txt_filtrarGrilla);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(label9);
+            ClientSize = new Size(1240, 568);
+            Controls.Add(panel1);
             Controls.Add(dgvFichaStock);
             Name = "FichaDeStock";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventario";
             ((System.ComponentModel.ISupportInitialize)dgvFichaStock).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -280,6 +252,9 @@
         private Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private TextBox txt_filtrarGrilla;
-        private FontAwesome.Sharp.IconButton btn_salir;
+        private MaterialSkin.Controls.MaterialTextBox txt_filtrar;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Panel panel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
