@@ -170,7 +170,6 @@ namespace SistemaEE.Formularios
 
         private void btn_ConfirmarCompra_Click(object sender, EventArgs e)
         {
-
             DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta compra?", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -179,18 +178,35 @@ namespace SistemaEE.Formularios
                 ConectaDB.AbrirDB();
                 foreach (Producto producto in carrito)
                 {
+                    string cant = $"Select cantidad from productos where id_producto = {producto.Id}";
+                    int cantidadActual = 0;
+
+                    // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
+                    using (var reader = ConectaDB.LecturaDB(cant))
+                    {
+                        if (reader.Read())
+                        {
+                            cantidadActual = Convert.ToInt32(reader["cantidad"]);
+                        }
+                    }
+                    int cantidadNetaEntrada = cantidadActual + producto.Cantidad;
+                    decimal total_stock = cantidadNetaEntrada * producto.Precio;
+                    total_stock.ToString();
                     // Actualiza los datos del producto en la base de datos
-                    string updateEntrada = $"UPDATE productos SET cantidad = {producto.Cantidad}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
+                    string updateEntrada = $"UPDATE productos SET cantidad = {cantidadNetaEntrada}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
                     ConectaDB.CargarDB(updateEntrada);
+                    //decimal totalEntrada = producto.Precio * producto.Cantidad;
+                    //totalEntrada.ToString();
 
                     //Realiza el insert en la tabla "fichastock"
-                    string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+                    DateTime fechaActual = DateTime.Now;
+                    string fechaActualString = fechaActual.ToString("dd/MM/yyyy");
                     int unidadesE = producto.Cantidad;
                     decimal precioUE = producto.Precio;
                     decimal totalE = producto.Cantidad * producto.Precio;
                     int unidadesEx = ObtenerUnidadesExistentes();
                     decimal precioUEx = ObtenerPrecioUExistentes();
-                    decimal totalEx = ObtenerTotalExistentes();
+                    decimal totalEx = cantidadNetaEntrada;
                     string concepto = "COMPRA";
 
                     //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen   
@@ -208,7 +224,7 @@ namespace SistemaEE.Formularios
                     }
                     //hace el insert en stock
                     string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
-                       $"VALUES ({fecha} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
+                        $"VALUES ({fechaActualString} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {cantidadNetaEntrada}, {precioUEx}, {totalEx})";
                     ConectaDB.CargarDB(insertStock);
 
                 }
