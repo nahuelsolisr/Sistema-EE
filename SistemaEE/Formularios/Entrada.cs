@@ -223,36 +223,18 @@ namespace SistemaEE.Formularios
                     unidadesE = producto.Cantidad;
                     precioUE = producto.Precio;
                     decimal totalE = producto.Cantidad * producto.Precio;
-                    int unidadesEx = ObtenerUnidadesExistentes();
-                    decimal precioUEx = ObtenerPrecioUExistentes();
-                    decimal totalEx = ObtenerTotalExistentes();
+                    string unidadesEx = cantidadNetaEntrada.ToString();
+                    string precioUEx = producto.Precio.ToString();
+                    decimal totalEx = precioUE * cantidadNetaEntrada;
                     string concepto = "COMPRA";
 
                     //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen   
 
-                    if (unidadesEx == 0)
-                    {
-                        unidadesEx = unidadesE;
-                        precioUEx = precioUE;
-                        totalEx = totalE;
-                    }
-                    else
-                    {
-                        
-                    }
+      
                     //hace el insert en stock
                     string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
-                        $"VALUES ({fechaActualString} ,'{producto.nombre}', {producto.Id}, '{concepto}', {unidadesE}, {precioUE}, {totalE}, {unidadesEx}, {precioUEx}, {totalEx})";
+                        $"VALUES ('{fechaActualString}' ,'{producto.nombre}', '{producto.Id}', '{concepto}', '{unidadesE}', '{precioUE}', '{totalE}', '{unidadesEx}', '{precioUEx}', '{totalEx}')";
                     ConectaDB.CargarDB(insertStock);
-
-
-                     unidadesEx = ObtenerUnidadesExistentes() + unidadesE;
-                     precioUEx = ObtenerPrecioUExistentes();
-                     totalEx = ObtenerTotalExistentes() + totalE;
-
-                    string insertaSuma = $"INSERT INTO fichastock (fecha, nombreProducto, IdProducto, Concepto, UnidadesEx, PrecioUEx, TotalEx) " +
-    $"VALUES (NULL, NULL, {producto.Id}, NULL, {unidadesEx}, {precioUEx}, {totalEx})";
-                    ConectaDB.CargarDB(insertaSuma);
 
                 }
                 // Agrega 

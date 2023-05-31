@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace SistemaEE.Formularios
 {
     public partial class Salidas : MaterialForm
     {
-        private List<Producto> carrito = new List<Producto>();
+        private List<Producto2> carrito2 = new List<Producto2>();
         public int contadorCompras = 0;
         private ProductosEnStock formularioProductos;
         string nombre;
@@ -117,20 +118,26 @@ namespace SistemaEE.Formularios
             txt_nombreProducto.Text = "";
         }
 
+        public class Producto2
+        {
+            public string Id { get; set; }
+            public string PrecioUS { get; set; }
+            public string Cantidad { get; set; }
+            public string UnidadesS { get; set; }
+            public string Ganancia { get; set; }
+            public string nombre { get; set; }
+            public string TotalS { get; set; }
+        }
+
         private void btn_agregarCarrito_Click(object sender, EventArgs e)
         {
-            ConectaDB.AbrirDB();
-            int id_producto = Elegir.idProducto;
-            int limitecantidad = Elegir.cantidad;
-            int CantidadNetaSalida = limitecantidad - Convert.ToInt32(txt_cantidad.Text);
-            CantidadNetaSalida.ToString();
-            string nombreProducto = Elegir.nomProducto;
+            string precio = txt_precio.Text;
+            string cantidadsalida = txt_cantidad.Text;
+            string id_producto = txt_idproducto.Text;
+            string nombre_producto = txt_nombreProducto.Text;
             string marcaProducto = Elegir.marca;
             string categoriaProducto = Elegir.categoria;
-            decimal precioConGanancia = Elegir.precioProducto;
-            cantidadComprada = Convert.ToInt32(txt_cantidad.Text);
 
-            // Verificar la cantidad disponible del producto
             int cantidadDisponible = ObtenerCantidadDisponible(nombre);
             if (cantidadDisponible == -1)
             {
@@ -143,12 +150,12 @@ namespace SistemaEE.Formularios
                 MessageBox.Show("No hay suficiente cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string precio = $"Select precio from productos where id_producto = {id_producto}";
+            string precioo = $"Select precio from productos where id_producto = {id_producto}";
             int preciocosto = 0;
 
             // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
             ConectaDB.AbrirDB();
-            using (var reader = ConectaDB.LecturaDB(precio))
+            using (var reader = ConectaDB.LecturaDB(precioo))
             {
                 if (reader.Read())
                 {
@@ -156,45 +163,142 @@ namespace SistemaEE.Formularios
                 }
             }
             ConectaDB.CerrarDB();
-            // Realizar la venta
-            decimal subtotal = precioConGanancia * cantidadComprada;
+            decimal preciod = Convert.ToDecimal(precio);
+            decimal cantidadsalidad = Convert.ToDecimal(cantidadsalida);
+            decimal subtotal = preciod * cantidadsalidad;
 
-            // Agregar fila a la grilla
-            dgvProductos.Rows.Add(nombreProducto, marcaProducto, categoriaProducto, precioConGanancia, cantidadComprada, subtotal);
-
-            int totalsalida = CantidadNetaSalida * preciocosto;
-            totalsalida.ToString();
-            int totalsalida2 = cantidadComprada * Convert.ToInt32(precioConGanancia);
-            totalsalida2.ToString();
-            Producto producto = new Producto
+            Producto2 producto2 = new Producto2
             {
-                Id = id_producto.ToString(),
-                Precio = precioConGanancia,
-                Cantidad = cantidadComprada,
-                nombre = nombreProducto,
+                UnidadesS = cantidadsalida,
+                PrecioUS = precio,
+                TotalS = subtotal.ToString(),
+                Id = id_producto,
+                nombre = nombre_producto,
+
             };
-            carrito.Add(producto);
-
-
-            foreach (Producto productoo in carrito)
-            {
-                ConectaDB.AbrirDB();
-                RestarCantidadVenta(nombre, cantidadComprada);
-                string fecha = DateTime.Now.ToString("yyyy-MM-dd");
-                string insertEntrada = $"INSERT INTO fichastock (cantidad_salida, precio_unit_salida, cod_producto, nombre_producto, total_salida, fecha, cantidad_stock, precio_unit_stock, total_stock) " + $"VALUES ('{producto.Cantidad}', '{producto.Precio}', {producto.Id}, '{producto.nombre}', '{totalsalida2}', '{fecha}', '{CantidadNetaSalida}', '{preciocosto}', '{totalsalida}')";
-                ConectaDB.CargarDB(insertEntrada);
-
-            }
-            ConectaDB.CerrarDB();
+            dgvProductos.Rows.Add(nombre_producto, marcaProducto, categoriaProducto, precio, cantidadsalida, subtotal);
+            carrito2.Add(producto2);
         }
+
+        public static int ObtenerUnidadesExistentes()
+        {
+
+            string consulta = "SELECT SUM(UnidadesEx) FROM fichastock";
+            SqlCommand comando = new SqlCommand(consulta, DB.ConexionConBD);
+            object resultado = comando.ExecuteScalar();
+            int unidadesExistentes = 0;
+
+            if (resultado != null && !Convert.IsDBNull(resultado))
+            {
+                unidadesExistentes = Convert.ToInt32(resultado);
+            }
+
+            return unidadesExistentes;
+        }
+        public static decimal ObtenerPrecioUExistentes()
+        {
+            string consulta = "SELECT AVG(PrecioUEx) FROM fichastock";
+            SqlCommand comando = new SqlCommand(consulta, DB.ConexionConBD);
+            object resultado = comando.ExecuteScalar();
+            decimal precioUExistente = 0;
+
+            if (resultado != null && !Convert.IsDBNull(resultado))
+            {
+                precioUExistente = Convert.ToDecimal(resultado);
+            }
+
+            return precioUExistente;
+        }
+
+        public static decimal ObtenerTotalExistentes()
+        {
+            string consulta = "SELECT SUM(TotalEx) FROM fichastock";
+            SqlCommand comando = new SqlCommand(consulta, DB.ConexionConBD);
+            object resultado = comando.ExecuteScalar();
+            decimal totalExistente = 0;
+
+            if (resultado != null && !Convert.IsDBNull(resultado))
+            {
+                totalExistente = Convert.ToDecimal(resultado);
+            }
+
+            return totalExistente;
+        }
+
 
         private void btn_ConfirmarCompra_Click(object sender, EventArgs e)
         {
-            RestarCantidadVenta(nombre, cantidadComprada);
-            Limpiar();
+            DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta venta?", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                ConectaDB.AbrirDB();
+                foreach (Producto2 producto2 in carrito2)
+                {
+                    int contador = 0;
+                    string cant = $"Select cantidad from productos where id_producto = {producto2.Id}";
+                    int cantidadActual = 0;
+
+                    // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
+                    using (var reader = ConectaDB.LecturaDB(cant))
+                    {
+                        if (reader.Read())
+                        {
+                            object cantidadObj = reader["cantidad"];
+                            if (cantidadObj != DBNull.Value)
+                            {
+                                cantidadActual = Convert.ToInt32(cantidadObj);
+                            }
+                            else
+                            {
+                                // Valor nulo, maneja el caso según tus necesidades (por ejemplo, asignar un valor predeterminado)
+                                cantidadActual = 0;
+                            }
+                        }
+                    }
+                    int cantidadNetaSalida = cantidadActual - Convert.ToInt32(producto2.UnidadesS);
+                    decimal total_stock = cantidadNetaSalida * Convert.ToDecimal(producto2.PrecioUS);
+                    total_stock.ToString();
+                    string precioo = $"Select precio from productos where id_producto = {producto2.Id}";
+                    int preciocosto = 0;
+
+                    // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
+                    ConectaDB.AbrirDB();
+                    using (var reader = ConectaDB.LecturaDB(precioo))
+                    {
+                        if (reader.Read())
+                        {
+                            preciocosto = Convert.ToInt32(reader["precio"]);
+                        }
+                    }
+                    // Actualiza los datos del producto en la base de datos
+                    string updateSalida = $"UPDATE productos SET cantidad = {cantidadNetaSalida} WHERE id_producto = {producto2.Id}";
+                    ConectaDB.CargarDB(updateSalida);
+
+                    DateTime fechaActual = DateTime.Now;
+                    string fechaActualString = fechaActual.ToString("dd/MM/yyyy");
+                    unidadesE = Convert.ToInt32(producto2.UnidadesS);
+                    precioUE = Convert.ToDecimal(producto2.PrecioUS);
+                    decimal totalE = unidadesE * precioUE;
+                    decimal totalEx = preciocosto * cantidadNetaSalida;
+                    string concepto = "VENTA";
+                    string totalsalida = totalE.ToString();
+
+                    //hace el insert en stock
+                    string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesS, PrecioUS, TotalS, UnidadesEx, PrecioUEx, TotalEx) " +
+                        $"VALUES ('{fechaActualString}' ,'{producto2.nombre}', '{producto2.Id}', '{concepto}', '{producto2.UnidadesS}', '{producto2.PrecioUS}', '{totalsalida}', '{cantidadNetaSalida}', '{preciocosto}', '{totalEx}')";
+                    ConectaDB.CargarDB(insertStock);
+                }
+                // Agrega 
+                MessageBox.Show("Su compra ha sido realizada");
+                ConectaDB.CerrarDB();
+                Limpiar();
+                carrito2.Clear();
+            }
         }
 
-        private void btn_traerCliente_Click_1(object sender, EventArgs e)
+        private void btn_traerCliente_Click(object sender, EventArgs e)
         {
             MuestraCliente muestraCliente = new MuestraCliente();
             muestraCliente.ShowDialog();
