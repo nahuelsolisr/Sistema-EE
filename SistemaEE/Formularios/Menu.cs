@@ -33,6 +33,21 @@ namespace SistemaEE.Formularios
 
             lbl_usuario.Text = nombre;
             this.PERMISOS = permisos;
+
+            // Obtener la hora actual del sistema
+            DateTime horaActual = DateTime.Now;
+
+            // Mostrar la hora en el label
+            lbl_horaActual.Text = horaActual.ToString();
+        }
+
+        private void Timer_Tick()
+        {
+            // Obtener la hora actual del sistema
+            DateTime horaActual = DateTime.Now;
+
+            // Mostrar la hora en el label
+            lbl_horaActual.Text = horaActual.ToString();
         }
 
 
@@ -119,5 +134,30 @@ namespace SistemaEE.Formularios
             inventario.ShowDialog();
         }
 
+        private void btn_datosEmpresa_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_subirLogo_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del cuadro de diálogo OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Filtrar solo los archivos de imagen
+            openFileDialog.Filter = "Archivos de imagen (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
+
+            // Mostrar el cuadro de diálogo y esperar a que el usuario seleccione una imagen
+            DialogResult result = openFileDialog.ShowDialog();
+
+            // Verificar si el usuario seleccionó una imagen
+            if (result == DialogResult.OK)
+            {
+                // Obtener la ruta de la imagen seleccionada
+                string rutaImagen = openFileDialog.FileName;
+
+                // Cargar la imagen en el PictureBox
+                pic_logoEmpresa.Image = Image.FromFile(rutaImagen);
+            }
+        }
     }
 }

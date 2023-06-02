@@ -50,13 +50,13 @@
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            txt_tipoUsuario = new MaterialSkin.Controls.MaterialTextBox();
             txt_contraseña = new MaterialSkin.Controls.MaterialTextBox();
             panel1 = new Panel();
             txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            txt_tipoUsuario = new MaterialSkin.Controls.MaterialComboBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
@@ -182,6 +182,7 @@
             // 
             // pnl_detalle
             // 
+            pnl_detalle.Controls.Add(txt_tipoUsuario);
             pnl_detalle.Controls.Add(iconPictureBox9);
             pnl_detalle.Controls.Add(txt_nombre);
             pnl_detalle.Controls.Add(iconPictureBox8);
@@ -195,7 +196,6 @@
             pnl_detalle.Controls.Add(materialLabel5);
             pnl_detalle.Controls.Add(materialLabel4);
             pnl_detalle.Controls.Add(materialLabel3);
-            pnl_detalle.Controls.Add(txt_tipoUsuario);
             pnl_detalle.Controls.Add(txt_contraseña);
             pnl_detalle.Location = new Point(12, 128);
             pnl_detalle.Name = "pnl_detalle";
@@ -360,23 +360,6 @@
             materialLabel3.TabIndex = 159;
             materialLabel3.Text = "NOMBRE:";
             // 
-            // txt_tipoUsuario
-            // 
-            txt_tipoUsuario.AnimateReadOnly = false;
-            txt_tipoUsuario.BorderStyle = BorderStyle.None;
-            txt_tipoUsuario.Depth = 0;
-            txt_tipoUsuario.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txt_tipoUsuario.LeadingIcon = null;
-            txt_tipoUsuario.Location = new Point(59, 188);
-            txt_tipoUsuario.MaxLength = 50;
-            txt_tipoUsuario.MouseState = MaterialSkin.MouseState.OUT;
-            txt_tipoUsuario.Multiline = false;
-            txt_tipoUsuario.Name = "txt_tipoUsuario";
-            txt_tipoUsuario.Size = new Size(295, 50);
-            txt_tipoUsuario.TabIndex = 148;
-            txt_tipoUsuario.Text = "";
-            txt_tipoUsuario.TrailingIcon = null;
-            // 
             // txt_contraseña
             // 
             txt_contraseña.AnimateReadOnly = false;
@@ -461,6 +444,29 @@
             iconPictureBox1.TabIndex = 141;
             iconPictureBox1.TabStop = false;
             // 
+            // txt_tipoUsuario
+            // 
+            txt_tipoUsuario.AutoResize = false;
+            txt_tipoUsuario.BackColor = Color.FromArgb(255, 255, 255);
+            txt_tipoUsuario.Depth = 0;
+            txt_tipoUsuario.DrawMode = DrawMode.OwnerDrawVariable;
+            txt_tipoUsuario.DropDownHeight = 174;
+            txt_tipoUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
+            txt_tipoUsuario.DropDownWidth = 121;
+            txt_tipoUsuario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            txt_tipoUsuario.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            txt_tipoUsuario.FormattingEnabled = true;
+            txt_tipoUsuario.IntegralHeight = false;
+            txt_tipoUsuario.ItemHeight = 43;
+            txt_tipoUsuario.Items.AddRange(new object[] { "Administrador", "Empleado" });
+            txt_tipoUsuario.Location = new Point(58, 189);
+            txt_tipoUsuario.MaxDropDownItems = 4;
+            txt_tipoUsuario.MouseState = MaterialSkin.MouseState.OUT;
+            txt_tipoUsuario.Name = "txt_tipoUsuario";
+            txt_tipoUsuario.Size = new Size(295, 49);
+            txt_tipoUsuario.StartIndex = 0;
+            txt_tipoUsuario.TabIndex = 171;
+            // 
             // Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -508,12 +514,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialTextBox txt_tipoUsuario;
         private MaterialSkin.Controls.MaterialTextBox txt_contraseña;
         private Panel panel1;
         private MaterialSkin.Controls.MaterialTextBox txt_filtrar;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private MaterialSkin.Controls.MaterialComboBox txt_tipoUsuario;
     }
 }

@@ -127,4 +127,9 @@ C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Usuarios.resources
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.FichaDeStock.resources
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\MaterialSkin.dll
-C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\itextsharp.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\ClosedXML.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\ExcelNumberFormat.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Irony.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\XLParser.dll

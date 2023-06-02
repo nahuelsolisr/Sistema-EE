@@ -64,6 +64,10 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            btn_cargaMasiva = new MaterialSkin.Controls.MaterialButton();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            btn_descargaPlantilla = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dgvCliente).BeginInit();
             pnl_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
@@ -76,13 +80,15 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox13).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // dgvCliente
             // 
             dgvCliente.AllowUserToResizeColumns = false;
             dgvCliente.AllowUserToResizeRows = false;
-            dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvCliente.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -106,7 +112,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvCliente.RowTemplate.Height = 25;
-            dgvCliente.Size = new Size(636, 474);
+            dgvCliente.Size = new Size(643, 398);
             dgvCliente.TabIndex = 124;
             dgvCliente.CellClick += Cell_Click;
             // 
@@ -575,14 +581,88 @@
             iconPictureBox1.TabStop = false;
             iconPictureBox1.Click += iconPictureBox1_Click;
             // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.Transparent;
+            iconPictureBox5.ForeColor = Color.SeaGreen;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            iconPictureBox5.IconColor = Color.SeaGreen;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 40;
+            iconPictureBox5.Location = new Point(391, 559);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(42, 40);
+            iconPictureBox5.TabIndex = 169;
+            iconPictureBox5.TabStop = false;
+            // 
+            // btn_cargaMasiva
+            // 
+            btn_cargaMasiva.AutoSize = false;
+            btn_cargaMasiva.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_cargaMasiva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_cargaMasiva.Depth = 0;
+            btn_cargaMasiva.Enabled = false;
+            btn_cargaMasiva.HighEmphasis = true;
+            btn_cargaMasiva.Icon = null;
+            btn_cargaMasiva.Location = new Point(430, 559);
+            btn_cargaMasiva.Margin = new Padding(4, 6, 4, 6);
+            btn_cargaMasiva.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_cargaMasiva.Name = "btn_cargaMasiva";
+            btn_cargaMasiva.NoAccentTextColor = Color.Empty;
+            btn_cargaMasiva.Size = new Size(137, 40);
+            btn_cargaMasiva.TabIndex = 170;
+            btn_cargaMasiva.Text = "Carga masiva";
+            btn_cargaMasiva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_cargaMasiva.UseAccentColor = false;
+            btn_cargaMasiva.UseVisualStyleBackColor = true;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.Transparent;
+            iconPictureBox2.ForeColor = Color.SeaGreen;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
+            iconPictureBox2.IconColor = Color.SeaGreen;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 40;
+            iconPictureBox2.Location = new Point(818, 559);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(42, 40);
+            iconPictureBox2.TabIndex = 171;
+            iconPictureBox2.TabStop = false;
+            // 
+            // btn_descargaPlantilla
+            // 
+            btn_descargaPlantilla.AutoSize = false;
+            btn_descargaPlantilla.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_descargaPlantilla.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_descargaPlantilla.Depth = 0;
+            btn_descargaPlantilla.Enabled = false;
+            btn_descargaPlantilla.HighEmphasis = true;
+            btn_descargaPlantilla.Icon = null;
+            btn_descargaPlantilla.Location = new Point(857, 559);
+            btn_descargaPlantilla.Margin = new Padding(4, 6, 4, 6);
+            btn_descargaPlantilla.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_descargaPlantilla.Name = "btn_descargaPlantilla";
+            btn_descargaPlantilla.NoAccentTextColor = Color.Empty;
+            btn_descargaPlantilla.Size = new Size(173, 40);
+            btn_descargaPlantilla.TabIndex = 172;
+            btn_descargaPlantilla.Text = "Descargar plantilla";
+            btn_descargaPlantilla.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_descargaPlantilla.UseAccentColor = false;
+            btn_descargaPlantilla.UseVisualStyleBackColor = true;
+            // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1046, 620);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox5);
+            Controls.Add(btn_cargaMasiva);
             Controls.Add(panel1);
             Controls.Add(pnl_detalle);
             Controls.Add(dgvCliente);
+            Controls.Add(btn_descargaPlantilla);
             Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Clientes";
@@ -602,6 +682,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -640,5 +722,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private MaterialSkin.Controls.MaterialComboBox cmb_condicion;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private MaterialSkin.Controls.MaterialButton btn_cargaMasiva;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private MaterialSkin.Controls.MaterialButton btn_descargaPlantilla;
     }
 }

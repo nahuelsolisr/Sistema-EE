@@ -135,7 +135,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string insertUsuario = "INSERT INTO usuarios (Usuario, Contra, Tipo_usuario) VALUES ('" + txt_contraseña.Text + "', " + txt_contraseña.Text + ", '" + txt_tipoUsuario.Text + "')";
+                string insertUsuario = "INSERT INTO usuarios (Usuario, Contra, Tipo_usuario) VALUES ('" + txt_nombre.Text + "', " + txt_contraseña.Text + ", '" + txt_tipoUsuario.Text + "')";
                 ConectaDB.CargarDB(insertUsuario);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El Usuario ha sido agregado correctamente.");
@@ -152,7 +152,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string updateUsuario = "UPDATE usuarios SET Usuario = '" + txt_contraseña.Text + "', Contra = '" + txt_contraseña.Text + "', Tipo_usuario = '" + txt_tipoUsuario.Text + "' WHERE Id_usuario = " + idUsuario;
+                string updateUsuario = "UPDATE usuarios SET Usuario = '" + txt_nombre.Text + "', Contra = '" + txt_contraseña.Text + "', Tipo_usuario = '" + txt_tipoUsuario.Text + "' WHERE Id_usuario = " + idUsuario;
                 ConectaDB.CargarDB(updateUsuario);
                 ConectaDB.CerrarDB();
                 dgv_Usuarios();

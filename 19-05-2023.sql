@@ -106,19 +106,19 @@ VALUES
 drop table fichastock
 truncate table fichastock
 CREATE TABLE fichastock(
-    fecha datetime,
-	nombreProducto varchar(20),
-    IdProducto int,
-    Concepto varchar(10),
-    UnidadesE int NULL,
-    PrecioUE int NULL,
-    TotalE int NULL,
-    UnidadesS int NULL,
-    PrecioUS int NULL,
-    TotalS int NULL,
-    UnidadesEx int,
-    PrecioUEx int,
-    TotalEx int,  
+    fecha varchar(20)null,
+	nombreProducto varchar(20)null,
+    IdProducto varchar(20),
+    Concepto varchar(10) NULL,
+    UnidadesE varchar(20) NULL,
+    PrecioUE varchar(20) NULL,
+    TotalE varchar(20) NULL,
+    UnidadesS varchar(20) NULL,
+    PrecioUS varchar(20) NULL,
+    TotalS varchar(20) NULL,
+    UnidadesEx varchar(20),
+    PrecioUEx varchar(20),
+    TotalEx varchar(20),  
 )
 select * from fichastock
 

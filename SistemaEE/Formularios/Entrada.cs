@@ -17,9 +17,7 @@ using System.Diagnostics;
 using Microsoft.VisualBasic.Logging;
 using static SistemaEE.Formularios.Entrada;
 using static System.Resources.ResXFileRef;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html.simpleparser;
+
 
 namespace SistemaEE.Formularios
 {
@@ -249,47 +247,47 @@ namespace SistemaEE.Formularios
         public void ComprobanteCompra()
         {
 
-            string filePath = @"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\plantillaEntrada.html";
-            string htmlContent = File.ReadAllText(filePath);
+            //string filePath = @"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\plantillaEntrada.html";
+            //string htmlContent = File.ReadAllText(filePath);
 
-            // Reemplazar las variables en el contenido HTML
-            htmlContent = htmlContent.Replace("@nombrenegocio", "PANTERASHOP")
-                .Replace("@docnegocio", "344324")
-                .Replace("@direcnegocio", "Ensenada 375")
-                .Replace("@numerodocumento", "111111111")
-                .Replace("@docproveedor", "32423423324")
-                .Replace("@nombreproveedor", "Claudio")
-                .Replace("@fecharegistro", "324234-234234-234")
-                .Replace("@montototal", "1000000");
+            //// Reemplazar las variables en el contenido HTML
+            //htmlContent = htmlContent.Replace("@nombrenegocio", "PANTERASHOP")
+            //    .Replace("@docnegocio", "344324")
+            //    .Replace("@direcnegocio", "Ensenada 375")
+            //    .Replace("@numerodocumento", "111111111")
+            //    .Replace("@docproveedor", "32423423324")
+            //    .Replace("@nombreproveedor", "Claudio")
+            //    .Replace("@fecharegistro", "324234-234234-234")
+            //    .Replace("@montototal", "1000000");
 
-            // Crear el documento PDF
-            Document doc = new Document();
+            //// Crear el documento PDF
+            //Document doc = new Document();
 
-            // Crear el escritor de PDF y vincularlo al documento y a un archivo temporal
-            string tempFilePath = Path.GetTempFileName() + ".pdf";
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
+            //// Crear el escritor de PDF y vincularlo al documento y a un archivo temporal
+            //string tempFilePath = Path.GetTempFileName() + ".pdf";
+            //PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
 
-            // Abrir el documento
-            doc.Open();
+            //// Abrir el documento
+            //doc.Open();
 
-            // Crear el lector HTML para convertir el contenido HTML a elementos PDF
-            var htmlWorker = new HTMLWorker(doc);
+            //// Crear el lector HTML para convertir el contenido HTML a elementos PDF
+            //var htmlWorker = new HTMLWorker(doc);
 
-            // Convertir el contenido HTML a elementos PDF y agregarlos al documento
-            using (TextReader reader = new StringReader(htmlContent))
-            {
-                htmlWorker.Parse(reader);
-            }
+            //// Convertir el contenido HTML a elementos PDF y agregarlos al documento
+            //using (TextReader reader = new StringReader(htmlContent))
+            //{
+            //    htmlWorker.Parse(reader);
+            //}
 
-            // Cerrar el documento
-            doc.Close();
+            //// Cerrar el documento
+            //doc.Close();
 
-            // Abre el archivo PDF en el navegador
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = tempFilePath,
-                UseShellExecute = true
-            });
+            //// Abre el archivo PDF en el navegador
+            //Process.Start(new ProcessStartInfo
+            //{
+            //    FileName = tempFilePath,
+            //    UseShellExecute = true
+            //});
 
         }
     }
