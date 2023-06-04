@@ -55,9 +55,6 @@
             tabContabilidad = new TabPage();
             tabUsuarios = new TabPage();
             tabConfiguracion = new TabPage();
-            btn_datosEmpresa = new MaterialSkin.Controls.MaterialButton();
-            materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
-            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             pic_logoEmpresa = new PictureBox();
             txt_direcciónEmpresa = new MaterialSkin.Controls.MaterialTextBox();
@@ -76,6 +73,7 @@
             btn_subirLogo = new MaterialSkin.Controls.MaterialButton();
             ImagenesTab = new ImageList(components);
             timer1 = new System.Windows.Forms.Timer(components);
+            btn_datosEmpresa = new MaterialSkin.Controls.MaterialButton();
             mtcMenu.SuspendLayout();
             tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             tabContabilidad.SuspendLayout();
             tabConfiguracion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pic_logoEmpresa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox11).BeginInit();
@@ -477,8 +474,6 @@
             // 
             tabConfiguracion.BackColor = Color.White;
             tabConfiguracion.Controls.Add(btn_datosEmpresa);
-            tabConfiguracion.Controls.Add(materialDivider3);
-            tabConfiguracion.Controls.Add(iconPictureBox9);
             tabConfiguracion.Controls.Add(materialLabel9);
             tabConfiguracion.Controls.Add(pic_logoEmpresa);
             tabConfiguracion.Controls.Add(txt_direcciónEmpresa);
@@ -501,51 +496,6 @@
             tabConfiguracion.Size = new Size(577, 485);
             tabConfiguracion.TabIndex = 4;
             tabConfiguracion.Text = "Opciones";
-            // 
-            // btn_datosEmpresa
-            // 
-            btn_datosEmpresa.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btn_datosEmpresa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btn_datosEmpresa.Depth = 0;
-            btn_datosEmpresa.HighEmphasis = true;
-            btn_datosEmpresa.Icon = null;
-            btn_datosEmpresa.Location = new Point(64, 403);
-            btn_datosEmpresa.Margin = new Padding(4, 6, 4, 6);
-            btn_datosEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
-            btn_datosEmpresa.Name = "btn_datosEmpresa";
-            btn_datosEmpresa.NoAccentTextColor = Color.Empty;
-            btn_datosEmpresa.Size = new Size(168, 36);
-            btn_datosEmpresa.TabIndex = 173;
-            btn_datosEmpresa.Text = "Modificar cambios";
-            btn_datosEmpresa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btn_datosEmpresa.UseAccentColor = false;
-            btn_datosEmpresa.UseVisualStyleBackColor = true;
-            btn_datosEmpresa.Click += btn_datosEmpresa_Click;
-            // 
-            // materialDivider3
-            // 
-            materialDivider3.BackColor = Color.FromArgb(30, 0, 0, 0);
-            materialDivider3.Depth = 0;
-            materialDivider3.Location = new Point(61, 459);
-            materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialDivider3.Name = "materialDivider3";
-            materialDivider3.Size = new Size(513, 10);
-            materialDivider3.TabIndex = 171;
-            materialDivider3.Text = "materialDivider3";
-            // 
-            // iconPictureBox9
-            // 
-            iconPictureBox9.BackColor = Color.Transparent;
-            iconPictureBox9.ForeColor = Color.SeaGreen;
-            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.Upload;
-            iconPictureBox9.IconColor = Color.SeaGreen;
-            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox9.IconSize = 27;
-            iconPictureBox9.Location = new Point(339, 370);
-            iconPictureBox9.Name = "iconPictureBox9";
-            iconPictureBox9.Size = new Size(27, 34);
-            iconPictureBox9.TabIndex = 170;
-            iconPictureBox9.TabStop = false;
             // 
             // materialLabel9
             // 
@@ -748,13 +698,13 @@
             btn_subirLogo.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_subirLogo.Depth = 0;
             btn_subirLogo.HighEmphasis = true;
-            btn_subirLogo.Icon = null;
-            btn_subirLogo.Location = new Point(363, 371);
+            btn_subirLogo.Icon = (Image)resources.GetObject("btn_subirLogo.Icon");
+            btn_subirLogo.Location = new Point(339, 371);
             btn_subirLogo.Margin = new Padding(4, 6, 4, 6);
             btn_subirLogo.MouseState = MaterialSkin.MouseState.HOVER;
             btn_subirLogo.Name = "btn_subirLogo";
             btn_subirLogo.NoAccentTextColor = Color.Empty;
-            btn_subirLogo.Size = new Size(123, 26);
+            btn_subirLogo.Size = new Size(147, 29);
             btn_subirLogo.TabIndex = 172;
             btn_subirLogo.Text = "Subir logo";
             btn_subirLogo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -777,6 +727,26 @@
             // 
             timer1.Interval = 1000;
             // 
+            // btn_datosEmpresa
+            // 
+            btn_datosEmpresa.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_datosEmpresa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_datosEmpresa.Depth = 0;
+            btn_datosEmpresa.HighEmphasis = true;
+            btn_datosEmpresa.Icon = (Image)resources.GetObject("btn_datosEmpresa.Icon");
+            btn_datosEmpresa.Location = new Point(64, 443);
+            btn_datosEmpresa.Margin = new Padding(4, 6, 4, 6);
+            btn_datosEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_datosEmpresa.Name = "btn_datosEmpresa";
+            btn_datosEmpresa.NoAccentTextColor = Color.Empty;
+            btn_datosEmpresa.Size = new Size(196, 36);
+            btn_datosEmpresa.TabIndex = 173;
+            btn_datosEmpresa.Text = "Modificar cambios";
+            btn_datosEmpresa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_datosEmpresa.UseAccentColor = false;
+            btn_datosEmpresa.UseVisualStyleBackColor = true;
+            btn_datosEmpresa.Click += btn_datosEmpresa_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -790,6 +760,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Menu :.";
+            FormClosed += Menu_FormClosed;
             mtcMenu.ResumeLayout(false);
             tabHome.ResumeLayout(false);
             tabHome.PerformLayout();
@@ -804,7 +775,6 @@
             tabContabilidad.ResumeLayout(false);
             tabConfiguracion.ResumeLayout(false);
             tabConfiguracion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pic_logoEmpresa).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox11).EndInit();
@@ -855,9 +825,7 @@
         private MaterialSkin.Controls.MaterialTextBox txt_nombreEmpresa;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox11;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialDivider materialDivider3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
-        private MaterialSkin.Controls.MaterialButton btn_datosEmpresa;
         private MaterialSkin.Controls.MaterialButton btn_subirLogo;
+        private MaterialSkin.Controls.MaterialButton btn_datosEmpresa;
     }
 }

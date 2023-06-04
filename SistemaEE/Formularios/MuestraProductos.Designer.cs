@@ -148,6 +148,7 @@
             Name = "MuestraProductos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Productos registrados :.";
+            FormClosed += MuestraProductos_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);

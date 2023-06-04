@@ -224,6 +224,7 @@
             Name = "FichaDeStock";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventario";
+            FormClosed += FichaDeStock_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvFichaStock).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

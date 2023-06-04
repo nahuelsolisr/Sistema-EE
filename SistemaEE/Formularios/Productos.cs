@@ -217,5 +217,10 @@ namespace SistemaEE.Formularios
             muestraProveedor.ShowDialog();
             txt_prov.Text = Clases.Elegir.nom_prov.ToString();
         }
+
+        private void Productos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

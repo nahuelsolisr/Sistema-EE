@@ -160,6 +160,7 @@
             Name = "MuestraCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".:  Clientes disponibles :.";
+            FormClosed += MuestraCliente_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);

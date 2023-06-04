@@ -612,6 +612,7 @@
             Name = "Entrada";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Compra :.";
+            FormClosed += Entrada_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();

@@ -70,7 +70,8 @@ namespace SistemaEE.Formularios
             }
             conexion.Close();
 
-
+            txt_clave.Text = "";
+            txt_usuario.Text = "";
         }
 
 
@@ -109,6 +110,7 @@ namespace SistemaEE.Formularios
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
             logear(this.txt_usuario.Text, this.txt_clave.Text);
+
         }
 
         private void msModoOscuro_CheckedChanged(object sender, EventArgs e)

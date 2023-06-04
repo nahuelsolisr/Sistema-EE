@@ -580,6 +580,7 @@
             Name = "Salidas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Venta :.";
+            FormClosed += Salidas_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);

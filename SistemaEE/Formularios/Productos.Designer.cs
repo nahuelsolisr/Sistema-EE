@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvProductos = new DataGridView();
             Column0 = new DataGridViewTextBoxColumn();
             btn_seleccionar = new DataGridViewButtonColumn();
@@ -55,8 +55,8 @@
             txt_categoria = new MaterialSkin.Controls.MaterialTextBox();
             iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             pnl_detalle = new Panel();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             btn_prov = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             btn_cargaMasiva = new MaterialSkin.Controls.MaterialButton();
             panel1 = new Panel();
             txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
@@ -73,8 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
             pnl_detalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_prov).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -85,15 +85,15 @@
             dgvProductos.AllowUserToResizeRows = false;
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvProductos.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column2, Column3, Column4 });
             dgvProductos.Location = new Point(376, 127);
@@ -101,10 +101,10 @@
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
-            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.Size = new Size(472, 480);
             dgvProductos.TabIndex = 103;
@@ -451,20 +451,6 @@
             pnl_detalle.Size = new Size(368, 487);
             pnl_detalle.TabIndex = 165;
             // 
-            // iconPictureBox5
-            // 
-            iconPictureBox5.BackColor = Color.Transparent;
-            iconPictureBox5.ForeColor = Color.SeaGreen;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Upload;
-            iconPictureBox5.IconColor = Color.SeaGreen;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 40;
-            iconPictureBox5.Location = new Point(854, 566);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(42, 40);
-            iconPictureBox5.TabIndex = 167;
-            iconPictureBox5.TabStop = false;
-            // 
             // btn_prov
             // 
             btn_prov.BackColor = Color.WhiteSmoke;
@@ -479,6 +465,20 @@
             btn_prov.TabIndex = 163;
             btn_prov.TabStop = false;
             btn_prov.Click += btn_prov_Click;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.Transparent;
+            iconPictureBox5.ForeColor = Color.SeaGreen;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            iconPictureBox5.IconColor = Color.SeaGreen;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 40;
+            iconPictureBox5.Location = new Point(854, 566);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(42, 40);
+            iconPictureBox5.TabIndex = 167;
+            iconPictureBox5.TabStop = false;
             // 
             // btn_cargaMasiva
             // 
@@ -572,7 +572,7 @@
             // 
             materialLabel7.AutoSize = true;
             materialLabel7.Depth = 0;
-            materialLabel7.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel7.Location = new Point(901, 541);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
@@ -595,6 +595,7 @@
             Name = "Productos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Productos :.";
+            FormClosed += Productos_FormClosed;
             Load += Productos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox13).EndInit();
@@ -606,8 +607,8 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
             pnl_detalle.ResumeLayout(false);
             pnl_detalle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_prov).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

@@ -228,7 +228,7 @@ namespace SistemaEE.Formularios
 
                     //verifica si las unidades existentes son igual a 0 ahora pasan a ser las entradas sino se le suma las entradas mas las que ya tienen   
 
-      
+
                     //hace el insert en stock
                     string insertStock = $"INSERT INTO fichastock (fecha, nombreProducto ,IdProducto, Concepto, UnidadesE, PrecioUE, TotalE, UnidadesEx, PrecioUEx, TotalEx) " +
                         $"VALUES ('{fechaActualString}' ,'{producto.nombre}', '{producto.Id}', '{concepto}', '{unidadesE}', '{precioUE}', '{totalE}', '{unidadesEx}', '{precioUEx}', '{totalEx}')";
@@ -240,7 +240,7 @@ namespace SistemaEE.Formularios
                 ConectaDB.CerrarDB();
                 Limpiar();
                 carrito.Clear();
-              // ComprobanteCompra();
+                // ComprobanteCompra();
             }
             else { }
         }
@@ -289,6 +289,11 @@ namespace SistemaEE.Formularios
             //    UseShellExecute = true
             //});
 
+        }
+
+        private void Entrada_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

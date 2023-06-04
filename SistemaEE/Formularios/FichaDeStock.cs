@@ -107,5 +107,10 @@ namespace SistemaEE.Formularios
         {
             this.Close();
         }
+
+        private void FichaDeStock_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -180,5 +180,10 @@ namespace SistemaEE.Formularios
                 MessageBox.Show("Error al eliminar el producto: " + ex.Message);
             }
         }
+
+        private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -187,5 +187,10 @@ namespace SistemaEE.Formularios
         {
 
         }
+
+        private void Clientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

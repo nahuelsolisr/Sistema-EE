@@ -314,5 +314,10 @@ namespace SistemaEE.Formularios
             txt_nombreProducto.Text = Elegir.nomProducto;
             txt_precio.Text = Elegir.precioProducto.ToString();
         }
+
+        private void Salidas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -98,5 +98,10 @@ namespace SistemaEE.Formularios
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarClientes(dgvCliente, filtro);
         }
+
+        private void MuestraCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

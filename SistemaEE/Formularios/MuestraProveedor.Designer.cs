@@ -155,6 +155,7 @@
             Name = "MuestraProveedor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Proveedores disponibles :.";
+            FormClosed += MuestraProveedor_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvProveedor).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);

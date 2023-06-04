@@ -105,5 +105,10 @@ namespace SistemaEE.Formularios
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarProveedores(dgvProveedor, filtro);
         }
+
+        private void MuestraProveedor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

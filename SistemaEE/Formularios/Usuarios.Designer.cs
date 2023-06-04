@@ -40,6 +40,7 @@
             Column3 = new DataGridViewTextBoxColumn();
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             pnl_detalle = new Panel();
+            txt_tipoUsuario = new MaterialSkin.Controls.MaterialComboBox();
             iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             txt_nombre = new MaterialSkin.Controls.MaterialTextBox();
             iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
@@ -56,7 +57,6 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            txt_tipoUsuario = new MaterialSkin.Controls.MaterialComboBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
@@ -201,6 +201,29 @@
             pnl_detalle.Name = "pnl_detalle";
             pnl_detalle.Size = new Size(368, 486);
             pnl_detalle.TabIndex = 177;
+            // 
+            // txt_tipoUsuario
+            // 
+            txt_tipoUsuario.AutoResize = false;
+            txt_tipoUsuario.BackColor = Color.FromArgb(255, 255, 255);
+            txt_tipoUsuario.Depth = 0;
+            txt_tipoUsuario.DrawMode = DrawMode.OwnerDrawVariable;
+            txt_tipoUsuario.DropDownHeight = 174;
+            txt_tipoUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
+            txt_tipoUsuario.DropDownWidth = 121;
+            txt_tipoUsuario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            txt_tipoUsuario.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            txt_tipoUsuario.FormattingEnabled = true;
+            txt_tipoUsuario.IntegralHeight = false;
+            txt_tipoUsuario.ItemHeight = 43;
+            txt_tipoUsuario.Items.AddRange(new object[] { "Administrador", "Empleado" });
+            txt_tipoUsuario.Location = new Point(58, 189);
+            txt_tipoUsuario.MaxDropDownItems = 4;
+            txt_tipoUsuario.MouseState = MaterialSkin.MouseState.OUT;
+            txt_tipoUsuario.Name = "txt_tipoUsuario";
+            txt_tipoUsuario.Size = new Size(295, 49);
+            txt_tipoUsuario.StartIndex = 0;
+            txt_tipoUsuario.TabIndex = 171;
             // 
             // iconPictureBox9
             // 
@@ -444,29 +467,6 @@
             iconPictureBox1.TabIndex = 141;
             iconPictureBox1.TabStop = false;
             // 
-            // txt_tipoUsuario
-            // 
-            txt_tipoUsuario.AutoResize = false;
-            txt_tipoUsuario.BackColor = Color.FromArgb(255, 255, 255);
-            txt_tipoUsuario.Depth = 0;
-            txt_tipoUsuario.DrawMode = DrawMode.OwnerDrawVariable;
-            txt_tipoUsuario.DropDownHeight = 174;
-            txt_tipoUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
-            txt_tipoUsuario.DropDownWidth = 121;
-            txt_tipoUsuario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            txt_tipoUsuario.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            txt_tipoUsuario.FormattingEnabled = true;
-            txt_tipoUsuario.IntegralHeight = false;
-            txt_tipoUsuario.ItemHeight = 43;
-            txt_tipoUsuario.Items.AddRange(new object[] { "Administrador", "Empleado" });
-            txt_tipoUsuario.Location = new Point(58, 189);
-            txt_tipoUsuario.MaxDropDownItems = 4;
-            txt_tipoUsuario.MouseState = MaterialSkin.MouseState.OUT;
-            txt_tipoUsuario.Name = "txt_tipoUsuario";
-            txt_tipoUsuario.Size = new Size(295, 49);
-            txt_tipoUsuario.StartIndex = 0;
-            txt_tipoUsuario.TabIndex = 171;
-            // 
             // Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -478,6 +478,7 @@
             Name = "Usuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Usuarios :.";
+            FormClosing += Usuarios_FormClosing;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();

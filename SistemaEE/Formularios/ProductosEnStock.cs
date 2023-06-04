@@ -106,5 +106,10 @@ namespace SistemaEE.Formularios
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarProductos(dgvProductos, filtro);
         }
+
+        private void ProductosEnStock_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

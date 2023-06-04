@@ -140,56 +140,71 @@ namespace SistemaEE.Formularios
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            try
+            bool validacion = EnviarValidaciones();
+
+            if (validacion)
             {
-                ConectaDB.AbrirDB();
-                string insertProveedor = "INSERT INTO proveedor (cuit_prov, nombre_prov, domicilio_prov, mail_prov, condicion) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_domicilio.Text + "', '" + txt_mail.Text + "', '" + cmb_condicion.Text + "')";
-                ConectaDB.CargarDB(insertProveedor);
-                ConectaDB.CerrarDB();
-                MessageBox.Show("El proveedor ha sido agregado correctamente.");
-                Limpiar();
-                dgv_Proveedores();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar el Proveedor: " + ex.Message);
+                try
+                {
+                    ConectaDB.AbrirDB();
+                    string insertProveedor = "INSERT INTO proveedor (cuit_prov, nombre_prov, domicilio_prov, mail_prov, condicion) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_domicilio.Text + "', '" + txt_mail.Text + "', '" + cmb_condicion.Text + "')";
+                    ConectaDB.CargarDB(insertProveedor);
+                    ConectaDB.CerrarDB();
+                    MessageBox.Show("El proveedor ha sido agregado correctamente.");
+                    Limpiar();
+                    dgv_Proveedores();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar el Proveedor: " + ex.Message);
+                }
             }
         }
 
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            try
+            bool validacion = EnviarValidaciones();
+
+            if (validacion)
             {
-                ConectaDB.AbrirDB();
-                string updateProveedor = "UPDATE proveedor SET cuit_prov = " + txt_cuit.Text + ", nombre_prov = '" + txt_nombre.Text + "', domicilio_prov = '" + txt_domicilio.Text + "', mail_prov = '" + txt_mail.Text + "',condicion = '" + cmb_condicion.Text + "' WHERE cuit_prov = " + idProveedor;
-                ConectaDB.CargarDB(updateProveedor);
-                ConectaDB.CerrarDB();
-                Limpiar();
-                dgv_Proveedores();
-                MessageBox.Show("Actualización exitosa.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar proveedor: " + ex.Message);
+                try
+                {
+                    ConectaDB.AbrirDB();
+                    string updateProveedor = "UPDATE proveedor SET cuit_prov = " + txt_cuit.Text + ", nombre_prov = '" + txt_nombre.Text + "', domicilio_prov = '" + txt_domicilio.Text + "', mail_prov = '" + txt_mail.Text + "',condicion = '" + cmb_condicion.Text + "' WHERE cuit_prov = " + idProveedor;
+                    ConectaDB.CargarDB(updateProveedor);
+                    ConectaDB.CerrarDB();
+                    Limpiar();
+                    dgv_Proveedores();
+                    MessageBox.Show("Actualización exitosa.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar proveedor: " + ex.Message);
+                }
             }
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            try
+            bool validacion = EnviarValidaciones();
+
+            if (validacion)
             {
-                ConectaDB.AbrirDB();
-                string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
-                ConectaDB.CargarDB(deleteProveedor);
-                ConectaDB.CerrarDB();
-                Limpiar();
-                MessageBox.Show("Proveedor eliminado correctamente");
-                dgv_Proveedores();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
+                try
+                {
+                    ConectaDB.AbrirDB();
+                    string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
+                    ConectaDB.CargarDB(deleteProveedor);
+                    ConectaDB.CerrarDB();
+                    Limpiar();
+                    MessageBox.Show("Proveedor eliminado correctamente");
+                    dgv_Proveedores();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
+                }
             }
         }
 
@@ -207,6 +222,49 @@ namespace SistemaEE.Formularios
             string filtro = txt_filtrar.Text;
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarProveedores(dgvProveedor, filtro);
+        }
+
+        private void Proveedores_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public bool EnviarValidaciones()
+        {
+
+            string cuit = txt_cuit.Text;
+
+            string nombre = txt_nombre.Text;
+
+            string email = txt_mail.Text;
+
+
+            if (!Validaciones.ValidarCuit(cuit))
+            {
+                MessageBox.Show("El CUIT no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Validaciones.ValidarNombre(nombre))
+            {
+                MessageBox.Show("El nombre no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Validaciones.ValidarEmail(email))
+            {
+                MessageBox.Show("El correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Todas las validaciones son correctas
+            return true;
+
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

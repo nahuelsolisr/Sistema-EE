@@ -550,9 +550,9 @@
             materialLabel1.Location = new Point(6, 5);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(196, 19);
+            materialLabel1.Size = new Size(158, 19);
             materialLabel1.TabIndex = 150;
-            materialLabel1.Text = "DETALLE DEL PROVEEDOR";
+            materialLabel1.Text = "DETALLE DE CLIENTE";
             // 
             // materialLabel2
             // 
@@ -562,9 +562,9 @@
             materialLabel2.Location = new Point(375, 5);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(182, 19);
+            materialLabel2.Size = new Size(144, 19);
             materialLabel2.TabIndex = 151;
-            materialLabel2.Text = "LISTA DE PROVEEDORES";
+            materialLabel2.Text = "LISTA DE CLIENTES";
             // 
             // iconPictureBox1
             // 
@@ -668,6 +668,7 @@
             Name = "Clientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Clientes :.";
+            FormClosed += Clientes_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvCliente).EndInit();
             pnl_detalle.ResumeLayout(false);
             pnl_detalle.PerformLayout();

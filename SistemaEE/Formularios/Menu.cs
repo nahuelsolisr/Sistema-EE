@@ -159,5 +159,10 @@ namespace SistemaEE.Formularios
                 pic_logoEmpresa.Image = Image.FromFile(rutaImagen);
             }
         }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

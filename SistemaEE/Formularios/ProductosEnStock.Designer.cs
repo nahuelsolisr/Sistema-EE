@@ -162,6 +162,7 @@
             Name = "ProductosEnStock";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Stock disponible :.";
+            FormClosed += ProductosEnStock_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
