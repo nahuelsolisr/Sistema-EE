@@ -46,15 +46,10 @@
             btn_clientes = new MaterialSkin.Controls.MaterialButton();
             btn_producto = new MaterialSkin.Controls.MaterialButton();
             btn_prov = new MaterialSkin.Controls.MaterialButton();
-            iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             tabContabilidad = new TabPage();
             tabUsuarios = new TabPage();
             tabConfiguracion = new TabPage();
+            btn_datosEmpresa = new MaterialSkin.Controls.MaterialButton();
             materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             pic_logoEmpresa = new PictureBox();
             txt_direcciónEmpresa = new MaterialSkin.Controls.MaterialTextBox();
@@ -73,17 +68,11 @@
             btn_subirLogo = new MaterialSkin.Controls.MaterialButton();
             ImagenesTab = new ImageList(components);
             timer1 = new System.Windows.Forms.Timer(components);
-            btn_datosEmpresa = new MaterialSkin.Controls.MaterialButton();
+            materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             mtcMenu.SuspendLayout();
             tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabFacturacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             tabContabilidad.SuspendLayout();
             tabConfiguracion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_logoEmpresa).BeginInit();
@@ -100,7 +89,7 @@
             btn_contabilidad.IconColor = Color.DimGray;
             btn_contabilidad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btn_contabilidad.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_contabilidad.Location = new Point(66, 18);
+            btn_contabilidad.Location = new Point(3, 3);
             btn_contabilidad.Name = "btn_contabilidad";
             btn_contabilidad.Size = new Size(211, 60);
             btn_contabilidad.TabIndex = 17;
@@ -129,6 +118,7 @@
             // tabHome
             // 
             tabHome.BackColor = Color.White;
+            tabHome.Controls.Add(materialLabel10);
             tabHome.Controls.Add(materialLabel3);
             tabHome.Controls.Add(lbl_horaActual);
             tabHome.Controls.Add(materialLabel2);
@@ -162,12 +152,11 @@
             lbl_horaActual.BackColor = Color.Transparent;
             lbl_horaActual.Depth = 0;
             lbl_horaActual.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lbl_horaActual.Location = new Point(410, 13);
+            lbl_horaActual.Location = new Point(464, 14);
             lbl_horaActual.MouseState = MaterialSkin.MouseState.HOVER;
             lbl_horaActual.Name = "lbl_horaActual";
-            lbl_horaActual.Size = new Size(107, 19);
+            lbl_horaActual.Size = new Size(1, 0);
             lbl_horaActual.TabIndex = 25;
-            lbl_horaActual.Text = "materialLabel1";
             // 
             // materialLabel2
             // 
@@ -225,12 +214,6 @@
             tabFacturacion.Controls.Add(btn_clientes);
             tabFacturacion.Controls.Add(btn_producto);
             tabFacturacion.Controls.Add(btn_prov);
-            tabFacturacion.Controls.Add(iconPictureBox6);
-            tabFacturacion.Controls.Add(iconPictureBox5);
-            tabFacturacion.Controls.Add(iconPictureBox4);
-            tabFacturacion.Controls.Add(iconPictureBox3);
-            tabFacturacion.Controls.Add(iconPictureBox2);
-            tabFacturacion.Controls.Add(iconPictureBox1);
             tabFacturacion.ImageKey = "file-invoice-solid.png";
             tabFacturacion.Location = new Point(4, 39);
             tabFacturacion.Name = "tabFacturacion";
@@ -246,13 +229,13 @@
             btn_stock.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_stock.Depth = 0;
             btn_stock.HighEmphasis = true;
-            btn_stock.Icon = null;
-            btn_stock.Location = new Point(124, 304);
+            btn_stock.Icon = (Image)resources.GetObject("btn_stock.Icon");
+            btn_stock.Location = new Point(66, 307);
             btn_stock.Margin = new Padding(4, 6, 4, 6);
             btn_stock.MouseState = MaterialSkin.MouseState.HOVER;
             btn_stock.Name = "btn_stock";
             btn_stock.NoAccentTextColor = Color.Empty;
-            btn_stock.Size = new Size(277, 53);
+            btn_stock.Size = new Size(182, 53);
             btn_stock.TabIndex = 36;
             btn_stock.Text = "Inventario";
             btn_stock.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -267,13 +250,13 @@
             btn_salidas.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_salidas.Depth = 0;
             btn_salidas.HighEmphasis = true;
-            btn_salidas.Icon = null;
-            btn_salidas.Location = new Point(124, 245);
+            btn_salidas.Icon = (Image)resources.GetObject("btn_salidas.Icon");
+            btn_salidas.Location = new Point(66, 248);
             btn_salidas.Margin = new Padding(4, 6, 4, 6);
             btn_salidas.MouseState = MaterialSkin.MouseState.HOVER;
             btn_salidas.Name = "btn_salidas";
             btn_salidas.NoAccentTextColor = Color.Empty;
-            btn_salidas.Size = new Size(277, 53);
+            btn_salidas.Size = new Size(182, 53);
             btn_salidas.TabIndex = 35;
             btn_salidas.Text = "Salidas";
             btn_salidas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -288,13 +271,13 @@
             btn_entradas.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_entradas.Depth = 0;
             btn_entradas.HighEmphasis = true;
-            btn_entradas.Icon = null;
-            btn_entradas.Location = new Point(124, 183);
+            btn_entradas.Icon = (Image)resources.GetObject("btn_entradas.Icon");
+            btn_entradas.Location = new Point(66, 186);
             btn_entradas.Margin = new Padding(4, 6, 4, 6);
             btn_entradas.MouseState = MaterialSkin.MouseState.HOVER;
             btn_entradas.Name = "btn_entradas";
             btn_entradas.NoAccentTextColor = Color.Empty;
-            btn_entradas.Size = new Size(277, 53);
+            btn_entradas.Size = new Size(182, 53);
             btn_entradas.TabIndex = 34;
             btn_entradas.Text = "Entradas";
             btn_entradas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -309,13 +292,13 @@
             btn_clientes.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_clientes.Depth = 0;
             btn_clientes.HighEmphasis = true;
-            btn_clientes.Icon = null;
-            btn_clientes.Location = new Point(124, 124);
+            btn_clientes.Icon = (Image)resources.GetObject("btn_clientes.Icon");
+            btn_clientes.Location = new Point(66, 127);
             btn_clientes.Margin = new Padding(4, 6, 4, 6);
             btn_clientes.MouseState = MaterialSkin.MouseState.HOVER;
             btn_clientes.Name = "btn_clientes";
             btn_clientes.NoAccentTextColor = Color.Empty;
-            btn_clientes.Size = new Size(277, 53);
+            btn_clientes.Size = new Size(182, 53);
             btn_clientes.TabIndex = 33;
             btn_clientes.Text = "Clientes";
             btn_clientes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -330,13 +313,13 @@
             btn_producto.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_producto.Depth = 0;
             btn_producto.HighEmphasis = true;
-            btn_producto.Icon = null;
-            btn_producto.Location = new Point(124, 65);
+            btn_producto.Icon = (Image)resources.GetObject("btn_producto.Icon");
+            btn_producto.Location = new Point(66, 68);
             btn_producto.Margin = new Padding(4, 6, 4, 6);
             btn_producto.MouseState = MaterialSkin.MouseState.HOVER;
             btn_producto.Name = "btn_producto";
             btn_producto.NoAccentTextColor = Color.Empty;
-            btn_producto.Size = new Size(277, 53);
+            btn_producto.Size = new Size(182, 53);
             btn_producto.TabIndex = 32;
             btn_producto.Text = "Productos";
             btn_producto.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -351,103 +334,19 @@
             btn_prov.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_prov.Depth = 0;
             btn_prov.HighEmphasis = true;
-            btn_prov.Icon = null;
-            btn_prov.Location = new Point(124, 6);
+            btn_prov.Icon = (Image)resources.GetObject("btn_prov.Icon");
+            btn_prov.Location = new Point(66, 9);
             btn_prov.Margin = new Padding(4, 6, 4, 6);
             btn_prov.MouseState = MaterialSkin.MouseState.HOVER;
             btn_prov.Name = "btn_prov";
             btn_prov.NoAccentTextColor = Color.Empty;
-            btn_prov.Size = new Size(277, 53);
+            btn_prov.Size = new Size(182, 53);
             btn_prov.TabIndex = 31;
             btn_prov.Text = "Proveedores";
             btn_prov.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btn_prov.UseAccentColor = false;
             btn_prov.UseVisualStyleBackColor = true;
             btn_prov.Click += btn_prov_Click;
-            // 
-            // iconPictureBox6
-            // 
-            iconPictureBox6.BackColor = Color.Transparent;
-            iconPictureBox6.ForeColor = Color.SteelBlue;
-            iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Cube;
-            iconPictureBox6.IconColor = Color.SteelBlue;
-            iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox6.IconSize = 53;
-            iconPictureBox6.Location = new Point(64, 304);
-            iconPictureBox6.Name = "iconPictureBox6";
-            iconPictureBox6.Size = new Size(62, 53);
-            iconPictureBox6.TabIndex = 30;
-            iconPictureBox6.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            iconPictureBox5.BackColor = Color.Transparent;
-            iconPictureBox5.ForeColor = Color.SteelBlue;
-            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Dolly;
-            iconPictureBox5.IconColor = Color.SteelBlue;
-            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 53;
-            iconPictureBox5.Location = new Point(64, 245);
-            iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(62, 53);
-            iconPictureBox5.TabIndex = 29;
-            iconPictureBox5.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            iconPictureBox4.BackColor = Color.Transparent;
-            iconPictureBox4.ForeColor = Color.SteelBlue;
-            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed;
-            iconPictureBox4.IconColor = Color.SteelBlue;
-            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 53;
-            iconPictureBox4.Location = new Point(64, 183);
-            iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(62, 53);
-            iconPictureBox4.TabIndex = 28;
-            iconPictureBox4.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.Transparent;
-            iconPictureBox3.ForeColor = Color.SteelBlue;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
-            iconPictureBox3.IconColor = Color.SteelBlue;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 53;
-            iconPictureBox3.Location = new Point(64, 123);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(62, 53);
-            iconPictureBox3.TabIndex = 27;
-            iconPictureBox3.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.Transparent;
-            iconPictureBox2.ForeColor = Color.SteelBlue;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Cubes;
-            iconPictureBox2.IconColor = Color.SteelBlue;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 53;
-            iconPictureBox2.Location = new Point(64, 65);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(62, 53);
-            iconPictureBox2.TabIndex = 26;
-            iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox1
-            // 
-            iconPictureBox1.BackColor = Color.Transparent;
-            iconPictureBox1.ForeColor = Color.SteelBlue;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.TruckMoving;
-            iconPictureBox1.IconColor = Color.SteelBlue;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 53;
-            iconPictureBox1.Location = new Point(64, 6);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(62, 53);
-            iconPictureBox1.TabIndex = 25;
-            iconPictureBox1.TabStop = false;
             // 
             // tabContabilidad
             // 
@@ -496,6 +395,26 @@
             tabConfiguracion.Size = new Size(577, 485);
             tabConfiguracion.TabIndex = 4;
             tabConfiguracion.Text = "Opciones";
+            // 
+            // btn_datosEmpresa
+            // 
+            btn_datosEmpresa.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_datosEmpresa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_datosEmpresa.Depth = 0;
+            btn_datosEmpresa.HighEmphasis = true;
+            btn_datosEmpresa.Icon = (Image)resources.GetObject("btn_datosEmpresa.Icon");
+            btn_datosEmpresa.Location = new Point(64, 443);
+            btn_datosEmpresa.Margin = new Padding(4, 6, 4, 6);
+            btn_datosEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_datosEmpresa.Name = "btn_datosEmpresa";
+            btn_datosEmpresa.NoAccentTextColor = Color.Empty;
+            btn_datosEmpresa.Size = new Size(196, 36);
+            btn_datosEmpresa.TabIndex = 173;
+            btn_datosEmpresa.Text = "Modificar cambios";
+            btn_datosEmpresa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_datosEmpresa.UseAccentColor = false;
+            btn_datosEmpresa.UseVisualStyleBackColor = true;
+            btn_datosEmpresa.Click += btn_datosEmpresa_Click;
             // 
             // materialLabel9
             // 
@@ -727,25 +646,17 @@
             // 
             timer1.Interval = 1000;
             // 
-            // btn_datosEmpresa
+            // materialLabel10
             // 
-            btn_datosEmpresa.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btn_datosEmpresa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btn_datosEmpresa.Depth = 0;
-            btn_datosEmpresa.HighEmphasis = true;
-            btn_datosEmpresa.Icon = (Image)resources.GetObject("btn_datosEmpresa.Icon");
-            btn_datosEmpresa.Location = new Point(64, 443);
-            btn_datosEmpresa.Margin = new Padding(4, 6, 4, 6);
-            btn_datosEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
-            btn_datosEmpresa.Name = "btn_datosEmpresa";
-            btn_datosEmpresa.NoAccentTextColor = Color.Empty;
-            btn_datosEmpresa.Size = new Size(196, 36);
-            btn_datosEmpresa.TabIndex = 173;
-            btn_datosEmpresa.Text = "Modificar cambios";
-            btn_datosEmpresa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btn_datosEmpresa.UseAccentColor = false;
-            btn_datosEmpresa.UseVisualStyleBackColor = true;
-            btn_datosEmpresa.Click += btn_datosEmpresa_Click;
+            materialLabel10.AutoSize = true;
+            materialLabel10.Depth = 0;
+            materialLabel10.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel10.Location = new Point(371, 13);
+            materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel10.Name = "materialLabel10";
+            materialLabel10.Size = new Size(87, 19);
+            materialLabel10.TabIndex = 27;
+            materialLabel10.Text = "Hora actual:";
             // 
             // Menu
             // 
@@ -766,12 +677,6 @@
             tabHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabFacturacion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             tabContabilidad.ResumeLayout(false);
             tabConfiguracion.ResumeLayout(false);
             tabConfiguracion.PerformLayout();
@@ -794,12 +699,6 @@
         private MaterialSkin.Controls.MaterialSwitch msModoOscuro;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton btn_prov;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private MaterialSkin.Controls.MaterialButton btn_stock;
         private MaterialSkin.Controls.MaterialButton btn_salidas;
         private MaterialSkin.Controls.MaterialButton btn_entradas;
@@ -827,5 +726,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialButton btn_subirLogo;
         private MaterialSkin.Controls.MaterialButton btn_datosEmpresa;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
     }
 }

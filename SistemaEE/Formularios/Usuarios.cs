@@ -39,6 +39,7 @@ namespace SistemaEE.Formularios
             {
                 EstiloClaro();
             }
+            txt_contraseña.Password = true;
 
         }
         public void EstiloClaro()
@@ -182,6 +183,22 @@ namespace SistemaEE.Formularios
         }
 
         private void Usuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Limpiar()
+        {
+            txt_nombre.Text = "";
+            txt_contraseña.Text = "";
+        }
+
+        private void Usuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }

@@ -211,16 +211,30 @@ namespace SistemaEE.Formularios
             filtrador.FiltrarProductos(dgvProductos, filtro);
         }
 
-        private void btn_prov_Click(object sender, EventArgs e)
+
+
+        private void Productos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_traerProv_Click(object sender, EventArgs e)
         {
             MuestraProveedor muestraProveedor = new MuestraProveedor();
             muestraProveedor.ShowDialog();
             txt_prov.Text = Clases.Elegir.nom_prov.ToString();
         }
 
-        private void Productos_FormClosed(object sender, FormClosedEventArgs e)
+        private void btn_limpiar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Limpiar();
+        }
+        public void Limpiar()
+        {
+            txt_nombre.Text = "";
+            txt_categoria.Text = "";
+            txt_marca.Text = "";
+            txt_prov.Text = "";
         }
     }
 }

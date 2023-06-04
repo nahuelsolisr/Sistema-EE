@@ -33,6 +33,12 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Proveedores));
             dgvProveedor = new DataGridView();
+            btn_seleccionar = new DataGridViewButtonColumn();
+            Column0 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -60,12 +66,6 @@
             btn_cargaMasiva = new MaterialSkin.Controls.MaterialButton();
             btn_descargaPlantilla = new MaterialSkin.Controls.MaterialButton();
             btn_limpiar = new MaterialSkin.Controls.MaterialButton();
-            btn_seleccionar = new DataGridViewButtonColumn();
-            Column0 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProveedor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -116,6 +116,50 @@
             dgvProveedor.Size = new Size(672, 402);
             dgvProveedor.TabIndex = 123;
             dgvProveedor.CellClick += Cell_Click;
+            // 
+            // btn_seleccionar
+            // 
+            btn_seleccionar.HeaderText = "";
+            btn_seleccionar.Name = "btn_seleccionar";
+            btn_seleccionar.ReadOnly = true;
+            btn_seleccionar.Resizable = DataGridViewTriState.False;
+            btn_seleccionar.Text = "";
+            btn_seleccionar.Width = 25;
+            // 
+            // Column0
+            // 
+            Column0.HeaderText = "Cuit";
+            Column0.Name = "Column0";
+            Column0.ReadOnly = true;
+            Column0.Width = 66;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Nombre";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 95;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Domicilio";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 104;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Mail";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 66;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Condición";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 108;
             // 
             // iconPictureBox3
             // 
@@ -499,12 +543,12 @@
             btn_cargaMasiva.Enabled = false;
             btn_cargaMasiva.HighEmphasis = true;
             btn_cargaMasiva.Icon = (Image)resources.GetObject("btn_cargaMasiva.Icon");
-            btn_cargaMasiva.Location = new Point(856, 574);
+            btn_cargaMasiva.Location = new Point(894, 574);
             btn_cargaMasiva.Margin = new Padding(4, 6, 4, 6);
             btn_cargaMasiva.MouseState = MaterialSkin.MouseState.HOVER;
             btn_cargaMasiva.Name = "btn_cargaMasiva";
             btn_cargaMasiva.NoAccentTextColor = Color.Empty;
-            btn_cargaMasiva.Size = new Size(183, 36);
+            btn_cargaMasiva.Size = new Size(145, 36);
             btn_cargaMasiva.TabIndex = 174;
             btn_cargaMasiva.Text = "Carga masiva";
             btn_cargaMasiva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -520,7 +564,7 @@
             btn_descargaPlantilla.Enabled = false;
             btn_descargaPlantilla.HighEmphasis = true;
             btn_descargaPlantilla.Icon = (Image)resources.GetObject("btn_descargaPlantilla.Icon");
-            btn_descargaPlantilla.Location = new Point(641, 575);
+            btn_descargaPlantilla.Location = new Point(679, 575);
             btn_descargaPlantilla.Margin = new Padding(4, 6, 4, 6);
             btn_descargaPlantilla.MouseState = MaterialSkin.MouseState.HOVER;
             btn_descargaPlantilla.Name = "btn_descargaPlantilla";
@@ -552,50 +596,6 @@
             btn_limpiar.UseAccentColor = false;
             btn_limpiar.UseVisualStyleBackColor = true;
             btn_limpiar.Click += btn_limpiar_Click;
-            // 
-            // btn_seleccionar
-            // 
-            btn_seleccionar.HeaderText = "";
-            btn_seleccionar.Name = "btn_seleccionar";
-            btn_seleccionar.ReadOnly = true;
-            btn_seleccionar.Resizable = DataGridViewTriState.False;
-            btn_seleccionar.Text = "";
-            btn_seleccionar.Width = 25;
-            // 
-            // Column0
-            // 
-            Column0.HeaderText = "Cuit";
-            Column0.Name = "Column0";
-            Column0.ReadOnly = true;
-            Column0.Width = 66;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Nombre";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 95;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Domicilio";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 104;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Mail";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 66;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Condición";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 108;
             // 
             // Proveedores
             // 

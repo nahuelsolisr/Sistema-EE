@@ -319,5 +319,11 @@ namespace SistemaEE.Formularios
         {
             this.Close();
         }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            dgvProductos.ClearSelection();
+            Limpiar();
+        }
     }
 }

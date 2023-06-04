@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
             iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             dgvUsuarios = new DataGridView();
@@ -41,30 +42,25 @@
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             pnl_detalle = new Panel();
             txt_tipoUsuario = new MaterialSkin.Controls.MaterialComboBox();
-            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             txt_nombre = new MaterialSkin.Controls.MaterialTextBox();
-            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
-            btn_editar = new MaterialSkin.Controls.MaterialButton();
-            iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            btn_eliminar = new MaterialSkin.Controls.MaterialButton();
-            btn_agregar = new MaterialSkin.Controls.MaterialButton();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             txt_contraseña = new MaterialSkin.Controls.MaterialTextBox();
+            btn_editar = new MaterialSkin.Controls.MaterialButton();
+            btn_eliminar = new MaterialSkin.Controls.MaterialButton();
+            btn_agregar = new MaterialSkin.Controls.MaterialButton();
             panel1 = new Panel();
             txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            btn_limpiar = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             pnl_detalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -114,7 +110,7 @@
             dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column1, Column2, Column3 });
-            dgvUsuarios.Location = new Point(387, 128);
+            dgvUsuarios.Location = new Point(373, 128);
             dgvUsuarios.Margin = new Padding(4);
             dgvUsuarios.MultiSelect = false;
             dgvUsuarios.Name = "dgvUsuarios";
@@ -125,7 +121,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvUsuarios.RowTemplate.Height = 25;
-            dgvUsuarios.Size = new Size(652, 486);
+            dgvUsuarios.Size = new Size(666, 423);
             dgvUsuarios.TabIndex = 159;
             dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
             // 
@@ -183,23 +179,17 @@
             // pnl_detalle
             // 
             pnl_detalle.Controls.Add(txt_tipoUsuario);
-            pnl_detalle.Controls.Add(iconPictureBox9);
             pnl_detalle.Controls.Add(txt_nombre);
-            pnl_detalle.Controls.Add(iconPictureBox8);
-            pnl_detalle.Controls.Add(btn_editar);
             pnl_detalle.Controls.Add(iconPictureBox5);
             pnl_detalle.Controls.Add(iconPictureBox6);
             pnl_detalle.Controls.Add(iconPictureBox3);
-            pnl_detalle.Controls.Add(iconPictureBox7);
-            pnl_detalle.Controls.Add(btn_eliminar);
-            pnl_detalle.Controls.Add(btn_agregar);
             pnl_detalle.Controls.Add(materialLabel5);
             pnl_detalle.Controls.Add(materialLabel4);
             pnl_detalle.Controls.Add(materialLabel3);
             pnl_detalle.Controls.Add(txt_contraseña);
             pnl_detalle.Location = new Point(12, 128);
             pnl_detalle.Name = "pnl_detalle";
-            pnl_detalle.Size = new Size(368, 486);
+            pnl_detalle.Size = new Size(353, 423);
             pnl_detalle.TabIndex = 177;
             // 
             // txt_tipoUsuario
@@ -221,23 +211,9 @@
             txt_tipoUsuario.MaxDropDownItems = 4;
             txt_tipoUsuario.MouseState = MaterialSkin.MouseState.OUT;
             txt_tipoUsuario.Name = "txt_tipoUsuario";
-            txt_tipoUsuario.Size = new Size(295, 49);
+            txt_tipoUsuario.Size = new Size(292, 49);
             txt_tipoUsuario.StartIndex = 0;
             txt_tipoUsuario.TabIndex = 171;
-            // 
-            // iconPictureBox9
-            // 
-            iconPictureBox9.BackColor = SystemColors.Control;
-            iconPictureBox9.ForeColor = Color.Firebrick;
-            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.TimesSquare;
-            iconPictureBox9.IconColor = Color.Firebrick;
-            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox9.IconSize = 39;
-            iconPictureBox9.Location = new Point(242, 436);
-            iconPictureBox9.Name = "iconPictureBox9";
-            iconPictureBox9.Size = new Size(39, 47);
-            iconPictureBox9.TabIndex = 157;
-            iconPictureBox9.TabStop = false;
             // 
             // txt_nombre
             // 
@@ -251,101 +227,10 @@
             txt_nombre.MouseState = MaterialSkin.MouseState.OUT;
             txt_nombre.Multiline = false;
             txt_nombre.Name = "txt_nombre";
-            txt_nombre.Size = new Size(295, 50);
+            txt_nombre.Size = new Size(291, 50);
             txt_nombre.TabIndex = 145;
             txt_nombre.Text = "";
             txt_nombre.TrailingIcon = null;
-            // 
-            // iconPictureBox8
-            // 
-            iconPictureBox8.BackColor = SystemColors.Control;
-            iconPictureBox8.ForeColor = Color.SteelBlue;
-            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            iconPictureBox8.IconColor = Color.SteelBlue;
-            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox8.IconSize = 36;
-            iconPictureBox8.Location = new Point(117, 436);
-            iconPictureBox8.Name = "iconPictureBox8";
-            iconPictureBox8.Size = new Size(39, 36);
-            iconPictureBox8.TabIndex = 156;
-            iconPictureBox8.TabStop = false;
-            // 
-            // btn_editar
-            // 
-            btn_editar.AutoSize = false;
-            btn_editar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btn_editar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btn_editar.Depth = 0;
-            btn_editar.HighEmphasis = true;
-            btn_editar.Icon = null;
-            btn_editar.Location = new Point(150, 436);
-            btn_editar.Margin = new Padding(4, 6, 4, 6);
-            btn_editar.MouseState = MaterialSkin.MouseState.HOVER;
-            btn_editar.Name = "btn_editar";
-            btn_editar.NoAccentTextColor = Color.Empty;
-            btn_editar.Size = new Size(89, 36);
-            btn_editar.TabIndex = 158;
-            btn_editar.Text = "Editar";
-            btn_editar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btn_editar.UseAccentColor = false;
-            btn_editar.UseVisualStyleBackColor = true;
-            btn_editar.Click += btn_editar_Click;
-            // 
-            // iconPictureBox7
-            // 
-            iconPictureBox7.BackColor = SystemColors.Control;
-            iconPictureBox7.ForeColor = Color.SteelBlue;
-            iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            iconPictureBox7.IconColor = Color.SteelBlue;
-            iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox7.IconSize = 36;
-            iconPictureBox7.Location = new Point(5, 436);
-            iconPictureBox7.Name = "iconPictureBox7";
-            iconPictureBox7.Size = new Size(39, 36);
-            iconPictureBox7.TabIndex = 155;
-            iconPictureBox7.TabStop = false;
-            // 
-            // btn_eliminar
-            // 
-            btn_eliminar.AutoSize = false;
-            btn_eliminar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btn_eliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btn_eliminar.Depth = 0;
-            btn_eliminar.HighEmphasis = true;
-            btn_eliminar.Icon = null;
-            btn_eliminar.Location = new Point(278, 436);
-            btn_eliminar.Margin = new Padding(4, 6, 4, 6);
-            btn_eliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.NoAccentTextColor = Color.Empty;
-            btn_eliminar.Size = new Size(78, 36);
-            btn_eliminar.TabIndex = 154;
-            btn_eliminar.Text = "Eliminar";
-            btn_eliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btn_eliminar.UseAccentColor = false;
-            btn_eliminar.UseVisualStyleBackColor = true;
-            btn_eliminar.Click += btn_eliminar_Click;
-            // 
-            // btn_agregar
-            // 
-            btn_agregar.AutoSize = false;
-            btn_agregar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btn_agregar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btn_agregar.Depth = 0;
-            btn_agregar.HighEmphasis = true;
-            btn_agregar.Icon = null;
-            btn_agregar.Location = new Point(37, 436);
-            btn_agregar.Margin = new Padding(4, 6, 4, 6);
-            btn_agregar.MouseState = MaterialSkin.MouseState.HOVER;
-            btn_agregar.Name = "btn_agregar";
-            btn_agregar.NoAccentTextColor = Color.Empty;
-            btn_agregar.Size = new Size(78, 36);
-            btn_agregar.TabIndex = 152;
-            btn_agregar.Text = "Agregar";
-            btn_agregar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            btn_agregar.UseAccentColor = false;
-            btn_agregar.UseVisualStyleBackColor = true;
-            btn_agregar.Click += btn_agregar_Click;
             // 
             // materialLabel5
             // 
@@ -395,10 +280,73 @@
             txt_contraseña.MouseState = MaterialSkin.MouseState.OUT;
             txt_contraseña.Multiline = false;
             txt_contraseña.Name = "txt_contraseña";
-            txt_contraseña.Size = new Size(295, 50);
+            txt_contraseña.Size = new Size(292, 50);
             txt_contraseña.TabIndex = 149;
             txt_contraseña.Text = "";
             txt_contraseña.TrailingIcon = null;
+            // 
+            // btn_editar
+            // 
+            btn_editar.AutoSize = false;
+            btn_editar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_editar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_editar.Depth = 0;
+            btn_editar.HighEmphasis = true;
+            btn_editar.Icon = (Image)resources.GetObject("btn_editar.Icon");
+            btn_editar.Location = new Point(133, 575);
+            btn_editar.Margin = new Padding(4, 6, 4, 6);
+            btn_editar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_editar.Name = "btn_editar";
+            btn_editar.NoAccentTextColor = Color.Empty;
+            btn_editar.Size = new Size(113, 36);
+            btn_editar.TabIndex = 158;
+            btn_editar.Text = "Editar";
+            btn_editar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_editar.UseAccentColor = false;
+            btn_editar.UseVisualStyleBackColor = true;
+            btn_editar.Click += btn_editar_Click;
+            // 
+            // btn_eliminar
+            // 
+            btn_eliminar.AutoSize = false;
+            btn_eliminar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_eliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_eliminar.Depth = 0;
+            btn_eliminar.HighEmphasis = true;
+            btn_eliminar.Icon = (Image)resources.GetObject("btn_eliminar.Icon");
+            btn_eliminar.Location = new Point(252, 575);
+            btn_eliminar.Margin = new Padding(4, 6, 4, 6);
+            btn_eliminar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.NoAccentTextColor = Color.Empty;
+            btn_eliminar.Size = new Size(113, 36);
+            btn_eliminar.TabIndex = 154;
+            btn_eliminar.Text = "Eliminar";
+            btn_eliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_eliminar.UseAccentColor = false;
+            btn_eliminar.UseVisualStyleBackColor = true;
+            btn_eliminar.Click += btn_eliminar_Click;
+            // 
+            // btn_agregar
+            // 
+            btn_agregar.AutoSize = false;
+            btn_agregar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_agregar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_agregar.Depth = 0;
+            btn_agregar.HighEmphasis = true;
+            btn_agregar.Icon = (Image)resources.GetObject("btn_agregar.Icon");
+            btn_agregar.Location = new Point(12, 575);
+            btn_agregar.Margin = new Padding(4, 6, 4, 6);
+            btn_agregar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_agregar.Name = "btn_agregar";
+            btn_agregar.NoAccentTextColor = Color.Empty;
+            btn_agregar.Size = new Size(113, 36);
+            btn_agregar.TabIndex = 152;
+            btn_agregar.Text = "Agregar";
+            btn_agregar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_agregar.UseAccentColor = false;
+            btn_agregar.UseVisualStyleBackColor = true;
+            btn_agregar.Click += btn_agregar_Click;
             // 
             // panel1
             // 
@@ -467,27 +415,49 @@
             iconPictureBox1.TabIndex = 141;
             iconPictureBox1.TabStop = false;
             // 
+            // btn_limpiar
+            // 
+            btn_limpiar.AutoSize = false;
+            btn_limpiar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_limpiar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_limpiar.Depth = 0;
+            btn_limpiar.HighEmphasis = true;
+            btn_limpiar.Icon = (Image)resources.GetObject("btn_limpiar.Icon");
+            btn_limpiar.Location = new Point(373, 575);
+            btn_limpiar.Margin = new Padding(4, 6, 4, 6);
+            btn_limpiar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_limpiar.Name = "btn_limpiar";
+            btn_limpiar.NoAccentTextColor = Color.Empty;
+            btn_limpiar.Size = new Size(113, 36);
+            btn_limpiar.TabIndex = 182;
+            btn_limpiar.Text = "Limpiar";
+            btn_limpiar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_limpiar.UseAccentColor = false;
+            btn_limpiar.UseVisualStyleBackColor = true;
+            btn_limpiar.Click += btn_limpiar_Click;
+            // 
             // Usuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1046, 620);
+            Controls.Add(btn_limpiar);
             Controls.Add(panel1);
+            Controls.Add(btn_editar);
             Controls.Add(pnl_detalle);
             Controls.Add(dgvUsuarios);
+            Controls.Add(btn_agregar);
+            Controls.Add(btn_eliminar);
             Name = "Usuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = ".: Usuarios :.";
-            FormClosing += Usuarios_FormClosing;
+            FormClosed += Usuarios_FormClosed;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             pnl_detalle.ResumeLayout(false);
             pnl_detalle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
@@ -505,11 +475,8 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private Panel pnl_detalle;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
         private MaterialSkin.Controls.MaterialTextBox txt_nombre;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
         private MaterialSkin.Controls.MaterialButton btn_editar;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
         private MaterialSkin.Controls.MaterialButton btn_eliminar;
         private MaterialSkin.Controls.MaterialButton btn_agregar;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -522,5 +489,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private MaterialSkin.Controls.MaterialComboBox txt_tipoUsuario;
+        private MaterialSkin.Controls.MaterialButton btn_limpiar;
     }
 }

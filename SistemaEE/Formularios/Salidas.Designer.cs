@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salidas));
             dgvProductos = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -39,8 +40,6 @@
             Column6 = new DataGridViewTextBoxColumn();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel2 = new Panel();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             btn_traerProduc = new MaterialSkin.Controls.MaterialButton();
             btn_traerCliente = new MaterialSkin.Controls.MaterialButton();
             txt_cuit = new MaterialSkin.Controls.MaterialTextBox();
@@ -53,7 +52,6 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             txt_idproducto = new MaterialSkin.Controls.MaterialTextBox();
             pnl_detalle = new Panel();
-            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
             materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
@@ -62,25 +60,22 @@
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             btn_agregarCarrito = new MaterialSkin.Controls.MaterialButton();
-            iconPictureBox9 = new FontAwesome.Sharp.IconPictureBox();
             btn_ConfirmarCompra = new MaterialSkin.Controls.MaterialButton();
+            btn_limpiar = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).BeginInit();
             pnl_detalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).BeginInit();
             SuspendLayout();
             // 
             // dgvProductos
             // 
             dgvProductos.AllowUserToResizeColumns = false;
             dgvProductos.AllowUserToResizeRows = false;
+            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -104,7 +99,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
             dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(773, 281);
+            dgvProductos.Size = new Size(885, 281);
             dgvProductos.TabIndex = 170;
             // 
             // Column1
@@ -112,7 +107,6 @@
             Column1.HeaderText = "Producto";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
-            Column1.Width = 103;
             // 
             // Column2
             // 
@@ -160,8 +154,6 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(iconPictureBox2);
-            panel2.Controls.Add(iconPictureBox3);
             panel2.Controls.Add(btn_traerProduc);
             panel2.Controls.Add(btn_traerCliente);
             panel2.Controls.Add(iconPictureBox1);
@@ -179,34 +171,6 @@
             panel2.Size = new Size(1113, 96);
             panel2.TabIndex = 202;
             // 
-            // iconPictureBox2
-            // 
-            iconPictureBox2.BackColor = Color.WhiteSmoke;
-            iconPictureBox2.ForeColor = Color.SteelBlue;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox2.IconColor = Color.SteelBlue;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 50;
-            iconPictureBox2.Location = new Point(937, 30);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(54, 50);
-            iconPictureBox2.TabIndex = 205;
-            iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            iconPictureBox3.BackColor = Color.WhiteSmoke;
-            iconPictureBox3.ForeColor = Color.SteelBlue;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconPictureBox3.IconColor = Color.SteelBlue;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 53;
-            iconPictureBox3.Location = new Point(375, 30);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(54, 53);
-            iconPictureBox3.TabIndex = 203;
-            iconPictureBox3.TabStop = false;
-            // 
             // btn_traerProduc
             // 
             btn_traerProduc.AutoSize = false;
@@ -214,8 +178,8 @@
             btn_traerProduc.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_traerProduc.Depth = 0;
             btn_traerProduc.HighEmphasis = true;
-            btn_traerProduc.Icon = null;
-            btn_traerProduc.Location = new Point(986, 30);
+            btn_traerProduc.Icon = (Image)resources.GetObject("btn_traerProduc.Icon");
+            btn_traerProduc.Location = new Point(942, 30);
             btn_traerProduc.Margin = new Padding(4, 6, 4, 6);
             btn_traerProduc.MouseState = MaterialSkin.MouseState.HOVER;
             btn_traerProduc.Name = "btn_traerProduc";
@@ -235,8 +199,8 @@
             btn_traerCliente.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_traerCliente.Depth = 0;
             btn_traerCliente.HighEmphasis = true;
-            btn_traerCliente.Icon = null;
-            btn_traerCliente.Location = new Point(424, 30);
+            btn_traerCliente.Icon = (Image)resources.GetObject("btn_traerCliente.Icon");
+            btn_traerCliente.Location = new Point(376, 31);
             btn_traerCliente.Margin = new Padding(4, 6, 4, 6);
             btn_traerCliente.MouseState = MaterialSkin.MouseState.HOVER;
             btn_traerCliente.Name = "btn_traerCliente";
@@ -385,7 +349,6 @@
             // 
             // pnl_detalle
             // 
-            pnl_detalle.Controls.Add(iconPictureBox8);
             pnl_detalle.Controls.Add(materialLabel8);
             pnl_detalle.Controls.Add(materialLabel7);
             pnl_detalle.Controls.Add(materialLabel6);
@@ -396,22 +359,8 @@
             pnl_detalle.Controls.Add(btn_agregarCarrito);
             pnl_detalle.Location = new Point(6, 169);
             pnl_detalle.Name = "pnl_detalle";
-            pnl_detalle.Size = new Size(1113, 137);
+            pnl_detalle.Size = new Size(1119, 137);
             pnl_detalle.TabIndex = 206;
-            // 
-            // iconPictureBox8
-            // 
-            iconPictureBox8.BackColor = Color.WhiteSmoke;
-            iconPictureBox8.ForeColor = Color.SteelBlue;
-            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            iconPictureBox8.IconColor = Color.SteelBlue;
-            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox8.IconSize = 53;
-            iconPictureBox8.Location = new Point(781, 76);
-            iconPictureBox8.Name = "iconPictureBox8";
-            iconPictureBox8.Size = new Size(59, 53);
-            iconPictureBox8.TabIndex = 208;
-            iconPictureBox8.TabStop = false;
             // 
             // materialLabel8
             // 
@@ -518,33 +467,19 @@
             btn_agregarCarrito.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_agregarCarrito.Depth = 0;
             btn_agregarCarrito.HighEmphasis = true;
-            btn_agregarCarrito.Icon = null;
-            btn_agregarCarrito.Location = new Point(820, 76);
+            btn_agregarCarrito.Icon = (Image)resources.GetObject("btn_agregarCarrito.Icon");
+            btn_agregarCarrito.Location = new Point(894, 77);
             btn_agregarCarrito.Margin = new Padding(4, 6, 4, 6);
             btn_agregarCarrito.MouseState = MaterialSkin.MouseState.HOVER;
             btn_agregarCarrito.Name = "btn_agregarCarrito";
             btn_agregarCarrito.NoAccentTextColor = Color.Empty;
-            btn_agregarCarrito.Size = new Size(280, 50);
+            btn_agregarCarrito.Size = new Size(219, 50);
             btn_agregarCarrito.TabIndex = 209;
             btn_agregarCarrito.Text = "AGREGAR AL CARRITO";
             btn_agregarCarrito.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btn_agregarCarrito.UseAccentColor = false;
             btn_agregarCarrito.UseVisualStyleBackColor = true;
             btn_agregarCarrito.Click += btn_agregarCarrito_Click;
-            // 
-            // iconPictureBox9
-            // 
-            iconPictureBox9.BackColor = Color.WhiteSmoke;
-            iconPictureBox9.ForeColor = Color.SteelBlue;
-            iconPictureBox9.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            iconPictureBox9.IconColor = Color.SteelBlue;
-            iconPictureBox9.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox9.IconSize = 53;
-            iconPictureBox9.Location = new Point(785, 539);
-            iconPictureBox9.Name = "iconPictureBox9";
-            iconPictureBox9.Size = new Size(59, 53);
-            iconPictureBox9.TabIndex = 211;
-            iconPictureBox9.TabStop = false;
             // 
             // btn_ConfirmarCompra
             // 
@@ -553,26 +488,47 @@
             btn_ConfirmarCompra.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_ConfirmarCompra.Depth = 0;
             btn_ConfirmarCompra.HighEmphasis = true;
-            btn_ConfirmarCompra.Icon = null;
-            btn_ConfirmarCompra.Location = new Point(839, 539);
+            btn_ConfirmarCompra.Icon = (Image)resources.GetObject("btn_ConfirmarCompra.Icon");
+            btn_ConfirmarCompra.Location = new Point(900, 539);
             btn_ConfirmarCompra.Margin = new Padding(4, 6, 4, 6);
             btn_ConfirmarCompra.MouseState = MaterialSkin.MouseState.HOVER;
             btn_ConfirmarCompra.Name = "btn_ConfirmarCompra";
             btn_ConfirmarCompra.NoAccentTextColor = Color.Empty;
-            btn_ConfirmarCompra.Size = new Size(267, 53);
+            btn_ConfirmarCompra.Size = new Size(225, 53);
             btn_ConfirmarCompra.TabIndex = 212;
-            btn_ConfirmarCompra.Text = "CONFIRMAR COMPRA";
+            btn_ConfirmarCompra.Text = "VENDER";
             btn_ConfirmarCompra.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btn_ConfirmarCompra.UseAccentColor = false;
             btn_ConfirmarCompra.UseVisualStyleBackColor = true;
             btn_ConfirmarCompra.Click += btn_ConfirmarCompra_Click;
+            // 
+            // btn_limpiar
+            // 
+            btn_limpiar.AutoSize = false;
+            btn_limpiar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_limpiar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_limpiar.Depth = 0;
+            btn_limpiar.HighEmphasis = true;
+            btn_limpiar.Icon = (Image)resources.GetObject("btn_limpiar.Icon");
+            btn_limpiar.Location = new Point(900, 478);
+            btn_limpiar.Margin = new Padding(4, 6, 4, 6);
+            btn_limpiar.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_limpiar.Name = "btn_limpiar";
+            btn_limpiar.NoAccentTextColor = Color.Empty;
+            btn_limpiar.Size = new Size(219, 49);
+            btn_limpiar.TabIndex = 213;
+            btn_limpiar.Text = "Vaciar carrito";
+            btn_limpiar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_limpiar.UseAccentColor = false;
+            btn_limpiar.UseVisualStyleBackColor = true;
+            btn_limpiar.Click += btn_limpiar_Click;
             // 
             // Salidas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1132, 601);
-            Controls.Add(iconPictureBox9);
+            Controls.Add(btn_limpiar);
             Controls.Add(btn_ConfirmarCompra);
             Controls.Add(pnl_detalle);
             Controls.Add(panel2);
@@ -585,15 +541,11 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox6).EndInit();
             pnl_detalle.ResumeLayout(false);
             pnl_detalle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox9).EndInit();
             ResumeLayout(false);
         }
 
@@ -607,8 +559,6 @@
         private DataGridViewTextBoxColumn Column6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Panel panel2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private MaterialSkin.Controls.MaterialButton btn_traerProduc;
         private MaterialSkin.Controls.MaterialButton btn_traerCliente;
         private MaterialSkin.Controls.MaterialTextBox txt_cuit;
@@ -621,7 +571,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialTextBox txt_idproducto;
         private Panel pnl_detalle;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
@@ -630,7 +579,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private MaterialSkin.Controls.MaterialButton btn_agregarCarrito;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox9;
         private MaterialSkin.Controls.MaterialButton btn_ConfirmarCompra;
+        private MaterialSkin.Controls.MaterialButton btn_limpiar;
     }
 }

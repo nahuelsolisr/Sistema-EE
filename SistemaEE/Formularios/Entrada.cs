@@ -247,53 +247,18 @@ namespace SistemaEE.Formularios
         public void ComprobanteCompra()
         {
 
-            //string filePath = @"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\plantillaEntrada.html";
-            //string htmlContent = File.ReadAllText(filePath);
-
-            //// Reemplazar las variables en el contenido HTML
-            //htmlContent = htmlContent.Replace("@nombrenegocio", "PANTERASHOP")
-            //    .Replace("@docnegocio", "344324")
-            //    .Replace("@direcnegocio", "Ensenada 375")
-            //    .Replace("@numerodocumento", "111111111")
-            //    .Replace("@docproveedor", "32423423324")
-            //    .Replace("@nombreproveedor", "Claudio")
-            //    .Replace("@fecharegistro", "324234-234234-234")
-            //    .Replace("@montototal", "1000000");
-
-            //// Crear el documento PDF
-            //Document doc = new Document();
-
-            //// Crear el escritor de PDF y vincularlo al documento y a un archivo temporal
-            //string tempFilePath = Path.GetTempFileName() + ".pdf";
-            //PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(tempFilePath, FileMode.Create));
-
-            //// Abrir el documento
-            //doc.Open();
-
-            //// Crear el lector HTML para convertir el contenido HTML a elementos PDF
-            //var htmlWorker = new HTMLWorker(doc);
-
-            //// Convertir el contenido HTML a elementos PDF y agregarlos al documento
-            //using (TextReader reader = new StringReader(htmlContent))
-            //{
-            //    htmlWorker.Parse(reader);
-            //}
-
-            //// Cerrar el documento
-            //doc.Close();
-
-            //// Abre el archivo PDF en el navegador
-            //Process.Start(new ProcessStartInfo
-            //{
-            //    FileName = tempFilePath,
-            //    UseShellExecute = true
-            //});
 
         }
 
         private void Entrada_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            dgvCarrito.ClearSelection();
+            Limpiar();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -191,6 +192,24 @@ namespace SistemaEE.Formularios
         private void Clientes_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+
+        }
+        public void Limpiar()
+        {
+            txt_cuit.Text = "";
+            txt_direccion.Text = "";
+            txt_mail.Text = "";
+            txt_nombre.Text = "";
+        }
+
+        private void btn_descargaPlantilla_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

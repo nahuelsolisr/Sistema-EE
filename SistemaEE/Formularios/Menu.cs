@@ -3,6 +3,7 @@ using MaterialSkin.Controls;
 using MaterialSkin.Properties;
 using MaterialSkin.Animations;
 using MaterialSkin;
+using System.Windows.Forms;
 
 namespace SistemaEE.Formularios
 {
@@ -11,6 +12,8 @@ namespace SistemaEE.Formularios
         public bool PERMISOS;
         public Menu(string nombre, bool permisos)
         {
+
+
             InitializeComponent();
             //
             this.Size = new Size(600, 600);
@@ -34,20 +37,21 @@ namespace SistemaEE.Formularios
             lbl_usuario.Text = nombre;
             this.PERMISOS = permisos;
 
-            // Obtener la hora actual del sistema
-            DateTime horaActual = DateTime.Now;
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = 1000; // Intervalo en milisegundos (1 segundo)
+            timer.Tick += Timer_Tick;
+            timer.Start();
 
-            // Mostrar la hora en el label
-            lbl_horaActual.Text = horaActual.ToString();
+
         }
 
-        private void Timer_Tick()
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            // Obtener la hora actual del sistema
+            // Obtener la hora actual
             DateTime horaActual = DateTime.Now;
 
-            // Mostrar la hora en el label
-            lbl_horaActual.Text = horaActual.ToString();
+            // Actualizar el texto del control Label con la hora actual formateada
+            lbl_horaActual.Text = horaActual.ToString("HH:mm:ss");
         }
 
 
