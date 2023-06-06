@@ -75,10 +75,7 @@ VALUES
   (21666666668, 'Silvia Martínez', 'Avenida Norte 852', 'silviamartinez@gmail.com', 'Consumidor Final'),
   (21999999991, 'Gabriel Herrera', 'Calle Sur 753', 'gabrielherrera@yahoo.com', 'Responsable Inscripto'),
   (22111111114, 'Carolina Rodríguez', 'Avenida Este 159', 'carolinarodriguez@gmail.com', 'Monotributista'),
-  (22333333336, 'Roberto González', 'Calle Oeste 357', 'robertogonzalez@yahoo.com', 'Consumidor Final'),
-  (22444444447, 'Marcela Torres', 'Avenida Sur 753', 'marcelatorres@gmail.com', 'Responsable Inscripto'),
-  (22666666669, 'Lucas Romero', 'Calle Norte 951', 'lucasromero@yahoo.com', 'Monotributista'),
-  (22999999992, 'Florencia López', 'Avenida Oeste 357', 'florencialopez@gmail.com', 'Consumidor Final');
+
 
 drop table fichastock
 truncate table fichastock
