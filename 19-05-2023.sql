@@ -30,30 +30,7 @@ FOREIGN KEY (cuit_prov) REFERENCES proveedor(cuit_prov),
 TRUNCATE TABLE productos;
 select * from productos
 INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20111111112, 'Laptop Acer', 'Electrónica', 'Acer');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20333333334, 'Televisor Samsung', 'Electrónica', 'Samsung');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20444444445, 'Camiseta Nike', 'Ropa', 'Nike');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20666666667, 'Zapatos Adidas', 'Calzado', 'Adidas');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20999999990, 'Aceite de Oliva', 'Alimentos', 'Marca X');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20111111112, 'Smartphone iPhone', 'Electrónica', 'Apple');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20333333334, 'Pantalones Levi', 'Ropa', 'Levi');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20444444445, 'Zapatillas New Balance', 'Calzado', 'New Balance');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20666666667, 'Arroz Integral', 'Alimentos', 'Marca Y');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20999999990, 'Smartwatch Samsung', 'Electrónica', 'Samsung');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20111111112, 'Televisor LG', 'Electrónica', 'LG');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20333333334, 'Chaqueta de Cuero', 'Ropa', 'Marca Z');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20444444445, 'Sandalias Birkenstock', 'Calzado', 'Birkenstock');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20666666667, 'Café en grano', 'Alimentos', 'Marca W');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20999999990, 'Tablet Samsung', 'Electrónica', 'Samsung');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20111111112, 'Jeans Wrangler', 'Ropa', 'Wrangler');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20333333334, 'Botas Timberland', 'Calzado', 'Timberland');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20444444445, 'Chocolate Milka', 'Alimentos', 'Milka');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20666666667, 'Impresora HP', 'Electrónica', 'HP');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20999999990, 'Chaleco de Lana', 'Ropa', 'Marca V');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20111111112, 'Zapatos de Vestir', 'Calzado', 'Marca U');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20333333334, 'Aceitunas rellenas', 'Alimentos', 'Marca T');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20444444445, 'Monitor Dell', 'Electrónica', 'Dell');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20666666667, 'Camisa Polo Ralph Lauren', 'Ropa', 'Ralph Lauren');
-INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (20999999990, 'Zapatos Deportivos', 'Calzado', 'Marca S');
+
 
 
 drop table productos
