@@ -561,7 +561,6 @@
             btn_descargaPlantilla.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btn_descargaPlantilla.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             btn_descargaPlantilla.Depth = 0;
-            btn_descargaPlantilla.Enabled = false;
             btn_descargaPlantilla.HighEmphasis = true;
             btn_descargaPlantilla.Icon = (Image)resources.GetObject("btn_descargaPlantilla.Icon");
             btn_descargaPlantilla.Location = new Point(679, 575);
@@ -575,6 +574,7 @@
             btn_descargaPlantilla.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btn_descargaPlantilla.UseAccentColor = false;
             btn_descargaPlantilla.UseVisualStyleBackColor = true;
+            btn_descargaPlantilla.Click += btn_descargaPlantilla_Click;
             // 
             // btn_limpiar
             // 

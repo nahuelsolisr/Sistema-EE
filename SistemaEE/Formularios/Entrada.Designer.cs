@@ -63,6 +63,8 @@
             btn_traerProv = new MaterialSkin.Controls.MaterialButton();
             btn_ConfirmarCompra = new MaterialSkin.Controls.MaterialButton();
             btn_limpiar = new MaterialSkin.Controls.MaterialButton();
+            lbl_info = new MaterialSkin.Controls.MaterialLabel();
+            lbl_precioVenta = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
@@ -292,11 +294,13 @@
             nud_ganancia.Location = new Point(545, 84);
             nud_ganancia.MouseState = MaterialSkin.MouseState.HOVER;
             nud_ganancia.Name = "nud_ganancia";
+            nud_ganancia.RangeMax = 150;
             nud_ganancia.Size = new Size(228, 40);
             nud_ganancia.TabIndex = 146;
             nud_ganancia.Text = "";
             nud_ganancia.Value = 25;
             nud_ganancia.ValueMax = 100;
+            nud_ganancia.MouseCaptureChanged += nud_ganancia_MouseCaptureChanged;
             // 
             // btn_agregarCarrito
             // 
@@ -327,9 +331,9 @@
             materialLabel3.Location = new Point(782, 8);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
-            materialLabel3.Size = new Size(69, 19);
+            materialLabel3.Size = new Size(88, 19);
             materialLabel3.TabIndex = 192;
-            materialLabel3.Text = "Producto:";
+            materialLabel3.Text = "PRODUCTO:";
             // 
             // txt_nombreProducto
             // 
@@ -357,9 +361,9 @@
             materialLabel1.Location = new Point(620, 8);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(14, 19);
+            materialLabel1.Size = new Size(63, 19);
             materialLabel1.TabIndex = 194;
-            materialLabel1.Text = "Id";
+            materialLabel1.Text = "CODIGO:";
             // 
             // txt_idproducto
             // 
@@ -556,11 +560,35 @@
             btn_limpiar.UseVisualStyleBackColor = true;
             btn_limpiar.Click += btn_limpiar_Click;
             // 
+            // lbl_info
+            // 
+            lbl_info.Depth = 0;
+            lbl_info.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_info.Location = new Point(900, 313);
+            lbl_info.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_info.Name = "lbl_info";
+            lbl_info.Size = new Size(219, 36);
+            lbl_info.TabIndex = 212;
+            lbl_info.Text = "EL PRECIO DE VENTA DEL PRODUCTO SERÁ DE:";
+            // 
+            // lbl_precioVenta
+            // 
+            lbl_precioVenta.AutoSize = true;
+            lbl_precioVenta.Depth = 0;
+            lbl_precioVenta.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_precioVenta.Location = new Point(906, 360);
+            lbl_precioVenta.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_precioVenta.Name = "lbl_precioVenta";
+            lbl_precioVenta.Size = new Size(1, 0);
+            lbl_precioVenta.TabIndex = 213;
+            // 
             // Entrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1132, 601);
+            Controls.Add(lbl_precioVenta);
+            Controls.Add(lbl_info);
             Controls.Add(btn_limpiar);
             Controls.Add(panel1);
             Controls.Add(pnl_detalle);
@@ -581,6 +609,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -618,5 +647,7 @@
         private MaterialSkin.Controls.MaterialButton btn_agregarCarrito;
         private MaterialSkin.Controls.MaterialButton btn_ConfirmarCompra;
         private MaterialSkin.Controls.MaterialButton btn_limpiar;
+        private MaterialSkin.Controls.MaterialLabel lbl_info;
+        private MaterialSkin.Controls.MaterialLabel lbl_precioVenta;
     }
 }

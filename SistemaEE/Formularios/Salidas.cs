@@ -116,6 +116,7 @@ namespace SistemaEE.Formularios
             txt_cantidad.Text = "";
             txt_idproducto.Text = "";
             txt_nombreProducto.Text = "";
+            lbl_total.Text = "";
         }
 
         public class Producto2
@@ -166,7 +167,7 @@ namespace SistemaEE.Formularios
             decimal preciod = Convert.ToDecimal(precio);
             decimal cantidadsalidad = Convert.ToDecimal(cantidadsalida);
             decimal subtotal = preciod * cantidadsalidad;
-
+            decimal total = 0;
             Producto2 producto2 = new Producto2
             {
                 UnidadesS = cantidadsalida,
@@ -178,6 +179,9 @@ namespace SistemaEE.Formularios
             };
             dgvProductos.Rows.Add(nombre_producto, marcaProducto, categoriaProducto, precio, cantidadsalida, subtotal);
             carrito2.Add(producto2);
+
+            total = total + subtotal;
+            lbl_total.Text = total.ToString();
         }
 
         public static int ObtenerUnidadesExistentes()
@@ -313,6 +317,7 @@ namespace SistemaEE.Formularios
             txt_idproducto.Text = Elegir.idProducto.ToString();
             txt_nombreProducto.Text = Elegir.nomProducto;
             txt_precio.Text = Elegir.precioProducto.ToString();
+            lbl_stockDisponible.Text = Elegir.cantidad.ToString();
         }
 
         private void Salidas_FormClosed(object sender, FormClosedEventArgs e)

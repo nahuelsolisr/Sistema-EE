@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -235,6 +236,26 @@ namespace SistemaEE.Formularios
             txt_categoria.Text = "";
             txt_marca.Text = "";
             txt_prov.Text = "";
+        }
+
+        WebClient cliente = new WebClient();
+        string ruta = null;
+
+        private void btn_descargaPlantilla_Click(object sender, EventArgs e)
+        {
+            // Crear un cuadro de diálogo de guardado de archivo
+            SaveFileDialog dialogo = new SaveFileDialog();
+            dialogo.Filter = "Archivos RAR|*.rar";
+            dialogo.FileName = "PlantillaClientes.rar";
+
+            // Mostrar el cuadro de diálogo y esperar a que el usuario seleccione una ubicación de archivo
+            if (dialogo.ShowDialog() == DialogResult.OK)
+            {
+                ruta = dialogo.FileName;
+
+                // Descargar el archivo utilizando la ruta completa del archivo
+                cliente.DownloadFileAsync(new Uri(@"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\PlantillaProductos.rar"), dialogo.FileName);
+            }
         }
     }
 }

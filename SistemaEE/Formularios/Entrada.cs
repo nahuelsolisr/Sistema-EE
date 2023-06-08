@@ -84,6 +84,8 @@ namespace SistemaEE.Formularios
             txt_nombreProducto.Text = "";
             txt_cantidad.Text = "";
             nud_ganancia.Value = 0;
+
+
         }
 
         //METODOS PARA OBTENER EL VALOR DE EXISTENCIA 
@@ -241,6 +243,7 @@ namespace SistemaEE.Formularios
                 Limpiar();
                 carrito.Clear();
                 // ComprobanteCompra();
+                lbl_precioVenta.Text = "";
             }
             else { }
         }
@@ -259,6 +262,29 @@ namespace SistemaEE.Formularios
         {
             dgvCarrito.ClearSelection();
             Limpiar();
+        }
+
+        private void ObtenerPrecio(object sender, EventArgs e)
+        {
+            precioUE = Convert.ToDecimal(txt_precio.Text);
+
+            lbl_info.Visible = true;
+            lbl_precioVenta.Visible = true;
+        }
+
+        private void nud_ganancia_MouseCaptureChanged(object sender, EventArgs e)
+        {
+            // Obtener el valor del slider
+            int valorSlider = nud_ganancia.Value;
+
+            // Calcular el porcentaje de ganancia
+            decimal porcentajeGanancia = valorSlider / 100M;
+
+            // Calcular el precio de venta
+            decimal precioVenta = precioUE + (precioUE * porcentajeGanancia);
+
+            // Mostrar el resultado en el TextBox lbl_precioVenta
+            lbl_precioVenta.Text = "$" + precioVenta.ToString();
         }
     }
 }

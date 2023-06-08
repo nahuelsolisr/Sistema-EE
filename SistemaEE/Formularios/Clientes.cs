@@ -11,12 +11,14 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Net;
 namespace SistemaEE.Formularios
 {
     public partial class Clientes : MaterialForm
     {
         decimal idCliente;
+        
+
         public Clientes()
         {
             InitializeComponent();
@@ -184,11 +186,6 @@ namespace SistemaEE.Formularios
             }
         }
 
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Clientes_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
@@ -207,9 +204,24 @@ namespace SistemaEE.Formularios
             txt_nombre.Text = "";
         }
 
+        WebClient cliente = new WebClient();
+        string ruta = null;
+
         private void btn_descargaPlantilla_Click(object sender, EventArgs e)
         {
-           
+            // Crear un cuadro de diálogo de guardado de archivo
+            SaveFileDialog dialogo = new SaveFileDialog();
+            dialogo.Filter = "Archivos RAR|*.rar";
+            dialogo.FileName = "PlantillaClientes.rar";
+
+            // Mostrar el cuadro de diálogo y esperar a que el usuario seleccione una ubicación de archivo
+            if (dialogo.ShowDialog() == DialogResult.OK)
+            {
+                ruta = dialogo.FileName;
+
+                // Descargar el archivo utilizando la ruta completa del archivo
+                cliente.DownloadFileAsync(new Uri(@"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\PlantillaClientes.rar"), dialogo.FileName);
+            }
         }
     }
 }
