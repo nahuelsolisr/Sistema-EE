@@ -74,7 +74,7 @@ VALUES
   (21444444446, 'Pedro Sánchez', 'Calle Mayor 321', 'pedrosanchez@yahoo.com', 'Monotributista'),
   (21666666668, 'Silvia Martínez', 'Avenida Norte 852', 'silviamartinez@gmail.com', 'Consumidor Final'),
   (21999999991, 'Gabriel Herrera', 'Calle Sur 753', 'gabrielherrera@yahoo.com', 'Responsable Inscripto'),
-  (22111111114, 'Carolina Rodríguez', 'Avenida Este 159', 'carolinarodriguez@gmail.com', 'Monotributista'),
+
 
 
 drop table fichastock
