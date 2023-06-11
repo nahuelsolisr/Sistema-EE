@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using OfficeOpenXml;
 using SistemaEE.Clases;
 using SistemaEE.Properties;
 using System;
@@ -10,9 +11,11 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace SistemaEE.Formularios
@@ -241,6 +244,8 @@ namespace SistemaEE.Formularios
         WebClient cliente = new WebClient();
         string ruta = null;
 
+        //DESCARGAR PLANTILLA 
+
         private void btn_descargaPlantilla_Click(object sender, EventArgs e)
         {
             // Crear un cuadro de diálogo de guardado de archivo
@@ -255,6 +260,69 @@ namespace SistemaEE.Formularios
 
                 // Descargar el archivo utilizando la ruta completa del archivo
                 cliente.DownloadFileAsync(new Uri(@"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\PlantillaProductos.rar"), dialogo.FileName);
+            }
+        }
+
+        //CARGA MASIVA DE PRODUCTOS
+
+        private void btn_cargaMasiva_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Permite al usuario seleccionar el archivo Excel
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Archivos de Excel (*.xlsx)|*.xlsx";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Obtiene la ruta del archivo seleccionado
+                    string rutaArchivo = openFileDialog.FileName;
+
+                    // Crea una instancia de FileInfo para el archivo Excel
+                    FileInfo archivoExcel = new FileInfo(rutaArchivo);
+
+                    // Crea una instancia de ExcelPackage para leer el archivo Excel
+                    using (ExcelPackage excelPackage = new ExcelPackage(archivoExcel))
+                    {
+                        // Obtén la primera hoja del archivo Excel
+                        ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets[1]; // Índice 1 representa la primera hoja
+
+                        // Inicializa el número de fila
+                        int fila = 2; // Ignoramos la primera fila, ya que generalmente contiene encabezados
+
+                        // Recorre las filas hasta encontrar una fila vacía en la columna A
+                        while (string.IsNullOrEmpty(excelWorksheet.Cells[fila, 1].Value?.ToString()))
+                        {
+                            decimal cuitProv = Convert.ToDecimal(excelWorksheet.Cells[fila, 2].Value);
+                            string nombre = excelWorksheet.Cells[fila, 3].Value?.ToString();
+                            string categoria = excelWorksheet.Cells[fila, 4].Value?.ToString();
+                            string marca = excelWorksheet.Cells[fila, 5].Value?.ToString();
+
+                            // Construye la consulta de inserción
+                            string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + cuitProv + ", '" + nombre + "', '" + categoria + "', '" + marca + "')";
+
+                            try
+                            {
+                                // Realiza la inserción en la base de datos
+                                ConectaDB.AbrirDB();
+                                ConectaDB.CargarDB(insertProducto);
+                                ConectaDB.CerrarDB();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error al agregar el producto en la fila " + fila + ": " + ex.Message);
+                                // Puedes manejar el error de inserción aquí, si es necesario
+                            }
+
+                            fila++; // Incrementa el número de fila
+                        }
+                    }
+
+                    MessageBox.Show("La carga masiva ha sido completada.", "Carga masiva exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al procesar el archivo Excel: " + ex.Message, "Error de carga masiva", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

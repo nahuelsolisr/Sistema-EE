@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[0.101.0, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.4, )"
+            },
             "FontAwesome.Sharp": {
               "target": "Package",
               "version": "[6.3.0, )"

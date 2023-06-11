@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.101.0" />
+    <PackageReference Include="EPPlus" Version="6.2.4" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
