@@ -274,6 +274,7 @@
             txt_precio.TabIndex = 202;
             txt_precio.Text = "";
             txt_precio.TrailingIcon = null;
+            txt_precio.TextChanged += txt_precio_TextChanged;
             // 
             // materialLabel5
             // 
@@ -294,7 +295,6 @@
             nud_ganancia.Location = new Point(545, 84);
             nud_ganancia.MouseState = MaterialSkin.MouseState.HOVER;
             nud_ganancia.Name = "nud_ganancia";
-            nud_ganancia.RangeMax = 150;
             nud_ganancia.Size = new Size(228, 40);
             nud_ganancia.TabIndex = 146;
             nud_ganancia.Text = "";

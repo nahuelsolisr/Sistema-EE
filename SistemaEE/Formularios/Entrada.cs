@@ -26,7 +26,7 @@ namespace SistemaEE.Formularios
 
         private List<Producto> carrito = new List<Producto>();
         public static int unidadesE;
-        public static decimal precioUE;
+        public static decimal precioUE, precioGanancia;
 
         public Entrada()
         {
@@ -264,14 +264,6 @@ namespace SistemaEE.Formularios
             Limpiar();
         }
 
-        private void ObtenerPrecio(object sender, EventArgs e)
-        {
-            precioUE = Convert.ToDecimal(txt_precio.Text);
-
-            lbl_info.Visible = true;
-            lbl_precioVenta.Visible = true;
-        }
-
         private void nud_ganancia_MouseCaptureChanged(object sender, EventArgs e)
         {
             // Obtener el valor del slider
@@ -281,10 +273,15 @@ namespace SistemaEE.Formularios
             decimal porcentajeGanancia = valorSlider / 100M;
 
             // Calcular el precio de venta
-            decimal precioVenta = precioUE + (precioUE * porcentajeGanancia);
+            decimal precioVenta = precioGanancia + (precioGanancia * porcentajeGanancia);
 
             // Mostrar el resultado en el TextBox lbl_precioVenta
             lbl_precioVenta.Text = "$" + precioVenta.ToString();
+        }
+
+        private void txt_precio_TextChanged(object sender, EventArgs e)
+        {
+            precioGanancia = Convert.ToDecimal(txt_precio.Text);
         }
     }
 }
