@@ -1,43 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Formularios\Clientes.cs">
+    <Compile Update="Presentacion\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Entrada.cs">
+    <Compile Update="Presentacion\Entrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FichaDeStock.cs">
+    <Compile Update="Presentacion\FichaDeStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Login.cs">
+    <Compile Update="Presentacion\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Menu.cs">
+    <Compile Update="Presentacion\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\MuestraCliente.cs">
+    <Compile Update="Presentacion\MuestraCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\MuestraProductos.cs">
+    <Compile Update="Presentacion\MuestraProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\MuestraProveedor.cs">
+    <Compile Update="Presentacion\MuestraProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Productos.cs">
+    <Compile Update="Presentacion\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\ProductosEnStock.cs">
+    <Compile Update="Presentacion\ProductosEnStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Proveedores.cs">
+    <Compile Update="Presentacion\Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Salidas.cs">
+    <Compile Update="Presentacion\Salidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Usuarios.cs">
+    <Compile Update="Presentacion\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
