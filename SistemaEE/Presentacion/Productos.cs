@@ -226,7 +226,7 @@ namespace SistemaEE.Formularios
         {
             MuestraProveedor muestraProveedor = new MuestraProveedor();
             muestraProveedor.ShowDialog();
-            txt_prov.Text = Clases.Datos.nom_prov.ToString();
+            txt_prov.Text = Datos.nom_prov.ToString();
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)

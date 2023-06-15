@@ -36,7 +36,7 @@ namespace SistemaEE.Formularios
             this.PERMISOS = permisos;
 
         }
-       
+
 
         public void EstiloClaro()
         {
@@ -108,14 +108,14 @@ namespace SistemaEE.Formularios
             inventario.ShowDialog();
         }
 
-    
-  
 
-     
+
+
+
 
         //MODULO DE CONFIGURACION
 
-        
+
 
         MaterialSkinManager TManager = MaterialSkinManager.Instance;
         private void msModoOscuro_CheckedChanged(object sender, EventArgs e)

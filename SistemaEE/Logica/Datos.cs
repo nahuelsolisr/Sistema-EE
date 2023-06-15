@@ -13,7 +13,8 @@ namespace SistemaEE.Clases
         public static string direccionEMPRESA;
 
 
-        public static bool  modoOscuro;
+        public static bool modoOscuro;
+
         public static decimal cuit_prov;
         public static string nom_prov;
 
@@ -22,6 +23,7 @@ namespace SistemaEE.Clases
 
         public static decimal CUITCliente;
         public static string NombreCliente;
+
 
         public static string direccion_cliente;
         public static string condicionante;
@@ -36,7 +38,5 @@ namespace SistemaEE.Clases
         public static string categoria;
 
       
-      
-
     }
 }

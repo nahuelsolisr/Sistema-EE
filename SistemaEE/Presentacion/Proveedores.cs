@@ -55,6 +55,7 @@ namespace SistemaEE.Formularios
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey800, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            dgvProveedor.BackgroundColor = Color.DimGray;
         }
 
         public void dgv_Proveedores()
@@ -64,7 +65,6 @@ namespace SistemaEE.Formularios
             string consultaProveedor = "SELECT * FROM proveedor";
             ConectaDB.LecturaDB(consultaProveedor);
             dgvProveedor.Rows.Clear(); // Limpia los datos anteriores en la grilla
-
             while (DB.lector.Read())
             {
                 //En lugar de asignar cada valor al valor de una celda específica de la grilla, 
@@ -78,7 +78,6 @@ namespace SistemaEE.Formularios
                     DB.lector["domicilio_prov"],
                     DB.lector["mail_prov"],
                     DB.lector["condicion"]
-
 
                 );
             }
@@ -100,7 +99,6 @@ namespace SistemaEE.Formularios
 
                 }
 
-
                 // Obtiene los datos de la fila seleccionada
 
                 DataGridViewRow filaSeleccionada = dgvProveedor.Rows[e.RowIndex];
@@ -108,13 +106,11 @@ namespace SistemaEE.Formularios
                 //le da color a la fila seleccionada
                 filaSeleccionada.DefaultCellStyle.BackColor = Color.SteelBlue;
 
-
                 string cuit = filaSeleccionada.Cells["Column0"].Value.ToString();
                 string nombre = filaSeleccionada.Cells["Column1"].Value.ToString();
                 string domicilio = filaSeleccionada.Cells["Column2"].Value.ToString();
                 string mail = filaSeleccionada.Cells["Column3"].Value.ToString();
                 string condicion = filaSeleccionada.Cells["Column4"].Value.ToString();
-
 
                 // Actualiza los TextBox con los datos de la fila seleccionada
                 txt_cuit.Text = cuit;
@@ -149,7 +145,6 @@ namespace SistemaEE.Formularios
             }
         }
 
-
         private void btn_editar_Click(object sender, EventArgs e)
         {
             bool validacion = EnviarValidaciones();
@@ -175,46 +170,29 @@ namespace SistemaEE.Formularios
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            bool validacion = EnviarValidaciones();
-
-            if (validacion)
+            try
             {
-                try
-                {
-                    ConectaDB.AbrirDB();
-                    string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
-                    ConectaDB.CargarDB(deleteProveedor);
-                    ConectaDB.CerrarDB();
-                    Limpiar();
-                    MessageBox.Show("Proveedor eliminado correctamente");
-                    dgv_Proveedores();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
-                }
+                ConectaDB.AbrirDB();
+                string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
+                ConectaDB.CargarDB(deleteProveedor);
+                ConectaDB.CerrarDB();
+                Limpiar();
+                MessageBox.Show("Proveedor eliminado correctamente");
+                dgv_Proveedores();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el proveedor: " + ex.Message);
+            }
+
         }
 
-        public void Limpiar()
-        {
-            txt_cuit.Text = "";
-            txt_nombre.Text = "";
-            txt_domicilio.Text = "";
-            txt_mail.Text = "";
-            cmb_condicion.Text = "";
-        }
 
         private void txt_filtrar_TextChanged(object sender, EventArgs e)
         {
             string filtro = txt_filtrar.Text;
             Filtrar filtrador = new Filtrar();
             filtrador.FiltrarProveedores(dgvProveedor, filtro);
-        }
-
-        private void Proveedores_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
         }
 
         public bool EnviarValidaciones()
@@ -245,7 +223,7 @@ namespace SistemaEE.Formularios
                 return false;
             }
 
-            // Todas las validaciones son correctas
+            //si todas las validaciones son correctas
             return true;
 
         }
@@ -273,6 +251,20 @@ namespace SistemaEE.Formularios
                 // Descargar el archivo utilizando la ruta completa del archivo
                 cliente.DownloadFileAsync(new Uri(@"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\PlantillaProveedor.rar"), dialogo.FileName);
             }
+        }
+
+        public void Limpiar()
+        {
+            txt_cuit.Text = "";
+            txt_nombre.Text = "";
+            txt_domicilio.Text = "";
+            txt_mail.Text = "";
+            cmb_condicion.Text = "";
+        }
+
+        private void Proveedores_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
