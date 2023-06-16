@@ -19,6 +19,9 @@
     <Compile Update="Presentacion\Mostrar\MuestraCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\Mostrar\MuestraFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\Mostrar\MuestraProductos.cs">
       <SubType>Form</SubType>
     </Compile>
