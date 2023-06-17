@@ -147,3 +147,4 @@ C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Security.Cryptography.Pkcs.dll
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Presentacion.Mostrar.MuestraFactura.resources

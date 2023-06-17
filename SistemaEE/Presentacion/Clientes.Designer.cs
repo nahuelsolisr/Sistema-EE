@@ -187,7 +187,7 @@
             cmb_condicion.FormattingEnabled = true;
             cmb_condicion.IntegralHeight = false;
             cmb_condicion.ItemHeight = 43;
-            cmb_condicion.Items.AddRange(new object[] { "Responsable Inscripto", "Monotributista ", "Consumidor final" });
+            cmb_condicion.Items.AddRange(new object[] { "Responsable Inscripto", "Monotributista ", "Consumidor Final" });
             cmb_condicion.Location = new Point(58, 358);
             cmb_condicion.MaxDropDownItems = 4;
             cmb_condicion.MouseState = MaterialSkin.MouseState.OUT;

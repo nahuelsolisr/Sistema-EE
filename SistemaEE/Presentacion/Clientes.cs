@@ -19,7 +19,7 @@ namespace SistemaEE.Formularios
     public partial class Clientes : MaterialForm
     {
         decimal idCliente;
-        
+
 
         public Clientes()
         {

@@ -2,6 +2,7 @@
 using MaterialSkin.Controls;
 using SistemaEE.AccesoDatos;
 using SistemaEE.Clases;
+using SistemaEE.Presentacion.Mostrar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -300,6 +301,10 @@ namespace SistemaEE.Formularios
                 ConectaDB.CerrarDB();
                 Limpiar();
                 carrito2.Clear();
+
+
+                MuestraFactura muestraFacturaForm = new MuestraFactura();
+                muestraFacturaForm.ShowDialog();
             }
         }
 

@@ -4,6 +4,7 @@ using MaterialSkin.Properties;
 using MaterialSkin.Animations;
 using MaterialSkin;
 using System.Windows.Forms;
+using SistemaEE.AccesoDatos;
 
 namespace SistemaEE.Formularios
 {
@@ -155,8 +156,11 @@ namespace SistemaEE.Formularios
 
         private void btn_datosEmpresa_Click(object sender, EventArgs e)
         {
-            Datos.nombreEMPRESA = txt_nombreEmpresa.Text;
-            Datos.direccionEMPRESA = txt_direcciónEmpresa.Text;
+            ConectaDB.AbrirDB();
+            string updateEmpresa = "UPDATE datosEmpresa SET cuitEmpresa = " + Convert.ToDecimal(txt_cuitEmpresa.Text) + ", nombreEmpresa = '" + txt_nombreEmpresa.Text + "', direccionEmpresa = '" + txt_direcciónEmpresa.Text + "'";
+            ConectaDB.CargarDB(updateEmpresa);
+            ConectaDB.CerrarDB();
+            MessageBox.Show("Datos actualizados");
         }
 
         private void btn_subirLogo_Click(object sender, EventArgs e)

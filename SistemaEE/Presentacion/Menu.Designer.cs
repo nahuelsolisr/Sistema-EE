@@ -68,6 +68,9 @@
             msModoOscuro = new MaterialSkin.Controls.MaterialSwitch();
             btn_subirLogo = new MaterialSkin.Controls.MaterialButton();
             ImagenesTab = new ImageList(components);
+            txt_cuitEmpresa = new MaterialSkin.Controls.MaterialTextBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             mtcMenu.SuspendLayout();
             tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // mtcMenu
@@ -339,6 +343,9 @@
             // tabConfiguracion
             // 
             tabConfiguracion.BackColor = Color.White;
+            tabConfiguracion.Controls.Add(txt_cuitEmpresa);
+            tabConfiguracion.Controls.Add(iconPictureBox1);
+            tabConfiguracion.Controls.Add(materialLabel10);
             tabConfiguracion.Controls.Add(mr_modoAzul);
             tabConfiguracion.Controls.Add(mr_modoVerde);
             tabConfiguracion.Controls.Add(mr_modoNaranja);
@@ -424,7 +431,7 @@
             btn_datosEmpresa.Depth = 0;
             btn_datosEmpresa.HighEmphasis = true;
             btn_datosEmpresa.Icon = (Image)resources.GetObject("btn_datosEmpresa.Icon");
-            btn_datosEmpresa.Location = new Point(64, 443);
+            btn_datosEmpresa.Location = new Point(374, 443);
             btn_datosEmpresa.Margin = new Padding(4, 6, 4, 6);
             btn_datosEmpresa.MouseState = MaterialSkin.MouseState.HOVER;
             btn_datosEmpresa.Name = "btn_datosEmpresa";
@@ -663,6 +670,49 @@
             ImagenesTab.Images.SetKeyName(3, "user-solid.png");
             ImagenesTab.Images.SetKeyName(4, "gear-solid.png");
             // 
+            // txt_cuitEmpresa
+            // 
+            txt_cuitEmpresa.AnimateReadOnly = false;
+            txt_cuitEmpresa.BorderStyle = BorderStyle.None;
+            txt_cuitEmpresa.Depth = 0;
+            txt_cuitEmpresa.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_cuitEmpresa.LeadingIcon = null;
+            txt_cuitEmpresa.Location = new Point(111, 399);
+            txt_cuitEmpresa.MaxLength = 50;
+            txt_cuitEmpresa.MouseState = MaterialSkin.MouseState.OUT;
+            txt_cuitEmpresa.Multiline = false;
+            txt_cuitEmpresa.Name = "txt_cuitEmpresa";
+            txt_cuitEmpresa.Size = new Size(184, 50);
+            txt_cuitEmpresa.TabIndex = 178;
+            txt_cuitEmpresa.Text = "";
+            txt_cuitEmpresa.TrailingIcon = null;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.WhiteSmoke;
+            iconPictureBox1.ForeColor = Color.SteelBlue;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.BuildingUser;
+            iconPictureBox1.IconColor = Color.SteelBlue;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 48;
+            iconPictureBox1.Location = new Point(62, 396);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(48, 52);
+            iconPictureBox1.TabIndex = 177;
+            iconPictureBox1.TabStop = false;
+            // 
+            // materialLabel10
+            // 
+            materialLabel10.AutoSize = true;
+            materialLabel10.Depth = 0;
+            materialLabel10.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel10.Location = new Point(111, 377);
+            materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel10.Name = "materialLabel10";
+            materialLabel10.Size = new Size(39, 19);
+            materialLabel10.TabIndex = 179;
+            materialLabel10.Text = "CUIT:";
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -688,6 +738,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -730,5 +781,8 @@
         private MaterialSkin.Controls.MaterialRadioButton mr_modoAzul;
         private MaterialSkin.Controls.MaterialRadioButton mr_modoVerde;
         private MaterialSkin.Controls.MaterialRadioButton mr_modoNaranja;
+        private MaterialSkin.Controls.MaterialTextBox txt_cuitEmpresa;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
     }
 }

@@ -11,6 +11,7 @@ namespace SistemaEE.Clases
 
         public static string nombreEMPRESA;
         public static string direccionEMPRESA;
+        public static decimal cuitEMPRESA;
 
 
         public static bool modoOscuro;
