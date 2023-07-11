@@ -341,7 +341,7 @@
             btn_imprimir.Depth = 0;
             btn_imprimir.HighEmphasis = true;
             btn_imprimir.Icon = (Image)resources.GetObject("btn_imprimir.Icon");
-            btn_imprimir.Location = new Point(309, 556);
+            btn_imprimir.Location = new Point(308, 500);
             btn_imprimir.Margin = new Padding(4, 6, 4, 6);
             btn_imprimir.MouseState = MaterialSkin.MouseState.HOVER;
             btn_imprimir.Name = "btn_imprimir";
