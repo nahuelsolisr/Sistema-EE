@@ -62,6 +62,8 @@ namespace SistemaEE.Formularios
         {
             if (mtcMenu.SelectedTab == tabContabilidad)
             {
+                lbl_cardTitulo.ForeColor = Color.DarkBlue;
+
 
             }
             if (mtcMenu.SelectedTab == tabUsuarios)
@@ -109,14 +111,7 @@ namespace SistemaEE.Formularios
             inventario.ShowDialog();
         }
 
-
-
-
-
-
         //MODULO DE CONFIGURACION
-
-
 
         MaterialSkinManager TManager = MaterialSkinManager.Instance;
         private void msModoOscuro_CheckedChanged(object sender, EventArgs e)
