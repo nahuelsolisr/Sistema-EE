@@ -447,6 +447,7 @@
             txt_cantidad.TabIndex = 203;
             txt_cantidad.Text = "";
             txt_cantidad.TrailingIcon = null;
+            txt_cantidad.KeyPress += KeyPressCantidad;
             // 
             // txt_precio
             // 
@@ -464,6 +465,7 @@
             txt_precio.TabIndex = 202;
             txt_precio.Text = "";
             txt_precio.TrailingIcon = null;
+            txt_precio.KeyPress += KeyPressPrecio;
             // 
             // iconPictureBox7
             // 
@@ -639,7 +641,7 @@
             Controls.Add(dgvProductos);
             Name = "Salidas";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = ".: Venta :.";
+            Text = ".: Facturación :.";
             FormClosed += Salidas_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

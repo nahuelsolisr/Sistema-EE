@@ -267,7 +267,7 @@ namespace SistemaEE.Formularios
         private void nud_ganancia_MouseCaptureChanged(object sender, EventArgs e)
         {
             // Obtener el valor del slider
-            int valorSlider = nud_ganancia.Value;
+            int valorSlider = (int)nud_ganancia.Value;
 
             // Calcular el porcentaje de ganancia
             decimal porcentajeGanancia = valorSlider / 100M;
@@ -275,13 +275,44 @@ namespace SistemaEE.Formularios
             // Calcular el precio de venta
             decimal precioVenta = precioGanancia + (precioGanancia * porcentajeGanancia);
 
-            // Mostrar el resultado en el TextBox lbl_precioVenta
-            lbl_precioVenta.Text = "$" + precioVenta.ToString();
+            // Formatear el precio de venta con separador de miles y mantener la coma como separador decimal
+            string precioFormateado = precioVenta.ToString("#,##0.00");
+
+            // Mostrar el resultado en lbl_precioVenta
+            lbl_precioVenta.Text = precioFormateado + "$";
         }
 
         private void txt_precio_TextChanged(object sender, EventArgs e)
         {
             precioGanancia = Convert.ToDecimal(txt_precio.Text);
+        }
+
+        private void KeyPressValidarPrecio(object sender, KeyPressEventArgs e)
+        {
+            MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+
+            // Permitir números, comas y teclas de control (como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
+
+            // Permitir solo una coma en el campo
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true; // Ignorar la coma adicional
+            }
+        }
+
+        private void KeyPressValidarCantidad(object sender, KeyPressEventArgs e)
+        {
+            MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+
+            // Permitir números y teclas de control (como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
         }
     }
 }

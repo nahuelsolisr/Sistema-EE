@@ -172,13 +172,19 @@ namespace SistemaEE.Formularios
         {
             try
             {
-                ConectaDB.AbrirDB();
-                string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
-                ConectaDB.CargarDB(deleteProveedor);
-                ConectaDB.CerrarDB();
-                Limpiar();
-                MessageBox.Show("Proveedor eliminado correctamente");
-                dgv_Proveedores();
+                // Preguntar al usuario si realmente desea eliminar el proveedor
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este proveedor?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    ConectaDB.AbrirDB();
+                    string deleteProveedor = "DELETE FROM proveedor WHERE cuit_prov = " + idProveedor + ";";
+                    ConectaDB.CargarDB(deleteProveedor);
+                    ConectaDB.CerrarDB();
+                    Limpiar();
+                    MessageBox.Show("Proveedor eliminado correctamente");
+                    dgv_Proveedores();
+                }
             }
             catch (Exception ex)
             {
@@ -205,7 +211,7 @@ namespace SistemaEE.Formularios
             string email = txt_mail.Text;
 
 
-            if (!Validaciones.ValidarCuit(cuit))
+            if (!Validaciones.ValidarCuilCuit(cuit))
             {
                 MessageBox.Show("El CUIT no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

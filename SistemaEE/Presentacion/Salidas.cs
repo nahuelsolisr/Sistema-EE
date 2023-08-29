@@ -183,7 +183,12 @@ namespace SistemaEE.Formularios
             carrito2.Add(producto2);
 
             total = total + subtotal;
-            lbl_total.Text = total.ToString();
+
+            // Convertir el valor en total a una cadena con el formato personalizado
+            string totalFormateado = total.ToString("#,##0.00");
+
+            // Mostrar el resultado formateado en lbl_total
+            lbl_total.Text = totalFormateado;
         }
 
         public static int ObtenerUnidadesExistentes()
@@ -335,6 +340,34 @@ namespace SistemaEE.Formularios
         {
             dgvProductos.ClearSelection();
             Limpiar();
+        }
+
+        private void KeyPressPrecio(object sender, KeyPressEventArgs e)
+        {
+            MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+
+            // Permitir números, comas y teclas de control (como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
+
+            // Permitir solo una coma en el campo
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true; // Ignorar la coma adicional
+            }
+        }
+
+        private void KeyPressCantidad(object sender, KeyPressEventArgs e)
+        {
+            MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+
+            // Permitir números y teclas de control (como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
         }
     }
 }

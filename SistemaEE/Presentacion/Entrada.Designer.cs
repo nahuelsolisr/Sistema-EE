@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entrada));
             dgvCarrito = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -82,15 +82,15 @@
             dgvCarrito.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCarrito.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCarrito.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column3 });
             dgvCarrito.Location = new Point(7, 313);
@@ -99,10 +99,10 @@
             dgvCarrito.Name = "dgvCarrito";
             dgvCarrito.ReadOnly = true;
             dgvCarrito.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
-            dgvCarrito.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
+            dgvCarrito.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvCarrito.RowTemplate.Height = 25;
             dgvCarrito.Size = new Size(885, 281);
             dgvCarrito.TabIndex = 133;
@@ -257,6 +257,7 @@
             txt_cantidad.TabIndex = 203;
             txt_cantidad.Text = "";
             txt_cantidad.TrailingIcon = null;
+            txt_cantidad.KeyPress += KeyPressValidarCantidad;
             // 
             // txt_precio
             // 
@@ -275,6 +276,7 @@
             txt_precio.Text = "";
             txt_precio.TrailingIcon = null;
             txt_precio.TextChanged += txt_precio_TextChanged;
+            txt_precio.KeyPress += KeyPressValidarPrecio;
             // 
             // materialLabel5
             // 
@@ -295,11 +297,12 @@
             nud_ganancia.Location = new Point(545, 84);
             nud_ganancia.MouseState = MaterialSkin.MouseState.HOVER;
             nud_ganancia.Name = "nud_ganancia";
-            nud_ganancia.Size = new Size(228, 40);
+            nud_ganancia.RangeMax = 1000;
+            nud_ganancia.Size = new Size(325, 40);
             nud_ganancia.TabIndex = 146;
             nud_ganancia.Text = "";
             nud_ganancia.Value = 25;
-            nud_ganancia.ValueMax = 100;
+            nud_ganancia.ValueMax = 1000;
             nud_ganancia.MouseCaptureChanged += nud_ganancia_MouseCaptureChanged;
             // 
             // btn_agregarCarrito

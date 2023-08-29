@@ -148,7 +148,7 @@
             txt_nombre.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_nombre.LeadingIcon = null;
             txt_nombre.Location = new Point(58, 37);
-            txt_nombre.MaxLength = 50;
+            txt_nombre.MaxLength = 25;
             txt_nombre.MouseState = MaterialSkin.MouseState.OUT;
             txt_nombre.Multiline = false;
             txt_nombre.Name = "txt_nombre";
@@ -165,7 +165,7 @@
             txt_marca.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_marca.LeadingIcon = null;
             txt_marca.Location = new Point(59, 192);
-            txt_marca.MaxLength = 50;
+            txt_marca.MaxLength = 25;
             txt_marca.MouseState = MaterialSkin.MouseState.OUT;
             txt_marca.Multiline = false;
             txt_marca.Name = "txt_marca";
@@ -367,7 +367,7 @@
             txt_categoria.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_categoria.LeadingIcon = null;
             txt_categoria.Location = new Point(58, 116);
-            txt_categoria.MaxLength = 50;
+            txt_categoria.MaxLength = 25;
             txt_categoria.MouseState = MaterialSkin.MouseState.OUT;
             txt_categoria.Multiline = false;
             txt_categoria.Name = "txt_categoria";

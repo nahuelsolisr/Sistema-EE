@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             mtcMenu = new MaterialSkin.Controls.MaterialTabControl();
             tabHome = new TabPage();
+            btn_cerrarSesion = new MaterialSkin.Controls.MaterialButton();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             pictureBox1 = new PictureBox();
@@ -129,6 +130,7 @@
             // tabHome
             // 
             tabHome.BackColor = Color.White;
+            tabHome.Controls.Add(btn_cerrarSesion);
             tabHome.Controls.Add(materialLabel3);
             tabHome.Controls.Add(materialLabel2);
             tabHome.Controls.Add(pictureBox1);
@@ -141,6 +143,27 @@
             tabHome.Size = new Size(577, 485);
             tabHome.TabIndex = 0;
             tabHome.Text = "Home";
+            // 
+            // btn_cerrarSesion
+            // 
+            btn_cerrarSesion.AutoSize = false;
+            btn_cerrarSesion.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btn_cerrarSesion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btn_cerrarSesion.Depth = 0;
+            btn_cerrarSesion.HighEmphasis = true;
+            btn_cerrarSesion.Icon = (Image)resources.GetObject("btn_cerrarSesion.Icon");
+            btn_cerrarSesion.Location = new Point(409, 9);
+            btn_cerrarSesion.Margin = new Padding(4, 6, 4, 6);
+            btn_cerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
+            btn_cerrarSesion.Name = "btn_cerrarSesion";
+            btn_cerrarSesion.NoAccentTextColor = Color.Empty;
+            btn_cerrarSesion.Size = new Size(161, 36);
+            btn_cerrarSesion.TabIndex = 179;
+            btn_cerrarSesion.Text = "cerrar sesion";
+            btn_cerrarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            btn_cerrarSesion.UseAccentColor = false;
+            btn_cerrarSesion.UseVisualStyleBackColor = true;
+            btn_cerrarSesion.Click += btn_cerrarSesion_Click;
             // 
             // materialLabel3
             // 
@@ -160,7 +183,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(213, 478);
+            materialLabel2.Location = new Point(213, 451);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(358, 19);
@@ -172,7 +195,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(70, 71);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(501, 404);
+            pictureBox1.Size = new Size(501, 365);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
@@ -255,7 +278,7 @@
             btn_salidas.NoAccentTextColor = Color.Empty;
             btn_salidas.Size = new Size(182, 53);
             btn_salidas.TabIndex = 35;
-            btn_salidas.Text = "Salidas";
+            btn_salidas.Text = "Facturación";
             btn_salidas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             btn_salidas.UseAccentColor = false;
             btn_salidas.UseVisualStyleBackColor = true;
@@ -1086,5 +1109,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel materialLabel11;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialButton btn_cerrarSesion;
     }
 }

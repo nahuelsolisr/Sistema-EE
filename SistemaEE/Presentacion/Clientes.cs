@@ -139,54 +139,73 @@ namespace SistemaEE.Formularios
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            try
+            bool validacion = EnviarValidaciones();
+
+            if (validacion)
             {
-                ConectaDB.AbrirDB();
-                string insertCliente = "INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_mail.Text + "', '" + cmb_condicion.Text + "')";
-                ConectaDB.CargarDB(insertCliente);
-                ConectaDB.CerrarDB();
-                MessageBox.Show("El Cliente ha sido agregado correctamente.");
-                dgv_Clientes();
+                try
+                {
+                    ConectaDB.AbrirDB();
+                    string insertCliente = "INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente) VALUES (" + txt_cuit.Text + ", '" + txt_nombre.Text + "', '" + txt_direccion.Text + "', '" + txt_mail.Text + "', '" + cmb_condicion.Text + "')";
+                    ConectaDB.CargarDB(insertCliente);
+                    ConectaDB.CerrarDB();
+                    MessageBox.Show("El Cliente ha sido agregado correctamente.");
+                    dgv_Clientes();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar el Cliente: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar el Cliente: " + ex.Message);
-            }
+           
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            try
+            bool validacion = EnviarValidaciones();
+
+            if (validacion)
             {
-                ConectaDB.AbrirDB();
-                string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + cmb_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
-                ConectaDB.CargarDB(updateProveedor);
-                ConectaDB.CerrarDB();
-                dgv_Clientes();
-                MessageBox.Show("Actualización exitosa.");
+                try
+                {
+                    ConectaDB.AbrirDB();
+                    string updateProveedor = "UPDATE clientes SET cuit_cliente = " + txt_cuit.Text + ", cliente_nombre = '" + txt_nombre.Text + "', direccion = '" + txt_direccion.Text + "', mail_cliente = '" + txt_mail.Text + "',condicion_cliente = '" + cmb_condicion.Text + "' WHERE cuit_cliente = " + idCliente;
+                    ConectaDB.CargarDB(updateProveedor);
+                    ConectaDB.CerrarDB();
+                    dgv_Clientes();
+                    MessageBox.Show("Actualización exitosa.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar cliente: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar cliente: " + ex.Message);
-            }
+                
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                ConectaDB.AbrirDB();
-                string deleteCliente = "DELETE FROM clientes WHERE cuit_cliente = " + idCliente + ";";
-                ConectaDB.CargarDB(deleteCliente);
-                ConectaDB.CerrarDB();
-                MessageBox.Show("Cliente eliminado correctamente");
-                dgv_Clientes();
+                // Preguntar al usuario si realmente desea eliminar el cliente
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este cliente?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    ConectaDB.AbrirDB();
+                    string deleteCliente = "DELETE FROM clientes WHERE cuit_cliente = " + idCliente + ";";
+                    ConectaDB.CargarDB(deleteCliente);
+                    ConectaDB.CerrarDB();
+                    MessageBox.Show("Cliente eliminado correctamente");
+                    dgv_Clientes();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al eliminar el Cliente: " + ex.Message);
             }
         }
+
 
         private void Clientes_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -224,6 +243,39 @@ namespace SistemaEE.Formularios
                 // Descargar el archivo utilizando la ruta completa del archivo
                 cliente.DownloadFileAsync(new Uri(@"C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\Resources\PlantillaClientes.rar"), dialogo.FileName);
             }
+        }
+
+        public bool EnviarValidaciones()
+        {
+
+            string cuit = txt_cuit.Text;
+
+            string nombre = txt_nombre.Text;
+
+            string email = txt_mail.Text;
+
+
+            if (!Validaciones.ValidarCuilCuit(cuit))
+            {
+                MessageBox.Show("El CUIT no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Validaciones.ValidarNombre(nombre))
+            {
+                MessageBox.Show("El nombre no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!Validaciones.ValidarEmail(email))
+            {
+                MessageBox.Show("El correo electrónico no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            //si todas las validaciones son correctas
+            return true;
+
         }
     }
 }

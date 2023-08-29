@@ -10,23 +10,45 @@ namespace SistemaEE.Clases
 {
     internal class Validaciones
     {
-        public static bool ValidarCuit(string cuit)
+        public static bool ValidarCuilCuit(string cuilCuit)
         {
-            // Validar que el CUIT tenga al menos 10 dígitos y como máximo 11 dígitos
-            if (cuit.Length < 10 || cuit.Length > 11)
+            // Validar que el CUIL | CUIT tenga 11 dígitos
+            if (cuilCuit.Length != 11)
             {
                 return false;
             }
 
-            // Validar que el CUIT solo contenga números
-            if (!Regex.IsMatch(cuit, @"^\d+$"))
+            // Validar que el CUIL | CUIT solo contenga números
+            if (!Regex.IsMatch(cuilCuit, @"^\d+$"))
             {
                 return false;
             }
 
-            return true;
+            bool rv = false;
+            int verificador;
+            int resultado = 0;
+            string cuit_nro = cuilCuit.Replace("-", string.Empty);
+            string codes = "6789456789";
+            long cuit_long = 0;
+
+            if (long.TryParse(cuit_nro, out cuit_long))
+            {
+                verificador = int.Parse(cuit_nro[cuit_nro.Length - 1].ToString());
+                int x = 0;
+                while (x < 10)
+                {
+                    int digitoValidador = int.Parse(codes.Substring((x), 1));
+                    int digito = int.Parse(cuit_nro.Substring((x), 1));
+                    int digitoValidacion = digitoValidador * digito;
+                    resultado += digitoValidacion;
+                    x++;
+                }
+                resultado = resultado % 11;
+                rv = (resultado == verificador);
+            }
+
+            return rv;
         }
-
         public static bool ValidarNombre(string nombre)
         {
             // Validar que el nombre solo contenga letras y un único caracter espacio

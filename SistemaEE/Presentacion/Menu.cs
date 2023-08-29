@@ -185,5 +185,9 @@ namespace SistemaEE.Formularios
         {
             this.Close();
         }
+        private void btn_cerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
