@@ -37,6 +37,8 @@ namespace SistemaEE.Formularios
             this.ControlBox = true;
             this.MinimizeBox = true;
             this.MaximizeBox = false;
+            txt_cantidad.Enabled = false;
+
             //
             if (Datos.modoOscuro)
             {
@@ -148,13 +150,13 @@ namespace SistemaEE.Formularios
                 return;
             }
 
-            if (cantidadComprada > cantidadDisponible)
+            if (Convert.ToInt64(cantidadsalida) > cantidadDisponible)
             {
                 MessageBox.Show("No hay suficiente cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string precioo = $"Select precio from productos where id_producto = {id_producto}";
-            int preciocosto = 0;
+            decimal preciocosto = 0;
 
             // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
             ConectaDB.AbrirDB();
@@ -162,14 +164,38 @@ namespace SistemaEE.Formularios
             {
                 if (reader.Read())
                 {
-                    preciocosto = Convert.ToInt32(reader["precio"]);
+                    preciocosto = Convert.ToDecimal(reader["precio"]);
                 }
             }
             ConectaDB.CerrarDB();
+
             decimal preciod = Convert.ToDecimal(precio);
             decimal cantidadsalidad = Convert.ToDecimal(cantidadsalida);
             decimal subtotal = preciod * cantidadsalidad;
             decimal total = 0;
+            decimal stock_disp = Convert.ToDecimal(lbl_stockDisponible.Text);
+            decimal apoyo = stock_disp + 1;
+            lbl_apoyo.Text = apoyo.ToString();
+
+
+
+            if (apoyo <= Convert.ToDecimal(cantidadsalida))
+            {
+                //stock_disp = stock_disp + Convert.ToDecimal(cantidadsalida);
+                MessageBox.Show("No hay suficiente cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            if (apoyo > Convert.ToDecimal(cantidadsalida))
+            {
+                stock_disp = stock_disp - Convert.ToDecimal(cantidadsalida);
+                lbl_stockDisponible.Text = stock_disp.ToString();
+            }
+            if (stock_disp == Convert.ToDecimal(cantidadsalida))
+            {
+                //lbl_stockDisponible.Text = "0";
+            }
+
             Producto2 producto2 = new Producto2
             {
                 UnidadesS = cantidadsalida,
@@ -239,6 +265,8 @@ namespace SistemaEE.Formularios
 
         private void btn_ConfirmarCompra_Click(object sender, EventArgs e)
         {
+            txt_cantidad.Enabled = false;
+            lbl_stockDisponible.Visible = false;
             DialogResult result = MessageBox.Show("¿Estás seguro de realizar esta venta?", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -272,7 +300,7 @@ namespace SistemaEE.Formularios
                     decimal total_stock = cantidadNetaSalida * Convert.ToDecimal(producto2.PrecioUS);
                     total_stock.ToString();
                     string precioo = $"Select precio from productos where id_producto = {producto2.Id}";
-                    int preciocosto = 0;
+                    decimal preciocosto = 0;
 
                     // Realiza la lectura de la base de datos para obtener la cantidad actual del producto
                     ConectaDB.AbrirDB();
@@ -280,7 +308,7 @@ namespace SistemaEE.Formularios
                     {
                         if (reader.Read())
                         {
-                            preciocosto = Convert.ToInt32(reader["precio"]);
+                            preciocosto = Convert.ToDecimal(reader["precio"]);
                         }
                     }
                     // Actualiza los datos del producto en la base de datos
@@ -302,14 +330,37 @@ namespace SistemaEE.Formularios
                     ConectaDB.CargarDB(insertStock);
                 }
                 // Agrega 
+                // Obtener los datos del DataGridView dgvProductos del Formulario 1
+                List<string[]> datos = new List<string[]>();
+
+                foreach (DataGridViewRow row in dgvProductos.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        string[] fila = new string[row.Cells.Count];
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            fila[i] = row.Cells[i].Value.ToString();
+                        }
+                        datos.Add(fila);
+                    }
+                }
                 MessageBox.Show("Su compra ha sido realizada");
                 ConectaDB.CerrarDB();
                 Limpiar();
                 carrito2.Clear();
 
 
-                MuestraFactura muestraFacturaForm = new MuestraFactura();
-                muestraFacturaForm.ShowDialog();
+
+
+                // Obtener una referencia al Formulario 2 (MuestraFactura)
+                MuestraFactura formulario2 = new MuestraFactura();
+
+                // Pasar los datos al DataGridView dgvProductosF en el Formulario 2
+                formulario2.AgregarDatosAlDataGridView(datos);
+
+                // Mostrar el Formulario 2
+                formulario2.ShowDialog(); // Puedes usar ShowDialog para bloquear el Formulario 1 hasta que se cierre el Formulario 2
             }
         }
 
@@ -323,6 +374,7 @@ namespace SistemaEE.Formularios
 
         private void btn_traerProduc_Click(object sender, EventArgs e)
         {
+            txt_cantidad.Enabled = true;
             ProductosEnStock productosEnStock = new ProductosEnStock();
             productosEnStock.ShowDialog();
             txt_idproducto.Text = Datos.idProducto.ToString();
@@ -338,15 +390,33 @@ namespace SistemaEE.Formularios
 
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
+            txt_cantidad.Enabled = false;
+            lbl_stockDisponible.Visible = false;
             dgvProductos.ClearSelection();
+            carrito2.Clear();
             Limpiar();
         }
 
         private void KeyPressPrecio(object sender, KeyPressEventArgs e)
         {
             MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+            if ((e.KeyChar >= 32 && e.KeyChar <= 43) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                errorProvider1.SetError(txt_precio, "Solo se admiten numeros");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
 
-            // Permitir números, comas y teclas de control (como retroceso)
+            if (e.KeyChar >= 45 && e.KeyChar <= 47)
+            {
+                errorProvider1.SetError(txt_precio, "Solo se admiten comas");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
+
+            //Permitir números, comas y teclas de control(como retroceso)
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
             {
                 e.Handled = true; // Ignorar el carácter ingresado
@@ -362,12 +432,43 @@ namespace SistemaEE.Formularios
         private void KeyPressCantidad(object sender, KeyPressEventArgs e)
         {
             MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+            if ((e.KeyChar >= 32 && e.KeyChar <= 43) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                errorProvider1.SetError(txt_cantidad, "Solo se admiten numeros");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
 
-            // Permitir números y teclas de control (como retroceso)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (e.KeyChar >= 45 && e.KeyChar <= 47)
+            {
+                errorProvider1.SetError(txt_cantidad, "Solo se admiten comas");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
+
+            //Permitir números, comas y teclas de control(como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
             {
                 e.Handled = true; // Ignorar el carácter ingresado
             }
+
+            // Permitir solo una coma en el campo
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true; // Ignorar la coma adicional
+            }
+        }
+
+        private void txt_precio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_cantidad_Click(object sender, EventArgs e)
+        {
+            lbl_stockDisponible.Visible = true;
         }
     }
 }

@@ -6518,11 +6518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
+      "projectUniqueName": "C:\\Users\\Rodri\\Desktop\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
       "projectName": "SistemaEE",
-      "projectPath": "C:\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
+      "projectPath": "C:\\Users\\Rodri\\Desktop\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
       "packagesPath": "C:\\Users\\Rodri\\.nuget\\packages\\",
-      "outputPath": "C:\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\obj\\",
+      "outputPath": "C:\\Users\\Rodri\\Desktop\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",

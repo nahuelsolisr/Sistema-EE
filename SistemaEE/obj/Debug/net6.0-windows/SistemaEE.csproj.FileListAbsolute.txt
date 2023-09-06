@@ -148,3 +148,108 @@ C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Security.Cryptography.Pkcs.dll
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Presentacion.Mostrar.MuestraFactura.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SistemaEE.exe
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SistemaEE.dll.config
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SistemaEE.deps.json
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SistemaEE.runtimeconfig.json
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SistemaEE.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SistemaEE.pdb
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\ClosedXML.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\EPPlus.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\EPPlus.Interfaces.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\EPPlus.System.Drawing.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\ExcelNumberFormat.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Irony.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\MaterialSkin.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Data.OleDb.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Diagnostics.PerformanceCounter.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\XLParser.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Data.OleDb.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.csproj.AssemblyReference.cache
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Clientes.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Entrada.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.FichaDeStock.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Login.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Menu.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraCliente.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Presentacion.Mostrar.MuestraFactura.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraProductos.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraProveedor.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.ProductosEnStock.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Productos.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Proveedores.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Salidas.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Usuarios.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Properties.Resources.resources
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.csproj.GenerateResource.cache
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.GeneratedMSBuildEditorConfig.editorconfig
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.AssemblyInfoInputs.cache
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.AssemblyInfo.cs
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.csproj.CoreCompileInputs.cache
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.csproj.CopyComplete
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\refint\SistemaEE.dll
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.pdb
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.genruntimeconfig.cache
+C:\MisProyectos (1)\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\ref\SistemaEE.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\ClosedXML.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\EPPlus.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\EPPlus.Interfaces.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\EPPlus.System.Drawing.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\ExcelNumberFormat.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Irony.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\MaterialSkin.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\SixLabors.Fonts.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\XLParser.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.FichaDeStock.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraCliente.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Presentacion.Mostrar.MuestraFactura.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraProductos.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.MuestraProveedor.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.ProductosEnStock.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Salidas.resources
+C:\Users\Rodri\Desktop\MisProyectos\Sistema Economia Empresarial\SistemaEE\obj\Debug\net6.0-windows\SistemaEE.Formularios.Usuarios.resources

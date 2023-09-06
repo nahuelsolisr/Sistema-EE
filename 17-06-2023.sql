@@ -1,3 +1,4 @@
+drop database EconomiaEmpresarial
 create database EconomiaEmpresarial
 use EconomiaEmpresarial
 
@@ -16,12 +17,15 @@ cuit_prov float,
 nombre varchar(20),
 categoria varchar(20),
 marca varchar(20),
-cantidad decimal NULL,
-precio float NULL,
-porcentajeg float NULL
+cantidad varchar(20) NULL,
+precio varchar(20) NULL,
+porcentajeg varchar (20) NULL,
+stock_min varchar (20) NULL
 FOREIGN KEY (cuit_prov) REFERENCES proveedor(cuit_prov),
 )
 
+
+select * from productos
 drop table productos
 
 create table proveedor(
@@ -44,7 +48,7 @@ condicion_cliente varchar(30)
 INSERT INTO clientes (cuit_cliente, cliente_nombre, direccion, mail_cliente, condicion_cliente)
 VALUES 
   (20111111112, 'Juan Pérez', 'Calle Falsa 123', 'juanperez@gmail.com', 'Responsable Inscripto'),
-  (20333333334, 'María Rodríguez', 'Avenida Siempre Viva 742', 'mariarodriguez@gmail.com', 'Monotributista'),
+  (20333333334, 'María Rodríguez', 'Avenida Siempre Viva 742', 'mariarodriguez@gmail.com', 'Monotributista')
 
 
 CREATE TABLE fichastock(

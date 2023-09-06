@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entrada));
             dgvCarrito = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -65,6 +66,7 @@
             btn_limpiar = new MaterialSkin.Controls.MaterialButton();
             lbl_info = new MaterialSkin.Controls.MaterialLabel();
             lbl_precioVenta = new MaterialSkin.Controls.MaterialLabel();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
@@ -73,6 +75,7 @@
             pnl_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // dgvCarrito
@@ -82,15 +85,15 @@
             dgvCarrito.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCarrito.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvCarrito.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCarrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column3 });
             dgvCarrito.Location = new Point(7, 313);
@@ -99,10 +102,10 @@
             dgvCarrito.Name = "dgvCarrito";
             dgvCarrito.ReadOnly = true;
             dgvCarrito.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
-            dgvCarrito.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvCarrito.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvCarrito.RowTemplate.Height = 25;
             dgvCarrito.Size = new Size(885, 281);
             dgvCarrito.TabIndex = 133;
@@ -257,6 +260,7 @@
             txt_cantidad.TabIndex = 203;
             txt_cantidad.Text = "";
             txt_cantidad.TrailingIcon = null;
+            txt_cantidad.Click += txt_cantidad_Click;
             txt_cantidad.KeyPress += KeyPressValidarCantidad;
             // 
             // txt_precio
@@ -293,6 +297,7 @@
             // nud_ganancia
             // 
             nud_ganancia.Depth = 0;
+            nud_ganancia.Enabled = false;
             nud_ganancia.ForeColor = Color.FromArgb(222, 0, 0, 0);
             nud_ganancia.Location = new Point(545, 84);
             nud_ganancia.MouseState = MaterialSkin.MouseState.HOVER;
@@ -303,6 +308,8 @@
             nud_ganancia.Text = "";
             nud_ganancia.Value = 25;
             nud_ganancia.ValueMax = 1000;
+            nud_ganancia.TextChanged += nud_ganancia_TextChanged;
+            nud_ganancia.Click += nud_ganancia_Click;
             nud_ganancia.MouseCaptureChanged += nud_ganancia_MouseCaptureChanged;
             // 
             // btn_agregarCarrito
@@ -585,6 +592,10 @@
             lbl_precioVenta.Size = new Size(1, 0);
             lbl_precioVenta.TabIndex = 213;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Entrada
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -611,6 +622,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -652,5 +664,6 @@
         private MaterialSkin.Controls.MaterialButton btn_limpiar;
         private MaterialSkin.Controls.MaterialLabel lbl_info;
         private MaterialSkin.Controls.MaterialLabel lbl_precioVenta;
+        private ErrorProvider errorProvider1;
     }
 }

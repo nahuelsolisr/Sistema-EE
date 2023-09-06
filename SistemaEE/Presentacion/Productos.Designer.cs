@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
@@ -37,6 +38,7 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             txt_nombre = new MaterialSkin.Controls.MaterialTextBox();
             txt_marca = new MaterialSkin.Controls.MaterialTextBox();
             txt_prov = new MaterialSkin.Controls.MaterialTextBox();
@@ -53,6 +55,9 @@
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             txt_categoria = new MaterialSkin.Controls.MaterialTextBox();
             pnl_detalle = new Panel();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            txt_stock_min = new MaterialSkin.Controls.MaterialTextBox();
             btn_traerProv = new MaterialSkin.Controls.MaterialButton();
             panel1 = new Panel();
             txt_filtrar = new MaterialSkin.Controls.MaterialTextBox();
@@ -62,14 +67,17 @@
             btn_limpiar = new MaterialSkin.Controls.MaterialButton();
             btn_cargaMasiva = new MaterialSkin.Controls.MaterialButton();
             btn_descargaPlantilla = new MaterialSkin.Controls.MaterialButton();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             pnl_detalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // dgvProductos
@@ -88,7 +96,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column2, Column3, Column4 });
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column0, btn_seleccionar, Column2, Column3, Column4, Column5 });
             dgvProductos.Location = new Point(370, 127);
             dgvProductos.MultiSelect = false;
             dgvProductos.Name = "dgvProductos";
@@ -140,6 +148,13 @@
             Column4.ReadOnly = true;
             Column4.Width = 79;
             // 
+            // Column5
+            // 
+            Column5.HeaderText = "Stock Minimo";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 133;
+            // 
             // txt_nombre
             // 
             txt_nombre.AnimateReadOnly = false;
@@ -182,7 +197,7 @@
             txt_prov.Enabled = false;
             txt_prov.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txt_prov.LeadingIcon = null;
-            txt_prov.Location = new Point(59, 271);
+            txt_prov.Location = new Point(59, 339);
             txt_prov.MaxLength = 50;
             txt_prov.MouseState = MaterialSkin.MouseState.OUT;
             txt_prov.Multiline = false;
@@ -200,7 +215,7 @@
             iconPictureBox13.IconColor = Color.SteelBlue;
             iconPictureBox13.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox13.IconSize = 48;
-            iconPictureBox13.Location = new Point(7, 274);
+            iconPictureBox13.Location = new Point(7, 342);
             iconPictureBox13.Name = "iconPictureBox13";
             iconPictureBox13.Size = new Size(48, 50);
             iconPictureBox13.TabIndex = 140;
@@ -289,7 +304,7 @@
             materialLabel6.AutoSize = true;
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel6.Location = new Point(58, 249);
+            materialLabel6.Location = new Point(58, 317);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             materialLabel6.Size = new Size(96, 19);
@@ -378,6 +393,9 @@
             // 
             // pnl_detalle
             // 
+            pnl_detalle.Controls.Add(iconPictureBox5);
+            pnl_detalle.Controls.Add(materialLabel7);
+            pnl_detalle.Controls.Add(txt_stock_min);
             pnl_detalle.Controls.Add(btn_traerProv);
             pnl_detalle.Controls.Add(txt_categoria);
             pnl_detalle.Controls.Add(iconPictureBox2);
@@ -396,6 +414,53 @@
             pnl_detalle.Size = new Size(360, 394);
             pnl_detalle.TabIndex = 165;
             // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.WhiteSmoke;
+            iconPictureBox5.ForeColor = Color.SteelBlue;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            iconPictureBox5.IconColor = Color.SteelBlue;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 46;
+            iconPictureBox5.Location = new Point(7, 274);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Size = new Size(46, 50);
+            iconPictureBox5.TabIndex = 204;
+            iconPictureBox5.TabStop = false;
+            iconPictureBox5.Click += iconPictureBox5_Click;
+            // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(59, 243);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(118, 19);
+            materialLabel7.TabIndex = 206;
+            materialLabel7.Text = "STOCK MÍNIMO:";
+            materialLabel7.Click += materialLabel7_Click;
+            // 
+            // txt_stock_min
+            // 
+            txt_stock_min.AnimateReadOnly = false;
+            txt_stock_min.BorderStyle = BorderStyle.None;
+            txt_stock_min.Depth = 0;
+            txt_stock_min.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_stock_min.LeadingIcon = null;
+            txt_stock_min.Location = new Point(59, 265);
+            txt_stock_min.MaxLength = 25;
+            txt_stock_min.MouseState = MaterialSkin.MouseState.OUT;
+            txt_stock_min.Multiline = false;
+            txt_stock_min.Name = "txt_stock_min";
+            txt_stock_min.Size = new Size(295, 50);
+            txt_stock_min.TabIndex = 205;
+            txt_stock_min.Text = "";
+            txt_stock_min.TrailingIcon = null;
+            txt_stock_min.TextChanged += materialTextBox1_TextChanged;
+            txt_stock_min.KeyPress += txt_stock_min_KeyPress;
+            // 
             // btn_traerProv
             // 
             btn_traerProv.AutoSize = false;
@@ -404,7 +469,7 @@
             btn_traerProv.Depth = 0;
             btn_traerProv.HighEmphasis = true;
             btn_traerProv.Icon = (Image)resources.GetObject("btn_traerProv.Icon");
-            btn_traerProv.Location = new Point(248, 271);
+            btn_traerProv.Location = new Point(248, 339);
             btn_traerProv.Margin = new Padding(4, 6, 4, 6);
             btn_traerProv.MouseState = MaterialSkin.MouseState.HOVER;
             btn_traerProv.Name = "btn_traerProv";
@@ -547,6 +612,10 @@
             btn_descargaPlantilla.UseVisualStyleBackColor = true;
             btn_descargaPlantilla.Click += btn_descargaPlantilla_Click;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -574,9 +643,11 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             pnl_detalle.ResumeLayout(false);
             pnl_detalle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -612,5 +683,10 @@
         private MaterialSkin.Controls.MaterialButton btn_limpiar;
         private MaterialSkin.Controls.MaterialButton btn_cargaMasiva;
         private MaterialSkin.Controls.MaterialButton btn_descargaPlantilla;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialTextBox txt_stock_min;
+        private ErrorProvider errorProvider1;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

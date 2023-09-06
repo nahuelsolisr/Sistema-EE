@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a2td0jNZYXAt5bbKkKcMVE6AWC7z6mLJ+tKUsOhqoif8ZqbSw0WZ+/OW8Prt5sQe3I1veDyaQr1Z1HNfLXf42Q==",
+  "dgSpecHash": "hqu6YTcyRJeGCvq2zF2eoaYWK9w/wfFvmCXdmFb3QQvsUM4OIgcQ1j8khm652iD8PBiUKLtg/CKjZuuG7p4GNw==",
   "success": true,
-  "projectFilePath": "C:\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
+  "projectFilePath": "C:\\Users\\Rodri\\Desktop\\MisProyectos\\Sistema Economia Empresarial\\SistemaEE\\SistemaEE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodri\\.nuget\\packages\\closedxml\\0.101.0\\closedxml.0.101.0.nupkg.sha512",
     "C:\\Users\\Rodri\\.nuget\\packages\\documentformat.openxml\\2.16.0\\documentformat.openxml.2.16.0.nupkg.sha512",

@@ -153,6 +153,7 @@ namespace SistemaEE.Formularios
 
         private void btn_agregarCarrito_Click(object sender, EventArgs e)
         {
+
             // Obtén los datos del producto del formulario
             string idProducto = txt_idproducto.Text;
             string nombreProducto = txt_nombreProducto.Text;
@@ -212,7 +213,7 @@ namespace SistemaEE.Formularios
                     decimal total_stock = cantidadNetaEntrada * producto.Precio;
                     total_stock.ToString();
                     // Actualiza los datos del producto en la base de datos
-                    string updateEntrada = $"UPDATE productos SET cantidad = {cantidadNetaEntrada}, precio = {producto.Precio}, porcentajeg = {producto.Ganancia} WHERE id_producto = {producto.Id}";
+                    string updateEntrada = $"UPDATE productos SET cantidad = '{cantidadNetaEntrada}', precio = '{producto.Precio}', porcentajeg = '{producto.Ganancia}' WHERE id_producto = {producto.Id}";
                     ConectaDB.CargarDB(updateEntrada);
                     //decimal totalEntrada = producto.Precio * producto.Cantidad;
                     //totalEntrada.ToString();
@@ -242,6 +243,7 @@ namespace SistemaEE.Formularios
                 ConectaDB.CerrarDB();
                 Limpiar();
                 carrito.Clear();
+                nud_ganancia.Enabled = false;
                 // ComprobanteCompra();
                 lbl_precioVenta.Text = "";
             }
@@ -284,14 +286,32 @@ namespace SistemaEE.Formularios
 
         private void txt_precio_TextChanged(object sender, EventArgs e)
         {
-            precioGanancia = Convert.ToDecimal(txt_precio.Text);
+
+
+
+
         }
 
         private void KeyPressValidarPrecio(object sender, KeyPressEventArgs e)
         {
             MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+            if ((e.KeyChar >= 32 && e.KeyChar <= 43) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                errorProvider1.SetError(txt_precio, "Solo se admiten numeros");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
 
-            // Permitir números, comas y teclas de control (como retroceso)
+            if (e.KeyChar >= 45 && e.KeyChar <= 47)
+            {
+                errorProvider1.SetError(txt_precio, "Solo se admiten comas");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
+
+            //Permitir números, comas y teclas de control(como retroceso)
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
             {
                 e.Handled = true; // Ignorar el carácter ingresado
@@ -307,12 +327,48 @@ namespace SistemaEE.Formularios
         private void KeyPressValidarCantidad(object sender, KeyPressEventArgs e)
         {
             MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+            if ((e.KeyChar >= 32 && e.KeyChar <= 43) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                errorProvider1.SetError(txt_cantidad, "Solo se admiten numeros");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
 
-            // Permitir números y teclas de control (como retroceso)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (e.KeyChar >= 45 && e.KeyChar <= 47)
+            {
+                errorProvider1.SetError(txt_cantidad, "Solo se admiten comas");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
+
+            //Permitir números, comas y teclas de control(como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
             {
                 e.Handled = true; // Ignorar el carácter ingresado
             }
+
+            // Permitir solo una coma en el campo
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true; // Ignorar la coma adicional
+            }
+        }
+
+        private void nud_ganancia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nud_ganancia_Click(object sender, EventArgs e)
+        {
+            precioGanancia = Convert.ToDecimal(txt_precio.Text);
+        }
+
+        private void txt_cantidad_Click(object sender, EventArgs e)
+        {
+            nud_ganancia.Enabled = true;
         }
     }
 }

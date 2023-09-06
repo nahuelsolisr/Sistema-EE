@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salidas));
             dgvProductos = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -52,6 +53,7 @@
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             txt_idproducto = new MaterialSkin.Controls.MaterialTextBox();
             pnl_detalle = new Panel();
+            lbl_apoyo = new Label();
             lbl_stockDisponible = new MaterialSkin.Controls.MaterialLabel();
             materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
@@ -65,10 +67,11 @@
             btn_ConfirmarCompra = new MaterialSkin.Controls.MaterialButton();
             btn_limpiar = new MaterialSkin.Controls.MaterialButton();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            txt_efectivo = new MaterialSkin.Controls.MaterialTextBox();
+            txt_importe = new MaterialSkin.Controls.MaterialTextBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             lbl_total = new MaterialSkin.Controls.MaterialLabel();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -77,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // dgvProductos
@@ -85,15 +89,15 @@
             dgvProductos.AllowUserToResizeRows = false;
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProductos.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
             dgvProductos.Location = new Point(7, 313);
@@ -102,10 +106,10 @@
             dgvProductos.Name = "dgvProductos";
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
-            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
+            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvProductos.RowTemplate.Height = 25;
             dgvProductos.Size = new Size(885, 281);
             dgvProductos.TabIndex = 170;
@@ -357,6 +361,7 @@
             // 
             // pnl_detalle
             // 
+            pnl_detalle.Controls.Add(lbl_apoyo);
             pnl_detalle.Controls.Add(lbl_stockDisponible);
             pnl_detalle.Controls.Add(materialLabel10);
             pnl_detalle.Controls.Add(materialLabel8);
@@ -371,6 +376,15 @@
             pnl_detalle.Name = "pnl_detalle";
             pnl_detalle.Size = new Size(1119, 137);
             pnl_detalle.TabIndex = 206;
+            // 
+            // lbl_apoyo
+            // 
+            lbl_apoyo.AutoSize = true;
+            lbl_apoyo.Location = new Point(501, 49);
+            lbl_apoyo.Name = "lbl_apoyo";
+            lbl_apoyo.Size = new Size(0, 15);
+            lbl_apoyo.TabIndex = 212;
+            lbl_apoyo.Visible = false;
             // 
             // lbl_stockDisponible
             // 
@@ -447,6 +461,7 @@
             txt_cantidad.TabIndex = 203;
             txt_cantidad.Text = "";
             txt_cantidad.TrailingIcon = null;
+            txt_cantidad.Click += txt_cantidad_Click;
             txt_cantidad.KeyPress += KeyPressCantidad;
             // 
             // txt_precio
@@ -465,6 +480,7 @@
             txt_precio.TabIndex = 202;
             txt_precio.Text = "";
             txt_precio.TrailingIcon = null;
+            txt_precio.TextChanged += txt_precio_TextChanged;
             txt_precio.KeyPress += KeyPressPrecio;
             // 
             // iconPictureBox7
@@ -570,22 +586,22 @@
             materialLabel5.TabIndex = 212;
             materialLabel5.Text = "IMPORTE:";
             // 
-            // txt_efectivo
+            // txt_importe
             // 
-            txt_efectivo.AnimateReadOnly = false;
-            txt_efectivo.BorderStyle = BorderStyle.None;
-            txt_efectivo.Depth = 0;
-            txt_efectivo.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txt_efectivo.LeadingIcon = null;
-            txt_efectivo.Location = new Point(940, 480);
-            txt_efectivo.MaxLength = 50;
-            txt_efectivo.MouseState = MaterialSkin.MouseState.OUT;
-            txt_efectivo.Multiline = false;
-            txt_efectivo.Name = "txt_efectivo";
-            txt_efectivo.Size = new Size(179, 50);
-            txt_efectivo.TabIndex = 211;
-            txt_efectivo.Text = "";
-            txt_efectivo.TrailingIcon = null;
+            txt_importe.AnimateReadOnly = false;
+            txt_importe.BorderStyle = BorderStyle.None;
+            txt_importe.Depth = 0;
+            txt_importe.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txt_importe.LeadingIcon = null;
+            txt_importe.Location = new Point(940, 480);
+            txt_importe.MaxLength = 50;
+            txt_importe.MouseState = MaterialSkin.MouseState.OUT;
+            txt_importe.Multiline = false;
+            txt_importe.Name = "txt_importe";
+            txt_importe.Size = new Size(179, 50);
+            txt_importe.TabIndex = 211;
+            txt_importe.Text = "";
+            txt_importe.TrailingIcon = null;
             // 
             // iconPictureBox2
             // 
@@ -624,6 +640,10 @@
             lbl_total.Size = new Size(1, 0);
             lbl_total.TabIndex = 215;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Salidas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -633,7 +653,7 @@
             Controls.Add(materialLabel9);
             Controls.Add(materialLabel5);
             Controls.Add(btn_limpiar);
-            Controls.Add(txt_efectivo);
+            Controls.Add(txt_importe);
             Controls.Add(iconPictureBox2);
             Controls.Add(btn_ConfirmarCompra);
             Controls.Add(pnl_detalle);
@@ -653,6 +673,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -690,11 +711,13 @@
         private MaterialSkin.Controls.MaterialButton btn_limpiar;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialTextBox txt_efectivo;
+        private MaterialSkin.Controls.MaterialTextBox txt_importe;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialLabel lbl_total;
         private MaterialSkin.Controls.MaterialLabel lbl_stockDisponible;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private ErrorProvider errorProvider1;
+        private Label lbl_apoyo;
     }
 }

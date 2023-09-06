@@ -5,6 +5,8 @@ using MaterialSkin.Animations;
 using MaterialSkin;
 using System.Windows.Forms;
 using SistemaEE.AccesoDatos;
+using static SistemaEE.Formularios.Entrada;
+using System.Data.SqlClient;
 
 namespace SistemaEE.Formularios
 {
@@ -58,21 +60,7 @@ namespace SistemaEE.Formularios
 
 
 
-        private void mtcMenu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (mtcMenu.SelectedTab == tabContabilidad)
-            {
-                lbl_cardTitulo.ForeColor = Color.DarkBlue;
 
-
-            }
-            if (mtcMenu.SelectedTab == tabUsuarios)
-            {
-                Usuarios usuarios = new Usuarios();
-                usuarios.ShowDialog();
-            }
-            else { }
-        }
 
         private void btn_prov_Click(object sender, EventArgs e)
         {
@@ -188,6 +176,54 @@ namespace SistemaEE.Formularios
         private void btn_cerrarSesion_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void mtcMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mtcMenu.SelectedTab == tabNotificacion)
+            {
+                notificaciones();
+            }
+            if (mtcMenu.SelectedTab == tabUsuarios)
+            {
+                Usuarios usuarios = new Usuarios();
+                usuarios.ShowDialog();
+            }
+            else { }
+        }
+
+        public void notificaciones()
+        {
+            string consulta = "SELECT nombre, stock_min, cantidad FROM productos WHERE CONVERT(int, stock_min) > CONVERT(int, cantidad)";
+
+            using (SqlConnection conexion = new SqlConnection(DB.strConexión))
+            {
+                conexion.Open();
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                using (SqlDataReader lector = comando.ExecuteReader())
+                {
+                    int i = 1; // Inicializar contador para los controles
+
+                    while (lector.Read())
+                    {
+                        Label lblTitulo = (Label)this.Controls.Find("lbl_cardTitulo" + i, true).FirstOrDefault();
+                        Label lblInfoCompra = (Label)this.Controls.Find("lbl_infoCompra" + i, true).FirstOrDefault();
+
+                        if (lblTitulo != null && lblInfoCompra != null)
+                        {
+                            string nombreProducto = lector["nombre"].ToString();
+                            string stockMinimo = lector["stock_min"].ToString();
+                            string cantidadActual = lector["cantidad"].ToString();
+
+                            lblTitulo.Text = "Atencion!! " + nombreProducto;
+                            lblInfoCompra.Text = $"Te quedan {cantidadActual} {nombreProducto} en stock.";
+                        }
+
+                        i++; // Incrementar el contador
+                    }
+                }
+            }
         }
     }
 }

@@ -45,20 +45,25 @@
             materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             lbl_fechaEmision = new MaterialSkin.Controls.MaterialLabel();
             panel3 = new Panel();
+            dgvProductosF = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            subtotal = new DataGridViewTextBoxColumn();
+            iva = new DataGridViewTextBoxColumn();
             materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            dgvProductos = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_iva = new MaterialSkin.Controls.MaterialLabel();
+            lbl_totalSiniva = new MaterialSkin.Controls.MaterialLabel();
             btn_imprimir = new MaterialSkin.Controls.MaterialButton();
+            lbl_total = new MaterialSkin.Controls.MaterialLabel();
+            lbl_totalFinal = new MaterialSkin.Controls.MaterialLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductosF).BeginInit();
             SuspendLayout();
             // 
             // lbl_nombreEmpresa
@@ -83,9 +88,9 @@
             lbl_tipoFactura.Location = new Point(195, 116);
             lbl_tipoFactura.MouseState = MaterialSkin.MouseState.HOVER;
             lbl_tipoFactura.Name = "lbl_tipoFactura";
-            lbl_tipoFactura.Size = new Size(37, 72);
+            lbl_tipoFactura.Size = new Size(40, 72);
             lbl_tipoFactura.TabIndex = 1;
-            lbl_tipoFactura.Text = "T";
+            lbl_tipoFactura.Text = "C";
             // 
             // panel1
             // 
@@ -222,13 +227,94 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(lbl_totalFinal);
+            panel3.Controls.Add(lbl_total);
+            panel3.Controls.Add(dgvProductosF);
+            panel3.Controls.Add(lbl_totalSiniva);
+            panel3.Controls.Add(btn_imprimir);
             panel3.Controls.Add(materialLabel13);
+            panel3.Controls.Add(lbl_iva);
             panel3.Controls.Add(materialLabel12);
-            panel3.Controls.Add(dgvProductos);
             panel3.Location = new Point(6, 254);
             panel3.Name = "panel3";
-            panel3.Size = new Size(416, 237);
+            panel3.Size = new Size(416, 291);
             panel3.TabIndex = 7;
+            // 
+            // dgvProductosF
+            // 
+            dgvProductosF.AllowUserToResizeColumns = false;
+            dgvProductosF.AllowUserToResizeRows = false;
+            dgvProductosF.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProductosF.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProductosF.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvProductosF.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductosF.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column2, Column3, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, subtotal, iva });
+            dgvProductosF.Location = new Point(3, 31);
+            dgvProductosF.Margin = new Padding(4);
+            dgvProductosF.MultiSelect = false;
+            dgvProductosF.Name = "dgvProductosF";
+            dgvProductosF.ReadOnly = true;
+            dgvProductosF.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
+            dgvProductosF.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvProductosF.RowTemplate.Height = 25;
+            dgvProductosF.Size = new Size(408, 157);
+            dgvProductosF.TabIndex = 175;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Producto";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Marca";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Categoria";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Precio";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // subtotal
+            // 
+            subtotal.HeaderText = "Sub-Total";
+            subtotal.Name = "subtotal";
+            subtotal.ReadOnly = true;
+            // 
+            // iva
+            // 
+            iva.HeaderText = "Iva";
+            iva.Name = "iva";
+            iva.ReadOnly = true;
+            iva.Visible = false;
             // 
             // materialLabel13
             // 
@@ -254,84 +340,29 @@
             materialLabel12.TabIndex = 173;
             materialLabel12.Text = "FORMA DE PAGO:";
             // 
-            // dgvProductos
+            // lbl_iva
             // 
-            dgvProductos.AllowUserToResizeColumns = false;
-            dgvProductos.AllowUserToResizeRows = false;
-            dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProductos.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column5, Column6 });
-            dgvProductos.Location = new Point(4, 38);
-            dgvProductos.Margin = new Padding(4);
-            dgvProductos.MultiSelect = false;
-            dgvProductos.Name = "dgvProductos";
-            dgvProductos.ReadOnly = true;
-            dgvProductos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Transparent;
-            dgvProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            dgvProductos.RowTemplate.Height = 25;
-            dgvProductos.Size = new Size(408, 186);
-            dgvProductos.TabIndex = 171;
+            lbl_iva.AutoSize = true;
+            lbl_iva.Depth = 0;
+            lbl_iva.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_iva.Location = new Point(13, 201);
+            lbl_iva.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_iva.Name = "lbl_iva";
+            lbl_iva.Size = new Size(39, 19);
+            lbl_iva.TabIndex = 9;
+            lbl_iva.Text = "@IVA";
             // 
-            // Column1
+            // lbl_totalSiniva
             // 
-            Column1.HeaderText = "Producto";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Precio";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Cantidad";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Sub-Total";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // materialLabel10
-            // 
-            materialLabel10.AutoSize = true;
-            materialLabel10.Depth = 0;
-            materialLabel10.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel10.Location = new Point(10, 568);
-            materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel10.Name = "materialLabel10";
-            materialLabel10.Size = new Size(39, 19);
-            materialLabel10.TabIndex = 9;
-            materialLabel10.Text = "@IVA";
-            // 
-            // materialLabel11
-            // 
-            materialLabel11.AutoSize = true;
-            materialLabel11.Depth = 0;
-            materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel11.Location = new Point(98, 568);
-            materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel11.Name = "materialLabel11";
-            materialLabel11.Size = new Size(65, 19);
-            materialLabel11.TabIndex = 172;
-            materialLabel11.Text = "@TOTAL";
+            lbl_totalSiniva.AutoSize = true;
+            lbl_totalSiniva.Depth = 0;
+            lbl_totalSiniva.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_totalSiniva.Location = new Point(189, 201);
+            lbl_totalSiniva.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_totalSiniva.Name = "lbl_totalSiniva";
+            lbl_totalSiniva.Size = new Size(65, 19);
+            lbl_totalSiniva.TabIndex = 172;
+            lbl_totalSiniva.Text = "@TOTAL";
             // 
             // btn_imprimir
             // 
@@ -341,7 +372,7 @@
             btn_imprimir.Depth = 0;
             btn_imprimir.HighEmphasis = true;
             btn_imprimir.Icon = (Image)resources.GetObject("btn_imprimir.Icon");
-            btn_imprimir.Location = new Point(308, 500);
+            btn_imprimir.Location = new Point(298, 249);
             btn_imprimir.Margin = new Padding(4, 6, 4, 6);
             btn_imprimir.MouseState = MaterialSkin.MouseState.HOVER;
             btn_imprimir.Name = "btn_imprimir";
@@ -353,16 +384,40 @@
             btn_imprimir.UseAccentColor = false;
             btn_imprimir.UseVisualStyleBackColor = true;
             // 
+            // lbl_total
+            // 
+            lbl_total.AutoSize = true;
+            lbl_total.Depth = 0;
+            lbl_total.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_total.Location = new Point(13, 230);
+            lbl_total.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_total.Name = "lbl_total";
+            lbl_total.Size = new Size(65, 19);
+            lbl_total.TabIndex = 180;
+            lbl_total.Text = "@TOTAL";
+            lbl_total.Visible = false;
+            lbl_total.Click += materialLabel5_Click;
+            // 
+            // lbl_totalFinal
+            // 
+            lbl_totalFinal.AutoSize = true;
+            lbl_totalFinal.Depth = 0;
+            lbl_totalFinal.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_totalFinal.Location = new Point(13, 266);
+            lbl_totalFinal.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_totalFinal.Name = "lbl_totalFinal";
+            lbl_totalFinal.Size = new Size(65, 19);
+            lbl_totalFinal.TabIndex = 181;
+            lbl_totalFinal.Text = "@TOTAL";
+            lbl_totalFinal.Visible = false;
+            // 
             // MuestraFactura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(428, 601);
-            Controls.Add(btn_imprimir);
+            ClientSize = new Size(428, 623);
             Controls.Add(panel3);
-            Controls.Add(materialLabel11);
             Controls.Add(lbl_tipoFactura);
-            Controls.Add(materialLabel10);
             Controls.Add(panel2);
             Controls.Add(lbl_nombreEmpresa);
             Controls.Add(panel1);
@@ -373,7 +428,7 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductosF).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -393,16 +448,21 @@
         private Panel panel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
-        private DataGridView dgvProductos;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialLabel lbl_iva;
+        private MaterialSkin.Controls.MaterialLabel lbl_totalSiniva;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialButton btn_imprimir;
+        private DataGridView dgvProductosF;
+        private MaterialSkin.Controls.MaterialLabel lbl_total;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn subtotal;
+        private DataGridViewTextBoxColumn iva;
+        private MaterialSkin.Controls.MaterialLabel lbl_totalFinal;
     }
 }

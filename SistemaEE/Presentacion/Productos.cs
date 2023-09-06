@@ -104,12 +104,14 @@ namespace SistemaEE.Formularios
                 string nombre = filaSeleccionada.Cells["Column2"].Value.ToString();
                 string categoria = filaSeleccionada.Cells["Column3"].Value.ToString();
                 string marca = filaSeleccionada.Cells["Column4"].Value.ToString();
+                string stock_min = filaSeleccionada.Cells["Column5"].Value.ToString();
 
 
                 // Actualiza los TextBox con los datos de la fila seleccionada
                 txt_nombre.Text = nombre;
                 txt_categoria.Text = categoria;
                 txt_marca.Text = marca;
+                txt_stock_min.Text = stock_min;
 
             }
         }
@@ -139,7 +141,8 @@ namespace SistemaEE.Formularios
                      "",
                     DB.lector["nombre"],
                     DB.lector["categoria"],
-                    DB.lector["marca"]
+                    DB.lector["marca"],
+                    DB.lector["stock_min"]
 
                 );
             }
@@ -161,7 +164,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca) VALUES (" + Datos.cuit_prov + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "')";
+                string insertProducto = "INSERT INTO productos (cuit_prov, nombre, categoria, marca, stock_min) VALUES (" + Datos.cuit_prov + " ,'" + txt_nombre.Text + "', '" + txt_categoria.Text + "', '" + txt_marca.Text + "' , '" + txt_stock_min.Text + "')";
                 ConectaDB.CargarDB(insertProducto);
                 ConectaDB.CerrarDB();
                 MessageBox.Show("El producto ha sido agregado correctamente.");
@@ -179,7 +182,7 @@ namespace SistemaEE.Formularios
             try
             {
                 ConectaDB.AbrirDB();
-                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "' WHERE id_producto = " + idProductoSeleccionado;
+                string updateProducto = "UPDATE productos SET cuit_prov = " + txt_prov.Text + " , nombre = '" + txt_nombre.Text + "', categoria = '" + txt_categoria.Text + "', marca = '" + txt_marca.Text + "',stock_min = '" + txt_stock_min.Text + "' WHERE id_producto = " + idProductoSeleccionado;
                 ConectaDB.CargarDB(updateProducto);
                 ConectaDB.CerrarDB();
                 dgv_Productos();
@@ -226,7 +229,7 @@ namespace SistemaEE.Formularios
         {
             MuestraProveedor muestraProveedor = new MuestraProveedor();
             muestraProveedor.ShowDialog();
-            txt_prov.Text = Datos.nom_prov.ToString();
+            txt_prov.Text = Datos.cuit_prov.ToString();
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)
@@ -323,6 +326,51 @@ namespace SistemaEE.Formularios
             catch (Exception ex)
             {
                 MessageBox.Show("Error al procesar el archivo Excel: " + ex.Message, "Error de carga masiva", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void iconPictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void materialTextBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txt_stock_min_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MaterialSkin.Controls.MaterialTextBox textBox = (MaterialSkin.Controls.MaterialTextBox)sender;
+            if ((e.KeyChar >= 32 && e.KeyChar <= 43) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                errorProvider1.SetError(txt_stock_min, "Solo se admiten numeros");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
+
+            if (e.KeyChar >= 45 && e.KeyChar <= 47)
+            {
+                errorProvider1.SetError(txt_stock_min, "Solo se admiten comas");
+                e.Handled = true;
+                return;
+            }
+            else errorProvider1.Clear();
+
+            //Permitir números, comas y teclas de control(como retroceso)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
+
+            // Permitir solo una coma en el campo
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true; // Ignorar la coma adicional
             }
         }
     }

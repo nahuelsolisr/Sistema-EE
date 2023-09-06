@@ -38,6 +38,8 @@ namespace SistemaEE.Clases
         public static string marca;
         public static string categoria;
 
-      
+        public static float IMPORTE;
+
+
     }
 }

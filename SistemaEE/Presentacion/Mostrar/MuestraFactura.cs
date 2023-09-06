@@ -21,10 +21,94 @@ namespace SistemaEE.Presentacion.Mostrar
     {
         public MuestraFactura()
         {
+
             InitializeComponent();
             CargarDatosEmpresa();
             OtrosDatos();
         }
+        public void AgregarDatosAlDataGridView(List<string[]> datos)
+        {
+            foreach (string[] fila in datos)
+            {
+                dgvProductosF.Rows.Add(fila);
+            }
+
+            // Declarar una variable para almacenar la suma total
+            decimal total = 0;
+            decimal iva = 0;
+
+            // Iterar a través de las filas del DataGridView
+            if (lbl_tipoFactura.Text == "A")
+            {
+                foreach (DataGridViewRow row in dgvProductosF.Rows)
+                {
+                    // Verificar si la celda en la columna deseada no está vacía y contiene un valor numérico
+                    if (row.Cells["subtotal"].Value != null &&
+                        decimal.TryParse(row.Cells["subtotal"].Value.ToString(), out decimal subtotal))
+                    {
+                        // Sumar el valor de la celda a la variable total
+                        total += subtotal;
+                        lbl_iva.Text = "IVA: INCLUIDO";
+                        lbl_totalSiniva.Text = "TOTAL: $" + total.ToString();
+                    }
+                }
+            }
+            if (lbl_tipoFactura.Text == "B")
+            {
+                foreach (DataGridViewRow row in dgvProductosF.Rows)
+                {
+                    // Verificar si la celda en la columna deseada no está vacía y contiene un valor numérico
+                    if (row.Cells["subtotal"].Value != null &&
+                        decimal.TryParse(row.Cells["subtotal"].Value.ToString(), out decimal subtotal))
+                    {
+                        // Sumar el valor de la celda a la variable total
+                        total += subtotal;
+                        lbl_iva.Text = "IVA: INCLUIDO";
+                        lbl_totalSiniva.Text = "TOTAL: $" + total.ToString();
+                    }
+                }
+            }
+            if (lbl_tipoFactura.Text == "C")
+            {
+                // Asegúrate de que la columna "iva" existe en el DataGridView
+                if (dgvProductosF.Columns.Contains("iva"))
+                {
+                    dgvProductosF.Columns["iva"].Visible = true; // Hacer visible la columna "iva"
+                }
+
+                foreach (DataGridViewRow row in dgvProductosF.Rows)
+                {
+                    // Verificar si la celda en la columna deseada no está vacía y contiene un valor numérico
+                    if (row.Cells["subtotal"].Value != null &&
+                        decimal.TryParse(row.Cells["subtotal"].Value.ToString(), out decimal subtotal))
+                    {
+                        // Calcular el subtotal con descuento del 21%
+                        decimal subtotalConDescuento = subtotal - (subtotal * 0.21M);
+
+                        // Asignar el valor del subtotal con descuento a la celda "subtotal" en la fila actual
+                        row.Cells["subtotal"].Value = subtotalConDescuento;
+
+                        // Calcular el IVA (21%) y asignarlo a la columna "iva" en la fila actual
+                        iva = subtotal * 0.21M;
+                        row.Cells["iva"].Value = iva;
+
+                        // Sumar el valor de la celda a la variable total
+                        total += subtotalConDescuento;
+                        lbl_iva.Text = "IVA: $" + iva;
+                        lbl_totalSiniva.Text = "TOTAL SIN IVA: $" + total.ToString();
+                        lbl_total.Text = "TOTAL NETO" + (total + iva).ToString();
+                    }
+                }
+            }
+
+            // Calcular el total final y mostrarlo en lbl_totaFinal
+            decimal totalFinal = total + iva;
+            lbl_totalFinal.Text = "TOTAL: $" + totalFinal.ToString();
+
+
+
+        }
+
         public void CargarDatosEmpresa()
         {
             ConectaDB.AbrirDB();
@@ -92,6 +176,11 @@ namespace SistemaEE.Presentacion.Mostrar
             lbl_numeroFactura.Text = nuevoNumeroFacturaFormateado;
 
             ConectaDB.CerrarDB();
+        }
+
+        private void materialLabel5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

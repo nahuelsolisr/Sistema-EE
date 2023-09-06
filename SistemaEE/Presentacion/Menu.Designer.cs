@@ -45,25 +45,31 @@
             btn_clientes = new MaterialSkin.Controls.MaterialButton();
             btn_producto = new MaterialSkin.Controls.MaterialButton();
             btn_prov = new MaterialSkin.Controls.MaterialButton();
-            tabContabilidad = new TabPage();
+            tabNotificacion = new TabPage();
+            materialCard7 = new MaterialSkin.Controls.MaterialCard();
+            lbl_infoCompra8 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo8 = new MaterialSkin.Controls.MaterialLabel();
+            materialCard8 = new MaterialSkin.Controls.MaterialCard();
+            lbl_infoCompra7 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo7 = new MaterialSkin.Controls.MaterialLabel();
             materialCard5 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_infoCompra6 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo6 = new MaterialSkin.Controls.MaterialLabel();
             materialCard6 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_infoCompra5 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo5 = new MaterialSkin.Controls.MaterialLabel();
             materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_infoCompra4 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo4 = new MaterialSkin.Controls.MaterialLabel();
             materialCard4 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_infoCompra3 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo3 = new MaterialSkin.Controls.MaterialLabel();
             materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_infoCompra2 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo2 = new MaterialSkin.Controls.MaterialLabel();
             materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            lbl_cardTitulo = new MaterialSkin.Controls.MaterialLabel();
+            lbl_infoCompra1 = new MaterialSkin.Controls.MaterialLabel();
+            lbl_cardTitulo1 = new MaterialSkin.Controls.MaterialLabel();
             tabUsuarios = new TabPage();
             tabConfiguracion = new TabPage();
             txt_cuitEmpresa = new MaterialSkin.Controls.MaterialTextBox();
@@ -90,11 +96,14 @@
             msModoOscuro = new MaterialSkin.Controls.MaterialSwitch();
             btn_subirLogo = new MaterialSkin.Controls.MaterialButton();
             ImagenesTab = new ImageList(components);
+            materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             mtcMenu.SuspendLayout();
             tabHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabFacturacion.SuspendLayout();
-            tabContabilidad.SuspendLayout();
+            tabNotificacion.SuspendLayout();
+            materialCard7.SuspendLayout();
+            materialCard8.SuspendLayout();
             materialCard5.SuspendLayout();
             materialCard6.SuspendLayout();
             materialCard3.SuspendLayout();
@@ -113,7 +122,7 @@
             // 
             mtcMenu.Controls.Add(tabHome);
             mtcMenu.Controls.Add(tabFacturacion);
-            mtcMenu.Controls.Add(tabContabilidad);
+            mtcMenu.Controls.Add(tabNotificacion);
             mtcMenu.Controls.Add(tabUsuarios);
             mtcMenu.Controls.Add(tabConfiguracion);
             mtcMenu.Depth = 0;
@@ -368,30 +377,109 @@
             btn_prov.UseVisualStyleBackColor = true;
             btn_prov.Click += btn_prov_Click;
             // 
-            // tabContabilidad
+            // tabNotificacion
             // 
-            tabContabilidad.BackColor = Color.White;
-            tabContabilidad.Controls.Add(materialCard5);
-            tabContabilidad.Controls.Add(materialCard6);
-            tabContabilidad.Controls.Add(materialCard3);
-            tabContabilidad.Controls.Add(materialCard4);
-            tabContabilidad.Controls.Add(materialCard2);
-            tabContabilidad.Controls.Add(materialCard1);
-            tabContabilidad.ImageKey = "bell-solid.png";
-            tabContabilidad.Location = new Point(4, 39);
-            tabContabilidad.Name = "tabContabilidad";
-            tabContabilidad.Size = new Size(577, 485);
-            tabContabilidad.TabIndex = 2;
-            tabContabilidad.Text = "Notificaciones";
+            tabNotificacion.BackColor = Color.White;
+            tabNotificacion.Controls.Add(materialLabel11);
+            tabNotificacion.Controls.Add(materialCard7);
+            tabNotificacion.Controls.Add(materialCard8);
+            tabNotificacion.Controls.Add(materialCard5);
+            tabNotificacion.Controls.Add(materialCard6);
+            tabNotificacion.Controls.Add(materialCard3);
+            tabNotificacion.Controls.Add(materialCard4);
+            tabNotificacion.Controls.Add(materialCard2);
+            tabNotificacion.Controls.Add(materialCard1);
+            tabNotificacion.ImageKey = "bell-solid.png";
+            tabNotificacion.Location = new Point(4, 39);
+            tabNotificacion.Name = "tabNotificacion";
+            tabNotificacion.Size = new Size(577, 485);
+            tabNotificacion.TabIndex = 2;
+            tabNotificacion.Text = "Notificaciones";
+            // 
+            // materialCard7
+            // 
+            materialCard7.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard7.Controls.Add(lbl_infoCompra8);
+            materialCard7.Controls.Add(lbl_cardTitulo8);
+            materialCard7.Depth = 0;
+            materialCard7.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard7.Location = new Point(323, 379);
+            materialCard7.Margin = new Padding(14);
+            materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCard7.Name = "materialCard7";
+            materialCard7.Padding = new Padding(14);
+            materialCard7.Size = new Size(240, 100);
+            materialCard7.TabIndex = 7;
+            // 
+            // lbl_infoCompra8
+            // 
+            lbl_infoCompra8.AutoSize = true;
+            lbl_infoCompra8.Depth = 0;
+            lbl_infoCompra8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra8.Location = new Point(13, 65);
+            lbl_infoCompra8.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra8.Name = "lbl_infoCompra8";
+            lbl_infoCompra8.Size = new Size(1, 0);
+            lbl_infoCompra8.TabIndex = 2;
+            // 
+            // lbl_cardTitulo8
+            // 
+            lbl_cardTitulo8.AutoSize = true;
+            lbl_cardTitulo8.Depth = 0;
+            lbl_cardTitulo8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo8.ForeColor = Color.Teal;
+            lbl_cardTitulo8.Location = new Point(7, 5);
+            lbl_cardTitulo8.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo8.Name = "lbl_cardTitulo8";
+            lbl_cardTitulo8.Size = new Size(1, 0);
+            lbl_cardTitulo8.TabIndex = 3;
+            // 
+            // materialCard8
+            // 
+            materialCard8.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard8.Controls.Add(lbl_infoCompra7);
+            materialCard8.Controls.Add(lbl_cardTitulo7);
+            materialCard8.Depth = 0;
+            materialCard8.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard8.Location = new Point(74, 379);
+            materialCard8.Margin = new Padding(14);
+            materialCard8.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCard8.Name = "materialCard8";
+            materialCard8.Padding = new Padding(14);
+            materialCard8.Size = new Size(240, 100);
+            materialCard8.TabIndex = 6;
+            // 
+            // lbl_infoCompra7
+            // 
+            lbl_infoCompra7.AutoSize = true;
+            lbl_infoCompra7.Depth = 0;
+            lbl_infoCompra7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra7.Location = new Point(14, 68);
+            lbl_infoCompra7.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra7.Name = "lbl_infoCompra7";
+            lbl_infoCompra7.Size = new Size(1, 0);
+            lbl_infoCompra7.TabIndex = 2;
+            // 
+            // lbl_cardTitulo7
+            // 
+            lbl_cardTitulo7.AutoSize = true;
+            lbl_cardTitulo7.Depth = 0;
+            lbl_cardTitulo7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo7.ForeColor = Color.Teal;
+            lbl_cardTitulo7.Location = new Point(8, 8);
+            lbl_cardTitulo7.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo7.Name = "lbl_cardTitulo7";
+            lbl_cardTitulo7.Size = new Size(1, 0);
+            lbl_cardTitulo7.TabIndex = 3;
             // 
             // materialCard5
             // 
             materialCard5.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard5.Controls.Add(materialLabel20);
-            materialCard5.Controls.Add(materialLabel21);
+            materialCard5.Controls.Add(lbl_infoCompra6);
+            materialCard5.Controls.Add(lbl_cardTitulo6);
             materialCard5.Depth = 0;
             materialCard5.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard5.Location = new Point(323, 241);
+            materialCard5.Location = new Point(323, 266);
             materialCard5.Margin = new Padding(14);
             materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard5.Name = "materialCard5";
@@ -399,39 +487,37 @@
             materialCard5.Size = new Size(240, 100);
             materialCard5.TabIndex = 5;
             // 
-            // materialLabel20
+            // lbl_infoCompra6
             // 
-            materialLabel20.AutoSize = true;
-            materialLabel20.Depth = 0;
-            materialLabel20.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel20.Location = new Point(66, 65);
-            materialLabel20.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel20.Name = "materialLabel20";
-            materialLabel20.Size = new Size(136, 19);
-            materialLabel20.TabIndex = 2;
-            materialLabel20.Text = "deberias comprar...";
+            lbl_infoCompra6.AutoSize = true;
+            lbl_infoCompra6.Depth = 0;
+            lbl_infoCompra6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra6.Location = new Point(13, 65);
+            lbl_infoCompra6.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra6.Name = "lbl_infoCompra6";
+            lbl_infoCompra6.Size = new Size(1, 0);
+            lbl_infoCompra6.TabIndex = 2;
             // 
-            // materialLabel21
+            // lbl_cardTitulo6
             // 
-            materialLabel21.AutoSize = true;
-            materialLabel21.Depth = 0;
-            materialLabel21.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel21.ForeColor = Color.Teal;
-            materialLabel21.Location = new Point(7, 5);
-            materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel21.Name = "materialLabel21";
-            materialLabel21.Size = new Size(76, 19);
-            materialLabel21.TabIndex = 3;
-            materialLabel21.Text = "Stock bajo";
+            lbl_cardTitulo6.AutoSize = true;
+            lbl_cardTitulo6.Depth = 0;
+            lbl_cardTitulo6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo6.ForeColor = Color.Teal;
+            lbl_cardTitulo6.Location = new Point(7, 5);
+            lbl_cardTitulo6.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo6.Name = "lbl_cardTitulo6";
+            lbl_cardTitulo6.Size = new Size(1, 0);
+            lbl_cardTitulo6.TabIndex = 3;
             // 
             // materialCard6
             // 
             materialCard6.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard6.Controls.Add(materialLabel18);
-            materialCard6.Controls.Add(materialLabel19);
+            materialCard6.Controls.Add(lbl_infoCompra5);
+            materialCard6.Controls.Add(lbl_cardTitulo5);
             materialCard6.Depth = 0;
             materialCard6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard6.Location = new Point(74, 241);
+            materialCard6.Location = new Point(74, 266);
             materialCard6.Margin = new Padding(14);
             materialCard6.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard6.Name = "materialCard6";
@@ -439,39 +525,37 @@
             materialCard6.Size = new Size(240, 100);
             materialCard6.TabIndex = 4;
             // 
-            // materialLabel18
+            // lbl_infoCompra5
             // 
-            materialLabel18.AutoSize = true;
-            materialLabel18.Depth = 0;
-            materialLabel18.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel18.Location = new Point(67, 68);
-            materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel18.Name = "materialLabel18";
-            materialLabel18.Size = new Size(136, 19);
-            materialLabel18.TabIndex = 2;
-            materialLabel18.Text = "deberias comprar...";
+            lbl_infoCompra5.AutoSize = true;
+            lbl_infoCompra5.Depth = 0;
+            lbl_infoCompra5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra5.Location = new Point(14, 68);
+            lbl_infoCompra5.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra5.Name = "lbl_infoCompra5";
+            lbl_infoCompra5.Size = new Size(1, 0);
+            lbl_infoCompra5.TabIndex = 2;
             // 
-            // materialLabel19
+            // lbl_cardTitulo5
             // 
-            materialLabel19.AutoSize = true;
-            materialLabel19.Depth = 0;
-            materialLabel19.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel19.ForeColor = Color.Teal;
-            materialLabel19.Location = new Point(8, 8);
-            materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel19.Name = "materialLabel19";
-            materialLabel19.Size = new Size(76, 19);
-            materialLabel19.TabIndex = 3;
-            materialLabel19.Text = "Stock bajo";
+            lbl_cardTitulo5.AutoSize = true;
+            lbl_cardTitulo5.Depth = 0;
+            lbl_cardTitulo5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo5.ForeColor = Color.Teal;
+            lbl_cardTitulo5.Location = new Point(8, 8);
+            lbl_cardTitulo5.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo5.Name = "lbl_cardTitulo5";
+            lbl_cardTitulo5.Size = new Size(1, 0);
+            lbl_cardTitulo5.TabIndex = 3;
             // 
             // materialCard3
             // 
             materialCard3.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard3.Controls.Add(materialLabel16);
-            materialCard3.Controls.Add(materialLabel17);
+            materialCard3.Controls.Add(lbl_infoCompra4);
+            materialCard3.Controls.Add(lbl_cardTitulo4);
             materialCard3.Depth = 0;
             materialCard3.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard3.Location = new Point(323, 128);
+            materialCard3.Location = new Point(323, 153);
             materialCard3.Margin = new Padding(14);
             materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard3.Name = "materialCard3";
@@ -479,39 +563,37 @@
             materialCard3.Size = new Size(240, 100);
             materialCard3.TabIndex = 3;
             // 
-            // materialLabel16
+            // lbl_infoCompra4
             // 
-            materialLabel16.AutoSize = true;
-            materialLabel16.Depth = 0;
-            materialLabel16.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel16.Location = new Point(67, 67);
-            materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel16.Name = "materialLabel16";
-            materialLabel16.Size = new Size(136, 19);
-            materialLabel16.TabIndex = 2;
-            materialLabel16.Text = "deberias comprar...";
+            lbl_infoCompra4.AutoSize = true;
+            lbl_infoCompra4.Depth = 0;
+            lbl_infoCompra4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra4.Location = new Point(14, 67);
+            lbl_infoCompra4.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra4.Name = "lbl_infoCompra4";
+            lbl_infoCompra4.Size = new Size(1, 0);
+            lbl_infoCompra4.TabIndex = 2;
             // 
-            // materialLabel17
+            // lbl_cardTitulo4
             // 
-            materialLabel17.AutoSize = true;
-            materialLabel17.Depth = 0;
-            materialLabel17.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel17.ForeColor = Color.Teal;
-            materialLabel17.Location = new Point(8, 7);
-            materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel17.Name = "materialLabel17";
-            materialLabel17.Size = new Size(76, 19);
-            materialLabel17.TabIndex = 3;
-            materialLabel17.Text = "Stock bajo";
+            lbl_cardTitulo4.AutoSize = true;
+            lbl_cardTitulo4.Depth = 0;
+            lbl_cardTitulo4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo4.ForeColor = Color.Teal;
+            lbl_cardTitulo4.Location = new Point(8, 7);
+            lbl_cardTitulo4.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo4.Name = "lbl_cardTitulo4";
+            lbl_cardTitulo4.Size = new Size(1, 0);
+            lbl_cardTitulo4.TabIndex = 3;
             // 
             // materialCard4
             // 
             materialCard4.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard4.Controls.Add(materialLabel14);
-            materialCard4.Controls.Add(materialLabel15);
+            materialCard4.Controls.Add(lbl_infoCompra3);
+            materialCard4.Controls.Add(lbl_cardTitulo3);
             materialCard4.Depth = 0;
             materialCard4.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard4.Location = new Point(74, 128);
+            materialCard4.Location = new Point(74, 153);
             materialCard4.Margin = new Padding(14);
             materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard4.Name = "materialCard4";
@@ -519,39 +601,37 @@
             materialCard4.Size = new Size(240, 100);
             materialCard4.TabIndex = 2;
             // 
-            // materialLabel14
+            // lbl_infoCompra3
             // 
-            materialLabel14.AutoSize = true;
-            materialLabel14.Depth = 0;
-            materialLabel14.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel14.Location = new Point(67, 67);
-            materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel14.Name = "materialLabel14";
-            materialLabel14.Size = new Size(136, 19);
-            materialLabel14.TabIndex = 2;
-            materialLabel14.Text = "deberias comprar...";
+            lbl_infoCompra3.AutoSize = true;
+            lbl_infoCompra3.Depth = 0;
+            lbl_infoCompra3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra3.Location = new Point(14, 67);
+            lbl_infoCompra3.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra3.Name = "lbl_infoCompra3";
+            lbl_infoCompra3.Size = new Size(1, 0);
+            lbl_infoCompra3.TabIndex = 2;
             // 
-            // materialLabel15
+            // lbl_cardTitulo3
             // 
-            materialLabel15.AutoSize = true;
-            materialLabel15.Depth = 0;
-            materialLabel15.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel15.ForeColor = Color.Teal;
-            materialLabel15.Location = new Point(8, 7);
-            materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel15.Name = "materialLabel15";
-            materialLabel15.Size = new Size(76, 19);
-            materialLabel15.TabIndex = 3;
-            materialLabel15.Text = "Stock bajo";
+            lbl_cardTitulo3.AutoSize = true;
+            lbl_cardTitulo3.Depth = 0;
+            lbl_cardTitulo3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo3.ForeColor = Color.Teal;
+            lbl_cardTitulo3.Location = new Point(8, 7);
+            lbl_cardTitulo3.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo3.Name = "lbl_cardTitulo3";
+            lbl_cardTitulo3.Size = new Size(1, 0);
+            lbl_cardTitulo3.TabIndex = 3;
             // 
             // materialCard2
             // 
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard2.Controls.Add(materialLabel11);
-            materialCard2.Controls.Add(materialLabel13);
+            materialCard2.Controls.Add(lbl_infoCompra2);
+            materialCard2.Controls.Add(lbl_cardTitulo2);
             materialCard2.Depth = 0;
             materialCard2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard2.Location = new Point(323, 14);
+            materialCard2.Location = new Point(323, 39);
             materialCard2.Margin = new Padding(14);
             materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard2.Name = "materialCard2";
@@ -559,39 +639,37 @@
             materialCard2.Size = new Size(240, 100);
             materialCard2.TabIndex = 1;
             // 
-            // materialLabel11
+            // lbl_infoCompra2
             // 
-            materialLabel11.AutoSize = true;
-            materialLabel11.Depth = 0;
-            materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel11.Location = new Point(67, 67);
-            materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel11.Name = "materialLabel11";
-            materialLabel11.Size = new Size(136, 19);
-            materialLabel11.TabIndex = 2;
-            materialLabel11.Text = "deberias comprar...";
+            lbl_infoCompra2.AutoSize = true;
+            lbl_infoCompra2.Depth = 0;
+            lbl_infoCompra2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra2.Location = new Point(14, 67);
+            lbl_infoCompra2.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra2.Name = "lbl_infoCompra2";
+            lbl_infoCompra2.Size = new Size(1, 0);
+            lbl_infoCompra2.TabIndex = 2;
             // 
-            // materialLabel13
+            // lbl_cardTitulo2
             // 
-            materialLabel13.AutoSize = true;
-            materialLabel13.Depth = 0;
-            materialLabel13.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel13.ForeColor = Color.Teal;
-            materialLabel13.Location = new Point(8, 7);
-            materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel13.Name = "materialLabel13";
-            materialLabel13.Size = new Size(76, 19);
-            materialLabel13.TabIndex = 3;
-            materialLabel13.Text = "Stock bajo";
+            lbl_cardTitulo2.AutoSize = true;
+            lbl_cardTitulo2.Depth = 0;
+            lbl_cardTitulo2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo2.ForeColor = Color.Teal;
+            lbl_cardTitulo2.Location = new Point(8, 7);
+            lbl_cardTitulo2.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo2.Name = "lbl_cardTitulo2";
+            lbl_cardTitulo2.Size = new Size(1, 0);
+            lbl_cardTitulo2.TabIndex = 3;
             // 
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard1.Controls.Add(materialLabel12);
-            materialCard1.Controls.Add(lbl_cardTitulo);
+            materialCard1.Controls.Add(lbl_infoCompra1);
+            materialCard1.Controls.Add(lbl_cardTitulo1);
             materialCard1.Depth = 0;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(74, 14);
+            materialCard1.Location = new Point(74, 39);
             materialCard1.Margin = new Padding(14);
             materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             materialCard1.Name = "materialCard1";
@@ -599,30 +677,28 @@
             materialCard1.Size = new Size(240, 100);
             materialCard1.TabIndex = 0;
             // 
-            // materialLabel12
+            // lbl_infoCompra1
             // 
-            materialLabel12.AutoSize = true;
-            materialLabel12.Depth = 0;
-            materialLabel12.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel12.Location = new Point(67, 67);
-            materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel12.Name = "materialLabel12";
-            materialLabel12.Size = new Size(136, 19);
-            materialLabel12.TabIndex = 1;
-            materialLabel12.Text = "deberias comprar...";
+            lbl_infoCompra1.AutoSize = true;
+            lbl_infoCompra1.Depth = 0;
+            lbl_infoCompra1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_infoCompra1.Location = new Point(14, 67);
+            lbl_infoCompra1.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_infoCompra1.Name = "lbl_infoCompra1";
+            lbl_infoCompra1.Size = new Size(1, 0);
+            lbl_infoCompra1.TabIndex = 1;
             // 
-            // lbl_cardTitulo
+            // lbl_cardTitulo1
             // 
-            lbl_cardTitulo.AutoSize = true;
-            lbl_cardTitulo.Depth = 0;
-            lbl_cardTitulo.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lbl_cardTitulo.ForeColor = Color.Teal;
-            lbl_cardTitulo.Location = new Point(8, 7);
-            lbl_cardTitulo.MouseState = MaterialSkin.MouseState.HOVER;
-            lbl_cardTitulo.Name = "lbl_cardTitulo";
-            lbl_cardTitulo.Size = new Size(76, 19);
-            lbl_cardTitulo.TabIndex = 1;
-            lbl_cardTitulo.Text = "Stock bajo";
+            lbl_cardTitulo1.AutoSize = true;
+            lbl_cardTitulo1.Depth = 0;
+            lbl_cardTitulo1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lbl_cardTitulo1.ForeColor = Color.Teal;
+            lbl_cardTitulo1.Location = new Point(8, 7);
+            lbl_cardTitulo1.MouseState = MaterialSkin.MouseState.HOVER;
+            lbl_cardTitulo1.Name = "lbl_cardTitulo1";
+            lbl_cardTitulo1.Size = new Size(1, 0);
+            lbl_cardTitulo1.TabIndex = 1;
             // 
             // tabUsuarios
             // 
@@ -1007,6 +1083,18 @@
             ImagenesTab.Images.SetKeyName(3, "user-solid.png");
             ImagenesTab.Images.SetKeyName(4, "gear-solid.png");
             // 
+            // materialLabel11
+            // 
+            materialLabel11.AutoSize = true;
+            materialLabel11.Depth = 0;
+            materialLabel11.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel11.Location = new Point(74, 12);
+            materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel11.Name = "materialLabel11";
+            materialLabel11.Size = new Size(392, 19);
+            materialLabel11.TabIndex = 8;
+            materialLabel11.Text = "Información de los productos que tienen un stock bajo\r\n\r\n";
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1026,7 +1114,12 @@
             tabHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabFacturacion.ResumeLayout(false);
-            tabContabilidad.ResumeLayout(false);
+            tabNotificacion.ResumeLayout(false);
+            tabNotificacion.PerformLayout();
+            materialCard7.ResumeLayout(false);
+            materialCard7.PerformLayout();
+            materialCard8.ResumeLayout(false);
+            materialCard8.PerformLayout();
             materialCard5.ResumeLayout(false);
             materialCard5.PerformLayout();
             materialCard6.ResumeLayout(false);
@@ -1053,7 +1146,7 @@
         private MaterialSkin.Controls.MaterialTabControl mtcMenu;
         private TabPage tabHome;
         private TabPage tabFacturacion;
-        private TabPage tabContabilidad;
+        private TabPage tabNotificacion;
         private TabPage tabUsuarios;
         private TabPage tabConfiguracion;
         private MaterialSkin.Controls.MaterialLabel lbl_usuario;
@@ -1092,23 +1185,30 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel12;
-        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra1;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo1;
         private MaterialSkin.Controls.MaterialCard materialCard5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel20;
-        private MaterialSkin.Controls.MaterialLabel materialLabel21;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra6;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo6;
         private MaterialSkin.Controls.MaterialCard materialCard6;
-        private MaterialSkin.Controls.MaterialLabel materialLabel18;
-        private MaterialSkin.Controls.MaterialLabel materialLabel19;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra5;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo5;
         private MaterialSkin.Controls.MaterialCard materialCard3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel16;
-        private MaterialSkin.Controls.MaterialLabel materialLabel17;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra4;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo4;
         private MaterialSkin.Controls.MaterialCard materialCard4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel14;
-        private MaterialSkin.Controls.MaterialLabel materialLabel15;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra3;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo3;
         private MaterialSkin.Controls.MaterialCard materialCard2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel11;
-        private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra2;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo2;
         private MaterialSkin.Controls.MaterialButton btn_cerrarSesion;
+        private MaterialSkin.Controls.MaterialCard materialCard7;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra8;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo8;
+        private MaterialSkin.Controls.MaterialCard materialCard8;
+        private MaterialSkin.Controls.MaterialLabel lbl_infoCompra7;
+        private MaterialSkin.Controls.MaterialLabel lbl_cardTitulo7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel11;
     }
 }
